@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>One Click Coaching — Direction Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone: #F4EFE8; --bone-2: #EAE3D8; --paper: #FBF8F3;
+    --clay: #C9A687; --clay-2: #B08A66; --terracotta: #B5583E;
+    --espresso: #2A221C; --ink: #1A1511;
+    --stone: #6E6358; --stone-2: #8F847A;
+    --line: #D9D0C2; --line-2: #C6BAA8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', sans-serif; }
+
+  /* ── Shared inside-artboard styles ── */
+  .ab { width: 100%; height: 100%; background: var(--bone); color: var(--ink); position: relative; overflow: hidden; font-family: 'Inter', sans-serif; }
+  .ab.dark { background: var(--espresso); color: var(--bone); }
+  .serif { font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -0.02em; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* LOGO CARDS (large centered mark) */
+  .logo-card { display: flex; flex-direction: column; justify-content: space-between; padding: 48px; }
+  .logo-card .tl { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: var(--stone-2); text-transform: uppercase; }
+  .logo-card.dark .tl { color: rgba(244,239,232,0.5); }
+  .logo-card .center { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .logo-card .bl { display: flex; justify-content: space-between; align-items: flex-end; }
+  .logo-card .bl h3 { font-family: 'Instrument Serif', serif; font-size: 38px; font-weight: 400; letter-spacing: -0.02em; margin: 0; }
+  .logo-card .bl h3 em { font-style: italic; color: var(--terracotta); }
+  .logo-card.dark .bl h3 em { color: var(--clay); }
+  .logo-card .bl .meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--stone-2); text-transform: uppercase; text-align: right; line-height: 1.7; }
+  .logo-card.dark .bl .meta { color: rgba(244,239,232,0.5); }
+
+  /* FAVICON ROW */
+  .mini-card { display: flex; flex-direction: column; padding: 0; }
+  .mini-card .tab { background: var(--bone-2); padding: 14px 18px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); }
+  .mini-card .tab .dots { display: flex; gap: 5px; }
+  .mini-card .tab .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line-2); }
+  .mini-card .tab .fav-row { display: flex; align-items: center; gap: 8px; background: var(--paper); padding: 5px 12px; border-radius: 5px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--stone); flex: 1; }
+  .mini-card .content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; gap: 24px; background: var(--paper); }
+  .mini-card .fav-big { width: 96px; height: 96px; display: flex; align-items: center; justify-content: center; background: var(--espresso); border-radius: 16px; }
+  .mini-card .fav-sm { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--espresso); border-radius: 10px; }
+  .mini-card .fav-xs { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: var(--espresso); border-radius: 5px; }
+  .mini-card .row { display: flex; gap: 12px; align-items: center; }
+  .mini-card .caption { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--stone-2); text-transform: uppercase; margin-top: auto; padding: 16px; border-top: 1px solid var(--line); text-align: center; background: var(--bone); }
+
+  /* HOMEPAGE HERO */
+  .hero-card { display: flex; flex-direction: column; }
+  .hero-card .nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 36px; border-bottom: 1px solid var(--line); background: var(--paper); }
+  .hero-card .nav .lockup { display: flex; align-items: center; gap: 8px; }
+  .hero-card .nav .links { display: flex; gap: 22px; font-size: 12px; color: var(--stone); }
+  .hero-card .nav .cta { background: var(--espresso); color: var(--bone); padding: 7px 14px; border-radius: 999px; font-size: 11px; }
+  .hero-card .body { flex: 1; padding: 52px 40px; background: var(--paper); display: flex; flex-direction: column; justify-content: center; }
+  .hero-card .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: var(--terracotta); text-transform: uppercase; margin-bottom: 16px; display: inline-flex; align-items: center; gap: 8px; }
+  .hero-card .eyebrow::before { content: ''; width: 16px; height: 1px; background: var(--terracotta); display: inline-block; }
+  .hero-card h1 { font-family: 'Instrument Serif', serif; font-size: 56px; line-height: 1; letter-spacing: -0.025em; margin: 0 0 18px; font-weight: 400; }
+  .hero-card h1 em { font-style: italic; color: var(--terracotta); }
+  .hero-card p { font-size: 13px; line-height: 1.55; color: var(--stone); margin: 0 0 22px; max-width: 380px; }
+  .hero-card .ctas { display: flex; gap: 8px; }
+  .hero-card .btn1 { background: var(--espresso); color: var(--bone); padding: 10px 18px; border-radius: 999px; font-size: 11px; }
+  .hero-card .btn2 { border: 1px solid var(--line-2); padding: 10px 18px; border-radius: 999px; font-size: 11px; color: var(--ink); }
+
+  /* BUSINESS CARD */
+  .bc-card { padding: 50px; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, var(--bone) 0%, var(--bone-2) 100%); }
+  .bc-card .card { aspect-ratio: 7/4; width: 100%; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 25px 50px -18px rgba(42,34,28,0.35), 0 6px 14px -4px rgba(42,34,28,0.2); }
+  .bc-card .card.paper { background: var(--paper); }
+  .bc-card .card.espresso { background: var(--espresso); color: var(--bone); }
+  .bc-card .card.clay { background: var(--clay); color: var(--espresso); }
+  .bc-card .card .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .bc-card .card .name { font-family: 'Instrument Serif', serif; font-size: 20px; letter-spacing: -0.01em; }
+  .bc-card .card .role { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 4px; color: var(--stone); }
+  .bc-card .card.espresso .role { color: rgba(244,239,232,0.6); }
+  .bc-card .card.clay .role { color: rgba(42,34,28,0.6); }
+  .bc-card .card .contact { font-family: 'JetBrains Mono', monospace; font-size: 9px; line-height: 1.8; letter-spacing: 0.06em; }
+  .bc-card .card .contact span { opacity: 0.5; }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel">
+
+// ───── Mark components (re-used across all artboards) ─────
+
+const PulseMark = ({ size = 260, stroke = '#2A221C', dot = '#B5583E' }) => (
+  <svg viewBox="0 0 200 200" width={size} height={size}>
+    <circle cx="100" cy="100" r="78" fill="none" stroke={stroke} strokeWidth="5"/>
+    <circle cx="156" cy="52" r="12" fill={dot}/>
+  </svg>
+);
+
+const ApertureMark = ({ size = 260, stroke = '#2A221C', dot = '#B5583E' }) => (
+  <svg viewBox="0 0 200 200" width={size} height={size}>
+    <circle cx="100" cy="100" r="82" fill="none" stroke={stroke} strokeWidth="2.5"/>
+    <circle cx="100" cy="100" r="62" fill="none" stroke={stroke} strokeWidth="2.5"/>
+    <circle cx="100" cy="100" r="42" fill="none" stroke={stroke} strokeWidth="2.5"/>
+    <circle cx="100" cy="100" r="10" fill={dot}/>
+    <line x1="8" y1="100" x2="18" y2="100" stroke={stroke} strokeWidth="2"/>
+    <line x1="182" y1="100" x2="192" y2="100" stroke={stroke} strokeWidth="2"/>
+    <line x1="100" y1="8" x2="100" y2="18" stroke={stroke} strokeWidth="2"/>
+    <line x1="100" y1="182" x2="100" y2="192" stroke={stroke} strokeWidth="2"/>
+  </svg>
+);
+
+const KeystrokeMark = ({ width = 440, ink = '#2A221C', dot = '#B5583E' }) => (
+  <svg viewBox="0 0 440 140" width={width}>
+    <text x="0" y="100" fontFamily="Instrument Serif, serif" fontSize="96" fill={ink} letterSpacing="-2">One</text>
+    <circle cx="214" cy="70" r="12" fill={dot}/>
+    <text x="240" y="100" fontFamily="Instrument Serif, serif" fontSize="96" fill={ink} letterSpacing="-2">Click</text>
+  </svg>
+);
+
+// Small versions used in favicons / navs
+const PulseMini = ({ size = 40, stroke = '#F4EFE8', dot = '#C9A687' }) => (
+  <svg viewBox="0 0 200 200" width={size} height={size}>
+    <circle cx="100" cy="100" r="78" fill="none" stroke={stroke} strokeWidth="8"/>
+    <circle cx="156" cy="52" r="16" fill={dot}/>
+  </svg>
+);
+const ApertureMini = ({ size = 40, stroke = '#F4EFE8', dot = '#C9A687' }) => (
+  <svg viewBox="0 0 200 200" width={size} height={size}>
+    <circle cx="100" cy="100" r="82" fill="none" stroke={stroke} strokeWidth="5"/>
+    <circle cx="100" cy="100" r="58" fill="none" stroke={stroke} strokeWidth="5"/>
+    <circle cx="100" cy="100" r="34" fill="none" stroke={stroke} strokeWidth="5"/>
+    <circle cx="100" cy="100" r="12" fill={dot}/>
+  </svg>
+);
+const KeystrokeMini = ({ size = 40, ink = '#F4EFE8', dot = '#C9A687' }) => (
+  <svg viewBox="0 0 200 200" width={size} height={size}>
+    <text x="100" y="130" fontFamily="Instrument Serif, serif" fontSize="130" fill={ink} textAnchor="middle" letterSpacing="-4">O</text>
+    <circle cx="148" cy="72" r="14" fill={dot}/>
+  </svg>
+);
+
+// Inline wordmark on light bg (for nav bars / cards)
+const WordmarkInline = ({ Mark, size = 18 }) => (
+  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+    <Mark size={size} stroke="#2A221C" dot="#B5583E" />
+    <span style={{ fontFamily: 'Instrument Serif, serif', fontSize: 18, letterSpacing: '-0.01em', color: '#2A221C' }}>One Click</span>
+  </span>
+);
+
+// ───── Artboard contents ─────
+
+function LogoArtboard({ Mark, title, concept, spec, markSize = 260 }) {
+  return (
+    <div className="ab logo-card">
+      <div className="tl">
+        <span>· Direction ·</span>
+        <span>{spec}</span>
+      </div>
+      <div className="center">
+        <Mark size={markSize} />
+      </div>
+      <div className="bl">
+        <h3>{title.split(' ').map((w, i, arr) => i === arr.length - 1 ? <em key={i}>{w}</em> : <span key={i}>{w} </span>)}</h3>
+        <div className="meta">
+          {concept.map((l, i) => <div key={i}>{l}</div>)}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function WordmarkArtboard() {
+  return (
+    <div className="ab logo-card">
+      <div className="tl">
+        <span>· Direction ·</span>
+        <span>Custom wordmark</span>
+      </div>
+      <div className="center">
+        <KeystrokeMark width={440} />
+      </div>
+      <div className="bl">
+        <h3>The <em>Keystroke</em></h3>
+        <div className="meta">
+          <div>Editorial</div>
+          <div>Literary</div>
+          <div>Confident</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FaviconArtboard({ Mark, label }) {
+  return (
+    <div className="ab mini-card">
+      <div className="tab">
+        <div className="dots"><span className="dot"/><span className="dot"/><span className="dot"/></div>
+        <div className="fav-row">
+          <Mark size={14} stroke="#2A221C" dot="#B5583E" />
+          <span>oneclickcoaching.com</span>
+        </div>
+      </div>
+      <div className="content">
+        <div className="fav-big"><Mark size={60} stroke="#F4EFE8" dot="#C9A687" /></div>
+        <div className="row">
+          <div className="fav-sm"><Mark size={30} stroke="#F4EFE8" dot="#C9A687" /></div>
+          <div className="fav-xs"><Mark size={14} stroke="#F4EFE8" dot="#C9A687" /></div>
+        </div>
+      </div>
+      <div className="caption">Favicon scaling · 96 · 48 · 24px</div>
+    </div>
+  );
+}
+
+function HeroArtboard({ Mark, markInNav }) {
+  return (
+    <div className="ab hero-card">
+      <div className="nav">
+        <div className="lockup">{markInNav}</div>
+        <div className="links"><span>Platform</span><span>Managers</span><span>Pricing</span></div>
+        <div className="cta">Book a demo →</div>
+      </div>
+      <div className="body">
+        <div className="eyebrow">AI sales coaching</div>
+        <h1>Make selling <em>visible.</em><br/>Coaching <em>immediate.</em></h1>
+        <p>Rep activity, call transcripts, and methodology scoring — unified. Coach behavior, not outcomes.</p>
+        <div className="ctas">
+          <div className="btn1">See the platform →</div>
+          <div className="btn2">For sales leaders</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CardArtboard({ Mark, variant = 'paper' }) {
+  const isDark = variant === 'espresso';
+  const stroke = isDark ? '#F4EFE8' : '#2A221C';
+  const dot = isDark ? '#C9A687' : '#B5583E';
+  const nameColor = isDark ? '#F4EFE8' : '#2A221C';
+  return (
+    <div className="ab bc-card">
+      <div className={`card ${variant}`}>
+        <div className="top">
+          <Mark size={36} stroke={variant === 'clay' ? '#2A221C' : stroke} dot={variant === 'clay' ? '#2A221C' : dot} />
+          <div style={{ textAlign: 'right' }}>
+            <div className="name" style={{ color: variant === 'clay' ? '#2A221C' : nameColor }}>Alex Chen</div>
+            <div className="role">Founder &amp; CEO</div>
+          </div>
+        </div>
+        <div className="contact" style={{ color: variant === 'clay' ? '#2A221C' : nameColor }}>
+          <div><span>e &nbsp;</span>alex@oneclickcoaching.com</div>
+          <div><span>t &nbsp;</span>+1 (415) 555 0118</div>
+          <div><span>w &nbsp;</span>oneclickcoaching.com</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ───── Canvas ─────
+
+function App() {
+  return (
+    <DesignCanvas>
+      <DCSection id="marks" title="The three marks, head to head" subtitle="Same size, same composition — the clearest way to compare. Click any artboard to focus; drag to reorder.">
+        <DCArtboard id="pulse-mark" label="A · The Pulse" width={560} height={560}>
+          <LogoArtboard Mark={PulseMark} title="The Pulse" spec="LKP-01 · A" concept={['Alive', 'Measured', 'Signal-aware']} />
+        </DCArtboard>
+        <DCArtboard id="aperture-mark" label="B · The Aperture" width={560} height={560}>
+          <LogoArtboard Mark={ApertureMark} title="The Aperture" spec="LKP-02 · B" concept={['Precise', 'Observational', 'Calm']} />
+        </DCArtboard>
+        <DCArtboard id="keystroke-mark" label="C · The Keystroke" width={560} height={560}>
+          <WordmarkArtboard />
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="favicons" title="At product scale" subtitle="The real stress test. Will it read in a browser tab, an app icon, a 24px avatar?">
+        <DCArtboard id="pulse-fav" label="A · Pulse" width={420} height={520}>
+          <FaviconArtboard Mark={PulseMark} />
+        </DCArtboard>
+        <DCArtboard id="aperture-fav" label="B · Aperture" width={420} height={520}>
+          <FaviconArtboard Mark={ApertureMark} />
+        </DCArtboard>
+        <DCArtboard id="keystroke-fav" label="C · Keystroke" width={420} height={520}>
+          <FaviconArtboard Mark={KeystrokeMini} />
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="homepages" title="Homepage — each mark leading" subtitle="Same site, three marks. See which one sits most naturally at the top of a real page.">
+        <DCArtboard id="pulse-hero" label="A · Pulse" width={620} height={520}>
+          <HeroArtboard Mark={PulseMark} markInNav={<WordmarkInline Mark={PulseMark} size={18} />} />
+        </DCArtboard>
+        <DCArtboard id="aperture-hero" label="B · Aperture" width={620} height={520}>
+          <HeroArtboard Mark={ApertureMark} markInNav={<WordmarkInline Mark={ApertureMark} size={18} />} />
+        </DCArtboard>
+        <DCArtboard id="keystroke-hero" label="C · Keystroke" width={620} height={520}>
+          <HeroArtboard Mark={KeystrokeMini} markInNav={
+            <svg viewBox="0 0 200 70" width={120} height={42}>
+              <text x="0" y="52" fontFamily="Instrument Serif, serif" fontSize="44" fill="#2A221C" letterSpacing="-1">One</text>
+              <circle cx="92" cy="34" r="6" fill="#B5583E"/>
+              <text x="106" y="52" fontFamily="Instrument Serif, serif" fontSize="44" fill="#2A221C" letterSpacing="-1">Click</text>
+            </svg>
+          } />
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="cards" title="Business cards" subtitle="Paper, espresso, clay — the three surfaces every mark has to live on.">
+        <DCArtboard id="pulse-card" label="A · Pulse on paper" width={520} height={380}>
+          <CardArtboard Mark={PulseMark} variant="paper" />
+        </DCArtboard>
+        <DCArtboard id="aperture-card" label="B · Aperture on espresso" width={520} height={380}>
+          <CardArtboard Mark={ApertureMark} variant="espresso" />
+        </DCArtboard>
+        <DCArtboard id="keystroke-card" label="C · Keystroke on clay" width={520} height={380}>
+          <CardArtboard Mark={KeystrokeMini} variant="clay" />
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="pick" title="How to decide" subtitle="A simple framework based on what the mark signals to a C-suite buyer.">
+        <DCArtboard id="pick-a" label="Pick A · Pulse if…" width={440} height={480}>
+          <div className="ab" style={{ padding: 40, display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <div className="mono" style={{ fontSize: 11, letterSpacing: '0.18em', color: '#B5583E', textTransform: 'uppercase' }}>— Direction A —</div>
+            <h2 className="serif" style={{ fontSize: 40, lineHeight: 1.02, margin: 0 }}>Pick <em style={{ color: '#B5583E' }}>The Pulse</em> if…</h2>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 14, color: '#2A221C', fontSize: 15, lineHeight: 1.5 }}>
+              <li>→ The product UI is the hero of your marketing.</li>
+              <li>→ You want a mark that animates well (the beat dot).</li>
+              <li>→ "Real-time" &amp; "live signal" are core messages.</li>
+              <li>→ You want the most distinctive favicon in-category.</li>
+            </ul>
+            <div style={{ marginTop: 'auto', paddingTop: 20, borderTop: '1px solid #D9D0C2', fontSize: 12, color: '#6E6358', lineHeight: 1.5 }}>
+              Trade-off: less literary on print &amp; stationery.
+            </div>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="pick-b" label="Pick B · Aperture if…" width={440} height={480}>
+          <div className="ab" style={{ padding: 40, display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <div className="mono" style={{ fontSize: 11, letterSpacing: '0.18em', color: '#B5583E', textTransform: 'uppercase' }}>— Direction B —</div>
+            <h2 className="serif" style={{ fontSize: 40, lineHeight: 1.02, margin: 0 }}>Pick <em style={{ color: '#B5583E' }}>The Aperture</em> if…</h2>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 14, color: '#2A221C', fontSize: 15, lineHeight: 1.5 }}>
+              <li>→ You want the most premium, "financial-journal" feel.</li>
+              <li>→ Coaching = "seeing clearly" is your core story.</li>
+              <li>→ You're selling to CROs, VPs, and finance buyers.</li>
+              <li>→ You want the mark to carry meaning on its own.</li>
+            </ul>
+            <div style={{ marginTop: 'auto', paddingTop: 20, borderTop: '1px solid #D9D0C2', fontSize: 12, color: '#6E6358', lineHeight: 1.5 }}>
+              Trade-off: quietest; less product-feel at a glance.
+            </div>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="pick-c" label="Pick C · Keystroke if…" width={440} height={480}>
+          <div className="ab" style={{ padding: 40, display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <div className="mono" style={{ fontSize: 11, letterSpacing: '0.18em', color: '#B5583E', textTransform: 'uppercase' }}>— Direction C —</div>
+            <h2 className="serif" style={{ fontSize: 40, lineHeight: 1.02, margin: 0 }}>Pick <em style={{ color: '#B5583E' }}>The Keystroke</em> if…</h2>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 14, color: '#2A221C', fontSize: 15, lineHeight: 1.5 }}>
+              <li>→ The website &amp; copy carry the brand, not a logo.</li>
+              <li>→ You want it to feel Apple-adjacent out of the gate.</li>
+              <li>→ The name ("One Click") is already the idea.</li>
+              <li>→ You want something timeless over distinctive.</li>
+            </ul>
+            <div style={{ marginTop: 'auto', paddingTop: 20, borderTop: '1px solid #D9D0C2', fontSize: 12, color: '#6E6358', lineHeight: 1.5 }}>
+              Trade-off: less ownable at tiny sizes without the dot.
+            </div>
+          </div>
+        </DCArtboard>
+        <DCArtboard id="hybrid" label="Hybrid · recommended" width={440} height={480}>
+          <div className="ab dark" style={{ padding: 40, display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <div className="mono" style={{ fontSize: 11, letterSpacing: '0.18em', color: '#C9A687', textTransform: 'uppercase' }}>— Our recommendation —</div>
+            <h2 className="serif" style={{ fontSize: 40, lineHeight: 1.02, margin: 0, color: '#F4EFE8' }}>The <em style={{ color: '#C9A687' }}>hybrid</em>.</h2>
+            <p style={{ color: 'rgba(244,239,232,0.75)', fontSize: 14, lineHeight: 1.55, margin: 0 }}>
+              Use <strong style={{ color: '#F4EFE8' }}>Keystroke</strong> as the primary wordmark (site, email, press). Use <strong style={{ color: '#F4EFE8' }}>Aperture</strong> as the icon/favicon (product UI, app icon, social). One brand — two expressions, same DNA.
+            </p>
+            <div style={{ display: 'flex', gap: 20, alignItems: 'center', marginTop: 'auto', paddingTop: 20, borderTop: '1px solid rgba(244,239,232,0.15)' }}>
+              <ApertureMini size={52} stroke="#F4EFE8" dot="#C9A687" />
+              <div style={{ width: 1, height: 32, background: 'rgba(244,239,232,0.2)' }} />
+              <svg viewBox="0 0 200 60" width={130}>
+                <text x="0" y="44" fontFamily="Instrument Serif, serif" fontSize="38" fill="#F4EFE8" letterSpacing="-1">One</text>
+                <circle cx="78" cy="30" r="5" fill="#C9A687"/>
+                <text x="90" y="44" fontFamily="Instrument Serif, serif" fontSize="38" fill="#F4EFE8" letterSpacing="-1">Click</text>
+              </svg>
+            </div>
+          </div>
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

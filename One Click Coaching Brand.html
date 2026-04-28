@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>One Click Coaching — Brand Identity</title>
+<meta name="viewport" content="width=1920, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Warm earthy premium palette */
+    --bone:     #F4EFE8;        /* page */
+    --bone-2:   #EAE3D8;        /* card */
+    --paper:    #FBF8F3;        /* light surface */
+    --clay:     #C9A687;        /* warm accent */
+    --clay-2:   #B08A66;        /* deeper accent */
+    --terracotta: #B5583E;      /* signal accent */
+    --espresso: #2A221C;        /* primary dark */
+    --ink:      #1A1511;        /* deepest ink */
+    --stone:    #6E6358;        /* secondary text */
+    --stone-2:  #8F847A;        /* tertiary text */
+    --line:     #D9D0C2;        /* hairline */
+    --line-2:   #C6BAA8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+
+  html, body {
+    background: #000;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+  }
+
+  section {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ──────── Typography utilities ──────── */
+  .serif { font-family: 'Instrument Serif', 'Times New Roman', serif; font-weight: 400; letter-spacing: -0.01em; }
+  .mono  { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .caps  { text-transform: uppercase; letter-spacing: 0.18em; font-weight: 500; font-size: 12px; }
+
+  /* ──────── Slide shell ──────── */
+  .slide-pad { padding: 96px 120px; height: 100%; display: flex; flex-direction: column; }
+  .slide-number {
+    position: absolute; top: 48px; right: 64px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--stone-2); letter-spacing: 0.14em;
+  }
+  .slide-chapter {
+    position: absolute; top: 48px; left: 64px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--stone-2); letter-spacing: 0.14em;
+  }
+  .footer {
+    position: absolute; bottom: 44px; left: 64px; right: 64px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--stone-2); letter-spacing: 0.14em;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--terracotta);
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before {
+    content: ''; display: inline-block; width: 20px; height: 1px; background: var(--terracotta);
+  }
+
+  /* ─── S1: COVER ─────────────────────────────────────────────────────── */
+  .cover { background: var(--espresso); color: var(--bone); }
+  .cover .grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(244,239,232,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244,239,232,.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+  }
+  .cover .content { position: relative; z-index: 2; height: 100%; padding: 100px 120px; display: flex; flex-direction: column; justify-content: space-between; }
+  .cover .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .cover .mark-lockup { display: flex; align-items: center; gap: 14px; }
+  .cover .mark-lockup svg { width: 28px; height: 28px; }
+  .cover .mark-lockup span { font-family: 'Instrument Serif', serif; font-size: 20px; letter-spacing: -0.01em; }
+  .cover .meta { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: rgba(244,239,232,0.55); line-height: 1.8; }
+  .cover h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 200px; line-height: 0.92; letter-spacing: -0.035em; font-weight: 400;
+    max-width: 1400px;
+  }
+  .cover h1 em { font-style: italic; color: var(--clay); }
+  .cover .bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .cover .sub {
+    max-width: 560px; font-size: 18px; line-height: 1.55; color: rgba(244,239,232,0.7);
+  }
+  .cover .stamp {
+    border: 1px solid rgba(244,239,232,0.25); border-radius: 999px;
+    padding: 10px 20px; font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.16em; color: rgba(244,239,232,0.7);
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .cover .stamp .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); }
+
+  /* ─── S2: CONTENTS ──────────────────────────────────────────────────── */
+  .contents h2 {
+    font-family: 'Instrument Serif', serif; font-size: 88px; line-height: 1;
+    font-weight: 400; letter-spacing: -0.02em;
+  }
+  .contents h2 em { font-style: italic; color: var(--terracotta); }
+  .contents .toc { margin-top: 80px; max-width: 1400px; }
+  .contents .toc-row {
+    display: grid; grid-template-columns: 60px 1fr 120px 80px;
+    gap: 32px; align-items: baseline;
+    padding: 22px 0; border-bottom: 1px solid var(--line);
+  }
+  .contents .toc-row:first-child { border-top: 1px solid var(--line); }
+  .contents .toc-num { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--stone-2); letter-spacing: 0.1em; }
+  .contents .toc-title { font-family: 'Instrument Serif', serif; font-size: 32px; letter-spacing: -0.01em; }
+  .contents .toc-title em { font-style: italic; color: var(--clay-2); }
+  .contents .toc-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--stone); letter-spacing: 0.14em; text-transform: uppercase; }
+  .contents .toc-page { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ink); text-align: right; }
+
+  /* ─── S3: THE BRIEF ─────────────────────────────────────────────────── */
+  .brief { display: grid; grid-template-columns: 1fr 1fr; }
+  .brief .left { padding: 96px 80px 96px 120px; display: flex; flex-direction: column; justify-content: space-between; background: var(--paper); }
+  .brief .right { padding: 96px 120px 96px 80px; background: var(--bone-2); }
+  .brief h2 { font-family: 'Instrument Serif', serif; font-size: 76px; line-height: 0.98; font-weight: 400; letter-spacing: -0.02em; margin-top: 24px; max-width: 560px; }
+  .brief h2 em { font-style: italic; color: var(--terracotta); }
+  .brief .tenets { margin-top: 60px; display: flex; flex-direction: column; gap: 28px; }
+  .brief .tenet { display: grid; grid-template-columns: 40px 1fr; gap: 20px; }
+  .brief .tenet .n { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--stone-2); padding-top: 6px; }
+  .brief .tenet .t { font-family: 'Instrument Serif', serif; font-size: 26px; line-height: 1.25; }
+  .brief .attribute-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 60px; margin-top: 48px; }
+  .brief .attr { display: flex; flex-direction: column; gap: 10px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .brief .attr .k { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone-2); }
+  .brief .attr .v { font-family: 'Instrument Serif', serif; font-size: 30px; letter-spacing: -0.01em; }
+  .brief .attr .v em { font-style: italic; color: var(--clay-2); }
+
+  /* ─── SECTION DIVIDER TEMPLATE ───────────────────────────────────────── */
+  .divider { background: var(--espresso); color: var(--bone); padding: 96px 120px; display: flex; flex-direction: column; justify-content: space-between; }
+  .divider .top-row { display: flex; justify-content: space-between; align-items: flex-start; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: rgba(244,239,232,0.5); }
+  .divider .chapter-num { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 180px; line-height: 0.9; color: var(--clay); }
+  .divider h1 {
+    font-family: 'Instrument Serif', serif; font-size: 120px; line-height: 0.95;
+    font-weight: 400; letter-spacing: -0.025em; max-width: 1400px;
+  }
+  .divider h1 em { font-style: italic; }
+  .divider .desc { max-width: 640px; font-size: 17px; line-height: 1.6; color: rgba(244,239,232,0.7); margin-top: 24px; }
+
+  /* ─── LOGO DIRECTION PAGE ─────────────────────────────────────────────── */
+  .logo-page { padding: 76px 100px; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 40px; }
+  .logo-page .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; }
+  .logo-page .head-left { display: flex; flex-direction: column; gap: 20px; flex: 1; }
+  .logo-page .dir-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; color: var(--stone-2); text-transform: uppercase; }
+  .logo-page h2 { font-family: 'Instrument Serif', serif; font-size: 76px; line-height: 1.02; font-weight: 400; letter-spacing: -0.025em; padding-bottom: 8px; }
+  .logo-page h2 em { font-style: italic; color: var(--terracotta); }
+  .logo-page .head-right { max-width: 420px; text-align: right; font-size: 16px; line-height: 1.55; color: var(--stone); }
+  .logo-page .showcase {
+    background: var(--paper); border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .logo-page .showcase .tick {
+    position: absolute; font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--stone-2); letter-spacing: 0.1em;
+  }
+  .logo-page .showcase .tick.tl { top: 20px; left: 24px; }
+  .logo-page .showcase .tick.tr { top: 20px; right: 24px; }
+  .logo-page .showcase .tick.bl { bottom: 20px; left: 24px; }
+  .logo-page .showcase .tick.br { bottom: 20px; right: 24px; }
+  .logo-page .details {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px;
+    padding-top: 32px; border-top: 1px solid var(--line);
+  }
+  .logo-page .detail { display: flex; flex-direction: column; gap: 8px; }
+  .logo-page .detail .k { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone-2); }
+  .logo-page .detail .v { font-family: 'Instrument Serif', serif; font-size: 22px; line-height: 1.2; }
+  .logo-page .detail .v em { font-style: italic; color: var(--clay-2); }
+
+  /* ─── LOGO LOCKUP VARIATIONS PAGE ────────────────────────────────────── */
+  .variations-page { padding: 76px 100px; }
+  .variations-page h2 { font-family: 'Instrument Serif', serif; font-size: 56px; line-height: 1; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .variations-page h2 em { font-style: italic; color: var(--terracotta); }
+  .variations-page .sub { color: var(--stone); font-size: 15px; max-width: 620px; margin-bottom: 48px; }
+  .variations-page .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; height: calc(100% - 200px); }
+  .variations-page .cell { background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; overflow: hidden; }
+  .variations-page .cell .disp { flex: 1; display: flex; align-items: center; justify-content: center; padding: 32px; }
+  .variations-page .cell.dark { background: var(--espresso); }
+  .variations-page .cell.clay { background: var(--clay); }
+  .variations-page .cell.terra { background: var(--terracotta); }
+  .variations-page .cell .lbl { padding: 14px 20px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone); border-top: 1px solid var(--line); background: var(--bone); }
+  .variations-page .cell.dark .lbl,
+  .variations-page .cell.clay .lbl,
+  .variations-page .cell.terra .lbl { background: var(--bone); color: var(--stone); border-top-color: var(--line); }
+
+  /* ─── COLOR SYSTEM ────────────────────────────────────────────────────── */
+  .colors { padding: 76px 100px; }
+  .colors h2 { font-family: 'Instrument Serif', serif; font-size: 76px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .colors h2 em { font-style: italic; color: var(--terracotta); }
+  .colors .sub { color: var(--stone); font-size: 16px; max-width: 640px; margin-bottom: 56px; }
+  .colors .row { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; }
+  .colors .chip { aspect-ratio: 3/4; display: flex; flex-direction: column; justify-content: space-between; padding: 20px; border: 1px solid var(--line); }
+  .colors .chip .name { font-family: 'Instrument Serif', serif; font-size: 22px; letter-spacing: -0.01em; }
+  .colors .chip .meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.04em; opacity: 0.85; }
+  .colors .chip.light-txt { color: var(--bone); }
+  .colors .chip.dark-txt  { color: var(--ink); }
+  .colors .usage { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+  .colors .usage-item { display: flex; flex-direction: column; gap: 10px; }
+  .colors .usage-item .k { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone-2); }
+  .colors .usage-item .v { font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1.3; }
+
+  /* ─── TYPOGRAPHY SYSTEM ──────────────────────────────────────────────── */
+  .type { padding: 76px 100px; display: grid; grid-template-rows: auto 1fr; gap: 48px; }
+  .type h2 { font-family: 'Instrument Serif', serif; font-size: 76px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .type h2 em { font-style: italic; color: var(--terracotta); }
+  .type .sub { color: var(--stone); font-size: 16px; max-width: 640px; }
+  .type .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .type .block { background: var(--paper); border: 1px solid var(--line); padding: 48px; display: flex; flex-direction: column; gap: 32px; }
+  .type .block .meta { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .type .block .fname { font-family: 'Instrument Serif', serif; font-size: 36px; }
+  .type .block .frole { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone-2); }
+  .type .block .specimen { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .type .block.serif-demo .specimen-main { font-family: 'Instrument Serif', serif; font-size: 140px; line-height: 0.92; letter-spacing: -0.03em; }
+  .type .block.serif-demo .specimen-main em { font-style: italic; color: var(--clay-2); }
+  .type .block.sans-demo .specimen-main { font-family: 'Inter', sans-serif; font-size: 72px; line-height: 1; letter-spacing: -0.03em; font-weight: 500; }
+  .type .block .scale { display: grid; grid-template-columns: 80px 1fr; gap: 16px 24px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--stone); }
+  .type .block .scale .sz { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--stone-2); letter-spacing: 0.08em; }
+
+  /* ─── APPLICATION: WEBSITE ────────────────────────────────────────────── */
+  .app-web { padding: 0; display: flex; flex-direction: column; }
+  .app-web .header-bar { padding: 28px 100px; display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--stone-2); letter-spacing: 0.14em; text-transform: uppercase; border-bottom: 1px solid var(--line); background: var(--bone); }
+  .app-web .mock-wrapper { flex: 1; padding: 40px 100px; display: flex; align-items: flex-start; justify-content: center; background: var(--bone); }
+  .app-web .browser { width: 100%; max-width: 1600px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line-2); box-shadow: 0 40px 80px -30px rgba(42,34,28,0.35); }
+  .app-web .browser-chrome { background: var(--bone-2); padding: 14px 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); }
+  .app-web .browser-chrome .dots { display: flex; gap: 6px; }
+  .app-web .browser-chrome .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--line-2); }
+  .app-web .browser-chrome .url { flex: 1; background: var(--paper); border-radius: 6px; padding: 6px 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--stone); letter-spacing: 0.04em; text-align: center; }
+  .app-web .browser-body { background: var(--paper); }
+  .app-web .site-nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 48px; border-bottom: 1px solid var(--line); }
+  .app-web .site-nav .lockup { display: flex; align-items: center; gap: 10px; }
+  .app-web .site-nav .lockup svg { width: 22px; height: 22px; }
+  .app-web .site-nav .lockup .wm { font-family: 'Instrument Serif', serif; font-size: 20px; letter-spacing: -0.01em; color: var(--ink); }
+  .app-web .site-nav .links { display: flex; gap: 36px; font-size: 14px; color: var(--stone); }
+  .app-web .site-nav .btn { background: var(--espresso); color: var(--bone); padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 500; }
+  .app-web .hero { padding: 80px 48px 72px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+  .app-web .hero .eyebrow { margin-bottom: 20px; }
+  .app-web .hero h1 { font-family: 'Instrument Serif', serif; font-size: 78px; line-height: 0.98; letter-spacing: -0.025em; color: var(--ink); }
+  .app-web .hero h1 em { font-style: italic; color: var(--terracotta); }
+  .app-web .hero .lede { margin-top: 24px; font-size: 16px; line-height: 1.6; color: var(--stone); max-width: 440px; }
+  .app-web .hero .ctas { margin-top: 32px; display: flex; gap: 12px; }
+  .app-web .hero .cta-primary { background: var(--espresso); color: var(--bone); padding: 14px 26px; border-radius: 999px; font-size: 14px; font-weight: 500; }
+  .app-web .hero .cta-secondary { border: 1px solid var(--line-2); padding: 14px 26px; border-radius: 999px; font-size: 14px; color: var(--ink); }
+  .app-web .hero-visual { aspect-ratio: 4/3; background: var(--espresso); border-radius: 12px; padding: 32px; color: var(--bone); display: flex; flex-direction: column; gap: 20px; position: relative; overflow: hidden; }
+  .app-web .hero-visual .panel-h { display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: rgba(244,239,232,0.5); text-transform: uppercase; }
+  .app-web .hero-visual .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); display: inline-block; margin-right: 6px; }
+  .app-web .hero-visual .big-stat { font-family: 'Instrument Serif', serif; font-size: 72px; line-height: 0.9; letter-spacing: -0.02em; }
+  .app-web .hero-visual .big-stat em { font-style: italic; color: var(--clay); }
+  .app-web .hero-visual .stat-lbl { font-size: 13px; color: rgba(244,239,232,0.7); max-width: 240px; }
+  .app-web .hero-visual .bars { display: flex; align-items: flex-end; gap: 6px; height: 60px; margin-top: auto; }
+  .app-web .hero-visual .bar { flex: 1; background: rgba(201,166,135,0.3); border-radius: 2px; }
+  .app-web .hero-visual .bar.hi { background: var(--clay); }
+  .app-web .social { padding: 30px 48px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 48px; }
+  .app-web .social .lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--stone-2); letter-spacing: 0.14em; text-transform: uppercase; }
+  .app-web .social .logos { display: flex; gap: 48px; font-family: 'Instrument Serif', serif; font-size: 22px; color: var(--stone); opacity: 0.6; letter-spacing: -0.01em; }
+
+  /* ─── APPLICATION: BUSINESS CARDS & STATIONERY ────────────────────────── */
+  .app-stationery { padding: 76px 100px; background: linear-gradient(180deg, var(--bone) 0%, var(--bone-2) 100%); }
+  .app-stationery h2 { font-family: 'Instrument Serif', serif; font-size: 64px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .app-stationery h2 em { font-style: italic; color: var(--terracotta); }
+  .app-stationery .sub { color: var(--stone); font-size: 15px; max-width: 560px; margin-bottom: 48px; }
+  .app-stationery .cards-stage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+  .app-stationery .card-frame { aspect-ratio: 7/4; background: var(--paper); border-radius: 10px; box-shadow: 0 30px 60px -20px rgba(42,34,28,0.35), 0 8px 16px -6px rgba(42,34,28,0.18); padding: 36px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+  .app-stationery .card-frame.dark { background: var(--espresso); color: var(--bone); }
+  .app-stationery .card-frame.clay { background: var(--clay); color: var(--espresso); }
+  .app-stationery .card-frame .mark { width: 36px; height: 36px; }
+  .app-stationery .card-frame .name { font-family: 'Instrument Serif', serif; font-size: 24px; letter-spacing: -0.01em; }
+  .app-stationery .card-frame .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone); margin-top: 6px; }
+  .app-stationery .card-frame.dark .role { color: rgba(244,239,232,0.7); }
+  .app-stationery .card-frame.clay .role { color: rgba(42,34,28,0.7); }
+  .app-stationery .card-frame .contact { font-family: 'JetBrains Mono', monospace; font-size: 10px; line-height: 1.8; letter-spacing: 0.08em; }
+  .app-stationery .card-frame .contact span { color: var(--stone); }
+  .app-stationery .card-frame.dark .contact span { color: rgba(244,239,232,0.55); }
+  .app-stationery .card-frame.clay .contact span { color: rgba(42,34,28,0.55); }
+  .app-stationery .card-frame .wm { font-family: 'Instrument Serif', serif; font-size: 48px; line-height: 1; letter-spacing: -0.02em; }
+  .app-stationery .card-frame .wm em { font-style: italic; color: var(--terracotta); }
+  .app-stationery .card-frame.dark .wm em { color: var(--clay); }
+  .app-stationery .card-frame.clay .wm em { color: var(--espresso); }
+  .app-stationery .card-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--stone-2); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 20px; text-align: center; }
+
+  /* ─── CLOSING ─────────────────────────────────────────────────────────── */
+  .closing { background: var(--espresso); color: var(--bone); padding: 96px 120px; display: flex; flex-direction: column; justify-content: space-between; }
+  .closing .top { display: flex; justify-content: space-between; align-items: flex-start; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: rgba(244,239,232,0.5); }
+  .closing .middle { display: flex; flex-direction: column; gap: 32px; max-width: 1400px; }
+  .closing h2 { font-family: 'Instrument Serif', serif; font-size: 140px; line-height: 0.96; letter-spacing: -0.03em; font-weight: 400; }
+  .closing h2 em { font-style: italic; color: var(--clay); }
+  .closing .quote-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: rgba(244,239,232,0.5); text-transform: uppercase; }
+  .closing .bottom { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 48px; border-top: 1px solid rgba(244,239,232,0.15); }
+  .closing .colophon { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: rgba(244,239,232,0.65); line-height: 1.7; }
+  .closing .colophon span { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: rgba(244,239,232,0.45); text-transform: uppercase; }
+  .closing .final-lockup { display: flex; align-items: center; gap: 16px; }
+  .closing .final-lockup svg { width: 52px; height: 52px; }
+  .closing .final-lockup span { font-family: 'Instrument Serif', serif; font-size: 40px; letter-spacing: -0.02em; }
+
+  /* Utility: ensure logo SVGs render crisply */
+  svg { display: block; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+  <!-- ═══════════════ S1: COVER ═══════════════ -->
+  <section class="cover" data-label="Cover">
+    <div class="grid-bg"></div>
+    <div class="content">
+      <div class="top">
+        <div class="mark-lockup">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#F4EFE8" stroke-width="1.25"/><circle cx="16" cy="16" r="3" fill="#C9A687"/></svg>
+          <span>One Click Coaching</span>
+        </div>
+        <div class="meta">
+          Brand Identity System<br>
+          Volume 01 · April 2026<br>
+          Prepared for internal review
+        </div>
+      </div>
+      <h1>A brand built on<br><em>one deliberate</em><br>moment.</h1>
+      <div class="bottom">
+        <div class="sub">
+          Three logo directions, a complete visual system, and live applications — for the AI sales coaching platform that makes selling visible, coaching immediate, and training stick.
+        </div>
+        <div class="stamp"><span class="dot"></span>Proposal · v1.0</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S2: CONTENTS ═══════════════ -->
+  <section class="contents" data-label="Contents">
+    <div class="slide-pad">
+      <div class="slide-chapter">§ Index</div>
+      <div class="slide-number">002</div>
+      <h2><em>Contents</em> —<br>what's inside this book.</h2>
+      <div class="toc">
+        <div class="toc-row">
+          <div class="toc-num">01</div>
+          <div class="toc-title">The <em>brief</em> — principles &amp; position</div>
+          <div class="toc-meta">Foundation</div>
+          <div class="toc-page">P. 04</div>
+        </div>
+        <div class="toc-row">
+          <div class="toc-num">02</div>
+          <div class="toc-title">Direction <em>A</em> — The Pulse</div>
+          <div class="toc-meta">Logo</div>
+          <div class="toc-page">P. 06</div>
+        </div>
+        <div class="toc-row">
+          <div class="toc-num">03</div>
+          <div class="toc-title">Direction <em>B</em> — The Aperture</div>
+          <div class="toc-meta">Logo</div>
+          <div class="toc-page">P. 08</div>
+        </div>
+        <div class="toc-row">
+          <div class="toc-num">04</div>
+          <div class="toc-title">Direction <em>C</em> — The Keystroke</div>
+          <div class="toc-meta">Logo</div>
+          <div class="toc-page">P. 10</div>
+        </div>
+        <div class="toc-row">
+          <div class="toc-num">05</div>
+          <div class="toc-title">Color &amp; <em>typography</em></div>
+          <div class="toc-meta">System</div>
+          <div class="toc-page">P. 12</div>
+        </div>
+        <div class="toc-row">
+          <div class="toc-num">06</div>
+          <div class="toc-title">Applications — <em>web &amp; stationery</em></div>
+          <div class="toc-meta">In use</div>
+          <div class="toc-page">P. 15</div>
+        </div>
+      </div>
+      <div class="footer"><span>One Click Coaching · Brand Book</span><span>002 / 018</span></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S3: THE BRIEF ═══════════════ -->
+  <section class="brief" data-label="Brief">
+    <div class="left">
+      <div>
+        <div class="eyebrow">Chapter 01 · Foundation</div>
+        <h2>Built for leaders who coach under <em>pressure</em>.</h2>
+      </div>
+      <div class="tenets">
+        <div class="tenet"><div class="n">01</div><div class="t">Restraint over volume. A brand that earns attention by being quieter than competitors.</div></div>
+        <div class="tenet"><div class="n">02</div><div class="t">Clarity over cleverness. Every mark, word, and page should pay for itself in understanding.</div></div>
+        <div class="tenet"><div class="n">03</div><div class="t">Editorial over SaaS. We look like a financial journal, not a cloud product.</div></div>
+      </div>
+      <div></div>
+    </div>
+    <div class="right">
+      <div class="slide-number">003</div>
+      <div class="eyebrow">The Brief</div>
+      <h2>Sharp.<br>Warm.<br><em>Quietly premium.</em></h2>
+      <div class="attribute-grid">
+        <div class="attr"><div class="k">Audience</div><div class="v">Executives &amp; C-suite</div></div>
+        <div class="attr"><div class="k">Category</div><div class="v">AI sales coaching</div></div>
+        <div class="attr"><div class="k">Feeling</div><div class="v"><em>Apple-caliber</em> restraint</div></div>
+        <div class="attr"><div class="k">Palette</div><div class="v">Warm, earthy, grounded</div></div>
+        <div class="attr"><div class="k">Type voice</div><div class="v">Editorial serif + precise sans</div></div>
+        <div class="attr"><div class="k">Avoid</div><div class="v">Gradient SaaS, stock smiles</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S4: DIRECTIONS DIVIDER ═══════════════ -->
+  <section class="divider" data-label="Directions">
+    <div class="top-row">
+      <span>Chapter 02 — 04</span>
+      <span>Logo directions</span>
+    </div>
+    <div>
+      <div class="chapter-num">Three</div>
+      <h1>directions to <em>choose from.</em></h1>
+      <div class="desc">Each direction is a complete idea — a coherent conceptual world with its own mark, voice, and implications for the rest of the system. Pick one to refine. We'll also explore hybrids if useful.</div>
+    </div>
+    <div class="top-row">
+      <span>One Click Coaching · Brand Book</span>
+      <span>004 / 018</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S5: DIRECTION A — THE PULSE ═══════════════ -->
+  <section class="logo-page" data-label="Direction A — Pulse">
+    <div class="slide-chapter">§ Direction A</div>
+    <div class="slide-number">005</div>
+    <div class="head">
+      <div class="head-left">
+        <span class="dir-num">· Direction A · 01 of 03 ·</span>
+        <h2><em>The Pulse.</em><br>A rhythmic mark.</h2>
+      </div>
+      <div class="head-right">
+        A slender circular contour with a single offset beat — the &ldquo;one&rdquo; in One Click. Evokes cadence, heartbeat, signal. It's the sound of a sales call going well, reduced to its simplest shape.
+      </div>
+    </div>
+
+    <div class="showcase">
+      <span class="tick tl">LKP-01 · A</span>
+      <span class="tick tr">Primary · Horizontal</span>
+      <span class="tick bl">Spec: 56 units · 4px stroke</span>
+      <span class="tick br">© 2026</span>
+      <svg viewBox="0 0 1000 220" style="width: 86%; max-width: 1100px; height: auto;">
+        <!-- Mark: circle with offset pulse dot -->
+        <g transform="translate(110, 110)">
+          <circle cx="0" cy="0" r="78" fill="none" stroke="#2A221C" stroke-width="5"/>
+          <circle cx="0" cy="0" r="78" fill="none" stroke="#B5583E" stroke-width="5" stroke-dasharray="10 480" stroke-dashoffset="-100" transform="rotate(-10)"/>
+          <circle cx="62" cy="-48" r="11" fill="#B5583E"/>
+        </g>
+        <!-- Wordmark -->
+        <text x="230" y="125" font-family="Instrument Serif, serif" font-size="88" fill="#2A221C" letter-spacing="-2">
+          One Click <tspan font-style="italic" fill="#2A221C">Coaching</tspan>
+        </text>
+      </svg>
+    </div>
+
+    <div class="details">
+      <div class="detail"><div class="k">Concept</div><div class="v">The <em>pulse</em> of active selling</div></div>
+      <div class="detail"><div class="k">Mark type</div><div class="v">Abstract + wordmark</div></div>
+      <div class="detail"><div class="k">Voice</div><div class="v">Alive, measured, signal-aware</div></div>
+      <div class="detail"><div class="k">Best for</div><div class="v">Product UI, dashboards, motion</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S6: DIRECTION A — VARIATIONS ═══════════════ -->
+  <section class="variations-page" data-label="A — Lockups">
+    <div class="slide-chapter">§ Direction A · Lockups</div>
+    <div class="slide-number">006</div>
+    <h2><em>The Pulse</em> · lockup system</h2>
+    <p class="sub">A single mark scales across every context — monochrome, reversed, and framed. The beat dot remains the only spot of color.</p>
+    <div class="grid-4">
+      <div class="cell">
+        <div class="disp">
+          <svg viewBox="0 0 200 200" width="80%">
+            <circle cx="100" cy="100" r="72" fill="none" stroke="#2A221C" stroke-width="5"/>
+            <circle cx="156" cy="52" r="11" fill="#B5583E"/>
+          </svg>
+        </div>
+        <div class="lbl">Primary Mark · Light</div>
+      </div>
+      <div class="cell dark">
+        <div class="disp">
+          <svg viewBox="0 0 200 200" width="80%">
+            <circle cx="100" cy="100" r="72" fill="none" stroke="#F4EFE8" stroke-width="5"/>
+            <circle cx="156" cy="52" r="11" fill="#C9A687"/>
+          </svg>
+        </div>
+        <div class="lbl">Primary Mark · Dark</div>
+      </div>
+      <div class="cell">
+        <div class="disp">
+          <svg viewBox="0 0 600 200" width="90%">
+            <g transform="translate(80,100)">
+              <circle cx="0" cy="0" r="56" fill="none" stroke="#2A221C" stroke-width="4"/>
+              <circle cx="44" cy="-34" r="8" fill="#B5583E"/>
+            </g>
+            <text x="170" y="122" font-family="Instrument Serif, serif" font-size="64" fill="#2A221C" letter-spacing="-1.4">One Click</text>
+          </svg>
+        </div>
+        <div class="lbl">Compact Lockup</div>
+      </div>
+      <div class="cell clay">
+        <div class="disp">
+          <svg viewBox="0 0 600 200" width="90%">
+            <g transform="translate(80,100)">
+              <circle cx="0" cy="0" r="56" fill="none" stroke="#2A221C" stroke-width="4"/>
+              <circle cx="44" cy="-34" r="8" fill="#2A221C"/>
+            </g>
+            <text x="170" y="122" font-family="Instrument Serif, serif" font-size="64" fill="#2A221C" letter-spacing="-1.4">OCC</text>
+          </svg>
+        </div>
+        <div class="lbl">Monogram · Warm</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S7: DIRECTION B — THE APERTURE ═══════════════ -->
+  <section class="logo-page" data-label="Direction B — Aperture">
+    <div class="slide-chapter">§ Direction B</div>
+    <div class="slide-number">007</div>
+    <div class="head">
+      <div class="head-left">
+        <span class="dir-num">· Direction B · 02 of 03 ·</span>
+        <h2><em>The Aperture.</em><br>A clarity monogram.</h2>
+      </div>
+      <div class="head-right">
+        Concentric rings resolving to a single focal point. The &ldquo;O&rdquo; of One becomes a lens — a metaphor for the platform's core job: making hidden sales behavior visible, resolvable, coachable.
+      </div>
+    </div>
+
+    <div class="showcase">
+      <span class="tick tl">LKP-02 · B</span>
+      <span class="tick tr">Primary · Horizontal</span>
+      <span class="tick bl">Spec: 56 units · Concentric</span>
+      <span class="tick br">© 2026</span>
+      <svg viewBox="0 0 1000 220" style="width: 86%; max-width: 1100px; height: auto;">
+        <!-- Aperture mark -->
+        <g transform="translate(110, 110)">
+          <circle cx="0" cy="0" r="82" fill="none" stroke="#2A221C" stroke-width="2.5"/>
+          <circle cx="0" cy="0" r="62" fill="none" stroke="#2A221C" stroke-width="2.5"/>
+          <circle cx="0" cy="0" r="42" fill="none" stroke="#2A221C" stroke-width="2.5"/>
+          <circle cx="0" cy="0" r="10" fill="#B5583E"/>
+          <line x1="-90" y1="0" x2="-84" y2="0" stroke="#2A221C" stroke-width="2"/>
+          <line x1="90" y1="0" x2="84" y2="0" stroke="#2A221C" stroke-width="2"/>
+          <line x1="0" y1="-90" x2="0" y2="-84" stroke="#2A221C" stroke-width="2"/>
+          <line x1="0" y1="90" x2="0" y2="84" stroke="#2A221C" stroke-width="2"/>
+        </g>
+        <!-- Wordmark -->
+        <text x="230" y="125" font-family="Instrument Serif, serif" font-size="88" fill="#2A221C" letter-spacing="-2">
+          One Click <tspan font-style="italic">Coaching</tspan>
+        </text>
+      </svg>
+    </div>
+
+    <div class="details">
+      <div class="detail"><div class="k">Concept</div><div class="v">Clarity as <em>resolution</em></div></div>
+      <div class="detail"><div class="k">Mark type</div><div class="v">Symbolic + wordmark</div></div>
+      <div class="detail"><div class="k">Voice</div><div class="v">Precise, observational, calm</div></div>
+      <div class="detail"><div class="k">Best for</div><div class="v">Editorial, print, premium feel</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S8: DIRECTION B — VARIATIONS ═══════════════ -->
+  <section class="variations-page" data-label="B — Lockups">
+    <div class="slide-chapter">§ Direction B · Lockups</div>
+    <div class="slide-number">008</div>
+    <h2><em>The Aperture</em> · lockup system</h2>
+    <p class="sub">The rings telegraph focus at a glance. The system holds up at tiny sizes because the outer ring does the work; the inner dot is the payoff.</p>
+    <div class="grid-4">
+      <div class="cell">
+        <div class="disp">
+          <svg viewBox="0 0 200 200" width="78%">
+            <circle cx="100" cy="100" r="78" fill="none" stroke="#2A221C" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="56" fill="none" stroke="#2A221C" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="10" fill="#B5583E"/>
+          </svg>
+        </div>
+        <div class="lbl">Primary Mark · Light</div>
+      </div>
+      <div class="cell dark">
+        <div class="disp">
+          <svg viewBox="0 0 200 200" width="78%">
+            <circle cx="100" cy="100" r="78" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="56" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="10" fill="#C9A687"/>
+          </svg>
+        </div>
+        <div class="lbl">Primary Mark · Dark</div>
+      </div>
+      <div class="cell">
+        <div class="disp">
+          <svg viewBox="0 0 600 200" width="90%">
+            <g transform="translate(80,100)">
+              <circle cx="0" cy="0" r="58" fill="none" stroke="#2A221C" stroke-width="2"/>
+              <circle cx="0" cy="0" r="40" fill="none" stroke="#2A221C" stroke-width="2"/>
+              <circle cx="0" cy="0" r="22" fill="none" stroke="#2A221C" stroke-width="2"/>
+              <circle cx="0" cy="0" r="7" fill="#B5583E"/>
+            </g>
+            <text x="170" y="122" font-family="Instrument Serif, serif" font-size="64" fill="#2A221C" letter-spacing="-1.4">OC<tspan font-style="italic">C</tspan></text>
+          </svg>
+        </div>
+        <div class="lbl">Stacked with Monogram</div>
+      </div>
+      <div class="cell terra">
+        <div class="disp">
+          <svg viewBox="0 0 200 200" width="78%">
+            <circle cx="100" cy="100" r="78" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="56" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="10" fill="#F4EFE8"/>
+          </svg>
+        </div>
+        <div class="lbl">Reversed on Signal</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S9: DIRECTION C — THE KEYSTROKE ═══════════════ -->
+  <section class="logo-page" data-label="Direction C — Keystroke">
+    <div class="slide-chapter">§ Direction C</div>
+    <div class="slide-number">009</div>
+    <div class="head">
+      <div class="head-left">
+        <span class="dir-num">· Direction C · 03 of 03 ·</span>
+        <h2><em>The Keystroke.</em><br>A deliberate wordmark.</h2>
+      </div>
+      <div class="head-right">
+        The quietest direction. A custom editorial wordmark where a single precision glyph — the middle &ldquo;O&rdquo; — is replaced with a small filled disc. The click as a moment, not a metaphor.
+      </div>
+    </div>
+
+    <div class="showcase">
+      <span class="tick tl">LKP-03 · C</span>
+      <span class="tick tr">Primary · Wordmark</span>
+      <span class="tick bl">Spec: Custom-set · Italic terminal</span>
+      <span class="tick br">© 2026</span>
+      <svg viewBox="0 0 1200 220" style="width: 92%; max-width: 1200px; height: auto;">
+        <text x="40" y="145" font-family="Instrument Serif, serif" font-size="128" fill="#2A221C" letter-spacing="-3" font-weight="400">
+          <tspan>One</tspan>
+        </text>
+        <circle cx="315" cy="104" r="16" fill="#B5583E"/>
+        <text x="350" y="145" font-family="Instrument Serif, serif" font-size="128" fill="#2A221C" letter-spacing="-3" font-weight="400">Click</text>
+        <text x="612" y="145" font-family="Instrument Serif, serif" font-size="128" fill="#2A221C" letter-spacing="-3" font-style="italic">Coaching.</text>
+      </svg>
+    </div>
+
+    <div class="details">
+      <div class="detail"><div class="k">Concept</div><div class="v">The click as <em>punctuation</em></div></div>
+      <div class="detail"><div class="k">Mark type</div><div class="v">Custom wordmark</div></div>
+      <div class="detail"><div class="k">Voice</div><div class="v">Editorial, literary, confident</div></div>
+      <div class="detail"><div class="k">Best for</div><div class="v">Website, stationery, press</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S10: DIRECTION C — VARIATIONS ═══════════════ -->
+  <section class="variations-page" data-label="C — Lockups">
+    <div class="slide-chapter">§ Direction C · Lockups</div>
+    <div class="slide-number">010</div>
+    <h2><em>The Keystroke</em> · lockup system</h2>
+    <p class="sub">The wordmark is the mark. The disc replaces a single letter — removable, scalable, and unmistakable at any size. The italic &ldquo;Coaching&rdquo; is the signature.</p>
+    <div class="grid-4">
+      <div class="cell">
+        <div class="disp">
+          <svg viewBox="0 0 400 120" width="94%">
+            <text x="0" y="82" font-family="Instrument Serif, serif" font-size="72" fill="#2A221C" letter-spacing="-1.6">One</text>
+            <circle cx="156" cy="58" r="9" fill="#B5583E"/>
+            <text x="176" y="82" font-family="Instrument Serif, serif" font-size="72" fill="#2A221C" letter-spacing="-1.6">Click</text>
+          </svg>
+        </div>
+        <div class="lbl">Short Wordmark · Light</div>
+      </div>
+      <div class="cell dark">
+        <div class="disp">
+          <svg viewBox="0 0 400 120" width="94%">
+            <text x="0" y="82" font-family="Instrument Serif, serif" font-size="72" fill="#F4EFE8" letter-spacing="-1.6">One</text>
+            <circle cx="156" cy="58" r="9" fill="#C9A687"/>
+            <text x="176" y="82" font-family="Instrument Serif, serif" font-size="72" fill="#F4EFE8" letter-spacing="-1.6">Click</text>
+          </svg>
+        </div>
+        <div class="lbl">Short Wordmark · Dark</div>
+      </div>
+      <div class="cell">
+        <div class="disp">
+          <svg viewBox="0 0 300 120" width="68%">
+            <text x="50" y="90" font-family="Instrument Serif, serif" font-size="92" fill="#2A221C" letter-spacing="-2">O</text>
+            <circle cx="138" cy="56" r="11" fill="#B5583E"/>
+            <text x="158" y="90" font-family="Instrument Serif, serif" font-size="92" fill="#2A221C" letter-spacing="-2" font-style="italic">C</text>
+          </svg>
+        </div>
+        <div class="lbl">Monogram · O·C</div>
+      </div>
+      <div class="cell clay">
+        <div class="disp">
+          <svg viewBox="0 0 400 120" width="94%">
+            <text x="0" y="82" font-family="Instrument Serif, serif" font-size="72" fill="#2A221C" letter-spacing="-1.6">One</text>
+            <circle cx="156" cy="58" r="9" fill="#2A221C"/>
+            <text x="176" y="82" font-family="Instrument Serif, serif" font-size="72" fill="#2A221C" letter-spacing="-1.6">Click</text>
+          </svg>
+        </div>
+        <div class="lbl">Short · Clay</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S11: SYSTEM DIVIDER ═══════════════ -->
+  <section class="divider" data-label="System">
+    <div class="top-row">
+      <span>Chapter 05</span>
+      <span>The visual system</span>
+    </div>
+    <div>
+      <div class="chapter-num">The</div>
+      <h1>system — <em>color &amp; type</em>.</h1>
+      <div class="desc">Shared across all three directions. The system is designed to feel like an editorial property — closer to The Atlantic or Monocle than a SaaS dashboard. The color is warm. The type is measured. Nothing glows.</div>
+    </div>
+    <div class="top-row">
+      <span>One Click Coaching · Brand Book</span>
+      <span>011 / 018</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S12: COLOR ═══════════════ -->
+  <section class="colors" data-label="Color">
+    <div class="slide-chapter">§ Chapter 05.1</div>
+    <div class="slide-number">012</div>
+    <h2><em>Color</em> · the earth palette</h2>
+    <p class="sub">Bone &amp; paper do 80% of the work. Espresso carries every confident moment. Clay is our handshake. Terracotta is the only voice that raises itself — reserved for signal, emphasis, and a single live dot.</p>
+    <div class="row">
+      <div class="chip dark-txt" style="background:#FBF8F3"><div class="meta">P01 · #FBF8F3<br>Paper · 95L<br>Surfaces</div><div class="name">Paper</div></div>
+      <div class="chip dark-txt" style="background:#F4EFE8"><div class="meta">P02 · #F4EFE8<br>Bone · 92L<br>Page</div><div class="name">Bone</div></div>
+      <div class="chip dark-txt" style="background:#EAE3D8"><div class="meta">P03 · #EAE3D8<br>Bone-2 · 87L<br>Cards</div><div class="name">Bone 2</div></div>
+      <div class="chip dark-txt" style="background:#C9A687"><div class="meta">P04 · #C9A687<br>Clay · 72L<br>Accent</div><div class="name">Clay</div></div>
+      <div class="chip light-txt" style="background:#B08A66"><div class="meta">P05 · #B08A66<br>Clay-2 · 60L<br>Deep accent</div><div class="name">Clay 2</div></div>
+      <div class="chip light-txt" style="background:#B5583E"><div class="meta">P06 · #B5583E<br>Terracotta · 50L<br>Signal</div><div class="name">Terra</div></div>
+      <div class="chip light-txt" style="background:#6E6358"><div class="meta">P07 · #6E6358<br>Stone · 45L<br>Secondary text</div><div class="name">Stone</div></div>
+      <div class="chip light-txt" style="background:#2A221C"><div class="meta">P08 · #2A221C<br>Espresso · 16L<br>Primary ink</div><div class="name">Espresso</div></div>
+    </div>
+    <div class="usage">
+      <div class="usage-item"><div class="k">60 · Ground</div><div class="v">Bone &amp; Paper dominate. Always default to the warmest surface.</div></div>
+      <div class="usage-item"><div class="k">30 · Weight</div><div class="v">Espresso carries headlines, CTAs, logo, and structural ink.</div></div>
+      <div class="usage-item"><div class="k">10 · Signal</div><div class="v">Clay for warmth, Terracotta for emphasis. Never both at once.</div></div>
+    </div>
+    <div class="footer"><span>Color · Volume 01</span><span>012 / 018</span></div>
+  </section>
+
+  <!-- ═══════════════ S13: TYPE ═══════════════ -->
+  <section class="type" data-label="Type">
+    <div class="slide-chapter">§ Chapter 05.2</div>
+    <div class="slide-number">013</div>
+    <div>
+      <h2><em>Type</em> · editorial meets precise</h2>
+      <p class="sub">A literary serif for emotion, voice, and headlines. A neutral sans for density, data, and product UI. A monospace for spec, captions, and the machine register. No other families enter the system.</p>
+    </div>
+    <div class="grid">
+      <div class="block serif-demo">
+        <div class="meta"><div class="fname">Instrument Serif</div><div class="frole">Display · Headlines · Voice</div></div>
+        <div class="specimen">
+          <div class="specimen-main">Coach the<br><em>behavior</em>.</div>
+        </div>
+        <div class="scale">
+          <div class="sz">200 / 0.92</div><div>Hero — cover-level moments only</div>
+          <div class="sz">88 / 0.98</div><div>Section openers, major chapter heads</div>
+          <div class="sz">32 / 1.2</div><div>Article leads, quotes, standout copy</div>
+        </div>
+      </div>
+      <div class="block sans-demo">
+        <div class="meta"><div class="fname">Inter</div><div class="frole">Body · UI · Data</div></div>
+        <div class="specimen">
+          <div class="specimen-main">Make selling visible, coaching immediate.</div>
+        </div>
+        <div class="scale">
+          <div class="sz">16 / 1.6</div><div>Body paragraphs, long-form reading</div>
+          <div class="sz">13 / 1.5</div><div>UI labels, nav items, button text</div>
+          <div class="sz">11 / 1.4 · mono</div><div>Captions, metadata, spec, timestamps</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Typography · Volume 01</span><span>013 / 018</span></div>
+  </section>
+
+  <!-- ═══════════════ S14: APPLICATIONS DIVIDER ═══════════════ -->
+  <section class="divider" data-label="Applications">
+    <div class="top-row">
+      <span>Chapter 06</span>
+      <span>In use</span>
+    </div>
+    <div>
+      <div class="chapter-num">Live</div>
+      <h1>— the system <em>applied.</em></h1>
+      <div class="desc">One website homepage and a stationery set. Shown using Direction C (The Keystroke) as the lead mark — swap in A or B once the direction is chosen. The grid, typography, and color feel identical across all three.</div>
+    </div>
+    <div class="top-row">
+      <span>One Click Coaching · Brand Book</span>
+      <span>014 / 018</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S15: WEBSITE ═══════════════ -->
+  <section class="app-web" data-label="Website">
+    <div class="header-bar">
+      <span>§ Application · 01 · Marketing site</span>
+      <span>015 / 018</span>
+    </div>
+    <div class="mock-wrapper">
+      <div class="browser">
+        <div class="browser-chrome">
+          <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="url">oneclickcoaching.com</div>
+        </div>
+        <div class="browser-body">
+          <div class="site-nav">
+            <div class="lockup">
+              <svg viewBox="0 0 200 80"><text x="0" y="58" font-family="Instrument Serif, serif" font-size="52" fill="#2A221C" letter-spacing="-1">One</text><circle cx="108" cy="40" r="7" fill="#B5583E"/><text x="122" y="58" font-family="Instrument Serif, serif" font-size="52" fill="#2A221C" letter-spacing="-1">Click</text></svg>
+            </div>
+            <div class="links"><span>Platform</span><span>For Managers</span><span>For Reps</span><span>Methodologies</span><span>Pricing</span></div>
+            <div class="btn">Book a walkthrough →</div>
+          </div>
+          <div class="hero">
+            <div>
+              <div class="eyebrow">AI sales coaching · Ver. 2026</div>
+              <h1>Make selling <em>visible.</em><br>Coaching <em>immediate.</em></h1>
+              <p class="lede">One Click Coaching turns rep activity, call transcripts, and methodology scoring into a single source of truth — so managers coach the behavior that actually drives outcomes.</p>
+              <div class="ctas">
+                <div class="cta-primary">See the platform →</div>
+                <div class="cta-secondary">For sales leaders</div>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="panel-h"><span><span class="live-dot"></span>Live coaching signal · Q2</span><span>North America</span></div>
+              <div>
+                <div class="big-stat">+38<em>%</em></div>
+                <div class="stat-lbl">Reps hitting methodology adherence week-over-week after deploying One Click.</div>
+              </div>
+              <div class="bars">
+                <div class="bar" style="height:20%"></div>
+                <div class="bar" style="height:28%"></div>
+                <div class="bar" style="height:24%"></div>
+                <div class="bar" style="height:38%"></div>
+                <div class="bar" style="height:45%"></div>
+                <div class="bar" style="height:52%"></div>
+                <div class="bar hi" style="height:70%"></div>
+                <div class="bar hi" style="height:82%"></div>
+                <div class="bar hi" style="height:96%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="social">
+            <div class="lbl">Trusted by sales teams using</div>
+            <div class="logos"><span>MEDDIC</span><span>· Sandler</span><span>· SPIN</span><span>· Challenger</span><span>· Gap Selling</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S16: STATIONERY ═══════════════ -->
+  <section class="app-stationery" data-label="Stationery">
+    <div class="slide-chapter">§ Application · 02</div>
+    <div class="slide-number">016</div>
+    <h2><em>Stationery</em> · business cards &amp; correspondence</h2>
+    <p class="sub">The system hits stationery size without losing its personality. Three treatments — paper, espresso, and clay — cover every context from boardrooms to conferences.</p>
+    <div class="cards-stage">
+      <div>
+        <div class="card-frame">
+          <div>
+            <svg class="mark" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#2A221C" stroke-width="2"/><circle cx="40" cy="40" r="22" fill="none" stroke="#2A221C" stroke-width="2"/><circle cx="40" cy="40" r="12" fill="none" stroke="#2A221C" stroke-width="2"/><circle cx="40" cy="40" r="4" fill="#B5583E"/></svg>
+          </div>
+          <div>
+            <div class="name">Alexandra Chen</div>
+            <div class="role">Founder &amp; CEO</div>
+          </div>
+          <div class="contact">
+            <div><span>e</span> &nbsp;alex@oneclickcoaching.com</div>
+            <div><span>t</span> &nbsp;+1 (415) 555 0118</div>
+            <div><span>w</span> &nbsp;oneclickcoaching.com</div>
+          </div>
+        </div>
+        <div class="card-label">Card 01 · Paper / Aperture</div>
+      </div>
+      <div>
+        <div class="card-frame dark">
+          <div class="wm">One<span style="display:inline-block;width:14px;height:14px;background:#B5583E;border-radius:50%;vertical-align:middle;margin:0 4px;"></span>Click<br><em>Coaching.</em></div>
+          <div class="contact">
+            <div><span>San Francisco &middot; New York</span></div>
+            <div>hello@oneclickcoaching.com</div>
+            <div>oneclickcoaching.com</div>
+          </div>
+        </div>
+        <div class="card-label">Card 02 · Espresso / Wordmark</div>
+      </div>
+      <div>
+        <div class="card-frame clay">
+          <div>
+            <svg class="mark" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#2A221C" stroke-width="2.5"/><circle cx="64" cy="16" r="5" fill="#2A221C"/></svg>
+          </div>
+          <div>
+            <div class="name">Marcus Okafor</div>
+            <div class="role">Head of Customer</div>
+          </div>
+          <div class="contact">
+            <div><span>e</span> &nbsp;marcus@oneclickcoaching.com</div>
+            <div><span>t</span> &nbsp;+1 (212) 555 0094</div>
+            <div><span>w</span> &nbsp;oneclickcoaching.com</div>
+          </div>
+        </div>
+        <div class="card-label">Card 03 · Clay / Pulse</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S17: CLOSING ═══════════════ -->
+  <section class="closing" data-label="Close">
+    <div class="top">
+      <span>Fin · Vol. 01</span>
+      <span>017 / 018</span>
+    </div>
+    <div class="middle">
+      <div class="quote-meta">— The working thesis —</div>
+      <h2>Make selling <em>visible.</em><br>Coaching <em>immediate.</em><br>Training, <em>finally,</em> stick.</h2>
+    </div>
+    <div class="bottom">
+      <div class="colophon">
+        <span>Colophon</span>
+        Instrument Serif + Inter + JetBrains Mono.<br>
+        Printed on Mohawk Superfine Eggshell, 100 lb.<br>
+        Prepared April 2026 · Brand Identity Review v1.0
+      </div>
+      <div class="final-lockup">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#F4EFE8" stroke-width="2"/><circle cx="50" cy="50" r="28" fill="none" stroke="#F4EFE8" stroke-width="2"/><circle cx="50" cy="50" r="16" fill="none" stroke="#F4EFE8" stroke-width="2"/><circle cx="50" cy="50" r="5" fill="#C9A687"/></svg>
+        <span>One Click Coaching</span>
+      </div>
+    </div>
+  </section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+</body>
+</html>

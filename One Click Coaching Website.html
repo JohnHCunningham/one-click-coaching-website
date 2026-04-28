@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>One Click Coaching — AI Sales Coaching Platform | Make Selling Visible</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="One Click Coaching turns rep activity, call transcripts, and methodology execution into a single feed — so managers coach the behavior, not just the outcome. $50/rep/month." />
+<meta name="keywords" content="AI sales coaching, sales methodology, MEDDIC, Sandler, sales training, rep coaching, call analysis, sales enablement" />
+<meta name="author" content="One Click Coaching Inc." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.oneclickcoaching.com/" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.oneclickcoaching.com/" />
+<meta property="og:title" content="One Click Coaching — AI Sales Coaching Platform" />
+<meta property="og:description" content="Turn rep activity, call transcripts, and methodology execution into a single feed. Coach the behavior, not just the outcome." />
+<meta property="og:image" content="https://www.oneclickcoaching.com/og-image.jpg" />
+<meta property="og:site_name" content="One Click Coaching" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://www.oneclickcoaching.com/" />
+<meta name="twitter:title" content="One Click Coaching — AI Sales Coaching Platform" />
+<meta name="twitter:description" content="Turn rep activity, call transcripts, and methodology execution into a single feed. Coach the behavior, not just the outcome." />
+<meta name="twitter:image" content="https://www.oneclickcoaching.com/og-image.jpg" />
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#2A221C" />
+<meta name="msapplication-TileColor" content="#2A221C" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone: #F4EFE8;
+    --bone-2: #EAE3D8;
+    --paper: #FBF8F3;
+    --clay: #C9A687;
+    --clay-2: #B08A66;
+    --terracotta: #B5583E;
+    --espresso: #2A221C;
+    --ink: #1A1511;
+    --stone: #6E6358;
+    --stone-2: #8F847A;
+    --line: #D9D0C2;
+    --line-2: #C6BAA8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+  html, body { background: var(--bone); color: var(--ink); font-family: 'Inter', sans-serif; }
+  body { font-size: 17px; line-height: 1.55; }
+  a { color: inherit; text-decoration: none; }
+  .serif { font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -0.02em; }
+  .mono { font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px; }
+  em { font-style: italic; }
+
+  /* ── container ── */
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+
+  /* ── nav ── */
+  nav.top { position: sticky; top: 0; z-index: 50; background: rgba(244,239,232,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  nav.top .inner { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+  nav.top .lockup { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
+  nav.top .lockup svg { width: 26px; height: 26px; flex-shrink: 0; }
+  nav.top .lockup .wm { font-family: 'Instrument Serif', serif; font-size: 22px; letter-spacing: -0.01em; white-space: nowrap; }
+  nav.top .links { display: flex; gap: 36px; font-size: 14px; color: var(--stone); }
+  nav.top .links a:hover { color: var(--ink); }
+  nav.top .cta { background: var(--espresso); color: var(--bone); padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform 0.15s ease; }
+  nav.top .cta:hover { transform: translateY(-1px); }
+
+  /* ── hero ── */
+  section.hero { padding: 160px 0 140px; border-bottom: 1px solid var(--line); }
+  .hero .eyebrow { display: inline-flex; align-items: center; gap: 12px; color: var(--terracotta); margin-bottom: 48px; }
+  .hero .eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--terracotta); }
+  .hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(64px, 9vw, 136px); line-height: 1.02; letter-spacing: -0.035em; max-width: 1100px; }
+  .hero h1 em { color: var(--terracotta); }
+  .hero .lede { margin-top: 72px; max-width: 620px; font-size: 21px; line-height: 1.55; color: var(--stone); font-weight: 300; }
+  .hero .lede strong { color: var(--ink); font-weight: 500; }
+  .hero .ctas { margin-top: 56px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .hero .cta-primary { background: var(--espresso); color: var(--bone); padding: 16px 28px; border-radius: 999px; font-size: 15px; font-weight: 500; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.15s ease; }
+  .hero .cta-primary:hover { transform: translateY(-1px); }
+  .hero .cta-secondary { padding: 16px 28px; font-size: 15px; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 6px; border-radius: 0; }
+
+  /* ── hero dashboard mock ── */
+  .hero-mock { margin-top: 100px; background: #1E1814; border-radius: 16px; border: 1px solid rgba(26,21,17,0.12); overflow: hidden; box-shadow: 0 40px 100px -30px rgba(42,34,28,0.4); color: var(--bone); }
+  .hero-mock .chrome { padding: 14px 22px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid rgba(244,239,232,0.08); background: rgba(244,239,232,0.02); }
+  .hero-mock .chrome .dots { display: flex; gap: 7px; }
+  .hero-mock .chrome .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(244,239,232,0.22); }
+  .hero-mock .chrome .path { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: rgba(244,239,232,0.5); }
+  .hero-mock .chrome .path .sl { color: rgba(244,239,232,0.3); margin: 0 8px; }
+  .hero-mock .chrome .path .here { color: var(--clay); }
+  .hero-mock .chrome .right-group { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+  .hero-mock .chrome .live { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--clay); text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; }
+  .hero-mock .chrome .live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); animation: pulse 1.6s ease-in-out infinite; }
+  .hero-mock .chrome .avatar-mini { width: 26px; height: 26px; border-radius: 50%; background: var(--clay); color: var(--espresso); display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 14px; }
+  .hero-mock .body { display: grid; grid-template-columns: 200px 1fr; min-height: 540px; }
+  .hero-mock .sidebar { border-right: 1px solid rgba(244,239,232,0.08); padding: 28px 20px; display: flex; flex-direction: column; gap: 6px; background: rgba(244,239,232,0.015); }
+  .hero-mock .sidebar .s-group { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(244,239,232,0.35); text-transform: uppercase; padding: 16px 8px 6px; }
+  .hero-mock .sidebar .s-item { padding: 8px 10px; border-radius: 6px; font-size: 13px; color: rgba(244,239,232,0.65); display: flex; align-items: center; gap: 10px; }
+  .hero-mock .sidebar .s-item.active { background: rgba(181,88,62,0.12); color: var(--bone); }
+  .hero-mock .sidebar .s-item .bu { width: 4px; height: 4px; border-radius: 50%; background: rgba(244,239,232,0.25); }
+  .hero-mock .sidebar .s-item.active .bu { background: var(--terracotta); }
+  .hero-mock .main { padding: 32px 36px; display: flex; flex-direction: column; gap: 28px; }
+  .hero-mock .crumb-row { display: flex; justify-content: space-between; align-items: center; }
+  .hero-mock .crumb-row h4 { font-family: 'Instrument Serif', serif; font-size: 28px; letter-spacing: -0.02em; font-weight: 400; }
+  .hero-mock .crumb-row h4 em { color: var(--clay); }
+  .hero-mock .crumb-row .filter-chips { display: flex; gap: 6px; }
+  .hero-mock .crumb-row .chip { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: rgba(244,239,232,0.6); padding: 6px 12px; border: 1px solid rgba(244,239,232,0.15); border-radius: 999px; text-transform: uppercase; }
+  .hero-mock .crumb-row .chip.on { background: var(--bone); color: var(--espresso); border-color: var(--bone); }
+  .hero-mock .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(244,239,232,0.08); border-bottom: 1px solid rgba(244,239,232,0.08); }
+  .hero-mock .kpi { padding: 20px 24px 20px 0; border-right: 1px solid rgba(244,239,232,0.08); }
+  .hero-mock .kpi:last-child { border-right: none; }
+  .hero-mock .kpi:not(:first-child) { padding-left: 24px; }
+  .hero-mock .kpi .k { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(244,239,232,0.45); text-transform: uppercase; margin-bottom: 10px; }
+  .hero-mock .kpi .v { font-family: 'Instrument Serif', serif; font-size: 42px; line-height: 1; letter-spacing: -0.025em; }
+  .hero-mock .kpi .v em { color: var(--clay); }
+  .hero-mock .kpi .v.terra em { color: var(--terracotta); }
+  .hero-mock .kpi .delta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #8BBF95; margin-top: 6px; }
+  .hero-mock .kpi .delta.dn { color: var(--terracotta); }
+  .hero-mock .table-hdr { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 0.8fr; gap: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(244,239,232,0.08); }
+  .hero-mock .table-hdr span { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: rgba(244,239,232,0.4); text-transform: uppercase; }
+  .hero-mock .rep-row { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 0.8fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(244,239,232,0.05); align-items: center; }
+  .hero-mock .rep-row:last-child { border-bottom: none; }
+  .hero-mock .rep-row .namecell { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--bone); }
+  .hero-mock .rep-row .av { width: 28px; height: 28px; border-radius: 50%; background: var(--clay); color: var(--espresso); display: inline-flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 13px; flex-shrink: 0; }
+  .hero-mock .rep-row .av.alt { background: #7d8ca0; }
+  .hero-mock .rep-row .av.alt2 { background: #a0857d; }
+  .hero-mock .rep-row .meta-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; color: rgba(244,239,232,0.4); display: block; text-transform: uppercase; margin-top: 2px; }
+  .hero-mock .rep-row .score { font-family: 'Instrument Serif', serif; font-size: 22px; letter-spacing: -0.02em; }
+  .hero-mock .rep-row .score em { color: rgba(244,239,232,0.4); font-size: 12px; font-style: normal; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; }
+  .hero-mock .rep-row .trend { display: flex; align-items: center; gap: 8px; height: 20px; }
+  .hero-mock .rep-row .trend svg { height: 20px; }
+  .hero-mock .rep-row .badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; display: inline-block; }
+  .hero-mock .rep-row .badge.g { background: rgba(139,191,149,0.15); color: #8BBF95; }
+  .hero-mock .rep-row .badge.y { background: rgba(201,166,135,0.15); color: var(--clay); }
+  .hero-mock .rep-row .badge.r { background: rgba(181,88,62,0.15); color: var(--terracotta); }
+  .hero-mock .rep-row .act { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--clay); text-transform: uppercase; text-align: right; }
+
+  /* ── call analysis mock (between problem and product) ── */
+  section.analysis { padding: 140px 0; border-bottom: 1px solid var(--line); }
+  .analysis .hd { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; margin-bottom: 72px; align-items: start; }
+  .analysis .hd .num { color: var(--stone-2); padding-top: 10px; }
+  .analysis .hd h2 { font-family: 'Instrument Serif', serif; font-size: clamp(44px, 5.5vw, 76px); line-height: 0.98; letter-spacing: -0.025em; }
+  .analysis .hd h2 em { color: var(--terracotta); }
+  .analysis .hd .sub { margin-top: 24px; font-size: 17px; line-height: 1.6; color: var(--stone); max-width: 560px; }
+  .analysis-mock { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(42,34,28,0.2); }
+  .analysis-mock .toolbar { padding: 14px 22px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--line); background: var(--bone-2); }
+  .analysis-mock .toolbar .t-title { font-family: 'Instrument Serif', serif; font-size: 18px; letter-spacing: -0.01em; }
+  .analysis-mock .toolbar .t-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--stone); text-transform: uppercase; }
+  .analysis-mock .toolbar .t-meta .mid { color: var(--line-2); margin: 0 8px; }
+  .analysis-mock .toolbar .right-group { margin-left: auto; display: flex; gap: 8px; }
+  .analysis-mock .toolbar .tb-btn { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--stone); text-transform: uppercase; padding: 6px 12px; border: 1px solid var(--line-2); border-radius: 6px; }
+  .analysis-mock .toolbar .tb-btn.primary { background: var(--espresso); color: var(--bone); border-color: var(--espresso); }
+  .analysis-mock .layout { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 560px; }
+  .analysis-mock .transcript { padding: 32px 36px; border-right: 1px solid var(--line); overflow: hidden; }
+  .analysis-mock .transcript .tr-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone-2); margin-bottom: 20px; }
+  .analysis-mock .turn { margin-bottom: 22px; padding-left: 16px; border-left: 2px solid var(--line); }
+  .analysis-mock .turn.annotated { border-left-color: var(--terracotta); background: rgba(181,88,62,0.03); padding: 8px 12px 8px 16px; border-radius: 0 6px 6px 0; margin-left: -2px; }
+  .analysis-mock .turn .spk { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--stone); text-transform: uppercase; margin-bottom: 6px; }
+  .analysis-mock .turn .spk.rep { color: var(--terracotta); }
+  .analysis-mock .turn .line { font-size: 14px; line-height: 1.6; color: var(--ink); }
+  .analysis-mock .turn .flag { margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--terracotta); text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px; }
+  .analysis-mock .turn .flag::before { content: '→'; }
+  .analysis-mock .scorecard { padding: 32px 36px; background: var(--bone-2); display: flex; flex-direction: column; gap: 24px; }
+  .analysis-mock .scorecard .sc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone-2); }
+  .analysis-mock .overall { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .analysis-mock .overall .big { font-family: 'Instrument Serif', serif; font-size: 72px; line-height: 0.92; letter-spacing: -0.03em; }
+  .analysis-mock .overall .big em { color: var(--terracotta); font-size: 28px; font-style: normal; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; }
+  .analysis-mock .overall .method { text-align: right; }
+  .analysis-mock .overall .method .m-name { font-family: 'Instrument Serif', serif; font-size: 22px; letter-spacing: -0.01em; }
+  .analysis-mock .overall .method .m-sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--stone); text-transform: uppercase; margin-top: 4px; }
+  .analysis-mock .criteria { display: flex; flex-direction: column; gap: 10px; }
+  .analysis-mock .crit { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; font-size: 13px; }
+  .analysis-mock .crit .c-name { display: flex; align-items: center; gap: 10px; color: var(--ink); }
+  .analysis-mock .crit .state { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 7px; border-radius: 3px; }
+  .analysis-mock .crit .state.hit { background: rgba(139,140,95,0.15); color: #6C7A4D; }
+  .analysis-mock .crit .state.partial { background: rgba(201,166,135,0.2); color: var(--clay-2); }
+  .analysis-mock .crit .state.miss { background: rgba(181,88,62,0.15); color: var(--terracotta); }
+  .analysis-mock .playcard { background: var(--espresso); color: var(--bone); border-radius: 8px; padding: 20px 22px; margin-top: auto; }
+  .analysis-mock .playcard .p-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
+  .analysis-mock .playcard .p-title { font-family: 'Instrument Serif', serif; font-size: 22px; line-height: 1.15; letter-spacing: -0.015em; }
+  .analysis-mock .playcard .p-title em { color: var(--clay); }
+  .analysis-mock .playcard .p-body { font-size: 13px; line-height: 1.55; color: rgba(244,239,232,0.7); margin-top: 10px; }
+
+  /* ── rep detail card (between method and security) ── */
+  section.rep-detail { padding: 140px 0; background: var(--bone-2); border-bottom: 1px solid var(--line); }
+  .rep-detail .hd { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; margin-bottom: 72px; align-items: start; }
+  .rep-detail .hd .num { color: var(--stone-2); padding-top: 10px; }
+  .rep-detail .hd h2 { font-family: 'Instrument Serif', serif; font-size: clamp(44px, 5.5vw, 76px); line-height: 0.98; letter-spacing: -0.025em; }
+  .rep-detail .hd h2 em { color: var(--terracotta); }
+  .rep-detail .hd .sub { margin-top: 24px; font-size: 17px; line-height: 1.6; color: var(--stone); max-width: 560px; }
+  .rep-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(42,34,28,0.2); }
+  .rep-card .hd-band { padding: 26px 36px; display: flex; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); }
+  .rep-card .av-lg { width: 56px; height: 56px; border-radius: 50%; background: var(--clay); color: var(--espresso); font-family: 'Instrument Serif', serif; font-size: 26px; display: flex; align-items: center; justify-content: center; }
+  .rep-card .id-block h4 { font-family: 'Instrument Serif', serif; font-size: 30px; letter-spacing: -0.02em; line-height: 1; }
+  .rep-card .id-block .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--stone); text-transform: uppercase; margin-top: 6px; }
+  .rep-card .score-big { margin-left: auto; text-align: right; }
+  .rep-card .score-big .n { font-family: 'Instrument Serif', serif; font-size: 56px; line-height: 1; letter-spacing: -0.025em; }
+  .rep-card .score-big .n em { color: var(--terracotta); }
+  .rep-card .score-big .d { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #6C7A4D; text-transform: uppercase; margin-top: 6px; }
+  .rep-card .grid3 { display: grid; grid-template-columns: 1.1fr 1fr 1fr; border-bottom: 1px solid var(--line); }
+  .rep-card .grid3 > div { padding: 28px 32px; border-right: 1px solid var(--line); }
+  .rep-card .grid3 > div:last-child { border-right: none; }
+  .rep-card .pnl-k { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: var(--stone-2); text-transform: uppercase; margin-bottom: 18px; }
+  .rep-card .trend-chart { display: flex; align-items: flex-end; gap: 4px; height: 70px; }
+  .rep-card .trend-chart .bar-v { flex: 1; background: var(--clay); border-radius: 2px 2px 0 0; min-height: 4px; }
+  .rep-card .trend-chart .bar-v.hi { background: var(--terracotta); }
+  .rep-card .trend-foot { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; color: var(--stone-2); text-transform: uppercase; margin-top: 10px; }
+  .rep-card .sw-list { display: flex; flex-direction: column; gap: 10px; }
+  .rep-card .sw { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.45; }
+  .rep-card .sw .mk { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; font-size: 10px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+  .rep-card .sw.strength .mk { background: rgba(139,140,95,0.2); color: #6C7A4D; }
+  .rep-card .sw.gap .mk { background: rgba(181,88,62,0.15); color: var(--terracotta); }
+  .rep-card .next-action { padding: 28px 32px; background: var(--espresso); color: var(--bone); display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+  .rep-card .next-action .na-k { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: var(--clay); text-transform: uppercase; margin-bottom: 10px; }
+  .rep-card .next-action .na-t { font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1.25; letter-spacing: -0.015em; max-width: 600px; }
+  .rep-card .next-action .na-t em { color: var(--clay); }
+  .rep-card .next-action .na-btn { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; background: var(--bone); color: var(--espresso); padding: 12px 20px; border-radius: 999px; white-space: nowrap; }
+
+  /* ── connections ── */
+  section.connect { padding: 140px 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .connect .hd { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; margin-bottom: 64px; align-items: start; }
+  .connect .hd .num { color: var(--stone-2); padding-top: 10px; }
+  .connect .hd h2 { font-family: 'Instrument Serif', serif; font-size: clamp(44px, 5.5vw, 76px); line-height: 0.98; letter-spacing: -0.025em; }
+  .connect .hd h2 em { color: var(--terracotta); }
+  .connect .hd .sub { margin-top: 24px; font-size: 17px; line-height: 1.6; color: var(--stone); max-width: 560px; }
+  .connect-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .conn { background: var(--paper); padding: 28px 24px; min-height: 160px; display: flex; flex-direction: column; justify-content: space-between; }
+  .conn .badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; align-self: flex-start; }
+  .conn .badge.live { background: rgba(108,122,77,0.15); color: #6C7A4D; }
+  .conn .badge.soon { background: rgba(143,132,122,0.18); color: var(--stone); }
+  .conn .name { font-family: 'Instrument Serif', serif; font-size: 26px; letter-spacing: -0.02em; margin-top: 10px; }
+  .conn .cat { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--stone-2); text-transform: uppercase; margin-top: 4px; }
+  .conn .oauth { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--terracotta); text-transform: uppercase; margin-top: auto; }
+  .conn.custom { background: var(--espresso); color: var(--bone); }
+  .conn.custom .name em { color: var(--clay); }
+  .conn.custom .cat { color: rgba(244,239,232,0.5); }
+  .conn.custom .oauth { color: var(--clay); }
+  .conn.custom .badge.live { background: rgba(201,166,135,0.2); color: var(--clay); }
+  .connect-foot { margin-top: 32px; display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; background: var(--bone-2); border-radius: 10px; gap: 24px; flex-wrap: wrap; }
+  .connect-foot .ft-txt { font-size: 14px; color: var(--stone); max-width: 680px; }
+  .connect-foot .ft-txt strong { color: var(--ink); font-weight: 500; }
+
+  /* ── learning / vector intelligence ── */
+  section.learning { padding: 140px 0; background: var(--espresso); color: var(--bone); border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+  .learning .hd { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; margin-bottom: 80px; align-items: start; }
+  .learning .hd .num { color: rgba(244,239,232,0.5); padding-top: 10px; }
+  .learning .hd h2 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 4.8vw, 60px); line-height: 1.08; letter-spacing: -0.025em; }
+  .learning .hd h2 em { color: var(--clay); }
+  .learning .hd .sub { margin-top: 40px; font-size: 17px; line-height: 1.6; color: rgba(244,239,232,0.7); max-width: 560px; }
+  .learning .hd .sub strong { color: var(--bone); font-weight: 500; }
+
+  .learning-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2px; background: rgba(244,239,232,0.12); border: 1px solid rgba(244,239,232,0.12); border-radius: 12px; overflow: hidden; }
+  .insight { background: var(--espresso); padding: 40px 36px; display: flex; flex-direction: column; gap: 14px; min-height: 280px; }
+  .insight .sig { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clay); display: flex; align-items: center; gap: 10px; }
+  .insight .sig::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--clay); box-shadow: 0 0 0 3px rgba(201,166,135,0.2); animation: pulse 2.2s ease-in-out infinite; }
+  .insight h3 { font-family: 'Instrument Serif', serif; font-size: 28px; line-height: 1.12; letter-spacing: -0.02em; font-weight: 400; }
+  .insight h3 em { color: var(--clay); font-style: italic; }
+  .insight h3 em.terra { color: var(--terracotta); }
+  .insight p { color: rgba(244,239,232,0.72); font-size: 14px; line-height: 1.6; }
+  .insight .evidence { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(244,239,232,0.1); display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,239,232,0.5); }
+  .insight .evidence .n { color: var(--bone); }
+  .insight.big { grid-column: 1 / -1; background: linear-gradient(180deg, #1E1814 0%, #2A221C 100%); padding: 48px 44px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; min-height: 200px; }
+  .insight.big .left h3 { font-size: 40px; line-height: 1.08; }
+  .insight.big .left p { margin-top: 18px; max-width: 500px; }
+  .insight.big .viz { display: flex; flex-direction: column; gap: 10px; }
+  .insight.big .viz-row { display: grid; grid-template-columns: 110px 1fr 46px; gap: 14px; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,239,232,0.65); }
+  .insight.big .viz-row .ph { color: rgba(244,239,232,0.5); }
+  .insight.big .viz-row .vbar { height: 6px; background: rgba(244,239,232,0.08); border-radius: 3px; overflow: hidden; }
+  .insight.big .viz-row .vbar .vfill { height: 100%; background: var(--clay); border-radius: 3px; }
+  .insight.big .viz-row .vbar .vfill.terra { background: var(--terracotta); }
+  .insight.big .viz-row .pct { text-align: right; color: var(--bone); }
+
+  .insight.team-win::before { content: ''; display: block; position: absolute; }
+  .insight .rep-mini { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+  .insight .rep-mini .av-s { width: 22px; height: 22px; border-radius: 50%; background: var(--clay); color: var(--espresso); font-family: 'Instrument Serif', serif; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+  .insight .rep-mini .nm { font-size: 13px; color: var(--bone); }
+  .insight .rep-mini .br { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,232,0.5); margin-left: auto; }
+
+  /* ── section header ── */
+  .sec-head { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; padding: 120px 0 80px; align-items: start; }
+  .sec-head .num { color: var(--stone-2); padding-top: 18px; }
+  .sec-head h2 { font-family: 'Instrument Serif', serif; font-size: clamp(48px, 6vw, 88px); line-height: 0.98; letter-spacing: -0.025em; font-weight: 400; }
+  .sec-head h2 em { color: var(--terracotta); }
+  .sec-head .sub { margin-top: 28px; font-size: 18px; line-height: 1.55; color: var(--stone); max-width: 560px; }
+
+  /* ── problem (one big statement) ── */
+  section.problem { border-bottom: 1px solid var(--line); padding-bottom: 120px; }
+  .problem .big { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 5.2vw, 76px); line-height: 1.1; letter-spacing: -0.02em; margin-top: 20px; max-width: 1100px; }
+  .problem .big em { color: var(--terracotta); }
+  .problem .big .fade { color: var(--stone-2); }
+
+  /* ── product (live panel) ── */
+  section.product { background: var(--espresso); color: var(--bone); padding: 120px 0; border-bottom: 1px solid var(--line); }
+  .product .inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .product .num { color: rgba(244,239,232,0.5); }
+  .product h2 { font-family: 'Instrument Serif', serif; font-size: clamp(44px, 5.5vw, 80px); line-height: 0.98; letter-spacing: -0.025em; font-weight: 400; margin-top: 18px; }
+  .product h2 em { color: var(--clay); }
+  .product .copy p { font-size: 17px; line-height: 1.6; color: rgba(244,239,232,0.72); margin-top: 28px; max-width: 480px; }
+
+  /* mock panel */
+  .panel { background: #1E1814; border-radius: 14px; border: 1px solid rgba(244,239,232,0.08); overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5); }
+  .panel .ph { padding: 14px 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(244,239,232,0.08); }
+  .panel .ph .dots { display: flex; gap: 6px; }
+  .panel .ph .dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(244,239,232,0.2); }
+  .panel .ph .lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: rgba(244,239,232,0.5); text-transform: uppercase; margin-left: 8px; }
+  .panel .pb { padding: 28px; }
+  .panel .row1 { display: flex; justify-content: space-between; align-items: baseline; }
+  .panel .row1 .title-k { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(244,239,232,0.5); text-transform: uppercase; }
+  .panel .row1 .live { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--clay); text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; }
+  .panel .row1 .live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); display: inline-block; animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .panel .stat-big { font-family: 'Instrument Serif', serif; font-size: 120px; line-height: 0.92; letter-spacing: -0.03em; margin: 20px 0 8px; }
+  .panel .stat-big em { color: var(--clay); }
+  .panel .stat-lbl { color: rgba(244,239,232,0.65); font-size: 14px; max-width: 340px; line-height: 1.5; }
+  .panel .divider { height: 1px; background: rgba(244,239,232,0.1); margin: 28px 0; }
+  .panel .reps { display: flex; flex-direction: column; gap: 14px; }
+  .panel .rep { display: grid; grid-template-columns: 1fr 160px 60px; gap: 20px; align-items: center; font-size: 13px; }
+  .panel .rep .name { color: var(--bone); }
+  .panel .rep .bar-wrap { height: 6px; background: rgba(244,239,232,0.08); border-radius: 3px; overflow: hidden; }
+  .panel .rep .bar { height: 100%; background: var(--clay); border-radius: 3px; }
+  .panel .rep .bar.terra { background: var(--terracotta); }
+  .panel .rep .pct { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(244,239,232,0.7); text-align: right; }
+
+  /* ── three pillars ── */
+  section.pillars { border-bottom: 1px solid var(--line); padding-bottom: 120px; }
+  .pillars .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+  .pillar { padding: 40px 0; border-top: 1px solid var(--ink); }
+  .pillar .n { color: var(--stone-2); margin-bottom: 32px; }
+  .pillar h3 { font-family: 'Instrument Serif', serif; font-size: 38px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 400; margin-bottom: 20px; }
+  .pillar h3 em { color: var(--terracotta); }
+  .pillar p { color: var(--stone); font-size: 16px; line-height: 1.6; }
+
+  /* ── methodology ── */
+  section.method { background: var(--paper); border-bottom: 1px solid var(--line); padding-bottom: 120px; }
+  .method .inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; padding-top: 120px; }
+  .method .left .num { color: var(--stone-2); }
+  .method h2 { font-family: 'Instrument Serif', serif; font-size: clamp(44px, 5.5vw, 80px); line-height: 0.98; letter-spacing: -0.025em; font-weight: 400; margin-top: 18px; }
+  .method h2 em { color: var(--terracotta); }
+  .method .p { margin-top: 32px; color: var(--stone); font-size: 17px; line-height: 1.6; max-width: 480px; }
+  .method .list { display: flex; flex-direction: column; }
+  .method .list .item { display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .method .list .item:first-child { border-top: 1px solid var(--line); }
+  .method .list .name { font-family: 'Instrument Serif', serif; font-size: 28px; letter-spacing: -0.01em; }
+  .method .list .name em { color: var(--clay-2); }
+  .method .list .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--stone-2); text-transform: uppercase; }
+
+  /* ── security ── */
+  section.security { background: var(--paper); border-bottom: 1px solid var(--line); padding: 120px 0; }
+  .security .inner { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; }
+  .security .left .num { color: var(--stone-2); }
+  .security .left h2 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 4.8vw, 64px); line-height: 1.05; letter-spacing: -0.025em; margin-top: 18px; }
+  .security .left h2 em { color: var(--terracotta); }
+  .security .left .lede { margin-top: 48px; font-size: 18px; line-height: 1.6; color: var(--stone); max-width: 420px; }
+  .security .left .lede strong { color: var(--ink); font-weight: 500; }
+  .security .right { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line); border: 1px solid var(--line); }
+  .sec-cell { background: var(--paper); padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; min-height: 200px; }
+  .sec-cell .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); }
+  .sec-cell h3 { font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1.15; letter-spacing: -0.02em; font-weight: 400; }
+  .sec-cell h3 em { color: var(--terracotta); }
+  .sec-cell p { color: var(--stone); font-size: 14px; line-height: 1.6; margin-top: auto; }
+  .sec-cell.feature { grid-column: 1 / -1; background: var(--espresso); color: var(--bone); padding: 40px 36px; }
+  .sec-cell.feature .tag { color: var(--clay); }
+  .sec-cell.feature h3 { font-size: 32px; }
+  .sec-cell.feature h3 em { color: var(--clay); }
+  .sec-cell.feature p { color: rgba(244,239,232,0.7); font-size: 15px; }
+  .sec-cell.feature .pill-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+  .sec-cell.feature .pill { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 12px; border: 1px solid rgba(244,239,232,0.3); border-radius: 999px; color: rgba(244,239,232,0.85); }
+
+  /* ── testimonial ── */
+  section.quote { padding: 180px 0; border-bottom: 1px solid var(--line); }
+  .quote .inner { max-width: 1060px; }
+  .quote .mark { font-family: 'Instrument Serif', serif; font-size: 180px; line-height: 0.5; color: var(--clay); font-style: italic; margin-bottom: 40px; display: block; }
+  .quote blockquote { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 5vw, 72px); line-height: 1.08; letter-spacing: -0.025em; font-weight: 400; }
+  .quote blockquote em { color: var(--terracotta); }
+  .quote .attrib { margin-top: 48px; display: flex; align-items: center; gap: 20px; }
+  .quote .avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--clay); display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 22px; color: var(--espresso); }
+  .quote .who { display: flex; flex-direction: column; gap: 2px; }
+  .quote .who .n { font-size: 15px; font-weight: 500; }
+  .quote .who .r { font-size: 14px; color: var(--stone); }
+
+  /* ── CTA / close ── */
+  section.close { background: var(--espresso); color: var(--bone); padding: 140px 0 120px; }
+  .close .inner { text-align: center; max-width: 1100px; margin: 0 auto; }
+  .close .eyebrow { color: var(--clay); display: inline-flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 44px; }
+  .close .eyebrow::before, .close .eyebrow::after { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--clay); }
+  .close h2 { font-family: 'Instrument Serif', serif; font-size: clamp(64px, 8vw, 128px); line-height: 0.96; letter-spacing: -0.03em; font-weight: 400; }
+  .close h2 em { color: var(--clay); }
+  .close .ctas { margin-top: 60px; display: inline-flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .close .cta-primary { background: var(--bone); color: var(--espresso); padding: 18px 32px; border-radius: 999px; font-size: 15px; font-weight: 500; transition: transform 0.15s ease; }
+  .close .cta-primary:hover { transform: translateY(-1px); }
+  .close .cta-secondary { padding: 18px 28px; font-size: 15px; color: var(--bone); border-bottom: 1px solid rgba(244,239,232,0.4); padding-bottom: 8px; border-radius: 0; }
+
+  /* ── footer ── */
+  footer { background: var(--espresso); color: rgba(244,239,232,0.6); padding: 60px 0 40px; border-top: 1px solid rgba(244,239,232,0.1); font-size: 13px; }
+  footer .inner { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+  footer .lockup-f { display: inline-flex; align-items: center; gap: 12px; color: var(--bone); white-space: nowrap; }
+  footer .lockup-f svg { width: 28px; height: 28px; flex-shrink: 0; }
+  footer .lockup-f .wm { font-family: 'Instrument Serif', serif; font-size: 22px; letter-spacing: -0.01em; white-space: nowrap; }
+  footer .meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,239,232,0.4); line-height: 1.8; }
+  footer .bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(244,239,232,0.1); display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,239,232,0.4); }
+
+  @media (max-width: 900px) {
+    .wrap { padding: 0 24px; }
+    nav.top .links { display: none; }
+    .hero { padding: 100px 0 80px; }
+    .sec-head, .product .inner, .method .inner { grid-template-columns: 1fr; gap: 24px; }
+    .pillars .grid { grid-template-columns: 1fr; gap: 8px; }
+    .panel .stat-big { font-size: 80px; }
+    footer .inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap inner">
+    <a href="#" class="lockup">
+      <svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+      <span class="wm">One Click <em>Coaching</em></span>
+    </a>
+    <div class="links">
+      <a href="#product">Platform</a>
+      <a href="#method">Methodologies</a>
+      <a href="#pillars">For Teams</a>
+      <a href="One Click Coaching Pricing.html">Pricing</a>
+    </div>
+    <a href="https://app.oneclickcoaching.com" class="cta">Sign In →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow mono">AI sales coaching — 2026</div>
+    <h1>Make selling <em>visible.</em><br>Coaching, <em>immediate.</em></h1>
+    <p class="lede">Most sales training fades within weeks. <strong>One Click Coaching</strong> turns rep activity, call transcripts, and methodology execution into a single feed — so managers coach the behavior, not just the outcome.</p>
+    <div class="ctas">
+      <a href="#close" class="cta-primary">Book a walkthrough <span>→</span></a>
+      <a href="#product" class="cta-secondary">See the platform</a>
+    </div>
+
+    <div class="hero-mock" aria-hidden="true">
+      <div class="chrome">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <span class="path">app.oneclickcoaching.com <span class="sl">/</span> team <span class="sl">/</span> <span class="here">overview</span></span>
+        <div class="right-group">
+          <span class="live">Live · synced 12s ago</span>
+          <span class="avatar-mini">J</span>
+        </div>
+      </div>
+      <div class="body">
+        <aside class="sidebar">
+          <div class="s-group">Workspace</div>
+          <div class="s-item active"><span class="bu"></span>Team overview</div>
+          <div class="s-item"><span class="bu"></span>Reps</div>
+          <div class="s-item"><span class="bu"></span>Calls</div>
+          <div class="s-item"><span class="bu"></span>Coaching queue</div>
+          <div class="s-group">Methodology</div>
+          <div class="s-item"><span class="bu"></span>MEDDIC</div>
+          <div class="s-item"><span class="bu"></span>Sandler</div>
+          <div class="s-item"><span class="bu"></span>Scripts</div>
+          <div class="s-group">Settings</div>
+          <div class="s-item"><span class="bu"></span>Integrations</div>
+        </aside>
+        <div class="main">
+          <div class="crumb-row">
+            <h4>Team — <em>week 14</em></h4>
+            <div class="filter-chips">
+              <span class="chip on">7 days</span>
+              <span class="chip">30 days</span>
+              <span class="chip">Quarter</span>
+            </div>
+          </div>
+          <div class="kpi-row">
+            <div class="kpi">
+              <div class="k">Methodology adherence</div>
+              <div class="v">82<em>%</em></div>
+              <div class="delta">↑ 12 pts WoW</div>
+            </div>
+            <div class="kpi">
+              <div class="k">Calls analyzed</div>
+              <div class="v">248</div>
+              <div class="delta">↑ 31 vs last wk</div>
+            </div>
+            <div class="kpi">
+              <div class="k">Coaching plays sent</div>
+              <div class="v"><em>47</em></div>
+              <div class="delta">↑ 8 auto-triggered</div>
+            </div>
+            <div class="kpi">
+              <div class="k">Drift alerts</div>
+              <div class="v terra"><em>3</em></div>
+              <div class="delta dn">2 require review</div>
+            </div>
+          </div>
+          <div>
+            <div class="table-hdr">
+              <span>Rep</span>
+              <span>Adherence</span>
+              <span>7-day trend</span>
+              <span>Weakest stage</span>
+              <span style="text-align:right">Action</span>
+            </div>
+            <div class="rep-row">
+              <div class="namecell"><span class="av">P</span><div><div>Priya Narayan</div><span class="meta-sub">AE · Mid-market</span></div></div>
+              <div class="score">94<em> /100</em></div>
+              <div class="trend"><svg viewBox="0 0 80 20"><polyline points="0,14 12,12 24,11 36,9 48,7 60,6 72,4" fill="none" stroke="#C9A687" stroke-width="1.5"/></svg><span class="badge g">Up 6</span></div>
+              <div><span class="badge g">Closing</span></div>
+              <div class="act">Recognize →</div>
+            </div>
+            <div class="rep-row">
+              <div class="namecell"><span class="av alt">J</span><div><div>Jordan Kim</div><span class="meta-sub">AE · Enterprise</span></div></div>
+              <div class="score">82<em> /100</em></div>
+              <div class="trend"><svg viewBox="0 0 80 20"><polyline points="0,10 12,11 24,9 36,8 48,9 60,7 72,7" fill="none" stroke="#C9A687" stroke-width="1.5"/></svg><span class="badge g">Up 2</span></div>
+              <div><span class="badge y">Metrics depth</span></div>
+              <div class="act">Queue coaching →</div>
+            </div>
+            <div class="rep-row">
+              <div class="namecell"><span class="av alt2">M</span><div><div>Marcus Owusu</div><span class="meta-sub">AE · Mid-market</span></div></div>
+              <div class="score">71<em> /100</em></div>
+              <div class="trend"><svg viewBox="0 0 80 20"><polyline points="0,6 12,7 24,8 36,8 48,9 60,11 72,12" fill="none" stroke="#B5583E" stroke-width="1.5"/></svg><span class="badge y">Down 4</span></div>
+              <div><span class="badge y">Pain funnel</span></div>
+              <div class="act">Queue coaching →</div>
+            </div>
+            <div class="rep-row">
+              <div class="namecell"><span class="av">D</span><div><div>Dana Robles</div><span class="meta-sub">SDR · Inbound</span></div></div>
+              <div class="score">48<em> /100</em></div>
+              <div class="trend"><svg viewBox="0 0 80 20"><polyline points="0,8 12,9 24,11 36,12 48,13 60,14 72,15" fill="none" stroke="#B5583E" stroke-width="1.5"/></svg><span class="badge r">Drift alert</span></div>
+              <div><span class="badge r">Upfront contract</span></div>
+              <div class="act">Coach now →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="analysis">
+  <div class="wrap">
+    <div class="hd">
+      <div class="num mono">§ 01.5 — In the product</div>
+      <div>
+        <h2>The brain does the thinking. <em>The rep just reviews.</em></h2>
+        <p class="sub">One Click Coaching analyzes every call, surfaces what was missed, and writes the exact next-call plays — tailored to your methodology. Reps don't have to remember a framework under pressure. They just open the review and run it.</p>
+      </div>
+    </div>
+    <div class="analysis-mock" aria-hidden="true">
+      <div class="toolbar">
+        <span class="t-title">Acme Corp · Discovery call</span>
+        <span class="t-meta">Jordan Kim<span class="mid">·</span>34 min<span class="mid">·</span>Tue 10:14am</span>
+        <div class="right-group">
+          <span class="tb-btn">Export</span>
+          <span class="tb-btn primary">Send coaching →</span>
+        </div>
+      </div>
+      <div class="layout">
+        <div class="transcript">
+          <div class="tr-label">Transcript · annotated</div>
+          <div class="turn">
+            <div class="spk rep">Jordan · Rep</div>
+            <div class="line">"Great, appreciate you taking the time. Let me walk you through what we do — we're a platform that helps sales teams…"</div>
+          </div>
+          <div class="turn annotated">
+            <div class="spk rep">Jordan · Rep</div>
+            <div class="line">"So I think based on what you've shared, we'd be a great fit. Should we talk pricing?"</div>
+            <div class="flag">Jumped to pricing · no metrics established</div>
+          </div>
+          <div class="turn">
+            <div class="spk">Prospect · Sarah</div>
+            <div class="line">"Well, we're not really sure on budget yet. We'd need to loop in our CFO…"</div>
+          </div>
+          <div class="turn annotated">
+            <div class="spk rep">Jordan · Rep</div>
+            <div class="line">"Totally — we can flex on pricing. What's the CFO typically worried about?"</div>
+            <div class="flag">Reactive discount signal · economic buyer not qualified</div>
+          </div>
+          <div class="turn">
+            <div class="spk">Prospect · Sarah</div>
+            <div class="line">"Honestly, ROI. Last tool we bought didn't move the needle…"</div>
+          </div>
+        </div>
+        <div class="scorecard">
+          <div class="overall">
+            <div>
+              <div class="sc-label" style="margin-bottom:8px">Overall score</div>
+              <div class="big">64<em>/100</em></div>
+            </div>
+            <div class="method">
+              <div class="m-name">MEDDIC</div>
+              <div class="m-sub">Acme · playbook v3</div>
+            </div>
+          </div>
+          <div>
+            <div class="sc-label" style="margin-bottom:14px">Criteria</div>
+            <div class="criteria">
+              <div class="crit"><div class="c-name">Metrics identified</div><span class="state miss">Missed</span></div>
+              <div class="crit"><div class="c-name">Economic buyer named</div><span class="state miss">Missed</span></div>
+              <div class="crit"><div class="c-name">Decision criteria</div><span class="state partial">Partial</span></div>
+              <div class="crit"><div class="c-name">Decision process</div><span class="state partial">Partial</span></div>
+              <div class="crit"><div class="c-name">Pain identified</div><span class="state hit">Hit</span></div>
+              <div class="crit"><div class="c-name">Champion engaged</div><span class="state hit">Hit</span></div>
+            </div>
+          </div>
+          <div class="playcard">
+            <div class="p-tag">Next-call play · auto-generated</div>
+            <div class="p-title">Before discounting, <em>quantify the ROI gap</em>.</div>
+            <div class="p-body">"You mentioned the last tool didn't move the needle — what did you expect it to deliver in dollars, and by when?" Re-anchors on metrics before pricing.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="wrap sec-head">
+    <div class="num mono">§ 01 — The gap</div>
+    <div>
+      <h2>The <em>training</em> was the easy part.</h2>
+      <p class="sub">Sandler. MEDDIC. SPIN. Challenger. You paid for the playbook. Two weeks later, half the team has quietly drifted back to what they did before — and no one sees it until the quarter closes.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="big">A rep either uses the method <em>under pressure</em>, or they don't. <span class="fade">Everything else is a guess.</span></p>
+  </div>
+</section>
+
+<section class="product" id="product">
+  <div class="wrap inner">
+    <div>
+      <div class="num mono">§ 02 — The platform</div>
+      <h2>One feed. Every <em>behavior</em>. Every call.</h2>
+      <div class="copy">
+        <p>Activity from your CRM. Transcripts from every call. Methodology scoring and coaching recommendations generated the moment a conversation ends.</p>
+        <p>Managers see what's happening across the team in seconds — not in a pipeline review three weeks too late.</p>
+      </div>
+    </div>
+    <div class="panel" aria-hidden="true">
+      <div class="ph">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <span class="lbl">Team · Q2 Live Feed</span>
+      </div>
+      <div class="pb">
+        <div class="row1">
+          <span class="title-k">Methodology adherence · week 14</span>
+          <span class="live">Live</span>
+        </div>
+        <div class="stat-big">+38<em>%</em></div>
+        <div class="stat-lbl">Reps hitting MEDDIC criteria on discovery calls — week over week.</div>
+        <div class="divider"></div>
+        <div class="reps">
+          <div class="rep"><span class="name">Priya N.</span><div class="bar-wrap"><div class="bar" style="width: 94%"></div></div><span class="pct">94</span></div>
+          <div class="rep"><span class="name">Jordan K.</span><div class="bar-wrap"><div class="bar" style="width: 82%"></div></div><span class="pct">82</span></div>
+          <div class="rep"><span class="name">Marcus O.</span><div class="bar-wrap"><div class="bar" style="width: 71%"></div></div><span class="pct">71</span></div>
+          <div class="rep"><span class="name">Dana R.</span><div class="bar-wrap"><div class="bar terra" style="width: 48%"></div></div><span class="pct">48</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars" id="pillars">
+  <div class="wrap sec-head">
+    <div class="num mono">§ 03 — What it does</div>
+    <div>
+      <h2>Three things. <em>Nothing else.</em></h2>
+      <p class="sub">No dashboards you don't use. No features that exist only on the pricing page. Three clear jobs — done well.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="grid">
+      <div class="pillar">
+        <div class="n mono">I · For Reps</div>
+        <h3>Feedback, <em>in the same hour</em> as the call.</h3>
+        <p>Short, specific, tied to real moments in the transcript. No waiting for a weekly 1:1. No guessing what "be more consultative" means.</p>
+      </div>
+      <div class="pillar">
+        <div class="n mono">II · For Managers</div>
+        <h3>Coach on behavior, <em>not outcomes</em>.</h3>
+        <p>See what your team is actually doing across discovery, demos, and closes. Trigger targeted coaching in a click — without scrubbing through hours of recordings.</p>
+      </div>
+      <div class="pillar">
+        <div class="n mono">III · For Leaders</div>
+        <h3>Training that <em>finally</em> sticks.</h3>
+        <p>Every rep, every week, measured against the methodology you invested in. Drift becomes visible the day it starts — not the quarter it shows up in the number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="method" id="method">
+  <div class="wrap inner">
+    <div class="left">
+      <div class="num mono">§ 04 — Methodologies</div>
+      <h2>Your playbook. <em>Instrumented.</em></h2>
+      <p class="p">One Click doesn't replace the methodology your team already runs. It measures it. Every call scored against the framework you've trained on, automatically — so the method becomes a daily habit, not a forgotten PDF.</p>
+    </div>
+    <div class="list">
+      <div class="item"><span class="name">Sandler</span><span class="tag">Supported</span></div>
+      <div class="item"><span class="name">MEDDIC <em>/ MEDDPICC</em></span><span class="tag">Supported</span></div>
+      <div class="item"><span class="name">SPIN Selling</span><span class="tag">Supported</span></div>
+      <div class="item"><span class="name">Challenger</span><span class="tag">Supported</span></div>
+      <div class="item"><span class="name">Gap Selling</span><span class="tag">Supported</span></div>
+      <div class="item"><span class="name">Your <em>custom</em> framework</span><span class="tag">On request</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="rep-detail">
+  <div class="wrap">
+    <div class="hd">
+      <div class="num mono">§ 04.5 — Rep view</div>
+      <div>
+        <h2>Each rep sees <em>exactly</em> where they stand.</h2>
+        <p class="sub">Strengths, gaps, and the single most important thing to work on this week — pulled from their real calls, not their self-reported pipeline stories.</p>
+      </div>
+    </div>
+    <div class="rep-card" aria-hidden="true">
+      <div class="hd-band">
+        <span class="av-lg">J</span>
+        <div class="id-block">
+          <h4>Jordan Kim</h4>
+          <div class="role">AE · Enterprise · 47 calls this month</div>
+        </div>
+        <div class="score-big">
+          <div class="n">82<em>/100</em></div>
+          <div class="d">↑ 8 pts · 30 days</div>
+        </div>
+      </div>
+      <div class="grid3">
+        <div>
+          <div class="pnl-k">30-day adherence</div>
+          <div class="trend-chart">
+            <div class="bar-v" style="height:45%"></div>
+            <div class="bar-v" style="height:42%"></div>
+            <div class="bar-v" style="height:50%"></div>
+            <div class="bar-v" style="height:48%"></div>
+            <div class="bar-v" style="height:55%"></div>
+            <div class="bar-v" style="height:52%"></div>
+            <div class="bar-v" style="height:60%"></div>
+            <div class="bar-v" style="height:58%"></div>
+            <div class="bar-v" style="height:65%"></div>
+            <div class="bar-v" style="height:62%"></div>
+            <div class="bar-v" style="height:70%"></div>
+            <div class="bar-v" style="height:68%"></div>
+            <div class="bar-v hi" style="height:75%"></div>
+            <div class="bar-v hi" style="height:78%"></div>
+            <div class="bar-v hi" style="height:82%"></div>
+          </div>
+          <div class="trend-foot"><span>30 days ago</span><span>Today</span></div>
+        </div>
+        <div>
+          <div class="pnl-k">Strengths</div>
+          <div class="sw-list">
+            <div class="sw strength"><span class="mk">✓</span>Pain funnel — consistently going 3+ layers deep on discovery.</div>
+            <div class="sw strength"><span class="mk">✓</span>Champion engagement — secures internal advocates early.</div>
+            <div class="sw strength"><span class="mk">✓</span>Talk ratio — 34% rep / 66% prospect (target met).</div>
+          </div>
+        </div>
+        <div>
+          <div class="pnl-k">Gaps</div>
+          <div class="sw-list">
+            <div class="sw gap"><span class="mk">!</span>Metrics — quantifies ROI in 2 of 10 calls. Target: 8.</div>
+            <div class="sw gap"><span class="mk">!</span>Economic buyer — rarely named before proposal stage.</div>
+            <div class="sw gap"><span class="mk">!</span>Reactive discounting — offers price flex without re-anchoring.</div>
+          </div>
+        </div>
+      </div>
+      <div class="next-action">
+        <div>
+          <div class="na-k">Focus this week</div>
+          <div class="na-t">Run the <em>metrics re-anchor</em> play on your next three discovery calls. "What does success look like in dollars, and by when?"</div>
+        </div>
+        <a href="#" class="na-btn">Start drill →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="learning">
+  <div class="wrap">
+    <div class="hd">
+      <div class="num mono">§ 05 — Adaptive intelligence</div>
+      <div>
+        <h2>The system <em>learns</em> your team.<br>Every call makes the <em>next one</em> sharper.</h2>
+        <p class="sub">Every call, every objection, every winning line goes into a private vector memory for your team — not a shared model. Over time, <strong>the system learns what works for your reps, your market, your product</strong> — and surfaces patterns no human would see by hand.</p>
+      </div>
+    </div>
+
+    <div class="learning-grid" aria-hidden="true">
+
+      <div class="insight big">
+        <div class="left">
+          <span class="sig">Team pattern · last 30 days</span>
+          <h3>Reps who <em>name the economic buyer in discovery</em> close 2.4× more often than the team average.</h3>
+          <p>The vector database found this automatically by comparing 248 calls across 9 reps. Three reps are already doing it. Six aren't. One Click knows which.</p>
+        </div>
+        <div class="viz">
+          <div class="viz-row"><span>Priya N.</span><div class="vbar"><div class="vfill" style="width:92%"></div></div><span class="pct">92%</span></div>
+          <div class="viz-row"><span>Jordan K.</span><div class="vbar"><div class="vfill" style="width:78%"></div></div><span class="pct">78%</span></div>
+          <div class="viz-row"><span>Marcus O.</span><div class="vbar"><div class="vfill" style="width:64%"></div></div><span class="pct">64%</span></div>
+          <div class="viz-row"><span class="ph">Team avg</span><div class="vbar"><div class="vfill" style="width:48%"></div></div><span class="pct">48%</span></div>
+          <div class="viz-row"><span>Dana R.</span><div class="vbar"><div class="vfill terra" style="width:22%"></div></div><span class="pct">22%</span></div>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="sig">Trend · positive</span>
+        <h3>Your team's <em>upfront contracts</em> are 38% cleaner than last quarter.</h3>
+        <p>Detected a consistent 3-part structure: agenda, outcomes, mutual permission. It's working — close rates on calls that open this way are up 21%.</p>
+        <div class="evidence"><span>Signal strength</span><span class="n">High · 184 calls</span></div>
+      </div>
+
+      <div class="insight">
+        <span class="sig" style="color:var(--terracotta)">Trend · warning</span>
+        <h3>Across the team, <em class="terra">reactive discounting</em> is up 14% this month.</h3>
+        <p>Reps are offering price flexibility before re-anchoring on value. Four of nine reps showing the pattern. Coaching plays auto-drafted.</p>
+        <div class="evidence"><span>Affected reps</span><span class="n">4 of 9</span></div>
+      </div>
+
+      <div class="insight">
+        <span class="sig">Recurring challenge · per rep</span>
+        <h3>Marcus: <em>pain funnel ends at layer 2</em>, every time.</h3>
+        <p>Across his last 22 discovery calls, the AI found the same stall point — after surface pain, he doesn't escalate to business impact. Tailored drill queued.</p>
+        <div class="rep-mini"><span class="av-s">M</span><span class="nm">Marcus Owusu</span><span class="br">22 calls analyzed</span></div>
+      </div>
+
+      <div class="insight">
+        <span class="sig">Winning line · surfaced</span>
+        <h3>"If I could solve that by Q3, what would it be worth?" — <em>landed 9/10 times</em>.</h3>
+        <p>Priya's go-to close question is quietly out-performing every other closing line on the team. Suggested as a play for the rest of the reps this week.</p>
+        <div class="rep-mini"><span class="av-s">P</span><span class="nm">Priya Narayan</span><span class="br">Source · 10 calls</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="connect">
+  <div class="wrap">
+    <div class="hd">
+      <div class="num mono">§ 06 — Connections</div>
+      <div>
+        <h2>One OAuth click. <em>No more copy-paste.</em></h2>
+        <p class="sub">Managers click "Connect" once. From then on, every call recording and every CRM event flows into One Click Coaching automatically — scored, coached, and ready before the rep's next meeting.</p>
+      </div>
+    </div>
+    <div class="connect-grid">
+      <div class="conn"><span class="badge live">Live</span><div><div class="name">Fathom</div><div class="cat">Meetings · Transcripts</div></div><div class="oauth">OAuth · 1-click connect</div></div>
+      <div class="conn"><span class="badge live">Live</span><div><div class="name">HubSpot</div><div class="cat">CRM · Activity · Deals</div></div><div class="oauth">OAuth · 1-click connect</div></div>
+      <div class="conn"><span class="badge live">Live</span><div><div class="name">Fireflies</div><div class="cat">Meetings · Transcripts</div></div><div class="oauth">OAuth · 1-click connect</div></div>
+      <div class="conn"><span class="badge live">Live</span><div><div class="name">Otter</div><div class="cat">Meetings · Transcripts</div></div><div class="oauth">OAuth · 1-click connect</div></div>
+      <div class="conn"><span class="badge live">Live</span><div><div class="name">Aircall</div><div class="cat">Phone · Call data</div></div><div class="oauth">OAuth · 1-click connect</div></div>
+      <div class="conn"><span class="badge soon">Q2</span><div><div class="name">Salesforce</div><div class="cat">CRM · Enterprise</div></div><div class="oauth">OAuth coming</div></div>
+      <div class="conn"><span class="badge soon">Q2</span><div><div class="name">Gong</div><div class="cat">Revenue intel</div></div><div class="oauth">OAuth coming</div></div>
+      <div class="conn custom"><span class="badge live">Included</span><div><div class="name">Our <em>own CRM</em></div><div class="cat">Zero monthly fees</div></div><div class="oauth">Built-in alternative</div></div>
+    </div>
+    <div class="connect-foot">
+      <p class="ft-txt">Don't want to pay monthly for a separate CRM? <strong>Use ours.</strong> One Click Coaching includes a lightweight deal and activity tracker — no extra seats, no extra bill. Or bring your own via OAuth.</p>
+      <a href="One Click Coaching Contact.html" class="cta" style="background:var(--espresso);color:var(--bone);padding:12px 22px;border-radius:999px;font-size:13px;font-weight:500">Request an integration →</a>
+    </div>
+  </div>
+</section>
+
+<section class="security">
+  <div class="wrap inner">
+    <div class="left">
+      <span class="num mono">§ — Security & data</span>
+      <h2>Your data.<br><em>Yours.</em> Full stop.</h2>
+      <p class="lede">We're the infrastructure — <strong>you own the insights</strong>. Built on Supabase with row-level isolation, bank-grade encryption, and a data policy that doesn't have fine print: your conversations, your coaching, your call it.</p>
+    </div>
+    <div class="right">
+      <div class="sec-cell feature">
+        <span class="tag">Client-owned data</span>
+        <h3>The client <em>owns</em> the data. Always.</h3>
+        <p>Export anything as CSV or via API. Delete everything with one click. No lock-in, no gotchas, no "your data is now ours" hidden in section 14. We never train models on your calls — not now, not ever.</p>
+        <div class="pill-row"><span class="pill">You own it</span><span class="pill">Export anytime</span><span class="pill">Delete anytime</span><span class="pill">Zero training on your data</span></div>
+      </div>
+      <div class="sec-cell">
+        <span class="tag">Infrastructure</span>
+        <h3>Built on <em>Supabase</em>.</h3>
+        <p>Enterprise-grade Postgres with Row-Level Security, automatic encryption, and tenant isolation at the database layer. The same stack trusted by fintechs and healthcare platforms.</p>
+      </div>
+      <div class="sec-cell">
+        <span class="tag">Encryption</span>
+        <h3>AES-256, <em>everywhere</em>.</h3>
+        <p>Bank-level encryption at rest and in transit. TLS 1.3 for every request. Keys rotated automatically. Nothing touches the wire or the disk unencrypted.</p>
+      </div>
+      <div class="sec-cell">
+        <span class="tag">Compliance</span>
+        <h3>SOC 2. <em>GDPR</em>. PIPEDA.</h3>
+        <p>SOC 2 Type II compliant. GDPR and Canadian PIPEDA aligned. Enterprise DPAs available. Regional data residency on request for enterprise tiers.</p>
+      </div>
+      <div class="sec-cell">
+        <span class="tag">Privacy posture</span>
+        <h3>Never <em>trained</em>. Never shared.</h3>
+        <p>Your transcripts don't train our AI. Your methodology doesn't leak to competitors. No third-party analytics on call content. No data brokers. Ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap inner">
+    <span class="mark">“</span>
+    <blockquote>We spent six figures on MEDDIC training. One Click was the first thing that made it <em>stick past the second month</em>.</blockquote>
+    <div class="attrib">
+      <div class="avatar">R</div>
+      <div class="who">
+        <span class="n">Rachel M.</span>
+        <span class="r">VP Sales · Series C SaaS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="close">
+  <div class="wrap inner">
+    <span class="eyebrow mono">See it on your team</span>
+    <h2>One walkthrough.<br><em>One decision.</em></h2>
+    <div class="ctas">
+      <a href="One Click Coaching Contact.html" class="cta-primary">Book a walkthrough →</a>
+      <a href="mailto:john@oneclickcoaching.com" class="cta-secondary">Talk to the founder</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <a href="#" class="lockup-f">
+          <svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#C9A687"/></svg>
+          <span class="wm">One Click <em style="font-style:italic;">Coaching</em></span>
+        </a>
+        <div class="meta" style="margin-top: 20px;">
+          AI sales coaching<br>
+          1880 Main St. W · Hamilton, ON
+        </div>
+      </div>
+      <div class="meta" style="text-align: right;">
+        john@oneclickcoaching.com<br>
+        (905) 519-8983
+      </div>
+    </div>
+    <div class="legal-links">
+      <a href="One Click Coaching Privacy.html">Privacy</a><span class="sep">·</span>
+      <a href="One Click Coaching Terms.html">Terms</a><span class="sep">·</span>
+      <a href="One Click Coaching Security.html">Security</a><span class="sep">·</span>
+      <a href="One Click Coaching AI Usage.html">AI Usage</a><span class="sep">·</span>
+      <a href="One Click Coaching Subprocessors.html">Sub-processors</a><span class="sep">·</span>
+      <a href="One Click Coaching Cookies.html">Cookies</a><span class="sep">·</span>
+      <a href="One Click Coaching Sitemap.html">Sitemap</a>
+    </div>
+    <div class="bottom">
+      <span>© 2026 One Click Coaching Inc.</span>
+      <span>Made in Hamilton · v1.0</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

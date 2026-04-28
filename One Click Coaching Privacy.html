@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Privacy Policy — One Click Coaching | Your Data, Protected</title>
+<meta name="description" content="One Click Coaching privacy policy in plain English. We never train AI on your data. You own it, you can export it, you can delete it. SOC 2, GDPR, PIPEDA compliant." />
+<meta name="author" content="One Click Coaching Inc." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.oneclickcoaching.com/privacy" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.oneclickcoaching.com/privacy" />
+<meta property="og:title" content="Privacy Policy — One Click Coaching" />
+<meta property="og:description" content="Privacy policy in plain English. We never train AI on your data. You own it." />
+<meta property="og:site_name" content="One Click Coaching" />
+<meta name="theme-color" content="#2A221C" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone:#F4EFE8;--bone-2:#EAE3D8;--paper:#FBF8F3;--clay:#C9A687;--clay-2:#B08A66;
+    --terracotta:#B5583E;--espresso:#2A221C;--ink:#1A1511;--stone:#6E6358;--stone-2:#8F847A;
+    --line:#D9D0C2;--line-2:#C6BAA8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+  html,body{background:var(--bone);color:var(--ink);font-family:'Inter',sans-serif;font-size:17px;line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  em{font-style:italic}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+
+  /* Nav */
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(244,239,232,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  nav.top .inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  nav.top .lockup{display:flex;align-items:center;gap:12px;white-space:nowrap}
+  nav.top .lockup svg{width:34px;height:34px}
+  nav.top .lockup .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em;white-space:nowrap}
+  nav.top .links{display:flex;gap:36px;font-size:14px;color:var(--stone)}
+  nav.top .links a:hover{color:var(--ink)}
+  nav.top .cta{background:var(--espresso);color:var(--bone);padding:10px 20px;border-radius:999px;font-size:13px;font-weight:500}
+
+  /* Hero */
+  section.hero{padding:100px 0 60px;border-bottom:1px solid var(--line)}
+  .hero .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:36px}
+  .hero .eyebrow::after{content:'';flex:1;height:1px;background:var(--line);max-width:200px}
+  .hero h1{font-family:'Instrument Serif',serif;font-size:clamp(56px,8vw,128px);line-height:0.95;letter-spacing:-0.03em;max-width:14ch}
+  .hero h1 em{color:var(--terracotta)}
+  .hero .lede{margin-top:36px;font-size:20px;line-height:1.55;color:var(--stone);max-width:640px}
+  .hero .meta{margin-top:48px;display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:48px;padding-top:32px;border-top:1px solid var(--line)}
+  .hero .meta .cell .k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+  .hero .meta .cell .v{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em}
+
+  /* Doc layout */
+  section.doc{padding:80px 0 40px}
+  .doc-grid{display:grid;grid-template-columns:280px 1fr;gap:96px;align-items:start}
+  .toc{position:sticky;top:110px}
+  .toc .label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .toc ol{list-style:none;counter-reset:toc;display:flex;flex-direction:column;gap:12px}
+  .toc li{counter-increment:toc;display:flex;gap:14px;font-size:14px;line-height:1.45;color:var(--stone);cursor:pointer;transition:color .15s}
+  .toc li::before{content:counter(toc,decimal-leading-zero);font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--clay-2);flex-shrink:0;padding-top:3px}
+  .toc li:hover,.toc li.active{color:var(--ink)}
+
+  /* Summary card */
+  .tldr{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:40px 44px;margin-bottom:64px;position:relative}
+  .tldr::before{content:'';position:absolute;top:0;left:44px;right:44px;height:2px;background:linear-gradient(90deg,var(--terracotta),var(--clay))}
+  .tldr .h{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+  .tldr .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta)}
+  .tldr h2{font-family:'Instrument Serif',serif;font-size:32px;letter-spacing:-0.02em}
+  .tldr h2 em{color:var(--terracotta)}
+  .tldr ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .tldr li{display:flex;gap:14px;font-size:16px;line-height:1.55;color:var(--ink)}
+  .tldr li::before{content:'—';color:var(--clay-2);flex-shrink:0}
+
+  /* Sections */
+  .doc-body > section{padding:48px 0;border-top:1px solid var(--line)}
+  .doc-body > section:first-child{border-top:none;padding-top:0}
+  .doc-body .sec-head{display:grid;grid-template-columns:80px 1fr;gap:32px;margin-bottom:32px;align-items:start}
+  .doc-body .sec-head .n{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--clay-2);padding-top:14px}
+  .doc-body .sec-head h2{font-family:'Instrument Serif',serif;font-size:44px;line-height:1.05;letter-spacing:-0.022em;font-weight:400}
+  .doc-body .sec-head h2 em{color:var(--terracotta)}
+  .doc-body .sec-body{padding-left:112px;max-width:720px}
+  .doc-body h3{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.015em;margin:32px 0 12px;font-weight:400}
+  .doc-body p{color:var(--stone);margin-bottom:14px;font-size:16px;line-height:1.7}
+  .doc-body p strong{color:var(--ink);font-weight:500}
+  .doc-body ul{list-style:none;margin:12px 0 20px;display:flex;flex-direction:column;gap:10px}
+  .doc-body ul li{position:relative;padding-left:24px;color:var(--stone);font-size:16px;line-height:1.65}
+  .doc-body ul li::before{content:'';position:absolute;left:0;top:11px;width:10px;height:1px;background:var(--clay-2)}
+  .doc-body ul li strong{color:var(--ink);font-weight:500}
+
+  /* Data table */
+  .data-table{margin:20px 0 8px;border-top:1px solid var(--line);font-size:14px}
+  .data-table .row{display:grid;grid-template-columns:1.1fr 1.6fr 1fr;gap:24px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
+  .data-table .row.hd{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+  .data-table .row .a{font-family:'Instrument Serif',serif;font-size:19px;letter-spacing:-0.01em;color:var(--ink)}
+  .data-table .row .b{color:var(--stone);line-height:1.6}
+  .data-table .row .c{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--clay-2);padding-top:3px}
+
+  /* Callout */
+  .callout{background:var(--espresso);color:var(--bone);border-radius:16px;padding:28px 32px;margin:28px 0}
+  .callout .h{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:10px}
+  .callout p{color:rgba(244,239,232,0.82);font-size:15px;line-height:1.65;margin:0}
+
+  /* Contact section */
+  section.contact-strip{background:var(--espresso);color:var(--bone);padding:100px 0}
+  .contact-strip .head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px}
+  .contact-strip h2{font-family:'Instrument Serif',serif;font-size:clamp(44px,5.5vw,76px);line-height:1;letter-spacing:-0.025em}
+  .contact-strip h2 em{color:var(--clay)}
+  .contact-strip .lede{color:rgba(244,239,232,0.7);font-size:17px;line-height:1.6}
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(244,239,232,0.12);border:1px solid rgba(244,239,232,0.12);border-radius:2px}
+  .contact-cell{background:var(--espresso);padding:32px 28px}
+  .contact-cell .k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:14px}
+  .contact-cell .v{font-family:'Instrument Serif',serif;font-size:24px;letter-spacing:-0.015em;line-height:1.3}
+  .contact-cell .n{color:rgba(244,239,232,0.6);font-size:13px;margin-top:8px;line-height:1.5}
+
+  /* Footer */
+  footer{background:var(--ink);color:rgba(244,239,232,0.6);padding:64px 0 40px;font-size:13px}
+  footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;padding-bottom:48px;border-bottom:1px solid rgba(244,239,232,0.1)}
+  footer .lockup-f{display:inline-flex;align-items:center;gap:12px;color:var(--bone)}
+  footer .lockup-f svg{width:32px;height:32px}
+  footer .lockup-f .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em}
+  footer .addr{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.4);line-height:1.9}
+  footer .colh{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+  footer .col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer .col a{color:rgba(244,239,232,0.7);font-size:13px}
+  footer .col a:hover{color:var(--bone)}
+  footer .bottom{padding-top:24px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,232,0.4)}
+  footer .bottom .right{display:flex;gap:28px}
+
+  @media (max-width:1000px){
+    .doc-grid{grid-template-columns:1fr;gap:48px}
+    .toc{position:static}
+    .doc-body .sec-head{grid-template-columns:1fr;gap:8px}
+    .doc-body .sec-body{padding-left:0}
+    .hero .meta{grid-template-columns:1fr 1fr;gap:24px}
+    .contact-strip .head,.contact-grid{grid-template-columns:1fr}
+    footer .cols{grid-template-columns:1fr 1fr}
+    .data-table .row{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap inner">
+    <a href="One Click Coaching Website.html" class="lockup">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+      <span class="wm">One Click <em>Coaching</em></span>
+    </a>
+    <div class="links">
+      <a href="One Click Coaching Website.html">Platform</a>
+      <a href="One Click Coaching Pricing.html">Pricing</a>
+      <a href="One Click Coaching About.html">About</a>
+      <a href="One Click Coaching Contact.html">Contact</a>
+    </div>
+    <a href="https://app.oneclickcoaching.com" class="cta">Sign In →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow mono">§ — Legal · Privacy Policy</span>
+    <h1>Privacy, stated <em>plainly.</em></h1>
+    <p class="lede">We think privacy policies should tell you what actually happens with your data — not hide it in twelve pages of lawyer copy. Here's the plain English, with the full legal text right underneath.</p>
+    <div class="meta">
+      <div class="cell"><div class="k">Effective</div><div class="v">November 20, 2025</div></div>
+      <div class="cell"><div class="k">Last updated</div><div class="v">November 20, 2025</div></div>
+      <div class="cell"><div class="k">Version</div><div class="v">1.0</div></div>
+      <div></div>
+    </div>
+  </div>
+</section>
+
+<section class="doc">
+  <div class="wrap">
+    <div class="doc-grid">
+      <aside class="toc">
+        <div class="label">On this page</div>
+        <ol>
+          <li data-href="#s1">What this policy covers</li>
+          <li data-href="#s2">What we collect</li>
+          <li data-href="#s3">How we use it</li>
+          <li data-href="#s4">How we share it</li>
+          <li data-href="#s5">AI & model training</li>
+          <li data-href="#s6">Security</li>
+          <li data-href="#s7">Your rights</li>
+          <li data-href="#s8">Retention</li>
+          <li data-href="#s9">International transfers</li>
+          <li data-href="#s10">Children</li>
+          <li data-href="#s11">Changes</li>
+          <li data-href="#s12">Contact us</li>
+        </ol>
+      </aside>
+
+      <div class="doc-body">
+
+        <div class="tldr">
+          <div class="h">
+            <span class="tag">§ — The short version</span>
+          </div>
+          <h2>If you only read <em>five things</em>.</h2>
+          <ul>
+            <li><strong>We never train AI models on your data.</strong> Your calls, transcripts, and coaching content are yours. Full stop.</li>
+            <li><strong>We only collect what we need</strong> to run the platform — rep activity, call transcripts you connect, and the minimum account information to log you in.</li>
+            <li><strong>We don't sell your data.</strong> We don't sell it, rent it, license it, or share it with advertisers. Ever.</li>
+            <li><strong>You own your data and can export or delete it</strong> with one click, at any time. If you cancel, we keep it accessible for 30 days, then we destroy it.</li>
+            <li><strong>We're SOC 2 Type II in progress</strong>, encrypt everything at rest (AES-256) and in transit (TLS 1.3), and use row-level tenant isolation so your data never touches another customer's.</li>
+          </ul>
+        </div>
+
+        <section id="s1">
+          <div class="sec-head"><div class="n">§ 01</div><h2>What this policy <em>covers</em>.</h2></div>
+          <div class="sec-body">
+            <p>This Privacy Policy describes how <strong>One Click Coaching Inc.</strong> ("we," "us," or "our") collects, uses, stores, and shares personal information when you use our sales coaching platform, website, and related services (together, the "Service").</p>
+            <p>It applies to anyone who uses the Service, including sales reps, managers, administrators, and individuals whose conversations are analyzed through a connected integration. It does not apply to third-party services you connect to (Fathom, Fireflies, HubSpot, etc.) — those are governed by their own privacy policies.</p>
+            <p>If your organization has its own agreement with us (a Master Services Agreement or Data Processing Addendum), that agreement may override parts of this policy. Where there's a conflict, the signed agreement wins.</p>
+          </div>
+        </section>
+
+        <section id="s2">
+          <div class="sec-head"><div class="n">§ 02</div><h2>What we <em>collect</em>.</h2></div>
+          <div class="sec-body">
+            <p>We collect three categories of information — nothing more.</p>
+            <div class="data-table">
+              <div class="row hd"><div>Category</div><div>What's in it</div><div>Source</div></div>
+              <div class="row"><div class="a">Account data</div><div class="b">Name, work email, job title, company name, password hash, authentication tokens, billing contact.</div><div class="c">You</div></div>
+              <div class="row"><div class="a">Usage data</div><div class="b">Logins, pages viewed, features used, device type, browser, approximate location (from IP), session timestamps. Used for product analytics and security.</div><div class="c">Auto</div></div>
+              <div class="row"><div class="a">Connected data</div><div class="b">Call recordings, transcripts, meeting metadata, CRM activity, calendar events — only from integrations you explicitly connect via OAuth.</div><div class="c">Your tools</div></div>
+            </div>
+            <h3>What we don't collect</h3>
+            <ul>
+              <li>Personal communications unrelated to sales coaching (we only ingest from sales-tool integrations you approve).</li>
+              <li>Browsing behavior outside our Service.</li>
+              <li>Cookies from advertising networks or third-party trackers. See our <a href="One Click Coaching Cookies.html" style="color:var(--terracotta);border-bottom:1px solid var(--terracotta)">Cookie Policy</a>.</li>
+              <li>Special categories of data (health, biometrics, religion, political views). If a sales call happens to mention these, they're treated like any other transcript data — never used for training, never shared.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="s3">
+          <div class="sec-head"><div class="n">§ 03</div><h2>How we <em>use</em> it.</h2></div>
+          <div class="sec-body">
+            <p>We use your information for six purposes, and only those six:</p>
+            <ul>
+              <li><strong>To run the Service</strong> — authenticate you, analyze calls, generate coaching, surface insights to you and your manager.</li>
+              <li><strong>To improve the Service</strong> — aggregated, anonymized usage patterns help us understand which features help reps improve. Your specific content never feeds this.</li>
+              <li><strong>To communicate with you</strong> — transactional emails, product updates, critical security notices, and responses to your requests.</li>
+              <li><strong>To ensure security</strong> — detect fraud, abuse, and unauthorized access; investigate incidents.</li>
+              <li><strong>To meet legal obligations</strong> — respond to lawful legal process, enforce our Terms, defend claims.</li>
+              <li><strong>To bill you</strong> — process payments through our payment processor (Stripe).</li>
+            </ul>
+            <p>We rely on the following <strong>lawful bases</strong> under GDPR: (i) performance of our contract with you (running the Service), (ii) our legitimate interests (security, product improvement, communications), (iii) your consent (for specific integrations and marketing), and (iv) legal obligation (tax, fraud prevention).</p>
+          </div>
+        </section>
+
+        <section id="s4">
+          <div class="sec-head"><div class="n">§ 04</div><h2>How we <em>share</em> it.</h2></div>
+          <div class="sec-body">
+            <p>We don't sell your data. We don't rent it. We don't license it to third parties for marketing. Here's every category of party that ever touches your data:</p>
+            <ul>
+              <li><strong>Sub-processors</strong> — cloud infrastructure, AI model providers, and operational vendors we use to deliver the Service. The full list is public at <a href="One Click Coaching Subprocessors.html" style="color:var(--terracotta);border-bottom:1px solid var(--terracotta)">Sub-processors</a>. We sign DPAs with each, bind them to equivalent security, and notify you before adding new ones.</li>
+              <li><strong>Your organization</strong> — if your employer or the account holder for your seat is a customer, managers and admins in your organization can see data about your activity on the Service. That's the entire point of a coaching tool.</li>
+              <li><strong>Integration partners</strong> — data flows to and from tools you explicitly connect (Fathom, HubSpot, etc.) only as needed to provide the feature.</li>
+              <li><strong>Professional advisors</strong> — lawyers, accountants, auditors, bound by confidentiality.</li>
+              <li><strong>Authorities</strong> — if legally compelled. We review every request, challenge overly broad demands, and notify you unless prohibited by law.</li>
+              <li><strong>A successor</strong> — in the event of a merger, acquisition, or asset sale, data transfers to the acquirer, who inherits the same obligations. We'd notify you in advance.</li>
+            </ul>
+            <p>That's the entire list. Nobody else sees your data.</p>
+          </div>
+        </section>
+
+        <section id="s5">
+          <div class="sec-head"><div class="n">§ 05</div><h2>AI &amp; model <em>training</em>.</h2></div>
+          <div class="sec-body">
+            <p>This is the section that matters most for a coaching product, so we want to be direct.</p>
+            <div class="callout">
+              <div class="h">§ — Plain-English commitment</div>
+              <p>Your call transcripts, coaching content, rep activity, and any data derived from them <strong>are never used to train any AI model</strong> — not ours, not our providers', not anyone's. Your data is processed to generate insights for <strong>you</strong>, and only you.</p>
+            </div>
+            <p>We use third-party large language models (listed on our <a href="One Click Coaching Subprocessors.html" style="color:var(--terracotta);border-bottom:1px solid var(--terracotta)">Sub-processors</a> page) to analyze calls and generate coaching. In every case we use <strong>zero-retention, no-training API endpoints</strong>: the provider processes your prompt, returns a result, and does not retain or train on the data. Where we can additionally contract for it, we have zero-day retention agreements with named model providers.</p>
+            <p>We may use fully aggregated and anonymized usage signals — for example, "reps who received feedback within 24 hours improved methodology scores by X%" — to improve the product. Those aggregates cannot be linked back to any individual or organization.</p>
+            <p>For more on how we handle AI, see our <a href="One Click Coaching AI Usage.html" style="color:var(--terracotta);border-bottom:1px solid var(--terracotta)">AI Usage &amp; Responsible AI</a> page.</p>
+          </div>
+        </section>
+
+        <section id="s6">
+          <div class="sec-head"><div class="n">§ 06</div><h2>Security in <em>brief</em>.</h2></div>
+          <div class="sec-body">
+            <p>Full detail lives on our <a href="One Click Coaching Security.html" style="color:var(--terracotta);border-bottom:1px solid var(--terracotta)">Security</a> page. The summary:</p>
+            <ul>
+              <li><strong>Encryption</strong> — AES-256 at rest, TLS 1.3 in transit.</li>
+              <li><strong>Tenant isolation</strong> — row-level isolation in every database; no shared tables.</li>
+              <li><strong>Access control</strong> — SSO/SAML available, role-based permissions, MFA required for staff.</li>
+              <li><strong>Audits</strong> — SOC 2 Type II audit in progress; annual penetration testing by an independent firm.</li>
+              <li><strong>Breach notification</strong> — we commit to notifying affected customers within 72 hours of confirmed unauthorized access to their data.</li>
+            </ul>
+            <p>No security control is perfect. If something happens, we'll tell you fast and tell you the truth.</p>
+          </div>
+        </section>
+
+        <section id="s7">
+          <div class="sec-head"><div class="n">§ 07</div><h2>Your <em>rights</em>.</h2></div>
+          <div class="sec-body">
+            <p>Depending on where you live, you may have some or all of the following rights over your personal information. We honor these rights for everyone, regardless of jurisdiction:</p>
+            <ul>
+              <li><strong>Access</strong> — ask for a copy of what we hold about you.</li>
+              <li><strong>Correction</strong> — fix anything that's wrong.</li>
+              <li><strong>Deletion</strong> — delete your account and all associated data.</li>
+              <li><strong>Portability</strong> — export your data in a machine-readable format.</li>
+              <li><strong>Objection / restriction</strong> — object to or limit certain uses.</li>
+              <li><strong>Withdraw consent</strong> — where processing is based on consent, withdraw it.</li>
+              <li><strong>Opt out of automated decision-making</strong> — we don't make solely-automated decisions that have legal or similarly significant effects; coaching recommendations are informational, not decisional.</li>
+              <li><strong>Complain to a regulator</strong> — you can lodge a complaint with your local data protection authority.</li>
+            </ul>
+            <p>To exercise any of these, email <a href="mailto:privacy@oneclickcoaching.com" style="color:var(--terracotta);border-bottom:1px solid var(--terracotta)">privacy@oneclickcoaching.com</a>. We respond within 30 days (usually within 5 business days). If you're an employee of a customer, we may route your request through your organization's administrator, as they control your workspace.</p>
+            <p><strong>California residents (CCPA/CPRA):</strong> you have the rights above, plus the right to know the categories of personal information collected, disclosed, or sold in the preceding 12 months. We do not sell or share personal information for cross-context behavioral advertising.</p>
+            <p><strong>EEA/UK/Swiss residents:</strong> our EU/UK representative for GDPR purposes is [To be appointed / Listed upon publication]. You can lodge complaints with your supervisory authority.</p>
+          </div>
+        </section>
+
+        <section id="s8">
+          <div class="sec-head"><div class="n">§ 08</div><h2>How long we <em>keep</em> it.</h2></div>
+          <div class="sec-body">
+            <p>We keep data only as long as we need it to run the Service or meet a legal obligation.</p>
+            <div class="data-table">
+              <div class="row hd"><div>Data</div><div>Retention</div><div>Basis</div></div>
+              <div class="row"><div class="a">Account data</div><div class="b">For the life of the account, plus 30 days after cancellation.</div><div class="c">Contract</div></div>
+              <div class="row"><div class="a">Call transcripts &amp; coaching</div><div class="b">For the life of the account, plus 30 days. Customers can shorten retention per workspace.</div><div class="c">Contract</div></div>
+              <div class="row"><div class="a">Usage logs</div><div class="b">13 months rolling, for security &amp; analytics.</div><div class="c">Legit. interest</div></div>
+              <div class="row"><div class="a">Billing records</div><div class="b">7 years, per tax and accounting law.</div><div class="c">Legal</div></div>
+              <div class="row"><div class="a">Backups</div><div class="b">Encrypted backups rotate out within 35 days of a production deletion.</div><div class="c">Security</div></div>
+            </div>
+            <p>When you cancel, your workspace enters a 30-day grace period during which you can re-activate or export your data. After 30 days, we destroy it — across primary storage, analytical copies, and backups within the rotation window above.</p>
+          </div>
+        </section>
+
+        <section id="s9">
+          <div class="sec-head"><div class="n">§ 09</div><h2>International <em>transfers</em>.</h2></div>
+          <div class="sec-body">
+            <p>We operate from Canada. Some of our sub-processors are located in the United States and the European Union. Your data may be transferred to, stored in, and processed in any country where we or our sub-processors operate.</p>
+            <p>For transfers of EEA, UK, or Swiss personal data out of those regions, we rely on the European Commission's <strong>Standard Contractual Clauses (SCCs)</strong>, the UK's International Data Transfer Addendum, and the Swiss Federal Data Protection and Information Commissioner's equivalent framework. Where available, we also rely on adequacy decisions (for example, Canada's adequacy status under GDPR).</p>
+            <p>Customers on our Enterprise tier can request EU-only data residency; contact sales.</p>
+          </div>
+        </section>
+
+        <section id="s10">
+          <div class="sec-head"><div class="n">§ 10</div><h2><em>Children.</em></h2></div>
+          <div class="sec-body">
+            <p>One Click Coaching is a B2B tool intended for use by sales professionals. The Service is not directed to children under 16, and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, email <a href="mailto:privacy@oneclickcoaching.com" style="color:var(--terracotta);border-bottom:1px solid var(--terracotta)">privacy@oneclickcoaching.com</a> and we'll delete it.</p>
+          </div>
+        </section>
+
+        <section id="s11">
+          <div class="sec-head"><div class="n">§ 11</div><h2>Changes to this <em>policy</em>.</h2></div>
+          <div class="sec-body">
+            <p>We'll update this policy as the Service evolves. When we make <strong>material</strong> changes — anything that meaningfully affects how we handle your data — we'll notify account admins by email at least <strong>30 days before</strong> the change takes effect, and post the new version here with a changelog. Minor clarifications are posted without notice; the "Last updated" date at the top always reflects the current version.</p>
+            <p>Prior versions are available on request.</p>
+          </div>
+        </section>
+
+        <section id="s12">
+          <div class="sec-head"><div class="n">§ 12</div><h2>Contact <em>us</em>.</h2></div>
+          <div class="sec-body">
+            <p>Privacy questions, requests, or complaints go to the addresses below. We read every one.</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <div class="wrap">
+    <div class="head">
+      <h2>Privacy, in <em>person.</em></h2>
+      <p class="lede">We don't route privacy requests through a ticket queue. Real humans read and respond — usually within a business day.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-cell">
+        <div class="k">Privacy inquiries</div>
+        <div class="v">privacy@oneclick<br>coaching.com</div>
+        <div class="n">Data subject requests, GDPR/CCPA questions, concerns.</div>
+      </div>
+      <div class="contact-cell">
+        <div class="k">Security issues</div>
+        <div class="v">security@oneclick<br>coaching.com</div>
+        <div class="n">Vulnerability reports, incident notifications. PGP key on the Security page.</div>
+      </div>
+      <div class="contact-cell">
+        <div class="k">Mailing address</div>
+        <div class="v">One Click Coaching Inc.<br>1880 Main St. W<br>Hamilton, ON, Canada</div>
+        <div class="n">Written correspondence and formal notices.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a href="One Click Coaching Website.html" class="lockup-f">
+          <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#C9A687"/></svg>
+          <span class="wm">One Click <em>Coaching</em></span>
+        </a>
+        <div class="addr">AI sales coaching<br>1880 Main St. W<br>Hamilton, ON · Canada<br>john@oneclickcoaching.com<br>(905) 519-8983</div>
+      </div>
+      <div class="col">
+        <div class="colh">Product</div>
+        <ul>
+          <li><a href="One Click Coaching Website.html">Platform</a></li>
+          <li><a href="One Click Coaching Pricing.html">Pricing</a></li>
+          <li><a href="One Click Coaching Contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="colh">Company</div>
+        <ul>
+          <li><a href="One Click Coaching About.html">About</a></li>
+          <li><a href="One Click Coaching Brand.html">Brand</a></li>
+          <li><a href="One Click Coaching Contact.html">Contact</a></li>
+          <li><a href="One Click Coaching Sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="colh">Trust</div>
+        <ul>
+          <li><a href="One Click Coaching Security.html">Security</a></li>
+          <li><a href="One Click Coaching Privacy.html">Privacy</a></li>
+          <li><a href="One Click Coaching Terms.html">Terms</a></li>
+          <li><a href="One Click Coaching AI Usage.html">AI Usage</a></li>
+          <li><a href="One Click Coaching Subprocessors.html">Sub-processors</a></li>
+          <li><a href="One Click Coaching Cookies.html">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 One Click Coaching Inc.</span>
+      <div class="right"><span>Made in Hamilton</span><span>v1.0</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Simple TOC highlight + smooth scroll
+  const tocItems = document.querySelectorAll('.toc li');
+  tocItems.forEach(li => {
+    li.addEventListener('click', () => {
+      const href = li.dataset.href;
+      const el = document.querySelector(href);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
+    });
+  });
+  const sections = document.querySelectorAll('.doc-body > section');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocItems.forEach(li => li.classList.toggle('active', li.dataset.href === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>

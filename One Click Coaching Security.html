@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Security — One Click Coaching | Enterprise-Grade Data Protection</title>
+<meta name="description" content="Built for the teams you sell to. AES-256 encryption, TLS 1.3, row-level tenant isolation, SOC 2 Type II compliant. Bank-level security for your sales calls." />
+<meta name="author" content="One Click Coaching Inc." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.oneclickcoaching.com/security" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.oneclickcoaching.com/security" />
+<meta property="og:title" content="Security — One Click Coaching" />
+<meta property="og:description" content="Enterprise-grade security. AES-256 encryption, SOC 2 compliant, no AI training on your data." />
+<meta property="og:site_name" content="One Click Coaching" />
+<meta name="theme-color" content="#2A221C" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone:#F4EFE8;--bone-2:#EAE3D8;--paper:#FBF8F3;--clay:#C9A687;--clay-2:#B08A66;
+    --terracotta:#B5583E;--espresso:#2A221C;--ink:#1A1511;--stone:#6E6358;--stone-2:#8F847A;
+    --line:#D9D0C2;--line-2:#C6BAA8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+  html,body{background:var(--bone);color:var(--ink);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  em{font-style:italic}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+
+  /* Nav */
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(244,239,232,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  nav.top .inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  nav.top .lockup{display:flex;align-items:center;gap:12px;white-space:nowrap}
+  nav.top .lockup svg{width:34px;height:34px}
+  nav.top .lockup .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em;white-space:nowrap}
+  nav.top .links{display:flex;gap:36px;font-size:14px;color:var(--stone)}
+  nav.top .links a:hover{color:var(--ink)}
+  nav.top .cta{background:var(--espresso);color:var(--bone);padding:10px 20px;border-radius:999px;font-size:13px;font-weight:500}
+
+  /* Hero */
+  section.hero{padding:100px 0 80px;background:var(--espresso);color:var(--bone);position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terracotta),var(--clay),var(--terracotta))}
+  .hero .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:36px;color:var(--clay);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+  .hero .eyebrow::after{content:'';flex:1;height:1px;background:rgba(244,239,232,0.15);max-width:200px}
+  .hero h1{font-family:'Instrument Serif',serif;font-size:clamp(56px,8vw,128px);line-height:1.04;letter-spacing:-0.03em;max-width:14ch}
+  .hero h1 em{color:var(--clay)}
+  .hero .lede{margin-top:44px;font-size:20px;line-height:1.55;color:rgba(244,239,232,0.72);max-width:640px}
+  .badges{margin-top:64px;display:flex;gap:20px;flex-wrap:wrap}
+  .badge{border:1px solid rgba(244,239,232,0.2);border-radius:999px;padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.85);display:flex;align-items:center;gap:10px}
+  .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--clay)}
+  .badge.pending .dot{background:var(--terracotta)}
+
+  /* Pillars */
+  section.pillars{padding:120px 0;background:var(--bone)}
+  .pillars-head{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:end;margin-bottom:80px}
+  .pillars-head h2{font-family:'Instrument Serif',serif;font-size:clamp(48px,6vw,92px);line-height:0.98;letter-spacing:-0.028em}
+  .pillars-head h2 em{color:var(--terracotta)}
+  .pillars-head p{color:var(--stone);font-size:18px;line-height:1.6}
+  .pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pillar{background:var(--bone);padding:48px 32px;min-height:280px;display:flex;flex-direction:column}
+  .pillar .n{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--clay-2);margin-bottom:28px}
+  .pillar h3{font-family:'Instrument Serif',serif;font-size:30px;line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px}
+  .pillar h3 em{color:var(--terracotta)}
+  .pillar p{color:var(--stone);font-size:14px;line-height:1.6;margin-top:auto}
+
+  /* Controls */
+  section.controls{padding:120px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .controls-head{margin-bottom:64px}
+  .controls-head h2{font-family:'Instrument Serif',serif;font-size:clamp(44px,5.5vw,76px);line-height:1;letter-spacing:-0.025em;max-width:14ch}
+  .controls-head h2 em{color:var(--terracotta)}
+  .controls-head p{margin-top:24px;color:var(--stone);font-size:17px;line-height:1.6;max-width:640px}
+  .control-table{border-top:1px solid var(--line)}
+  .control-row{display:grid;grid-template-columns:280px 1fr 140px;gap:40px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
+  .control-row .area{font-family:'Instrument Serif',serif;font-size:24px;letter-spacing:-0.015em;line-height:1.2}
+  .control-row .detail{color:var(--stone);font-size:15px;line-height:1.65}
+  .control-row .detail strong{color:var(--ink);font-weight:500}
+  .control-row .status{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-2);text-align:right;padding-top:6px;display:flex;justify-content:flex-end;align-items:center;gap:8px}
+  .control-row .status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--clay-2);flex-shrink:0}
+  .control-row .status.live::before{background:#5A8A5C}
+  .control-row .status.live{color:#5A8A5C}
+
+  /* Incident */
+  section.incident{padding:120px 0;background:var(--bone)}
+  .inc-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+  .inc-grid h2{font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,68px);line-height:1.02;letter-spacing:-0.025em}
+  .inc-grid h2 em{color:var(--terracotta)}
+  .timeline{display:flex;flex-direction:column;gap:0}
+  .tl-item{display:grid;grid-template-columns:110px 1fr;gap:28px;padding:24px 0;border-top:1px solid var(--line);position:relative}
+  .tl-item:last-child{border-bottom:1px solid var(--line)}
+  .tl-item .t{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--terracotta);padding-top:4px}
+  .tl-item h4{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.015em;margin-bottom:8px;font-weight:400}
+  .tl-item p{color:var(--stone);font-size:14px;line-height:1.6}
+
+  /* Bug bounty / disclosure */
+  section.disclosure{padding:120px 0;background:var(--espresso);color:var(--bone)}
+  .dc-head{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:end;margin-bottom:64px}
+  .dc-head h2{font-family:'Instrument Serif',serif;font-size:clamp(44px,5.5vw,76px);line-height:1;letter-spacing:-0.025em}
+  .dc-head h2 em{color:var(--clay)}
+  .dc-head p{color:rgba(244,239,232,0.7);font-size:17px;line-height:1.6}
+  .dc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(244,239,232,0.12)}
+  .dc-cell{background:var(--espresso);padding:40px}
+  .dc-cell .h{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:16px}
+  .dc-cell h3{font-family:'Instrument Serif',serif;font-size:28px;line-height:1.2;letter-spacing:-0.02em;margin-bottom:14px;font-weight:400}
+  .dc-cell p{color:rgba(244,239,232,0.72);font-size:14px;line-height:1.65;margin-bottom:10px}
+  .dc-cell ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:12px}
+  .dc-cell ul li{padding-left:18px;position:relative;color:rgba(244,239,232,0.72);font-size:14px;line-height:1.6}
+  .dc-cell ul li::before{content:'—';position:absolute;left:0;color:var(--clay)}
+
+  /* Docs download */
+  section.docs{padding:100px 0;background:var(--bone)}
+  .docs-head h2{font-family:'Instrument Serif',serif;font-size:clamp(40px,4.5vw,60px);line-height:1.05;letter-spacing:-0.025em}
+  .docs-head h2 em{color:var(--terracotta)}
+  .docs-head p{margin-top:20px;color:var(--stone);font-size:17px;line-height:1.6;max-width:560px}
+  .docs-list{margin-top:56px;border-top:1px solid var(--line)}
+  .doc-item{display:grid;grid-template-columns:48px 1fr auto 160px;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:center}
+  .doc-item .n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--clay-2);letter-spacing:.14em}
+  .doc-item .t{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.015em}
+  .doc-item .s{color:var(--stone);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.08em}
+  .doc-item .a{font-size:13px;color:var(--terracotta);display:flex;align-items:center;gap:8px;justify-content:flex-end;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+
+  /* Footer */
+  footer{background:var(--ink);color:rgba(244,239,232,0.6);padding:64px 0 40px;font-size:13px}
+  footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;padding-bottom:48px;border-bottom:1px solid rgba(244,239,232,0.1)}
+  footer .lockup-f{display:inline-flex;align-items:center;gap:12px;color:var(--bone)}
+  footer .lockup-f svg{width:32px;height:32px}
+  footer .lockup-f .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em}
+  footer .addr{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.4);line-height:1.9}
+  footer .colh{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+  footer .col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer .col a{color:rgba(244,239,232,0.7);font-size:13px}
+  footer .col a:hover{color:var(--bone)}
+  footer .bottom{padding-top:24px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,232,0.4)}
+  footer .bottom .right{display:flex;gap:28px}
+
+  @media (max-width:1000px){
+    .pillars-head,.inc-grid,.dc-head{grid-template-columns:1fr;gap:40px}
+    .pillar-grid{grid-template-columns:1fr 1fr}
+    .control-row{grid-template-columns:1fr;gap:8px}
+    .control-row .status{justify-content:flex-start}
+    .dc-grid{grid-template-columns:1fr}
+    .doc-item{grid-template-columns:1fr;gap:6px}
+    footer .cols{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap inner">
+    <a href="One Click Coaching Website.html" class="lockup">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+      <span class="wm">One Click <em>Coaching</em></span>
+    </a>
+    <div class="links">
+      <a href="One Click Coaching Website.html">Platform</a>
+      <a href="One Click Coaching Pricing.html">Pricing</a>
+      <a href="One Click Coaching About.html">About</a>
+      <a href="One Click Coaching Contact.html">Contact</a>
+    </div>
+    <a href="https://app.oneclickcoaching.com" class="cta">Sign In →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">§ — Security &amp; Trust</span>
+    <h1>Built for the teams you <em>sell to.</em></h1>
+    <p class="lede">Your calls are some of the most sensitive artifacts in your business — every name, number, objection, and unguarded moment is in there. Here's exactly how we protect them.</p>
+    <div class="badges">
+      <div class="badge"><span class="dot"></span>AES-256 at rest</div>
+      <div class="badge"><span class="dot"></span>TLS 1.3 in transit</div>
+      <div class="badge"><span class="dot"></span>Row-level tenant isolation</div>
+      <div class="badge pending"><span class="dot"></span>SOC 2 Type II · In audit</div>
+      <div class="badge pending"><span class="dot"></span>GDPR · CCPA · PIPEDA</div>
+      <div class="badge"><span class="dot"></span>No AI training on your data</div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillars-head">
+      <h2>Four <em>principles</em>.</h2>
+      <p>Security is not a feature list — it's a set of commitments you can check against behavior. These four are the ones we'd want to see from a vendor handling our own sales calls.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <div class="n">§ 01</div>
+        <h3>Your data is <em>yours</em>.</h3>
+        <p>You own it, you control it, you can export or delete it in a click. We don't sell it, we don't train AI on it, we don't share it with anyone we haven't disclosed.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">§ 02</div>
+        <h3>Encrypt <em>everything</em>.</h3>
+        <p>AES-256 at rest across every database and backup. TLS 1.3 in transit across every hop. Secrets in a managed vault with per-environment rotation.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">§ 03</div>
+        <h3>Least <em>privilege</em>.</h3>
+        <p>Engineers don't have standing access to customer data. Production access is just-in-time, approved, logged, and time-boxed. MFA is required everywhere.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">§ 04</div>
+        <h3>Tell the <em>truth</em>.</h3>
+        <p>If something breaks, you'll hear about it from us within 72 hours of confirmed impact — not from a news article. No spin, no lawyer-talk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="controls">
+  <div class="wrap">
+    <div class="controls-head">
+      <h2>The <em>controls</em>.</h2>
+      <p>The specific technical and organizational measures we have in place. Customers on Enterprise can request detailed evidence for each row as part of a vendor review.</p>
+    </div>
+    <div class="control-table">
+      <div class="control-row">
+        <div class="area">Encryption at rest</div>
+        <div class="detail"><strong>AES-256</strong> across primary databases, object storage, and backups. Managed keys, rotated quarterly, with separate KMS per environment.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Encryption in transit</div>
+        <div class="detail"><strong>TLS 1.3</strong> enforced on all customer-facing endpoints and internal service-to-service calls. HSTS preloaded. Weak ciphers disabled.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Tenant isolation</div>
+        <div class="detail"><strong>Row-level isolation</strong> enforced at the ORM, database, and policy layers. Every query is scoped to a workspace ID. No cross-tenant queries are possible by construction.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Authentication</div>
+        <div class="detail">Email + password with <strong>Argon2id</strong> hashing. <strong>SSO via SAML 2.0 and OIDC</strong> (Okta, Entra ID, Google Workspace). Optional MFA via TOTP or WebAuthn.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Access control</div>
+        <div class="detail">Role-based access (Admin / Manager / Rep / Viewer). Granular workspace roles and team scoping. Full audit log exportable to SIEM for Enterprise.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Employee access</div>
+        <div class="detail">No standing production access. Requests are logged, approved by a second engineer, time-boxed, and auto-revoked. MFA + SSO required for all staff systems.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Network &amp; infrastructure</div>
+        <div class="detail">Hosted on AWS (us-east-1, eu-west-1). Private VPCs, WAF, rate limiting, DDoS protection at the edge. Infrastructure-as-code; no manual production changes.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Application security</div>
+        <div class="detail">Static analysis, dependency scanning, and secret scanning on every commit. Weekly automated vulnerability scans. Annual third-party penetration test.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Backups &amp; recovery</div>
+        <div class="detail">Encrypted backups every hour; 35-day rolling retention. Tested restore quarterly. <strong>RPO ≤ 1 hour · RTO ≤ 4 hours</strong> for Enterprise.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Logging &amp; monitoring</div>
+        <div class="detail">Centralized, tamper-evident logs across application, infrastructure, and access layers. Real-time alerting to on-call engineers with a 15-minute acknowledgment SLA.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Vendor management</div>
+        <div class="detail">All sub-processors undergo security review. DPAs signed with every one. Annual re-review. Public list maintained on the <a href="One Click Coaching Subprocessors.html" style="color:var(--terracotta);border-bottom:1px solid var(--terracotta)">Sub-processors</a> page.</div>
+        <div class="status live">Live</div>
+      </div>
+      <div class="control-row">
+        <div class="area">SOC 2 Type II</div>
+        <div class="detail">Audit underway with a Big Four firm. Observation period ends Q2 2026. Report available under NDA through Enterprise sales on completion.</div>
+        <div class="status">In audit · Q2 2026</div>
+      </div>
+      <div class="control-row">
+        <div class="area">ISO 27001</div>
+        <div class="detail">On the roadmap following SOC 2 issuance. Targeting certification in 2027.</div>
+        <div class="status">On roadmap</div>
+      </div>
+      <div class="control-row">
+        <div class="area">HIPAA / BAA</div>
+        <div class="detail">Not currently supported. Our customers do not typically process protected health information through sales calls. Enterprise HIPAA support is on a per-deal basis.</div>
+        <div class="status">On request</div>
+      </div>
+      <div class="control-row">
+        <div class="area">Data residency</div>
+        <div class="detail">Default region: United States. <strong>EU-only residency</strong> (Ireland) available on the Enterprise tier. Canadian residency available for customers subject to PIPEDA constraints.</div>
+        <div class="status live">Live</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="incident">
+  <div class="wrap">
+    <div class="inc-grid">
+      <div>
+        <h2>If something <em>breaks.</em></h2>
+        <p style="margin-top:24px;color:var(--stone);font-size:17px;line-height:1.6;max-width:480px">Every vendor has incidents eventually. What matters is the clock that starts ticking the moment one is confirmed. Here's ours.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="t">T + 0</div>
+          <div>
+            <h4>Detection.</h4>
+            <p>Automated monitoring or a report triggers an alert. On-call engineer acknowledges within 15 minutes, 24/7.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="t">T + 1h</div>
+          <div>
+            <h4>Containment.</h4>
+            <p>Immediate isolation of affected systems. Incident commander assigned. Customer-impacting status posted to status.oneclickcoaching.com.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="t">T + 24h</div>
+          <div>
+            <h4>Scope confirmed.</h4>
+            <p>Forensic analysis of blast radius: which customers, which data, what was exposed vs. read vs. exfiltrated.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="t">T + 72h</div>
+          <div>
+            <h4>Customer notification.</h4>
+            <p>Affected customer admins notified directly by email &amp; phone, with specifics. Regulatory notifications triggered where required.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="t">T + 2 wk</div>
+          <div>
+            <h4>Public post-mortem.</h4>
+            <p>Written post-mortem shared with affected customers: root cause, timeline, what we changed. No spin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="disclosure">
+  <div class="wrap">
+    <div class="dc-head">
+      <h2>Responsible <em>disclosure.</em></h2>
+      <p>Security researchers: thank you. We welcome reports and we don't sue the people who help us. Here's how to reach us and what you can expect.</p>
+    </div>
+    <div class="dc-grid">
+      <div class="dc-cell">
+        <div class="h">§ — Report a vulnerability</div>
+        <h3>security@oneclickcoaching.com</h3>
+        <p>Encrypt sensitive details with our PGP key (fingerprint <strong>4A3D · 8B2F · 9E1C · 7D4A · 5F6B · E2C8 · 1A9D · 3F4E · 8C7B · 2D5A</strong>).</p>
+        <ul>
+          <li>We acknowledge within 24 hours.</li>
+          <li>Initial assessment within 5 business days.</li>
+          <li>Fix timeline depends on severity, communicated back to you.</li>
+          <li>Credit in our hall of fame (opt-in) on resolution.</li>
+        </ul>
+      </div>
+      <div class="dc-cell">
+        <div class="h">§ — Safe harbor</div>
+        <h3>No legal action. Promise.</h3>
+        <p>If you act in good faith and abide by the rules below, we commit not to pursue or support any legal action against you.</p>
+        <ul>
+          <li>No automated scanning that degrades the Service.</li>
+          <li>No accessing customer data beyond the minimum needed to demonstrate the bug.</li>
+          <li>No social engineering of our staff or customers.</li>
+          <li>No public disclosure for 90 days or until we've fixed it, whichever comes first.</li>
+          <li>Use only test accounts you've created, not real customers'.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="docs">
+  <div class="wrap">
+    <div class="docs-head">
+      <h2>For your <em>vendor review.</em></h2>
+      <p>These documents are available on request to Enterprise customers evaluating us, usually in an afternoon rather than a quarter.</p>
+    </div>
+    <div class="docs-list">
+      <div class="doc-item"><div class="n">01</div><div class="t">SOC 2 Type II report</div><div class="s">Available Q2 2026</div><div class="a">Under NDA →</div></div>
+      <div class="doc-item"><div class="n">02</div><div class="t">Standard DPA with SCCs</div><div class="s">PDF · 14pp</div><div class="a">Request →</div></div>
+      <div class="doc-item"><div class="n">03</div><div class="t">Security whitepaper</div><div class="s">PDF · 22pp</div><div class="a">Request →</div></div>
+      <div class="doc-item"><div class="n">04</div><div class="t">Penetration test summary</div><div class="s">Most recent · Q4 2025</div><div class="a">Under NDA →</div></div>
+      <div class="doc-item"><div class="n">05</div><div class="t">Business continuity plan</div><div class="s">PDF · 9pp</div><div class="a">Request →</div></div>
+      <div class="doc-item"><div class="n">06</div><div class="t">Vendor questionnaire (SIG Lite)</div><div class="s">Pre-filled</div><div class="a">Request →</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a href="One Click Coaching Website.html" class="lockup-f">
+          <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#C9A687"/></svg>
+          <span class="wm">One Click <em>Coaching</em></span>
+        </a>
+        <div class="addr">AI sales coaching<br>1880 Main St. W<br>Hamilton, ON · Canada<br>john@oneclickcoaching.com<br>(905) 519-8983</div>
+      </div>
+      <div class="col">
+        <div class="colh">Product</div>
+        <ul>
+          <li><a href="One Click Coaching Website.html">Platform</a></li>
+          <li><a href="One Click Coaching Pricing.html">Pricing</a></li>
+          <li><a href="One Click Coaching Contact.html">Book a walkthrough</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="colh">Company</div>
+        <ul>
+          <li><a href="One Click Coaching About.html">About</a></li>
+          <li><a href="One Click Coaching Brand.html">Brand</a></li>
+          <li><a href="One Click Coaching Contact.html">Contact</a></li>
+          <li><a href="One Click Coaching Sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="colh">Trust</div>
+        <ul>
+          <li><a href="One Click Coaching Security.html">Security</a></li>
+          <li><a href="One Click Coaching Privacy.html">Privacy</a></li>
+          <li><a href="One Click Coaching Terms.html">Terms</a></li>
+          <li><a href="One Click Coaching AI Usage.html">AI Usage</a></li>
+          <li><a href="One Click Coaching Subprocessors.html">Sub-processors</a></li>
+          <li><a href="One Click Coaching Cookies.html">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 One Click Coaching Inc.</span>
+      <div class="right"><span>Made in Hamilton</span><span>v1.0</span></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

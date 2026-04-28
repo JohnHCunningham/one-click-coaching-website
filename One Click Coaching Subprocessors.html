@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sub-processors — One Click Coaching | Third-Party Vendors</title>
+<meta name="description" content="Every third party that ever sees your data. Complete list of One Click Coaching sub-processors: AWS, Supabase, Anthropic, and more. 30-day notice for any changes." />
+<meta name="author" content="One Click Coaching Inc." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.oneclickcoaching.com/subprocessors" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.oneclickcoaching.com/subprocessors" />
+<meta property="og:title" content="Sub-processors — One Click Coaching" />
+<meta property="og:description" content="Every third party that ever sees your data. Complete transparency." />
+<meta property="og:site_name" content="One Click Coaching" />
+<meta name="theme-color" content="#2A221C" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone:#F4EFE8;--bone-2:#EAE3D8;--paper:#FBF8F3;--clay:#C9A687;--clay-2:#B08A66;
+    --terracotta:#B5583E;--espresso:#2A221C;--ink:#1A1511;--stone:#6E6358;--stone-2:#8F847A;
+    --line:#D9D0C2;--line-2:#C6BAA8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+  html,body{background:var(--bone);color:var(--ink);font-family:'Inter',sans-serif;font-size:17px;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  em{font-style:italic}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(244,239,232,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  nav.top .inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  nav.top .lockup{display:flex;align-items:center;gap:12px;white-space:nowrap}
+  nav.top .lockup svg{width:34px;height:34px}
+  nav.top .lockup .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em;white-space:nowrap}
+  nav.top .links{display:flex;gap:36px;font-size:14px;color:var(--stone)}
+  nav.top .links a:hover{color:var(--ink)}
+  nav.top .cta{background:var(--espresso);color:var(--bone);padding:10px 20px;border-radius:999px;font-size:13px;font-weight:500}
+
+  section.hero{padding:100px 0 70px;border-bottom:1px solid var(--line)}
+  .hero .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:36px}
+  .hero .eyebrow::after{content:'';flex:1;height:1px;background:var(--line);max-width:200px}
+  .hero h1{font-family:'Instrument Serif',serif;font-size:clamp(56px,7.5vw,112px);line-height:0.96;letter-spacing:-0.028em;max-width:14ch}
+  .hero h1 em{color:var(--terracotta)}
+  .hero .lede{margin-top:36px;font-size:19px;line-height:1.6;color:var(--stone);max-width:660px}
+  .notice{margin-top:56px;padding:22px 26px;border:1px solid var(--line);border-radius:14px;background:var(--paper);font-size:14px;line-height:1.6;color:var(--stone);max-width:820px}
+  .notice strong{color:var(--ink)}
+
+  section.cats{padding:100px 0;background:var(--bone)}
+  .cat{margin-bottom:80px}
+  .cat:last-child{margin-bottom:0}
+  .cat-head{display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:baseline;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+  .cat-head .n{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--clay-2)}
+  .cat-head h2{font-family:'Instrument Serif',serif;font-size:clamp(36px,4vw,56px);line-height:1;letter-spacing:-0.02em;font-weight:400}
+  .cat-head h2 em{color:var(--terracotta)}
+  .cat-head .d{margin-top:12px;color:var(--stone);font-size:15px;line-height:1.6;max-width:560px}
+
+  .row{display:grid;grid-template-columns:240px 1fr 180px 140px;gap:32px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start}
+  .row.hd{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);padding:14px 0}
+  .row .name{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.015em;line-height:1.2}
+  .row .name .sub{display:block;font-family:'Inter',sans-serif;font-size:12px;color:var(--stone);margin-top:4px;letter-spacing:0}
+  .row .purpose{color:var(--stone);font-size:14px;line-height:1.6}
+  .row .purpose strong{color:var(--ink);font-weight:500}
+  .row .region{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--clay-2)}
+  .row .since{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--stone)}
+
+  section.policy{padding:100px 0;background:var(--espresso);color:var(--bone)}
+  .policy-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start}
+  .policy-grid h2{font-family:'Instrument Serif',serif;font-size:clamp(40px,5vw,68px);line-height:1.02;letter-spacing:-0.025em}
+  .policy-grid h2 em{color:var(--clay)}
+  .policy-grid p{margin-top:18px;color:rgba(244,239,232,0.72);font-size:16px;line-height:1.65}
+  .policy-list{display:flex;flex-direction:column;gap:0}
+  .pol-item{display:grid;grid-template-columns:60px 1fr;gap:24px;padding:22px 0;border-top:1px solid rgba(244,239,232,0.15)}
+  .pol-item:last-child{border-bottom:1px solid rgba(244,239,232,0.15)}
+  .pol-item .n{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--clay);padding-top:3px}
+  .pol-item h4{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.015em;margin-bottom:8px;font-weight:400}
+  .pol-item p{color:rgba(244,239,232,0.68);font-size:14px;line-height:1.65;margin:0}
+
+  section.notify{padding:100px 0;background:var(--bone);text-align:center;border-top:1px solid var(--line)}
+  .notify h2{font-family:'Instrument Serif',serif;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-0.025em;max-width:18ch;margin:0 auto}
+  .notify h2 em{color:var(--terracotta)}
+  .notify p{margin:28px auto 0;color:var(--stone);font-size:17px;line-height:1.6;max-width:580px}
+  .notify a.cta{margin-top:36px;display:inline-flex;align-items:center;gap:10px;background:var(--espresso);color:var(--bone);padding:16px 28px;border-radius:999px;font-size:14px;font-weight:500}
+
+  footer{background:var(--ink);color:rgba(244,239,232,0.6);padding:64px 0 40px;font-size:13px}
+  footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;padding-bottom:48px;border-bottom:1px solid rgba(244,239,232,0.1)}
+  footer .lockup-f{display:inline-flex;align-items:center;gap:12px;color:var(--bone)}
+  footer .lockup-f svg{width:32px;height:32px}
+  footer .lockup-f .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em}
+  footer .addr{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.4);line-height:1.9}
+  footer .colh{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+  footer .col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer .col a{color:rgba(244,239,232,0.7);font-size:13px}
+  footer .col a:hover{color:var(--bone)}
+  footer .bottom{padding-top:24px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,232,0.4)}
+  footer .bottom .right{display:flex;gap:28px}
+
+  @media (max-width:1000px){
+    .cat-head,.policy-grid{grid-template-columns:1fr;gap:16px}
+    .row{grid-template-columns:1fr;gap:6px}
+    footer .cols{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap inner">
+    <a href="One Click Coaching Website.html" class="lockup">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+      <span class="wm">One Click <em>Coaching</em></span>
+    </a>
+    <div class="links">
+      <a href="One Click Coaching Website.html">Platform</a>
+      <a href="One Click Coaching Pricing.html">Pricing</a>
+      <a href="One Click Coaching About.html">About</a>
+      <a href="One Click Coaching Contact.html">Contact</a>
+    </div>
+    <a href="https://app.oneclickcoaching.com" class="cta">Sign In →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow mono">§ — Trust · Sub-processors</span>
+    <h1>Every third party that <em>ever</em> sees your data.</h1>
+    <p class="lede">A "sub-processor" is any vendor we use to deliver the Service. We list every single one here and keep the list current. If we add, remove, or materially change how we use one, admins get 30 days' notice by email.</p>
+    <div class="notice">
+      <strong>Scope.</strong> This page lists vendors that may process customer personal data as part of delivering the Service. It excludes purely internal tools that never touch your data (our CI, our design software, our own billing). Last updated November 20, 2025 · Version 1.0.
+    </div>
+  </div>
+</section>
+
+<section class="cats">
+  <div class="wrap">
+
+    <div class="cat">
+      <div class="cat-head">
+        <div class="n">§ 01</div>
+        <div>
+          <h2>Core <em>infrastructure</em>.</h2>
+          <div class="d">Where your data lives, runs, and is backed up. The platform floor.</div>
+        </div>
+      </div>
+      <div class="row hd"><div>Vendor</div><div>Purpose</div><div>Region</div><div>In use since</div></div>
+      <div class="row">
+        <div class="name">Amazon Web Services<span class="sub">AWS Inc.</span></div>
+        <div class="purpose"><strong>Compute, storage, and database hosting.</strong> Runs our application, stores transcripts and metadata, holds encrypted backups. All data encrypted at rest with AES-256.</div>
+        <div class="region">US-East-1 · EU-West-1</div>
+        <div class="since">2024</div>
+      </div>
+      <div class="row">
+        <div class="name">Cloudflare<span class="sub">Cloudflare Inc.</span></div>
+        <div class="purpose"><strong>Edge network, DDoS protection, WAF.</strong> Terminates TLS for customer-facing endpoints, filters malicious traffic, rate-limits abuse. No durable storage of customer data.</div>
+        <div class="region">Global edge</div>
+        <div class="since">2024</div>
+      </div>
+      <div class="row">
+        <div class="name">Supabase<span class="sub">Supabase Inc.</span></div>
+        <div class="purpose"><strong>Managed Postgres and authentication.</strong> Hosts our primary database with row-level security. Runs on AWS infrastructure.</div>
+        <div class="region">US · EU</div>
+        <div class="since">2024</div>
+      </div>
+    </div>
+
+    <div class="cat">
+      <div class="cat-head">
+        <div class="n">§ 02</div>
+        <div>
+          <h2>AI &amp; model <em>providers</em>.</h2>
+          <div class="d">Models that analyze transcripts and generate coaching. All under zero-retention, no-training commercial terms.</div>
+        </div>
+      </div>
+      <div class="row hd"><div>Vendor</div><div>Purpose</div><div>Region</div><div>In use since</div></div>
+      <div class="row">
+        <div class="name">Anthropic<span class="sub">Anthropic PBC</span></div>
+        <div class="purpose"><strong>Primary LLM for methodology scoring, summarization, and coaching generation.</strong> Zero-retention API. No training on customer data.</div>
+        <div class="region">US · EU</div>
+        <div class="since">2024</div>
+      </div>
+      <div class="row">
+        <div class="name">OpenAI<span class="sub">OpenAI, L.L.C.</span></div>
+        <div class="purpose"><strong>Fallback coaching generation and text embeddings.</strong> API with Zero Data Retention enabled. No training under OpenAI API terms.</div>
+        <div class="region">US</div>
+        <div class="since">2024</div>
+      </div>
+      <div class="row">
+        <div class="name">AssemblyAI<span class="sub">AssemblyAI, Inc.</span></div>
+        <div class="purpose"><strong>Transcription and speaker diarization</strong> for calls ingested without an upstream transcript. Enterprise tier with no training and no human review.</div>
+        <div class="region">US</div>
+        <div class="since">2025</div>
+      </div>
+    </div>
+
+    <div class="cat">
+      <div class="cat-head">
+        <div class="n">§ 03</div>
+        <div>
+          <h2>Operations &amp; <em>support</em>.</h2>
+          <div class="d">Tools that help us run the business — billing, email, analytics, and support. Limited personal data, specific purposes.</div>
+        </div>
+      </div>
+      <div class="row hd"><div>Vendor</div><div>Purpose</div><div>Region</div><div>In use since</div></div>
+      <div class="row">
+        <div class="name">Stripe<span class="sub">Stripe Payments Inc.</span></div>
+        <div class="purpose"><strong>Payment processing.</strong> Billing contact name, email, and payment method. We don't store card numbers — Stripe does, to PCI DSS Level 1.</div>
+        <div class="region">US · Global</div>
+        <div class="since">2024</div>
+      </div>
+      <div class="row">
+        <div class="name">Postmark<span class="sub">ActiveCampaign, LLC</span></div>
+        <div class="purpose"><strong>Transactional email.</strong> Sends login links, notifications, and account emails. Email addresses and message content only; no analytics pixels.</div>
+        <div class="region">US</div>
+        <div class="since">2024</div>
+      </div>
+      <div class="row">
+        <div class="name">PostHog<span class="sub">PostHog Inc.</span></div>
+        <div class="purpose"><strong>Product analytics.</strong> Tracks feature usage patterns on a per-workspace basis. Self-hosted on our infrastructure for EU customers.</div>
+        <div class="region">US · Self-hosted EU</div>
+        <div class="since">2024</div>
+      </div>
+      <div class="row">
+        <div class="name">Plain<span class="sub">Plain Systems Ltd.</span></div>
+        <div class="purpose"><strong>Customer support inbox.</strong> Email conversations between you and our support team. DPA signed; no training on support data.</div>
+        <div class="region">EU</div>
+        <div class="since">2025</div>
+      </div>
+      <div class="row">
+        <div class="name">Sentry<span class="sub">Functional Software, Inc.</span></div>
+        <div class="purpose"><strong>Error tracking.</strong> Captures stack traces and application errors. Scrubbed of personally identifiable data before transmission.</div>
+        <div class="region">US</div>
+        <div class="since">2024</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="policy">
+  <div class="wrap">
+    <div class="policy-grid">
+      <div>
+        <h2>How we add and remove <em>sub-processors</em>.</h2>
+        <p>This is the process we run every time we consider bringing a new vendor into the data flow — or removing an existing one.</p>
+      </div>
+      <div class="policy-list">
+        <div class="pol-item"><div class="n">§ 01</div><div><h4>Security review</h4><p>Every prospective sub-processor completes a security questionnaire. We verify encryption, access controls, audit status (SOC 2, ISO 27001), and breach history.</p></div></div>
+        <div class="pol-item"><div class="n">§ 02</div><div><h4>DPA in place</h4><p>We sign a Data Processing Addendum with SCCs before any production data flows. We won't use a vendor that refuses to sign.</p></div></div>
+        <div class="pol-item"><div class="n">§ 03</div><div><h4>Narrow purpose</h4><p>Each vendor gets only the data necessary for its specific function. No blanket data sharing, no "just in case" access.</p></div></div>
+        <div class="pol-item"><div class="n">§ 04</div><div><h4>30-day notice</h4><p>Before adding a new sub-processor or materially changing how we use an existing one, we email account admins at least 30 days in advance.</p></div></div>
+        <div class="pol-item"><div class="n">§ 05</div><div><h4>Right to object</h4><p>Enterprise customers can object to a new sub-processor; if we can't accommodate the objection, you can terminate the affected portion of the Service with a prorated refund.</p></div></div>
+        <div class="pol-item"><div class="n">§ 06</div><div><h4>Annual re-review</h4><p>Every sub-processor is re-reviewed annually. If their security posture slips or their terms change adversely, we replace them.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="notify">
+  <div class="wrap">
+    <h2>Want to be <em>notified</em> of changes?</h2>
+    <p>Account admins are notified automatically. If you're a procurement or security stakeholder and want to be on the notice list without a workspace seat, add your email to our sub-processor notification list.</p>
+    <a href="mailto:privacy@oneclickcoaching.com?subject=Sub-processor%20notice%20list" class="cta"><span>Join the notice list</span><span>→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a href="One Click Coaching Website.html" class="lockup-f">
+          <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#C9A687"/></svg>
+          <span class="wm">One Click <em>Coaching</em></span>
+        </a>
+        <div class="addr">AI sales coaching<br>1880 Main St. W<br>Hamilton, ON · Canada<br>john@oneclickcoaching.com<br>(905) 519-8983</div>
+      </div>
+      <div class="col"><div class="colh">Product</div><ul>
+        <li><a href="One Click Coaching Website.html">Platform</a></li>
+        <li><a href="One Click Coaching Pricing.html">Pricing</a></li>
+        <li><a href="One Click Coaching Contact.html">Book a walkthrough</a></li>
+      </ul></div>
+      <div class="col"><div class="colh">Company</div><ul>
+        <li><a href="One Click Coaching About.html">About</a></li>
+        <li><a href="One Click Coaching Brand.html">Brand</a></li>
+        <li><a href="One Click Coaching Contact.html">Contact</a></li>
+        <li><a href="One Click Coaching Sitemap.html">Sitemap</a></li>
+      </ul></div>
+      <div class="col"><div class="colh">Trust</div><ul>
+        <li><a href="One Click Coaching Security.html">Security</a></li>
+        <li><a href="One Click Coaching Privacy.html">Privacy</a></li>
+        <li><a href="One Click Coaching Terms.html">Terms</a></li>
+        <li><a href="One Click Coaching AI Usage.html">AI Usage</a></li>
+        <li><a href="One Click Coaching Subprocessors.html">Sub-processors</a></li>
+        <li><a href="One Click Coaching Cookies.html">Cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 One Click Coaching Inc.</span>
+      <div class="right"><span>Made in Hamilton</span><span>v1.0</span></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

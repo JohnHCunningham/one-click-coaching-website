@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI Usage Policy — One Click Coaching | Responsible AI You Can Explain</title>
+<meta name="description" content="How One Click Coaching uses AI responsibly. We never train on your data, keep humans in the loop, and show our work. AI you can explain to your board." />
+<meta name="author" content="One Click Coaching Inc." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.oneclickcoaching.com/ai-usage" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.oneclickcoaching.com/ai-usage" />
+<meta property="og:title" content="AI Usage Policy — One Click Coaching" />
+<meta property="og:description" content="Responsible AI: we never train on your data, keep humans in the loop, show our work." />
+<meta property="og:site_name" content="One Click Coaching" />
+<meta name="theme-color" content="#2A221C" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone:#F4EFE8;--bone-2:#EAE3D8;--paper:#FBF8F3;--clay:#C9A687;--clay-2:#B08A66;
+    --terracotta:#B5583E;--espresso:#2A221C;--ink:#1A1511;--stone:#6E6358;--stone-2:#8F847A;
+    --line:#D9D0C2;--line-2:#C6BAA8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+  html,body{background:var(--bone);color:var(--ink);font-family:'Inter',sans-serif;font-size:17px;line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  em{font-style:italic}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(244,239,232,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  nav.top .inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  nav.top .lockup{display:flex;align-items:center;gap:12px;white-space:nowrap}
+  nav.top .lockup svg{width:34px;height:34px}
+  nav.top .lockup .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em;white-space:nowrap}
+  nav.top .links{display:flex;gap:36px;font-size:14px;color:var(--stone)}
+  nav.top .links a:hover{color:var(--ink)}
+  nav.top .cta{background:var(--espresso);color:var(--bone);padding:10px 20px;border-radius:999px;font-size:13px;font-weight:500}
+
+  section.hero{padding:100px 0 60px;border-bottom:1px solid var(--line)}
+  .hero .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:36px}
+  .hero .eyebrow::after{content:'';flex:1;height:1px;background:var(--line);max-width:200px}
+  .hero h1{font-family:'Instrument Serif',serif;font-size:clamp(56px,8vw,128px);line-height:1.04;letter-spacing:-0.03em;max-width:14ch}
+  .hero h1 em{color:var(--terracotta)}
+  .hero .lede{margin-top:44px;font-size:20px;line-height:1.55;color:var(--stone);max-width:640px}
+
+  section.commit{padding:100px 0;background:var(--espresso);color:var(--bone)}
+  .commit h2{font-family:'Instrument Serif',serif;font-size:clamp(44px,5.5vw,76px);line-height:1;letter-spacing:-0.025em;max-width:18ch}
+  .commit h2 em{color:var(--clay)}
+  .commit .lede{margin-top:28px;color:rgba(244,239,232,0.75);font-size:18px;line-height:1.6;max-width:600px}
+  .pledge{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(244,239,232,0.12)}
+  .pledge .item{background:var(--espresso);padding:40px 32px;min-height:240px;display:flex;flex-direction:column;gap:14px}
+  .pledge .n{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--clay)}
+  .pledge h3{font-family:'Instrument Serif',serif;font-size:28px;line-height:1.15;letter-spacing:-0.02em;font-weight:400}
+  .pledge h3 em{color:var(--clay)}
+  .pledge p{color:rgba(244,239,232,0.7);font-size:14px;line-height:1.65;margin-top:auto}
+
+  section.flow{padding:120px 0;background:var(--bone)}
+  .flow-head{margin-bottom:72px}
+  .flow-head h2{font-family:'Instrument Serif',serif;font-size:clamp(44px,5.5vw,76px);line-height:1;letter-spacing:-0.025em;max-width:16ch}
+  .flow-head h2 em{color:var(--terracotta)}
+  .flow-head p{margin-top:24px;color:var(--stone);font-size:17px;line-height:1.6;max-width:640px}
+  .flow-chain{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+  .flow-step{padding:32px 24px;border-right:1px solid var(--line);position:relative}
+  .flow-step:last-child{border-right:none}
+  .flow-step .n{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--clay-2);margin-bottom:18px}
+  .flow-step h4{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.15;letter-spacing:-0.015em;margin-bottom:10px;font-weight:400}
+  .flow-step p{color:var(--stone);font-size:13px;line-height:1.55}
+  .flow-step.highlight{background:var(--paper)}
+  .flow-step.highlight .n{color:var(--terracotta)}
+
+  section.models{padding:120px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .models h2{font-family:'Instrument Serif',serif;font-size:clamp(44px,5.5vw,76px);line-height:1;letter-spacing:-0.025em;max-width:16ch;margin-bottom:24px}
+  .models h2 em{color:var(--terracotta)}
+  .models .lede{color:var(--stone);font-size:17px;line-height:1.6;max-width:640px;margin-bottom:56px}
+  .model-table{border-top:1px solid var(--line)}
+  .model-row{display:grid;grid-template-columns:1.1fr 1fr 1.4fr 140px;gap:32px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start}
+  .model-row.hd{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+  .model-row .a{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.015em;line-height:1.2}
+  .model-row .b{color:var(--stone);font-size:14px;line-height:1.55}
+  .model-row .c{color:var(--stone);font-size:14px;line-height:1.55}
+  .model-row .d{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--clay-2);display:flex;gap:8px;align-items:center}
+  .model-row .d::before{content:'';width:6px;height:6px;border-radius:50%;background:#5A8A5C}
+
+  section.risk{padding:120px 0;background:var(--bone)}
+  .risk-head{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:end;margin-bottom:64px}
+  .risk-head h2{font-family:'Instrument Serif',serif;font-size:clamp(44px,5.5vw,76px);line-height:1;letter-spacing:-0.025em}
+  .risk-head h2 em{color:var(--terracotta)}
+  .risk-head p{color:var(--stone);font-size:17px;line-height:1.6}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .risk-cell{background:var(--bone);padding:36px 32px;display:flex;flex-direction:column;gap:12px;min-height:220px}
+  .risk-cell .h{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--terracotta);text-transform:uppercase}
+  .risk-cell h3{font-family:'Instrument Serif',serif;font-size:26px;letter-spacing:-0.015em;line-height:1.2;font-weight:400}
+  .risk-cell h3 em{color:var(--terracotta)}
+  .risk-cell p{color:var(--stone);font-size:14px;line-height:1.65;margin-top:auto}
+  .risk-cell p strong{color:var(--ink);font-weight:500}
+
+  section.governance{padding:100px 0;background:var(--bone-2)}
+  .gov-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:start}
+  .gov-grid h2{font-family:'Instrument Serif',serif;font-size:clamp(40px,4.5vw,60px);line-height:1.05;letter-spacing:-0.025em}
+  .gov-grid h2 em{color:var(--terracotta)}
+  .gov-grid p{margin-top:20px;color:var(--stone);font-size:16px;line-height:1.6}
+  .gov-list{display:flex;flex-direction:column;gap:0}
+  .gov-item{display:grid;grid-template-columns:60px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--line)}
+  .gov-item:last-child{border-bottom:1px solid var(--line)}
+  .gov-item .n{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--clay-2);padding-top:3px}
+  .gov-item h4{font-family:'Instrument Serif',serif;font-size:20px;letter-spacing:-0.015em;margin-bottom:6px;font-weight:400}
+  .gov-item p{color:var(--stone);font-size:14px;line-height:1.6;margin:0}
+
+  footer{background:var(--ink);color:rgba(244,239,232,0.6);padding:64px 0 40px;font-size:13px}
+  footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;padding-bottom:48px;border-bottom:1px solid rgba(244,239,232,0.1)}
+  footer .lockup-f{display:inline-flex;align-items:center;gap:12px;color:var(--bone)}
+  footer .lockup-f svg{width:32px;height:32px}
+  footer .lockup-f .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em}
+  footer .addr{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.4);line-height:1.9}
+  footer .colh{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+  footer .col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer .col a{color:rgba(244,239,232,0.7);font-size:13px}
+  footer .col a:hover{color:var(--bone)}
+  footer .bottom{padding-top:24px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,232,0.4)}
+  footer .bottom .right{display:flex;gap:28px}
+
+  @media (max-width:1000px){
+    .pledge,.flow-chain,.risk-grid,.gov-grid,.risk-head{grid-template-columns:1fr}
+    .flow-step{border-right:none;border-bottom:1px solid var(--line)}
+    .model-row{grid-template-columns:1fr;gap:8px}
+    footer .cols{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap inner">
+    <a href="One Click Coaching Website.html" class="lockup">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+      <span class="wm">One Click <em>Coaching</em></span>
+    </a>
+    <div class="links">
+      <a href="One Click Coaching Website.html">Platform</a>
+      <a href="One Click Coaching Pricing.html">Pricing</a>
+      <a href="One Click Coaching About.html">About</a>
+      <a href="One Click Coaching Contact.html">Contact</a>
+    </div>
+    <a href="https://app.oneclickcoaching.com" class="cta">Sign In →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow mono">§ — Responsible AI</span>
+    <h1>AI you can <em>explain</em> to your board.</h1>
+    <p class="lede">An AI coaching product without an AI policy is a liability. Here's exactly how we use AI, which models touch your data, what they can and can't do with it, and how we keep a human in the loop.</p>
+  </div>
+</section>
+
+<section class="commit">
+  <div class="wrap">
+    <h2>Three <em>non-negotiables</em>.</h2>
+    <p class="lede">These aren't marketing claims. They're in our contracts and our architecture. If we ever changed them we'd tell you 90 days before, in writing.</p>
+    <div class="pledge">
+      <div class="item">
+        <div class="n">§ 01</div>
+        <h3>We never <em>train</em> on your data.</h3>
+        <p>Not our own models. Not our providers'. We use zero-retention, no-training API endpoints in every integration with a frontier model provider. Your content comes in, a result goes out, nothing is kept.</p>
+      </div>
+      <div class="item">
+        <div class="n">§ 02</div>
+        <h3>We keep a <em>human</em> in the loop.</h3>
+        <p>Every coaching suggestion is framed as a recommendation for a manager or rep to weigh — never as an automated decision. No hiring, firing, PIPs, or commission changes should be based solely on model output, and our product never offers to do that for you.</p>
+      </div>
+      <div class="item">
+        <div class="n">§ 03</div>
+        <h3>We show our <em>work</em>.</h3>
+        <p>Every AI-generated insight is linked to the specific call moment that produced it. You can replay the audio, see the transcript, and judge the model's reasoning for yourself. No black box.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flow">
+  <div class="wrap">
+    <div class="flow-head">
+      <h2>How your data actually <em>moves</em>.</h2>
+      <p>From the moment a call ends to the moment your manager sees a coaching insight. Five steps, one of which is where the model provider sits.</p>
+    </div>
+    <div class="flow-chain">
+      <div class="flow-step"><div class="n">§ 01 · SOURCE</div><h4>Call ends</h4><p>A meeting or call wraps up in Fathom, Fireflies, Otter, etc. — you own the recording.</p></div>
+      <div class="flow-step"><div class="n">§ 02 · INGEST</div><h4>Pulled via OAuth</h4><p>We fetch the transcript using the OAuth token you granted. Encrypted in transit with TLS 1.3.</p></div>
+      <div class="flow-step highlight"><div class="n">§ 03 · ANALYZE</div><h4>Model processes</h4><p>Transcript goes to the LLM provider under a zero-retention contract. Returned annotations come back in seconds.</p></div>
+      <div class="flow-step"><div class="n">§ 04 · STORE</div><h4>Encrypted at rest</h4><p>Results and transcript stored in your tenant-isolated database. AES-256. Backed up hourly.</p></div>
+      <div class="flow-step"><div class="n">§ 05 · DELIVER</div><h4>Surfaced to humans</h4><p>Manager sees coaching; rep sees feedback. Every insight linked back to the call moment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="models">
+  <div class="wrap">
+    <h2>Which <em>models</em> touch your data.</h2>
+    <p class="lede">We publish the list. When we change a provider — adding one, dropping one, or changing how we use one — account admins get 30 days' notice before the change rolls out.</p>
+    <div class="model-table">
+      <div class="model-row hd"><div>Provider · Model</div><div>Used for</div><div>Terms</div><div>Region</div></div>
+      <div class="model-row">
+        <div class="a">Anthropic · Claude Sonnet</div>
+        <div class="b">Methodology scoring, call summarization, coaching generation.</div>
+        <div class="c">Zero-retention API, <strong>no training</strong> on customer data per Anthropic commercial terms.</div>
+        <div class="d">US · EU</div>
+      </div>
+      <div class="model-row">
+        <div class="a">OpenAI · GPT-4.1</div>
+        <div class="b">Fallback coaching generation, structured extraction.</div>
+        <div class="c">API with Zero Data Retention. <strong>No training</strong> under OpenAI API terms.</div>
+        <div class="d">US</div>
+      </div>
+      <div class="model-row">
+        <div class="a">AssemblyAI · Universal-2</div>
+        <div class="b">Transcription and speaker diarization for calls without upstream transcripts.</div>
+        <div class="c">Enterprise tier. <strong>No training</strong>, no human review of audio.</div>
+        <div class="d">US</div>
+      </div>
+      <div class="model-row">
+        <div class="a">OpenAI · text-embedding-3</div>
+        <div class="b">Semantic search across your workspace's own calls.</div>
+        <div class="c">Zero Data Retention. Embeddings never leave your tenant.</div>
+        <div class="d">US</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="risk">
+  <div class="wrap">
+    <div class="risk-head">
+      <h2>Known limits and <em>how we handle them</em>.</h2>
+      <p>Every AI product has failure modes. Pretending otherwise is how trust collapses. Here are the four we watch most carefully — what can go wrong, and what we do about it.</p>
+    </div>
+    <div class="risk-grid">
+      <div class="risk-cell">
+        <div class="h">§ 01 · Hallucination</div>
+        <h3>LLMs can <em>invent</em> facts.</h3>
+        <p>Coaching suggestions are grounded in the specific transcript — we quote the exact call moment for every insight. If the model can't cite a transcript snippet, we don't show the insight. <strong>Rep score cards show source quotes, not just judgments.</strong></p>
+      </div>
+      <div class="risk-cell">
+        <div class="h">§ 02 · Bias</div>
+        <h3>Models can <em>penalize</em> non-standard speech.</h3>
+        <p>Accents, speech patterns, and cultural communication styles can skew model output. We benchmark methodology scoring across demographic groups quarterly and publish findings to Enterprise customers. <strong>Managers see raw transcripts, not just scores.</strong></p>
+      </div>
+      <div class="risk-cell">
+        <div class="h">§ 03 · Over-reliance</div>
+        <h3>AI shouldn't make <em>HR decisions</em>.</h3>
+        <p>Our Acceptable Use forbids using the Service as the sole basis for firing, PIPs, or pay changes. Our product UI discourages it: leaderboards show trends, not grades; coaching is framed as suggestion, not directive.</p>
+      </div>
+      <div class="risk-cell">
+        <div class="h">§ 04 · Data leakage</div>
+        <h3>Prompts can <em>leak</em> into shared context.</h3>
+        <p>Every call to a model provider is isolated per workspace. No cross-tenant prompting, no retrieval across customers, no shared embeddings. Architecturally, your data cannot appear in another customer's session.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="governance">
+  <div class="wrap">
+    <div class="gov-grid">
+      <div>
+        <h2>How we <em>govern</em> this.</h2>
+        <p>Responsible AI is a system, not a slogan. Here's the operating rhythm behind what we just described.</p>
+      </div>
+      <div class="gov-list">
+        <div class="gov-item"><div class="n">§ 01</div><div><h4>AI Review Board</h4><p>A cross-functional group (engineering, product, legal, customer success) reviews every material change to how we use models — new providers, new prompting techniques, new automated behaviors.</p></div></div>
+        <div class="gov-item"><div class="n">§ 02</div><div><h4>Model change notice</h4><p>30-day notice to admins before adding or removing a model provider, or changing how their data is processed.</p></div></div>
+        <div class="gov-item"><div class="n">§ 03</div><div><h4>Red-teaming</h4><p>Quarterly adversarial testing by an independent firm — prompt injection, jailbreak attempts, data-leak probes.</p></div></div>
+        <div class="gov-item"><div class="n">§ 04</div><div><h4>Bias audits</h4><p>Methodology scoring benchmarked across demographic cohorts quarterly. Material disparities trigger prompt or model changes.</p></div></div>
+        <div class="gov-item"><div class="n">§ 05</div><div><h4>Opt-out</h4><p>Enterprise customers can disable any AI feature (scoring, suggestions, summarization) workspace-wide if they need to.</p></div></div>
+        <div class="gov-item"><div class="n">§ 06</div><div><h4>Transparency</h4><p>Any material change to this page is published with a changelog. Prior versions available on request.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a href="One Click Coaching Website.html" class="lockup-f">
+          <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#C9A687"/></svg>
+          <span class="wm">One Click <em>Coaching</em></span>
+        </a>
+        <div class="addr">AI sales coaching<br>1880 Main St. W<br>Hamilton, ON · Canada<br>john@oneclickcoaching.com<br>(905) 519-8983</div>
+      </div>
+      <div class="col"><div class="colh">Product</div><ul>
+        <li><a href="One Click Coaching Website.html">Platform</a></li>
+        <li><a href="One Click Coaching Pricing.html">Pricing</a></li>
+        <li><a href="One Click Coaching Contact.html">Book a walkthrough</a></li>
+      </ul></div>
+      <div class="col"><div class="colh">Company</div><ul>
+        <li><a href="One Click Coaching About.html">About</a></li>
+        <li><a href="One Click Coaching Brand.html">Brand</a></li>
+        <li><a href="One Click Coaching Contact.html">Contact</a></li>
+        <li><a href="One Click Coaching Sitemap.html">Sitemap</a></li>
+      </ul></div>
+      <div class="col"><div class="colh">Trust</div><ul>
+        <li><a href="One Click Coaching Security.html">Security</a></li>
+        <li><a href="One Click Coaching Privacy.html">Privacy</a></li>
+        <li><a href="One Click Coaching Terms.html">Terms</a></li>
+        <li><a href="One Click Coaching AI Usage.html">AI Usage</a></li>
+        <li><a href="One Click Coaching Subprocessors.html">Sub-processors</a></li>
+        <li><a href="One Click Coaching Cookies.html">Cookies</a></li>
+      </ul></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 One Click Coaching Inc.</span>
+      <div class="right"><span>Made in Hamilton</span><span>v1.0</span></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

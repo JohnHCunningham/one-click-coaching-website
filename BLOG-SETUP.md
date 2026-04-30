@@ -2,27 +2,7 @@
 
 ## Quick Start
 
-### 1. Get OpenAI API Key
-1. Go to https://platform.openai.com/api-keys
-2. Create a new API key
-3. Set it in your environment:
-   ```bash
-   export OPENAI_API_KEY="sk-your-key-here"
-   ```
-
-   Or add to your `~/.zshrc` or `~/.bashrc`:
-   ```bash
-   echo 'export OPENAI_API_KEY="sk-your-key-here"' >> ~/.zshrc
-   source ~/.zshrc
-   ```
-
-### 2. Install OpenAI Package
-```bash
-cd /Users/johncunningham/one-click-coaching-website
-npm install openai
-```
-
-### 3. Create a Blog Post
+### 1. Create a Blog Post
 
 **Using Claude Code:**
 ```
@@ -32,12 +12,9 @@ npm install openai
 **Manual workflow:**
 1. Research your topic (use your research tool/artifact)
 2. Ask Claude to write the blog using CLAUDE.md framework
-3. Generate the cover image:
-   ```bash
-   node utils/generate-blog-image.js "sales training reinforcement" "sales-training-reinforcement"
-   ```
-4. Create the HTML file in `blog/`
-5. Update `blog.html` with the new post
+3. Ask Claude to generate the cover image (uses built-in image generation)
+4. Claude creates the HTML file in `blog/`
+5. Claude updates `blog.html` with the new post
 
 ## Blog Post Structure
 
@@ -75,18 +52,20 @@ All posts use the CLAUDE.md framework:
 - Short paragraphs (1-3 lines)
 - Data-driven
 
-## Image Generation Tips
+## Image Generation with Claude
 
-**Good topics for DALL-E:**
+**Claude Sonnet 4.5 generates images natively** - no API key needed!
+
+**Example topics:**
 - "sales methodology execution under pressure"
 - "feedback loop speed in training retention"
 - "pipeline leakage from process abandonment"
 
-**Image will automatically:**
+**Images automatically:**
 - Use brand colors (bone, terracotta, espresso)
-- Be minimalist and professional
+- Are minimalist and professional
 - Exclude text, people, charts
-- Be sized for social sharing (1792x1024)
+- Sized for social sharing (1792x1024)
 
 ## Publishing Workflow
 
@@ -101,28 +80,26 @@ All posts use the CLAUDE.md framework:
    ```
 5. Vercel auto-deploys to www.oneclickcoaching.com
 
-## Example Commands
-
-**Generate image only:**
-```bash
-node utils/generate-blog-image.js "sales coaching feedback loops" "coaching-feedback-loops"
-```
+## Example Usage
 
 **Create full post with Claude:**
 ```
 /blog sales methodology execution gaps
 ```
 
+Claude will:
+1. Research the topic
+2. Write the post using CLAUDE.md framework
+3. Generate a brand-matched cover image
+4. Create the HTML file
+5. Update the blog listing
+
 ## Troubleshooting
 
-**"OPENAI_API_KEY not set"**
-- Check: `echo $OPENAI_API_KEY`
-- If empty, export it or add to shell config
-
-**Image generation fails**
-- Check API key is valid
-- Check you have credits on OpenAI account
-- Try simpler prompt
+**Image generation issues**
+- Make sure you're using Claude Sonnet 4.5 (not Haiku)
+- Images are generated inline during blog creation
+- No separate API key needed
 
 **Blog not showing on site**
 - Verify HTML file is in `blog/` directory

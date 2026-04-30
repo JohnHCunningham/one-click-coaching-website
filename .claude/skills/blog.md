@@ -51,14 +51,20 @@ Creates a new sales coaching blog post for One Click Coaching, following the est
 - Color palette: bone (#F4EFE8), terracotta (#B5583E), espresso (#2A221C)
 - Abstract/geometric or clean photography
 - No text overlays
-- 1200x630px (social media optimized)
+- 1792x1024px (social media optimized)
 
-**DALL-E Prompt Template:**
+**Claude Image Generation Prompt:**
 ```
-Minimalist abstract geometric composition representing [TOPIC].
-Color palette: warm beige (#F4EFE8), terracotta red (#B5583E), dark brown (#2A221C).
-Professional, modern, clean. No text. No people.
-Style: flat design, simple shapes, subtle gradients.
+Create a minimalist abstract geometric composition representing [TOPIC] in sales coaching.
+
+Style:
+- Color palette: warm beige (#F4EFE8), terracotta/burnt orange (#B5583E), dark espresso brown (#2A221C)
+- Flat design with simple geometric shapes
+- Subtle gradients and negative space
+- Professional, modern, calming aesthetic
+- NO text, NO people, NO charts/graphs
+
+Composition: Balanced, sophisticated, emphasizing the concept through abstract shapes and color relationships.
 ```
 
 ### Step 4: Create HTML File
@@ -83,30 +89,15 @@ Style: flat design, simple shapes, subtle gradients.
 - `{CONTENT}` - Full HTML content
 - `{TAGS}` - Post tags
 
-## OpenAI Setup
-**Required:** Set `OPENAI_API_KEY` environment variable
+## Image Generation with Claude
+**Uses:** Claude Sonnet 4.5's built-in image generation
 
-**Image Generation:**
-```javascript
-// utils/generate-image.js
-const OpenAI = require('openai');
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+**Process:**
+1. Generate image during blog post creation
+2. Save to `blog/images/[slug].png`
+3. Reference in blog post HTML
 
-async function generateBlogImage(topic, slug) {
-  const response = await openai.images.generate({
-    model: "dall-e-3",
-    prompt: `Minimalist abstract geometric composition representing ${topic}. Color palette: warm beige (#F4EFE8), terracotta red (#B5583E), dark brown (#2A221C). Professional, modern, clean. No text. No people. Style: flat design, simple shapes, subtle gradients.`,
-    size: "1792x1024",
-    quality: "standard",
-    n: 1,
-  });
-
-  // Download and save to blog/images/[slug].png
-  const imageUrl = response.data[0].url;
-  // ... download logic
-  return `/blog/images/${slug}.png`;
-}
-```
+**No API key needed** - Claude generates images natively
 
 ## Notes
 - All blog posts must follow the CLAUDE.md copywriting framework

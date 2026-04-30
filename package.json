@@ -1,0 +1,19 @@
+{
+  "name": "one-click-coaching-website",
+  "version": "1.0.0",
+  "description": "Static website for One Click Coaching",
+  "private": true,
+  "scripts": {
+    "generate-image": "node utils/generate-blog-image.js"
+  },
+  "keywords": [
+    "sales",
+    "coaching",
+    "AI"
+  ],
+  "author": "John Cunningham",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "openai": "^4.77.0"
+  }
+}

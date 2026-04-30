@@ -1,0 +1,14 @@
+# Environment variables (contains API keys)
+.env
+
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+
+# Editor
+.vscode/
+.idea/

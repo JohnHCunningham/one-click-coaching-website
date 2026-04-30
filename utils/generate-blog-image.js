@@ -6,9 +6,12 @@
  * Usage: node utils/generate-blog-image.js "topic description" "slug-name"
  *
  * Requirements:
- * - Set OPENAI_API_KEY environment variable
- * - npm install openai
+ * - Add OPENAI_API_KEY to .env file
+ * - npm install openai dotenv
  */
+
+// Load environment variables from .env
+require('dotenv').config();
 
 const OpenAI = require('openai');
 const https = require('https');
@@ -17,8 +20,9 @@ const path = require('path');
 
 // Check for API key
 if (!process.env.OPENAI_API_KEY) {
-  console.error('Error: OPENAI_API_KEY environment variable not set');
-  console.error('Set it with: export OPENAI_API_KEY="your-key-here"');
+  console.error('Error: OPENAI_API_KEY not found');
+  console.error('Add it to your .env file:');
+  console.error('  OPENAI_API_KEY=sk-your-key-here');
   process.exit(1);
 }
 

@@ -109,7 +109,13 @@ Keep answers to 2-3 sentences. Be direct, not defensive.
 
 ### Step 3: Generate Cover Image
 
-**Uses:** OpenAI DALL-E 2 API via automated script
+**Uses:** Kie.ai Nano Banana 2 API (Google Gemini 3.1 Flash Image)
+
+**Why Nano Banana 2:**
+- Accurate text rendering (no garbled text like DALL-E)
+- Strong character consistency
+- 4K output support
+- Better prompt understanding
 
 **Command:**
 ```bash
@@ -125,13 +131,14 @@ node utils/generate-blog-image.js "sales methodology adherence scoring showing 3
 - Minimalist, professional, abstract/geometric
 - Color palette: bone (#F4EFE8), terracotta (#B5583E), espresso (#2A221C)
 - NO text overlays, NO people, NO charts/graphs
-- Size: 1024x1024px (DALL-E 2)
+- Size: 1024x1024px (1K resolution, upgradable to 4K)
 - Automatically saved to `/blog/images/[slug].png`
 
 **The script automatically:**
-1. Generates image with brand colors
-2. Downloads and saves to correct directory
-3. Returns web path for HTML reference
+1. Creates async generation task with Nano Banana 2
+2. Polls for completion (typically 30-60 seconds)
+3. Downloads and saves to correct directory
+4. Returns web path for HTML reference
 
 **In blog post HTML:**
 ```html

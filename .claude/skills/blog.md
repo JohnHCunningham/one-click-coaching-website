@@ -22,10 +22,32 @@ Creates a new sales coaching blog post for One Click Coaching, following the est
 ## Workflow
 
 ### Step 1: Research & Outline
-- If user provides research notes/artifact, use those
-- Otherwise, search for relevant data, statistics, case studies
+
+**A. Fresh Keyword Research (ALWAYS DO THIS FIRST):**
+1. Use WebSearch to research the topic with these queries:
+   - `"{topic}" people also ask 2026`
+   - `"sales {topic}" trends 2026`
+   - `"{topic}" questions salespeople ask`
+   - `"{topic}" statistics data`
+
+2. Extract from search results:
+   - Current PAA (People Also Ask) questions
+   - Trending related searches
+   - Recent statistics and data points
+   - Common pain points and objections
+   - Featured snippet opportunities
+
+3. Cross-reference with `/blog/research/methodology-drift-keywords.md` for:
+   - Existing keyword strategy
+   - Core themes to maintain
+   - Proven high-performing questions
+
+**B. Outline Creation:**
 - Identify the core insight/pattern to name
-- Draft 3-5 key sections
+- Select 3-5 PAA questions to answer as H2 headers
+- Draft sections connecting topic to methodology drift
+- Gather specific data points and statistics
+- Plan rhetorical devices (4-6 minimum)
 
 ### Step 2: Write Using CLAUDE.md Framework
 **Apply these principles:**
@@ -106,3 +128,33 @@ Composition: Balanced, sophisticated, emphasizing the concept through abstract s
 - CTA always links to contact.html
 - Images stored in `/blog/images/`
 - Maintain consistent brand voice: calm, confident, experienced
+- **Reference `/blog/research/methodology-drift-keywords.md` for SEO optimization**
+- Use PAA (People Also Ask) questions as H2 headers for featured snippet opportunities
+- Answer PAA questions directly (40-60 words) then expand with examples
+- Connect all content back to core theme: methodology drift prevention
+
+## Keeping Keywords Fresh
+
+**Automatic (Every Blog Post):**
+- WebSearch fetches current PAA questions and trends
+- Real-time data ensures relevance
+- No manual updates needed
+
+**Manual Refresh (Monthly Recommended):**
+To update the base keyword research file, run:
+```
+/blog-research-update [topic]
+```
+
+This will:
+1. Search for latest PAA questions across all core topics
+2. Identify trending sales/coaching keywords for 2026
+3. Update `/blog/research/methodology-drift-keywords.md`
+4. Flag new blog post opportunities
+
+**Core Topics to Monitor:**
+- methodology drift
+- sales training ROI
+- sales coaching automation
+- AI sales coaching
+- [methodology name] sales training (Sandler, MEDDIC, etc.)

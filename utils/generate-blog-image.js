@@ -64,10 +64,9 @@ Composition: balanced, sophisticated, calming.`;
 
   try {
     const response = await openai.images.generate({
-      model: "dall-e-3",
+      model: "dall-e-2",
       prompt: prompt,
-      size: "1792x1024", // Good for social sharing
-      quality: "standard",
+      size: "1024x1024", // DALL-E 2 max size
       n: 1,
     });
 

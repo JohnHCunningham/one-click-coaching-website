@@ -161,15 +161,33 @@ Generate the blog post now.`;
 
   // Extract JSON from response (handle markdown code blocks)
   let jsonMatch = responseText.match(/```json\n([\s\S]*?)\n```/);
-  if (!jsonMatch) {
-    jsonMatch = responseText.match(/\{[\s\S]*\}/);
+  let jsonString;
+
+  if (jsonMatch) {
+    jsonString = jsonMatch[1];
+  } else {
+    // Try to find JSON object (first { to last })
+    const firstBrace = responseText.indexOf('{');
+    const lastBrace = responseText.lastIndexOf('}');
+    if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+      jsonString = responseText.substring(firstBrace, lastBrace + 1);
+    }
   }
 
-  if (!jsonMatch) {
+  if (!jsonString) {
+    console.error('Failed to extract JSON from response.');
+    console.error('Response preview:', responseText.substring(0, 500));
     throw new Error('Failed to extract JSON from Claude response');
   }
 
-  const blogData = JSON.parse(jsonMatch[1] || jsonMatch[0]);
+  let blogData;
+  try {
+    blogData = JSON.parse(jsonString);
+  } catch (error) {
+    console.error('JSON parsing failed. JSON string preview:');
+    console.error(jsonString.substring(0, 500));
+    throw new Error(`Invalid JSON from Claude: ${error.message}`);
+  }
 
   console.log(`✅ Generated blog post: "${blogData.title}"`);
   console.log(`📊 Reading time: ${blogData.readingTime} min`);

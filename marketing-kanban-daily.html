@@ -132,6 +132,17 @@ body {
   border-radius: 10px;
   padding: 20px;
   min-height: 400px;
+  transition: all 0.3s ease;
+}
+
+.day-column.current-day {
+  background: var(--bone);
+  border: 2px solid var(--terracotta);
+  box-shadow: 0 4px 16px rgba(181, 88, 62, 0.15);
+}
+
+.day-column.past-day {
+  opacity: 0.6;
 }
 
 .day-header {
@@ -191,6 +202,11 @@ body {
 
 .task-card.completed .task-title {
   text-decoration: line-through;
+}
+
+.task-card.rolled-task {
+  border-left: 3px solid var(--terracotta);
+  background: linear-gradient(to right, rgba(181, 88, 62, 0.05), var(--bone));
 }
 
 .task-checkbox {
@@ -295,6 +311,7 @@ body {
       <option value="7">Week 7: Research Push (Jun 16-21)</option>
       <option value="10">Week 10: Pipeline Close (Jul 7-12)</option>
     </select>
+    <button class="export-btn" id="nextDayBtn" style="background: var(--terracotta);">Next Day →</button>
     <button class="export-btn" id="exportBtn">Export Progress</button>
   </div>
 </div>
@@ -303,6 +320,9 @@ body {
   <div>
     <div class="week-title">Week <span id="currentWeek">1</span>: <em id="weekPhase">Foundation</em></div>
     <div class="week-hours" id="weekDescription">Set up all marketing channels and build foundation lists</div>
+    <div class="week-hours" style="margin-top: 8px; color: var(--terracotta);">
+      Current Day: <strong id="currentDayName">Monday</strong> (Day <span id="currentDayNum">1</span>/6)
+    </div>
   </div>
   <div class="week-hours">
     <span id="weekHoursCompleted">0</span> / <span id="weekHoursTotal">24</span> hours completed
@@ -444,20 +464,116 @@ const weeklySchedule = {
 
 // Storage
 let completedTasks = JSON.parse(localStorage.getItem('occCompletedTasks') || '{}');
-let currentWeek = '1';
+let rolledOverTasks = JSON.parse(localStorage.getItem('occRolledOverTasks') || '{}');
+let currentWeek = localStorage.getItem('occCurrentWeek') || '1';
+let currentDayIndex = parseInt(localStorage.getItem('occCurrentDayIndex') || '0');
+let lastChecked = localStorage.getItem('occLastChecked') || new Date().toDateString();
+
+const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 // Initialize
 function init() {
+  // Check if we need to auto-advance (midnight rollover)
+  checkMidnightRollover();
+
   loadWeek(currentWeek);
   updateStats();
+  updateCurrentDayDisplay();
 
   document.getElementById('weekSelector').addEventListener('change', (e) => {
     currentWeek = e.target.value;
+    localStorage.setItem('occCurrentWeek', currentWeek);
+    currentDayIndex = 0;
+    localStorage.setItem('occCurrentDayIndex', currentDayIndex);
     loadWeek(currentWeek);
     updateStats();
+    updateCurrentDayDisplay();
   });
 
+  document.getElementById('nextDayBtn').addEventListener('click', advanceToNextDay);
   document.getElementById('exportBtn').addEventListener('click', exportProgress);
+}
+
+// Check for midnight rollover
+function checkMidnightRollover() {
+  const today = new Date().toDateString();
+  if (lastChecked !== today) {
+    // New day - auto advance
+    advanceToNextDay(true);
+    lastChecked = today;
+    localStorage.setItem('occLastChecked', today);
+  }
+}
+
+// Advance to next day
+function advanceToNextDay(auto = false) {
+  const week = weeklySchedule[currentWeek];
+  if (!week) return;
+
+  const days = Object.keys(week.days);
+  const currentDay = days[currentDayIndex];
+
+  if (!currentDay) return;
+
+  // Move unfinished tasks from current day to next day
+  const currentDayTasks = week.days[currentDay].tasks;
+  const unfinishedTasks = currentDayTasks.filter(task => {
+    const taskId = `w${currentWeek}-t${task.id}`;
+    return !completedTasks[taskId];
+  });
+
+  // Store rolled over tasks for next day
+  if (unfinishedTasks.length > 0 && currentDayIndex < days.length - 1) {
+    const nextDay = days[currentDayIndex + 1];
+    if (!rolledOverTasks[currentWeek]) {
+      rolledOverTasks[currentWeek] = {};
+    }
+    if (!rolledOverTasks[currentWeek][nextDay]) {
+      rolledOverTasks[currentWeek][nextDay] = [];
+    }
+
+    unfinishedTasks.forEach(task => {
+      const taskId = `w${currentWeek}-t${task.id}`;
+      if (!rolledOverTasks[currentWeek][nextDay].find(t => t.id === task.id)) {
+        rolledOverTasks[currentWeek][nextDay].push({
+          ...task,
+          rolledFrom: currentDay
+        });
+      }
+    });
+
+    localStorage.setItem('occRolledOverTasks', JSON.stringify(rolledOverTasks));
+  }
+
+  // Advance day
+  if (currentDayIndex < days.length - 1) {
+    currentDayIndex++;
+    localStorage.setItem('occCurrentDayIndex', currentDayIndex);
+
+    if (!auto) {
+      alert(`Advanced to ${days[currentDayIndex]}!\n\n${unfinishedTasks.length} unfinished tasks rolled over.`);
+    }
+  } else {
+    if (!auto) {
+      alert('Week complete! Select a new week to continue.');
+    }
+  }
+
+  loadWeek(currentWeek);
+  updateStats();
+  updateCurrentDayDisplay();
+}
+
+// Update current day display
+function updateCurrentDayDisplay() {
+  const week = weeklySchedule[currentWeek];
+  if (!week) return;
+
+  const days = Object.keys(week.days);
+  const currentDay = days[currentDayIndex];
+
+  document.getElementById('currentDayName').textContent = currentDay || 'Complete';
+  document.getElementById('currentDayNum').textContent = currentDayIndex + 1;
 }
 
 // Load week
@@ -475,26 +591,37 @@ function loadWeek(weekNum) {
   let totalHours = 0;
   let totalTasks = 0;
 
-  Object.entries(week.days).forEach(([day, data]) => {
-    const dayHours = data.tasks.reduce((sum, t) => sum + t.time, 0);
-    totalHours += dayHours;
+  const days = Object.keys(week.days);
+
+  Object.entries(week.days).forEach(([day, data], dayIdx) => {
+    const isCurrentDay = dayIdx === currentDayIndex;
+    const isPastDay = dayIdx < currentDayIndex;
+
+    // Include rolled over tasks for this day
+    let allTasks = [...data.tasks];
+    if (rolledOverTasks[weekNum] && rolledOverTasks[weekNum][day]) {
+      allTasks = [...rolledOverTasks[weekNum][day], ...allTasks];
+    }
+
+    const dayHours = allTasks.reduce((sum, t) => sum + t.time, 0);
+    totalHours += data.tasks.reduce((sum, t) => sum + t.time, 0);
     totalTasks += data.tasks.length;
 
     const dayColumn = document.createElement('div');
-    dayColumn.className = 'day-column';
+    dayColumn.className = `day-column ${isCurrentDay ? 'current-day' : ''} ${isPastDay ? 'past-day' : ''}`;
     dayColumn.innerHTML = `
       <div class="day-header">
-        <div class="day-name">${day}</div>
+        <div class="day-name">${day} ${isCurrentDay ? '← Today' : ''}</div>
         <div class="day-focus">${data.focus}</div>
-        <div class="day-hours">${dayHours.toFixed(1)} hours</div>
+        <div class="day-hours">${dayHours.toFixed(1)} hours ${allTasks.length > data.tasks.length ? `(+${allTasks.length - data.tasks.length} rolled)` : ''}</div>
       </div>
       <div class="task-list" id="tasks-${day}"></div>
     `;
     grid.appendChild(dayColumn);
 
     const taskList = dayColumn.querySelector('.task-list');
-    data.tasks.forEach(task => {
-      const taskCard = createTaskCard(task, weekNum);
+    allTasks.forEach(task => {
+      const taskCard = createTaskCard(task, weekNum, task.rolledFrom);
       taskList.appendChild(taskCard);
     });
   });
@@ -504,16 +631,16 @@ function loadWeek(weekNum) {
 }
 
 // Create task card
-function createTaskCard(task, weekNum) {
+function createTaskCard(task, weekNum, rolledFrom = null) {
   const taskId = `w${weekNum}-t${task.id}`;
   const isCompleted = completedTasks[taskId] || false;
 
   const card = document.createElement('div');
-  card.className = `task-card ${isCompleted ? 'completed' : ''}`;
+  card.className = `task-card ${isCompleted ? 'completed' : ''} ${rolledFrom ? 'rolled-task' : ''}`;
 
   card.innerHTML = `
     <div class="task-checkbox ${isCompleted ? 'checked' : ''}" data-task-id="${taskId}"></div>
-    <div class="task-title">${task.title}</div>
+    <div class="task-title">${task.title}${rolledFrom ? ` <span style="color: var(--terracotta); font-size: 11px;">(from ${rolledFrom})</span>` : ''}</div>
     <div class="task-meta">
       <span class="difficulty-${task.difficulty}">${task.difficulty}</span>
       <span>·</span>

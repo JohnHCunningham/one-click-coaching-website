@@ -462,6 +462,7 @@ body {
       <option value="all" selected>All Tasks</option>
     </select>
     <button class="export-btn" onclick="exportToRAG()">Export to RAG</button>
+    <button class="clear-btn" onclick="resetBoard()">Reset Board</button>
     <button class="clear-btn" onclick="clearCompleted()">Clear Completed</button>
   </div>
 </div>
@@ -630,13 +631,29 @@ const initialTasks = [
   { id: Date.now() + 36, title: '90-day review', description: 'Full analysis: emails sent, meetings booked, deals closed, revenue, backlinks', time: 4, difficulty: 'medium', status: 'todo', week: '10', category: 'foundation', startDate: getStartDate('10'), createdAt: new Date().toISOString() },
 ];
 
+// Reset board to initial state
+function resetBoard() {
+  if (confirm('Reset board to initial 36 tasks? This will clear all current progress.')) {
+    tasks = JSON.parse(JSON.stringify(initialTasks)); // Deep clone
+    saveTasks();
+    renderBoard();
+    alert('Board reset! All 36 tasks loaded.');
+  }
+}
+
 // Load tasks from localStorage or use initial tasks
 function loadTasks() {
   const saved = localStorage.getItem('occKanbanTasks');
   if (saved) {
-    tasks = JSON.parse(saved);
+    try {
+      tasks = JSON.parse(saved);
+    } catch (e) {
+      console.error('Error parsing saved tasks:', e);
+      tasks = JSON.parse(JSON.stringify(initialTasks));
+      saveTasks();
+    }
   } else {
-    tasks = initialTasks;
+    tasks = JSON.parse(JSON.stringify(initialTasks));
     saveTasks();
   }
   renderBoard();

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCC Marketing Kanban — Daily Schedule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bone: #F4EFE8;
+  --bone-2: #EAE3D8;
+  --paper: #FBF8F3;
+  --clay: #C9A687;
+  --terracotta: #B5583E;
+  --espresso: #2A221C;
+  --ink: #1A1511;
+  --stone: #6E6358;
+  --stone-2: #8F847A;
+  --line: #D9D0C2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bone);
+  color: var(--ink);
+  padding: 24px;
+}
+
+.header {
+  max-width: 1600px;
+  margin: 0 auto 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.header h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.header h1 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.week-nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.week-selector {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 8px 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.export-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  background: var(--espresso);
+  color: var(--bone);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.export-btn:hover {
+  opacity: 0.9;
+}
+
+.week-info {
+  max-width: 1600px;
+  margin: 0 auto 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.week-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+.week-title em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.week-hours {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--stone);
+}
+
+.daily-grid {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.day-column {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 400px;
+}
+
+.day-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.day-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.day-focus {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-2);
+}
+
+.day-hours {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--terracotta);
+  margin-top: 8px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-card {
+  background: var(--bone);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.task-card:hover {
+  border-color: var(--clay);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42, 34, 28, 0.1);
+}
+
+.task-card.completed {
+  opacity: 0.5;
+  background: var(--bone-2);
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+}
+
+.task-checkbox {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--line);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.task-checkbox:hover {
+  border-color: var(--terracotta);
+}
+
+.task-checkbox.checked {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+.task-checkbox.checked::after {
+  content: '✓';
+  color: var(--bone);
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.task-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  padding-right: 30px;
+}
+
+.task-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--stone-2);
+}
+
+.difficulty-easy { color: var(--clay); }
+.difficulty-medium { color: var(--terracotta); }
+.difficulty-hard { color: var(--espresso); }
+
+.stats-bar {
+  max-width: 1600px;
+  margin: 24px auto 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-2);
+}
+
+.stat-value {
+  font-family: 'Instrument Serif', serif;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.stat-value em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>OCC Daily <em>Schedule</em></h1>
+  <div class="week-nav">
+    <select class="week-selector" id="weekSelector">
+      <option value="1">Week 1: Foundation (May 5-11)</option>
+      <option value="3">Week 3: Launch (May 19-24)</option>
+      <option value="4">Week 4: Momentum (May 26-31)</option>
+      <option value="7">Week 7: Research Push (Jun 16-21)</option>
+      <option value="10">Week 10: Pipeline Close (Jul 7-12)</option>
+    </select>
+    <button class="export-btn" id="exportBtn">Export Progress</button>
+  </div>
+</div>
+
+<div class="week-info">
+  <div>
+    <div class="week-title">Week <span id="currentWeek">1</span>: <em id="weekPhase">Foundation</em></div>
+    <div class="week-hours" id="weekDescription">Set up all marketing channels and build foundation lists</div>
+  </div>
+  <div class="week-hours">
+    <span id="weekHoursCompleted">0</span> / <span id="weekHoursTotal">24</span> hours completed
+  </div>
+</div>
+
+<div class="daily-grid" id="dailyGrid">
+  <!-- Days will be populated here -->
+</div>
+
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-label">This Week</div>
+    <div class="stat-value"><span id="weekTasksCompleted">0</span>/<span id="weekTasksTotal">0</span></div>
+  </div>
+  <div class="stat">
+    <div class="stat-label">Total Completed</div>
+    <div class="stat-value"><span id="totalCompleted">0</span></div>
+  </div>
+  <div class="stat">
+    <div class="stat-label">Hours Logged</div>
+    <div class="stat-value"><span id="totalHours">0</span><em>h</em></div>
+  </div>
+</div>
+
+<script>
+// Week configurations with daily tasks
+const weeklySchedule = {
+  '1': {
+    name: 'Foundation',
+    description: 'Set up all marketing channels and build foundation lists',
+    dates: 'May 5-11, 2026',
+    days: {
+      'Monday': {
+        focus: 'Setup & Research',
+        tasks: [
+          { id: 1, title: 'Set up HARO account', time: 0.25, difficulty: 'easy', category: 'backlinks' },
+          { id: 2, title: 'Create Google Alerts', time: 0.25, difficulty: 'easy', category: 'backlinks' },
+          { id: 3, title: 'Build Tier 1 prospect list (50 VPs)', time: 2, difficulty: 'medium', category: 'outreach' },
+          { id: 4, title: 'Set up email tracking tools', time: 0.5, difficulty: 'easy', category: 'foundation' }
+        ]
+      },
+      'Tuesday': {
+        focus: 'LinkedIn Setup',
+        tasks: [
+          { id: 5, title: 'Optimize LinkedIn profile', time: 0.5, difficulty: 'easy', category: 'content' },
+          { id: 6, title: 'Join Reddit communities', time: 0.25, difficulty: 'easy', category: 'outreach' },
+          { id: 7, title: 'Write first LinkedIn post (Neuroscience)', time: 1, difficulty: 'medium', category: 'content' },
+          { id: 8, title: 'Comment on 10 prospect posts', time: 0.5, difficulty: 'easy', category: 'content' }
+        ]
+      },
+      'Wednesday': {
+        focus: 'Prospect Lists',
+        tasks: [
+          { id: 9, title: 'Build Tier 2 prospect list (100 Directors)', time: 2, difficulty: 'medium', category: 'outreach' },
+          { id: 10, title: 'Create CRM tracking spreadsheet', time: 0.5, difficulty: 'easy', category: 'foundation' },
+          { id: 11, title: 'Answer 5 Reddit questions', time: 0.75, difficulty: 'medium', category: 'backlinks' }
+        ]
+      },
+      'Thursday': {
+        focus: 'Partner Research',
+        tasks: [
+          { id: 12, title: 'Build Sandler franchisee list (20-30)', time: 0.75, difficulty: 'medium', category: 'partners' },
+          { id: 13, title: 'Research 10 target podcasts', time: 0.5, difficulty: 'easy', category: 'backlinks' },
+          { id: 14, title: 'Draft 5 personalized cold emails', time: 1.5, difficulty: 'hard', category: 'outreach' }
+        ]
+      },
+      'Friday': {
+        focus: 'Email & Content',
+        tasks: [
+          { id: 15, title: 'Send 10 personalized Tier 1 emails', time: 0.5, difficulty: 'easy', category: 'outreach' },
+          { id: 16, title: 'Draft 5 more personalized emails', time: 1.5, difficulty: 'hard', category: 'outreach' }
+        ]
+      },
+      'Saturday': {
+        focus: 'HARO & Review',
+        tasks: [
+          { id: 17, title: 'Respond to 5 HARO queries', time: 1, difficulty: 'medium', category: 'backlinks' },
+          { id: 18, title: 'Week 1 review and plan Week 2', time: 1, difficulty: 'easy', category: 'foundation' }
+        ]
+      }
+    }
+  },
+  '3': {
+    name: 'Launch',
+    description: 'First full marketing week - outreach, content, partners',
+    dates: 'May 19-24, 2026',
+    days: {
+      'Monday': {
+        focus: 'HARO + Outreach Prep',
+        tasks: [
+          { id: 19, title: 'HARO digest - respond to 3-5 queries', time: 1, difficulty: 'medium', category: 'backlinks' },
+          { id: 20, title: 'Research 10 Tier 1 prospects (deep)', time: 1.5, difficulty: 'hard', category: 'outreach' },
+          { id: 21, title: 'Draft 10 Tier 1 cold emails', time: 1, difficulty: 'medium', category: 'outreach' }
+        ]
+      },
+      'Tuesday': {
+        focus: 'LinkedIn Content',
+        tasks: [
+          { id: 22, title: 'Write LinkedIn post (Story + Insight)', time: 1, difficulty: 'medium', category: 'content' },
+          { id: 23, title: 'Comment on 20 prospect posts', time: 0.75, difficulty: 'easy', category: 'content' },
+          { id: 24, title: 'Send 10-15 connection requests', time: 0.5, difficulty: 'easy', category: 'content' }
+        ]
+      },
+      'Wednesday': {
+        focus: 'Cold Email + Reddit',
+        tasks: [
+          { id: 25, title: 'Send Monday drafted emails (10)', time: 0.5, difficulty: 'easy', category: 'outreach' },
+          { id: 26, title: 'Research + draft 20 Tier 2 emails', time: 1.5, difficulty: 'medium', category: 'outreach' },
+          { id: 27, title: 'Answer 5 Reddit questions', time: 0.75, difficulty: 'medium', category: 'backlinks' }
+        ]
+      },
+      'Thursday': {
+        focus: 'Partners + Content',
+        tasks: [
+          { id: 28, title: 'Write LinkedIn post (Contrarian)', time: 1, difficulty: 'medium', category: 'content' },
+          { id: 29, title: 'Research 5 Sandler franchisees', time: 0.75, difficulty: 'medium', category: 'partners' },
+          { id: 30, title: 'Send 5 franchisee emails', time: 0.5, difficulty: 'medium', category: 'partners' }
+        ]
+      },
+      'Friday': {
+        focus: 'Sales Calls',
+        tasks: [
+          { id: 31, title: 'Discovery calls (2 blocked)', time: 2, difficulty: 'medium', category: 'sales' },
+          { id: 32, title: 'Send follow-up emails + proposals', time: 1, difficulty: 'medium', category: 'sales' }
+        ]
+      },
+      'Saturday': {
+        focus: 'Backlinks + Review',
+        tasks: [
+          { id: 33, title: 'Pitch 5 podcasts', time: 1, difficulty: 'hard', category: 'backlinks' },
+          { id: 34, title: 'Answer 5 Quora questions', time: 0.75, difficulty: 'easy', category: 'backlinks' },
+          { id: 35, title: 'Weekly review + metrics update', time: 1, difficulty: 'easy', category: 'foundation' }
+        ]
+      }
+    }
+  }
+};
+
+// Storage
+let completedTasks = JSON.parse(localStorage.getItem('occCompletedTasks') || '{}');
+let currentWeek = '1';
+
+// Initialize
+function init() {
+  loadWeek(currentWeek);
+  updateStats();
+
+  document.getElementById('weekSelector').addEventListener('change', (e) => {
+    currentWeek = e.target.value;
+    loadWeek(currentWeek);
+    updateStats();
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', exportProgress);
+}
+
+// Load week
+function loadWeek(weekNum) {
+  const week = weeklySchedule[weekNum];
+  if (!week) return;
+
+  document.getElementById('currentWeek').textContent = weekNum;
+  document.getElementById('weekPhase').textContent = week.name;
+  document.getElementById('weekDescription').textContent = week.description;
+
+  const grid = document.getElementById('dailyGrid');
+  grid.innerHTML = '';
+
+  let totalHours = 0;
+  let totalTasks = 0;
+
+  Object.entries(week.days).forEach(([day, data]) => {
+    const dayHours = data.tasks.reduce((sum, t) => sum + t.time, 0);
+    totalHours += dayHours;
+    totalTasks += data.tasks.length;
+
+    const dayColumn = document.createElement('div');
+    dayColumn.className = 'day-column';
+    dayColumn.innerHTML = `
+      <div class="day-header">
+        <div class="day-name">${day}</div>
+        <div class="day-focus">${data.focus}</div>
+        <div class="day-hours">${dayHours.toFixed(1)} hours</div>
+      </div>
+      <div class="task-list" id="tasks-${day}"></div>
+    `;
+    grid.appendChild(dayColumn);
+
+    const taskList = dayColumn.querySelector('.task-list');
+    data.tasks.forEach(task => {
+      const taskCard = createTaskCard(task, weekNum);
+      taskList.appendChild(taskCard);
+    });
+  });
+
+  document.getElementById('weekHoursTotal').textContent = totalHours.toFixed(1);
+  document.getElementById('weekTasksTotal').textContent = totalTasks;
+}
+
+// Create task card
+function createTaskCard(task, weekNum) {
+  const taskId = `w${weekNum}-t${task.id}`;
+  const isCompleted = completedTasks[taskId] || false;
+
+  const card = document.createElement('div');
+  card.className = `task-card ${isCompleted ? 'completed' : ''}`;
+
+  card.innerHTML = `
+    <div class="task-checkbox ${isCompleted ? 'checked' : ''}" data-task-id="${taskId}"></div>
+    <div class="task-title">${task.title}</div>
+    <div class="task-meta">
+      <span class="difficulty-${task.difficulty}">${task.difficulty}</span>
+      <span>·</span>
+      <span>${task.time}h</span>
+      <span>·</span>
+      <span>${task.category}</span>
+    </div>
+  `;
+
+  const checkbox = card.querySelector('.task-checkbox');
+  checkbox.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleTask(taskId, task.time);
+  });
+
+  return card;
+}
+
+// Toggle task
+function toggleTask(taskId, hours) {
+  completedTasks[taskId] = !completedTasks[taskId];
+  localStorage.setItem('occCompletedTasks', JSON.stringify(completedTasks));
+  loadWeek(currentWeek);
+  updateStats();
+}
+
+// Update stats
+function updateStats() {
+  const week = weeklySchedule[currentWeek];
+  if (!week) return;
+
+  let weekCompleted = 0;
+  let weekHoursCompleted = 0;
+  let weekTotal = 0;
+
+  Object.values(week.days).forEach(day => {
+    day.tasks.forEach(task => {
+      const taskId = `w${currentWeek}-t${task.id}`;
+      weekTotal++;
+      if (completedTasks[taskId]) {
+        weekCompleted++;
+        weekHoursCompleted += task.time;
+      }
+    });
+  });
+
+  document.getElementById('weekTasksCompleted').textContent = weekCompleted;
+  document.getElementById('weekHoursCompleted').textContent = weekHoursCompleted.toFixed(1);
+
+  // Total stats
+  let totalComplete = 0;
+  let totalHours = 0;
+
+  Object.entries(weeklySchedule).forEach(([weekNum, weekData]) => {
+    Object.values(weekData.days).forEach(day => {
+      day.tasks.forEach(task => {
+        const taskId = `w${weekNum}-t${task.id}`;
+        if (completedTasks[taskId]) {
+          totalComplete++;
+          totalHours += task.time;
+        }
+      });
+    });
+  });
+
+  document.getElementById('totalCompleted').textContent = totalComplete;
+  document.getElementById('totalHours').textContent = totalHours.toFixed(1);
+}
+
+// Export progress
+function exportProgress() {
+  const data = {
+    exportedAt: new Date().toISOString(),
+    completedTasks: completedTasks,
+    summary: {
+      totalCompleted: Object.keys(completedTasks).filter(k => completedTasks[k]).length,
+      totalHours: 0
+    }
+  };
+
+  // Calculate total hours
+  Object.entries(weeklySchedule).forEach(([weekNum, weekData]) => {
+    Object.values(weekData.days).forEach(day => {
+      day.tasks.forEach(task => {
+        const taskId = `w${weekNum}-t${task.id}`;
+        if (completedTasks[taskId]) {
+          data.summary.totalHours += task.time;
+        }
+      });
+    });
+  });
+
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `occ-progress-${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+
+  alert(`Exported progress!\n\nCompleted: ${data.summary.totalCompleted} tasks\nHours logged: ${data.summary.totalHours.toFixed(1)}h`);
+}
+
+// Start
+init();
+</script>
+
+</body>
+</html>

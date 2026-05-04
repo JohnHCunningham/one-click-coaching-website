@@ -302,7 +302,12 @@ body {
 <body>
 
 <div class="header">
-  <h1>OCC Daily <em>Schedule</em></h1>
+  <div>
+    <h1>OCC Daily <em>Schedule</em></h1>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--terracotta); margin-top: 8px; letter-spacing: 0.08em;">
+      90-DAY GOAL: $1,500 MRR · 4 DEALS · JULY 30, 2026
+    </div>
+  </div>
   <div class="week-nav">
     <select class="week-selector" id="weekSelector">
       <option value="1">Week 1: Foundation (May 5-11)</option>
@@ -366,42 +371,46 @@ const weeklySchedule = {
         ]
       },
       'Tuesday': {
-        focus: 'LinkedIn Setup',
+        focus: 'Cold Email Stack Setup',
         tasks: [
-          { id: 5, title: 'Optimize LinkedIn profile', time: 0.5, difficulty: 'easy', category: 'content' },
-          { id: 6, title: 'Join Reddit communities', time: 0.25, difficulty: 'easy', category: 'outreach' },
-          { id: 7, title: 'Write first LinkedIn post (Neuroscience)', time: 1, difficulty: 'medium', category: 'content' },
-          { id: 8, title: 'Comment on 10 prospect posts', time: 0.5, difficulty: 'easy', category: 'content' }
+          { id: 5, title: 'Buy cold email domain (occreach.com)', time: 0.25, difficulty: 'easy', category: 'foundation' },
+          { id: 6, title: 'Set up Google Workspace for new domain', time: 0.5, difficulty: 'medium', category: 'foundation' },
+          { id: 7, title: 'Configure DNS (SPF, DKIM, DMARC)', time: 0.5, difficulty: 'hard', category: 'foundation' },
+          { id: 8, title: 'Sign up: Instantly.ai + Hunter.io', time: 0.5, difficulty: 'easy', category: 'foundation' },
+          { id: 9, title: 'Start LinkedIn Sales Navigator trial', time: 0.25, difficulty: 'easy', category: 'outreach' },
+          { id: 10, title: 'Set up HARO account', time: 0.25, difficulty: 'easy', category: 'backlinks' }
         ]
       },
       'Wednesday': {
-        focus: 'Prospect Lists',
+        focus: 'LinkedIn + Lists',
         tasks: [
-          { id: 9, title: 'Build Tier 2 prospect list (100 Directors)', time: 2, difficulty: 'medium', category: 'outreach' },
-          { id: 10, title: 'Create CRM tracking spreadsheet', time: 0.5, difficulty: 'easy', category: 'foundation' },
-          { id: 11, title: 'Answer 5 Reddit questions', time: 0.75, difficulty: 'medium', category: 'backlinks' }
+          { id: 11, title: 'Optimize LinkedIn profile (headline, about)', time: 0.5, difficulty: 'easy', category: 'content' },
+          { id: 12, title: 'Build Tier 1 prospect list (50 VPs) via Sales Nav', time: 2, difficulty: 'medium', category: 'outreach' },
+          { id: 13, title: 'Use Hunter.io to find + verify emails', time: 1, difficulty: 'medium', category: 'outreach' }
         ]
       },
       'Thursday': {
-        focus: 'Partner Research',
+        focus: 'Content Creation',
         tasks: [
-          { id: 12, title: 'Build Sandler franchisee list (20-30)', time: 0.75, difficulty: 'medium', category: 'partners' },
-          { id: 13, title: 'Research 10 target podcasts', time: 0.5, difficulty: 'easy', category: 'backlinks' },
-          { id: 14, title: 'Draft 5 personalized cold emails', time: 1.5, difficulty: 'hard', category: 'outreach' }
+          { id: 14, title: 'Write first LinkedIn post (Neuroscience pillar)', time: 1, difficulty: 'medium', category: 'content' },
+          { id: 15, title: 'Comment on 10 prospect LinkedIn posts', time: 0.5, difficulty: 'easy', category: 'content' },
+          { id: 16, title: 'Join Reddit: r/sales, r/SaaS, r/startups', time: 0.25, difficulty: 'easy', category: 'outreach' },
+          { id: 17, title: 'Build Sandler franchisee list (20-30)', time: 0.75, difficulty: 'medium', category: 'partners' }
         ]
       },
       'Friday': {
-        focus: 'Email & Content',
+        focus: 'Outreach Prep',
         tasks: [
-          { id: 15, title: 'Send 10 personalized Tier 1 emails', time: 0.5, difficulty: 'easy', category: 'outreach' },
-          { id: 16, title: 'Draft 5 more personalized emails', time: 1.5, difficulty: 'hard', category: 'outreach' }
+          { id: 18, title: 'Draft 10 personalized Tier 1 cold emails', time: 2, difficulty: 'hard', category: 'outreach' },
+          { id: 19, title: 'Create CRM tracking spreadsheet', time: 0.5, difficulty: 'easy', category: 'foundation' }
         ]
       },
       'Saturday': {
-        focus: 'HARO & Review',
+        focus: 'Backlinks + Review',
         tasks: [
-          { id: 17, title: 'Respond to 5 HARO queries', time: 1, difficulty: 'medium', category: 'backlinks' },
-          { id: 18, title: 'Week 1 review and plan Week 2', time: 1, difficulty: 'easy', category: 'foundation' }
+          { id: 20, title: 'Respond to 3 HARO queries (first practice)', time: 1, difficulty: 'medium', category: 'backlinks' },
+          { id: 21, title: 'Answer 3 Reddit questions in r/sales', time: 0.75, difficulty: 'medium', category: 'backlinks' },
+          { id: 22, title: 'Week 1 review: what worked, what needs adjustment', time: 0.5, difficulty: 'easy', category: 'foundation' }
         ]
       }
     }
@@ -466,7 +475,7 @@ const weeklySchedule = {
 let completedTasks = JSON.parse(localStorage.getItem('occCompletedTasks') || '{}');
 let rolledOverTasks = JSON.parse(localStorage.getItem('occRolledOverTasks') || '{}');
 let currentWeek = localStorage.getItem('occCurrentWeek') || '1';
-let currentDayIndex = parseInt(localStorage.getItem('occCurrentDayIndex') || '0');
+let currentDayIndex = parseInt(localStorage.getItem('occCurrentDayIndex') || '1'); // Start on Tuesday (index 1)
 let lastChecked = localStorage.getItem('occLastChecked') || new Date().toDateString();
 
 const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

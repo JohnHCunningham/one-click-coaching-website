@@ -692,6 +692,49 @@ function renderBoard() {
   });
 
   updateStats();
+  setupDropZones();
+}
+
+// Set up drop zones
+function setupDropZones() {
+  document.querySelectorAll('.card-list').forEach(list => {
+    // Remove old listeners by cloning and replacing
+    const newList = list.cloneNode(true);
+    list.parentNode.replaceChild(newList, list);
+
+    newList.addEventListener('dragover', e => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      newList.classList.add('drag-over');
+    });
+
+    newList.addEventListener('dragleave', e => {
+      newList.classList.remove('drag-over');
+    });
+
+    newList.addEventListener('drop', e => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (!draggedElement) return;
+
+      const taskId = parseInt(draggedElement.dataset.id);
+      const newStatus = newList.parentElement.dataset.status;
+
+      // Update task status
+      const task = tasks.find(t => t.id === taskId);
+      if (task) {
+        task.status = newStatus;
+        if (newStatus === 'completed' && !task.completedAt) {
+          task.completedAt = new Date().toISOString();
+        }
+        saveTasks();
+        renderBoard();
+      }
+
+      newList.classList.remove('drag-over');
+    });
+  });
 }
 
 // Create a card element
@@ -761,40 +804,6 @@ function handleDragEnd(e) {
     list.classList.remove('drag-over');
   });
 }
-
-// Set up drop zones
-document.querySelectorAll('.card-list').forEach(list => {
-  list.addEventListener('dragover', e => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-    list.classList.add('drag-over');
-  });
-
-  list.addEventListener('dragleave', e => {
-    list.classList.remove('drag-over');
-  });
-
-  list.addEventListener('drop', e => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const taskId = parseInt(draggedElement.dataset.id);
-    const newStatus = list.parentElement.dataset.status;
-
-    // Update task status
-    const task = tasks.find(t => t.id === taskId);
-    if (task) {
-      task.status = newStatus;
-      if (newStatus === 'completed' && !task.completedAt) {
-        task.completedAt = new Date().toISOString();
-      }
-      saveTasks();
-      renderBoard();
-    }
-
-    list.classList.remove('drag-over');
-  });
-});
 
 // Update statistics
 function updateStats() {
@@ -895,11 +904,23 @@ function editTask(id) {
   alert('Edit functionality coming soon. For now, delete and recreate the task.');
 }
 
-// Week selector change
-document.getElementById('weekSelector').addEventListener('change', renderBoard);
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  // Week selector change
+  document.getElementById('weekSelector').addEventListener('change', renderBoard);
 
-// Initialize
-loadTasks();
+  // Add button event listeners
+  document.querySelector('.export-btn').addEventListener('click', exportToRAG);
+  document.querySelectorAll('.clear-btn')[0].addEventListener('click', resetBoard);
+  document.querySelectorAll('.clear-btn')[1].addEventListener('click', clearCompleted);
+
+  // Make functions globally accessible for inline onclick in cards
+  window.editTask = editTask;
+  window.deleteTask = deleteTask;
+
+  // Initialize
+  loadTasks();
+});
 </script>
 
 </body>

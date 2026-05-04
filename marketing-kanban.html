@@ -570,17 +570,18 @@ body {
 // Task data structure for RAG
 let tasks = [];
 
+// Helper function to calculate start date based on week
+const getStartDate = (week) => {
+  const baseDate = new Date('2026-05-05'); // Monday, May 5, 2026
+  const weekNum = parseInt(week);
+  const daysToAdd = (weekNum - 1) * 7;
+  const startDate = new Date(baseDate);
+  startDate.setDate(baseDate.getDate() + daysToAdd);
+  return startDate.toISOString().split('T')[0];
+};
+
 // Initialize with 90-day plan tasks
 const initialTasks = [
-  // Helper function to calculate start date based on week
-  const getStartDate = (week) => {
-    const baseDate = new Date('2026-05-05'); // Monday, May 5, 2026
-    const weekNum = parseInt(week);
-    const daysToAdd = (weekNum - 1) * 7;
-    const startDate = new Date(baseDate);
-    startDate.setDate(baseDate.getDate() + daysToAdd);
-    return startDate.toISOString().split('T')[0];
-  };
 
   // Week 1-2: Foundation
   { id: Date.now() + 1, title: 'Set up HARO account', description: 'Sign up at helpareporter.com and configure email digest (5:35am, 12:35pm, 5:35pm EST)', time: 0.25, difficulty: 'easy', status: 'todo', week: '1', category: 'backlinks', startDate: getStartDate('1'), createdAt: new Date().toISOString() },

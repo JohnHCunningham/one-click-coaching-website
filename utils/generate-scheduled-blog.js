@@ -318,29 +318,42 @@ function updateBlogListing(blogData) {
   const blogListPath = path.join(__dirname, '..', 'blog.html');
   let blogHTML = fs.readFileSync(blogListPath, 'utf-8');
 
-  const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).replace(',', '');
 
-  const newCard = `            <article style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:transform 0.2s;">
-                <a href="blog/${blogData.slug}.html" style="text-decoration:none;color:inherit;">
-                    <img src="blog/images/${blogData.slug}.png" alt="${blogData.title}" style="width:100%;height:240px;object-fit:cover;">
-                    <div style="padding:24px;">
-                        <div style="display:flex;gap:12px;margin-bottom:12px;">
-                            <span style="background:#B5583E;color:white;padding:4px 12px;border-radius:4px;font-size:14px;">${blogData.category}</span>
-                            <span style="color:#666;font-size:14px;">${blogData.readingTime} min read</span>
-                        </div>
-                        <h3 style="font-size:24px;margin-bottom:12px;color:#2A221C;">${blogData.title}</h3>
-                        <p style="color:#666;line-height:1.6;margin-bottom:16px;">${blogData.excerpt}</p>
-                        <div style="display:flex;justify-content:space-between;align-items:center;">
-                            <span style="color:#B5583E;font-weight:600;">Read More →</span>
-                            <span style="color:#999;font-size:14px;">${date}</span>
-                        </div>
-                    </div>
-                </a>
-            </article>`;
+  // Choose emoji based on category
+  const emojiMap = {
+    'Sales Coaching': '🎯',
+    'Sales Methodology': '📊',
+    'Coaching': '👥',
+    'Sales Performance': '⭐',
+    'Sales Training': '📚',
+    'Sales Process': '🔄',
+    'Sales Onboarding': '🎯',
+    'AI Sales Coaching': '🤖',
+    'Sales Analytics': '📈',
+    'Sales Management': '👔'
+  };
+  const emoji = emojiMap[blogData.category] || '💡';
 
-  // Insert after the blog grid opening div
-  const gridPattern = /<div style="display:grid;grid-template-columns:repeat\(auto-fill,minmax\(350px,1fr\)\);gap:32px;margin-bottom:60px;">/;
-  blogHTML = blogHTML.replace(gridPattern, match => match + '\n' + newCard + '\n');
+  const newCard = `
+      <a href="blog/${blogData.slug}.html" class="post-card">
+        <div class="thumb"><span>${emoji}</span></div>
+        <div class="body">
+          <div class="category">${blogData.category}</div>
+          <h3>${blogData.title}</h3>
+          <p class="excerpt">${blogData.excerpt}</p>
+          <div class="meta">
+            <span>${blogData.readingTime} min read</span>
+            <span class="dot"></span>
+            <span>${date}</span>
+          </div>
+        </div>
+      </a>
+`;
+
+  // Insert after the posts-grid opening div
+  const gridPattern = /<div class="posts-grid">\s*/;
+  blogHTML = blogHTML.replace(gridPattern, match => match + newCard);
 
   fs.writeFileSync(blogListPath, blogHTML);
   console.log('✅ Updated blog.html listing');

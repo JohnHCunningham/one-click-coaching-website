@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCC Marketing Kanban — 90-Day Execution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bone: #F4EFE8;
+  --bone-2: #EAE3D8;
+  --paper: #FBF8F3;
+  --clay: #C9A687;
+  --terracotta: #B5583E;
+  --espresso: #2A221C;
+  --ink: #1A1511;
+  --stone: #6E6358;
+  --stone-2: #8F847A;
+  --line: #D9D0C2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bone);
+  color: var(--ink);
+  padding: 24px;
+}
+
+.header {
+  max-width: 1800px;
+  margin: 0 auto 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.header h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.header h1 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.week-selector {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 8px 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.export-btn, .clear-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  background: var(--espresso);
+  color: var(--bone);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.export-btn:hover, .clear-btn:hover {
+  opacity: 0.9;
+}
+
+.clear-btn {
+  background: var(--terracotta);
+}
+
+.stats {
+  max-width: 1800px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-2);
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-family: 'Instrument Serif', serif;
+  font-size: 32px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.stat-value em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.board {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.column {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 600px;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.column-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.column-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--stone-2);
+  background: var(--bone-2);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background: var(--bone);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card.dragging {
+  opacity: 0.5;
+}
+
+.card:hover {
+  border-color: var(--clay);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42, 34, 28, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.difficulty-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.difficulty-easy {
+  background: rgba(201, 166, 135, 0.2);
+  color: var(--clay);
+}
+
+.difficulty-medium {
+  background: rgba(181, 88, 62, 0.2);
+  color: var(--terracotta);
+}
+
+.difficulty-hard {
+  background: rgba(42, 34, 28, 0.15);
+  color: var(--espresso);
+}
+
+.card-description {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--stone);
+  margin-bottom: 12px;
+}
+
+.card-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.meta-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--stone-2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--stone-2);
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.card-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--stone);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card-btn:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+
+.drag-over {
+  background: var(--bone-2);
+  border-color: var(--clay);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(42, 34, 28, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.modal-header {
+  font-family: 'Instrument Serif', serif;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+.modal-header em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-2);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-input, .form-textarea, .form-select {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 10px 14px;
+  background: var(--bone);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-primary, .btn-secondary {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--espresso);
+  color: var(--bone);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+
+.time-tracker {
+  background: var(--bone-2);
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.time-tracker-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-2);
+  margin-bottom: 8px;
+}
+
+.time-tracker-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.time-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  padding: 6px 12px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.time-btn.active {
+  background: var(--terracotta);
+  color: var(--bone);
+  border-color: var(--terracotta);
+}
+
+.completed-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--stone);
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>OCC Marketing <em>Kanban</em></h1>
+  <div class="controls">
+    <select class="week-selector" id="weekSelector">
+      <option value="1">Week 1-2: Foundation</option>
+      <option value="3">Week 3: Launch</option>
+      <option value="4">Week 4-6: Momentum</option>
+      <option value="7">Week 7-9: Research Push</option>
+      <option value="10">Week 10-12: Pipeline Close</option>
+      <option value="all" selected>All Tasks</option>
+    </select>
+    <button class="export-btn" onclick="exportToRAG()">Export to RAG</button>
+    <button class="clear-btn" onclick="clearCompleted()">Clear Completed</button>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat-card">
+    <div class="stat-label">To Start</div>
+    <div class="stat-value" id="todoCount">0</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">In Progress</div>
+    <div class="stat-value" id="inProgressCount">0</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Completed</div>
+    <div class="stat-value" id="completedCount">0</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Total Time</div>
+    <div class="stat-value"><span id="totalTime">0</span><em>h</em></div>
+  </div>
+</div>
+
+<div class="board">
+  <div class="column" data-status="todo">
+    <div class="column-header">
+      <div class="column-title">To Start</div>
+      <div class="column-count" id="todoColumnCount">0</div>
+    </div>
+    <div class="card-list" id="todoList"></div>
+  </div>
+
+  <div class="column" data-status="in-progress">
+    <div class="column-header">
+      <div class="column-title">In Progress</div>
+      <div class="column-count" id="inProgressColumnCount">0</div>
+    </div>
+    <div class="card-list" id="inProgressList"></div>
+  </div>
+
+  <div class="column" data-status="completed">
+    <div class="column-header">
+      <div class="column-title">Completed</div>
+      <div class="column-count" id="completedColumnCount">0</div>
+    </div>
+    <div class="card-list" id="completedList"></div>
+  </div>
+</div>
+
+<!-- Add Task Modal -->
+<div class="modal" id="taskModal">
+  <div class="modal-content">
+    <h2 class="modal-header">Add <em>New Task</em></h2>
+    <form id="taskForm">
+      <div class="form-group">
+        <label class="form-label">Task Title</label>
+        <input type="text" class="form-input" id="taskTitle" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea class="form-textarea" id="taskDescription"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Time Estimate (hours)</label>
+        <input type="number" class="form-input" id="taskTime" min="0.25" step="0.25" value="0.5">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Difficulty</label>
+        <select class="form-select" id="taskDifficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Week</label>
+        <select class="form-select" id="taskWeek">
+          <option value="1">Week 1-2</option>
+          <option value="3">Week 3</option>
+          <option value="4">Week 4-6</option>
+          <option value="7">Week 7-9</option>
+          <option value="10">Week 10-12</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Category</label>
+        <select class="form-select" id="taskCategory">
+          <option value="outreach">Outreach</option>
+          <option value="content">Content</option>
+          <option value="backlinks">Backlinks</option>
+          <option value="partners">Partners</option>
+          <option value="sales">Sales</option>
+          <option value="foundation">Foundation</option>
+        </select>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Add Task</button>
+        <button type="button" class="btn-secondary" onclick="closeModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+// Task data structure for RAG
+let tasks = [];
+
+// Initialize with 90-day plan tasks
+const initialTasks = [
+  // Helper function to calculate start date based on week
+  const getStartDate = (week) => {
+    const baseDate = new Date('2026-05-05'); // Monday, May 5, 2026
+    const weekNum = parseInt(week);
+    const daysToAdd = (weekNum - 1) * 7;
+    const startDate = new Date(baseDate);
+    startDate.setDate(baseDate.getDate() + daysToAdd);
+    return startDate.toISOString().split('T')[0];
+  };
+
+  // Week 1-2: Foundation
+  { id: Date.now() + 1, title: 'Set up HARO account', description: 'Sign up at helpareporter.com and configure email digest (5:35am, 12:35pm, 5:35pm EST)', time: 0.25, difficulty: 'easy', status: 'todo', week: '1', category: 'backlinks', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 2, title: 'Create Google Alerts', description: 'Set up alerts for "sales coaching", "methodology training", "Sandler", "MEDDIC"', time: 0.25, difficulty: 'easy', status: 'todo', week: '1', category: 'backlinks', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 3, title: 'Join Reddit communities', description: 'Join r/sales, r/SaaS, r/startups, r/salesenablement', time: 0.25, difficulty: 'easy', status: 'todo', week: '1', category: 'outreach', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 4, title: 'Optimize LinkedIn profile', description: 'Update headline, about section, featured section with OCC positioning', time: 0.5, difficulty: 'easy', status: 'todo', week: '1', category: 'content', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 5, title: 'Build Tier 1 prospect list', description: '50 VPs of Sales/CROs at ICP companies (B2B, 5-25 reps, $5M-$50M revenue)', time: 1, difficulty: 'medium', status: 'todo', week: '1', category: 'outreach', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 6, title: 'Build Tier 2 prospect list', description: '100 Sales Directors/Enablement Managers at ICP companies', time: 1, difficulty: 'medium', status: 'todo', week: '1', category: 'outreach', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 7, title: 'Build Sandler franchisee list', description: '20-30 targets from sandler.com/locations matching IPP criteria', time: 0.75, difficulty: 'medium', status: 'todo', week: '1', category: 'partners', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 8, title: 'Set up email tracking tools', description: 'Hunter.io for verification, Lemwarm for warm-up', time: 0.5, difficulty: 'easy', status: 'todo', week: '1', category: 'foundation', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 9, title: 'Create CRM tracking spreadsheet', description: 'Columns: prospect, outreach date, template used, response, meeting booked', time: 0.5, difficulty: 'easy', status: 'todo', week: '1', category: 'foundation', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 10, title: 'Draft 10 personalized cold emails', description: 'Tier 1 prospects with deep research (15-20 min each)', time: 2, difficulty: 'hard', status: 'todo', week: '1', category: 'outreach', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+
+  // Week 2
+  { id: Date.now() + 11, title: 'Respond to 5 HARO queries', description: 'Practice HARO format with substantive responses and OCC link', time: 1, difficulty: 'medium', status: 'todo', week: '1', category: 'backlinks', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 12, title: 'Research 10 target podcasts', description: 'Sales/SaaS podcasts for guest pitching (30 Min to President\'s Club, etc.)', time: 0.5, difficulty: 'easy', status: 'todo', week: '1', category: 'backlinks', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 13, title: 'Write LinkedIn post (Neuroscience)', description: 'First post using Pillar: Neuroscience/Data from Angle Bank', time: 1, difficulty: 'medium', status: 'todo', week: '1', category: 'content', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 14, title: 'Comment on 10 prospect posts', description: 'Genuine value-add comments on LinkedIn, no pitch', time: 0.5, difficulty: 'easy', status: 'todo', week: '1', category: 'content', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 15, title: 'Send 10 personalized cold emails', description: 'Send Week 1 drafted emails to Tier 1 prospects', time: 0.5, difficulty: 'easy', status: 'todo', week: '1', category: 'outreach', startDate: getStartDate('1'), createdAt: new Date().toISOString() },
+
+  // Week 3: Launch
+  { id: Date.now() + 16, title: 'HARO Monday routine', description: 'Check digest, respond to 3-5 queries on sales/coaching/training topics', time: 1, difficulty: 'medium', status: 'todo', week: '3', category: 'backlinks', startDate: getStartDate('3'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 17, title: 'Research 10 Tier 1 prospects', description: 'Deep personalization: LinkedIn posts, company news, pain signals (15-20 min each)', time: 1.5, difficulty: 'hard', status: 'todo', week: '3', category: 'outreach', startDate: getStartDate('3'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 18, title: 'Draft 10 Tier 1 emails', description: 'Write personalized cold emails using research', time: 1, difficulty: 'medium', status: 'todo', week: '3', category: 'outreach', startDate: getStartDate('3'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 19, title: 'Write LinkedIn post (Story)', description: 'Pillar: Story + Insight, real client scenario', time: 1, difficulty: 'medium', status: 'todo', week: '3', category: 'content', startDate: getStartDate('3'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 20, title: 'LinkedIn engagement (20 comments)', description: 'Comment on 20 prospect posts, genuine value-add', time: 0.75, difficulty: 'easy', status: 'todo', week: '3', category: 'content', startDate: getStartDate('3'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 21, title: 'Send connection requests', description: 'Send 10-15 LinkedIn connection requests with personalized notes', time: 0.5, difficulty: 'easy', status: 'todo', week: '3', category: 'content', startDate: getStartDate('3'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 22, title: 'Answer 5 Reddit questions', description: 'r/sales questions with helpful answers, link to blog where relevant', time: 0.75, difficulty: 'medium', status: 'todo', week: '3', category: 'backlinks', startDate: getStartDate('3'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 23, title: 'Research 5 Sandler franchisees', description: 'Deep research on target franchisees (LinkedIn, client base, recent posts)', time: 0.75, difficulty: 'medium', status: 'todo', week: '3', category: 'partners', startDate: getStartDate('3'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 24, title: 'Send 5 franchisee emails', description: 'Send partner outreach emails using templates', time: 0.5, difficulty: 'medium', status: 'todo', week: '3', category: 'partners', startDate: getStartDate('3'), createdAt: new Date().toISOString() },
+
+  // Week 4-6: Momentum
+  { id: Date.now() + 25, title: 'Create research survey', description: 'Draft 10-question survey for sales leaders on methodology drift', time: 1.5, difficulty: 'hard', status: 'todo', week: '4', category: 'backlinks', startDate: getStartDate('4'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 26, title: 'Send survey to 100 leaders', description: 'Email survey to sales leaders in network', time: 1, difficulty: 'medium', status: 'todo', week: '4', category: 'backlinks', startDate: getStartDate('4'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 27, title: 'Analyze LinkedIn post performance', description: 'Score Week 3 posts by engagement rate, identify winning pillars', time: 0.5, difficulty: 'easy', status: 'todo', week: '4', category: 'content', startDate: getStartDate('4'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 28, title: 'Compile survey results', description: 'Analyze 30+ survey responses, identify key insights', time: 2, difficulty: 'medium', status: 'todo', week: '4', category: 'backlinks', startDate: getStartDate('4'), createdAt: new Date().toISOString() },
+
+  // Week 7-9: Research Push
+  { id: Date.now() + 29, title: 'Write research report', description: '1,500-word report with survey findings, 3-5 data visualizations', time: 4, difficulty: 'hard', status: 'todo', week: '7', category: 'backlinks', startDate: getStartDate('7'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 30, title: 'Create gated PDF', description: 'Design PDF version of research for lead gen', time: 1.5, difficulty: 'medium', status: 'todo', week: '7', category: 'backlinks', startDate: getStartDate('7'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 31, title: 'Publish research blog post', description: 'Publish ungated version to blog', time: 0.5, difficulty: 'easy', status: 'todo', week: '7', category: 'backlinks', startDate: getStartDate('7'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 32, title: 'Outreach to 20 journalists', description: 'Email journalists/bloggers with research findings', time: 2, difficulty: 'hard', status: 'todo', week: '7', category: 'backlinks', startDate: getStartDate('7'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 33, title: 'Pitch to Sales Hacker', description: 'Pitch research to Sales Hacker, HubSpot Blog, Gong blog editors', time: 1, difficulty: 'hard', status: 'todo', week: '7', category: 'backlinks', startDate: getStartDate('7'), createdAt: new Date().toISOString() },
+
+  // Week 10-12: Pipeline Close
+  { id: Date.now() + 34, title: 'Follow up all proposals', description: 'Move stalled deals forward or disqualify', time: 2, difficulty: 'medium', status: 'todo', week: '10', category: 'sales', startDate: getStartDate('10'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 35, title: 'Create first case study', description: 'Document pilot client results (1-pager + blog post)', time: 3, difficulty: 'hard', status: 'todo', week: '10', category: 'content', startDate: getStartDate('10'), createdAt: new Date().toISOString() },
+  { id: Date.now() + 36, title: '90-day review', description: 'Full analysis: emails sent, meetings booked, deals closed, revenue, backlinks', time: 4, difficulty: 'medium', status: 'todo', week: '10', category: 'foundation', startDate: getStartDate('10'), createdAt: new Date().toISOString() },
+];
+
+// Load tasks from localStorage or use initial tasks
+function loadTasks() {
+  const saved = localStorage.getItem('occKanbanTasks');
+  if (saved) {
+    tasks = JSON.parse(saved);
+  } else {
+    tasks = initialTasks;
+    saveTasks();
+  }
+  renderBoard();
+}
+
+// Save tasks to localStorage
+function saveTasks() {
+  localStorage.setItem('occKanbanTasks', JSON.stringify(tasks));
+}
+
+// Render the board
+function renderBoard() {
+  const selectedWeek = document.getElementById('weekSelector').value;
+  const filteredTasks = selectedWeek === 'all'
+    ? tasks
+    : tasks.filter(t => t.week === selectedWeek);
+
+  const todoList = document.getElementById('todoList');
+  const inProgressList = document.getElementById('inProgressList');
+  const completedList = document.getElementById('completedList');
+
+  todoList.innerHTML = '';
+  inProgressList.innerHTML = '';
+  completedList.innerHTML = '';
+
+  filteredTasks.forEach(task => {
+    const card = createCard(task);
+    if (task.status === 'todo') {
+      todoList.appendChild(card);
+    } else if (task.status === 'in-progress') {
+      inProgressList.appendChild(card);
+    } else if (task.status === 'completed') {
+      completedList.appendChild(card);
+    }
+  });
+
+  updateStats();
+}
+
+// Create a card element
+function createCard(task) {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.draggable = true;
+  card.dataset.id = task.id;
+
+  const difficultyClass = `difficulty-${task.difficulty}`;
+
+  const startDateFormatted = task.startDate ? new Date(task.startDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'No date';
+
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="card-title">${task.title}</div>
+      <div class="difficulty-badge ${difficultyClass}">${task.difficulty}</div>
+    </div>
+    <div class="card-description">${task.description}</div>
+    <div class="card-meta">
+      <div class="meta-item">
+        <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        ${startDateFormatted}
+      </div>
+      <div class="meta-item">
+        <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        ${task.time}h
+      </div>
+      <div class="meta-item">
+        <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+        </svg>
+        ${task.category}
+      </div>
+    </div>
+    ${task.completedAt ? `<div class="completed-time">Completed: ${new Date(task.completedAt).toLocaleDateString()}</div>` : ''}
+    <div class="card-actions">
+      <button class="card-btn" onclick="editTask(${task.id})">Edit</button>
+      <button class="card-btn" onclick="deleteTask(${task.id})">Delete</button>
+    </div>
+  `;
+
+  // Drag events
+  card.addEventListener('dragstart', handleDragStart);
+  card.addEventListener('dragend', handleDragEnd);
+
+  return card;
+}
+
+// Drag and drop handlers
+let draggedElement = null;
+
+function handleDragStart(e) {
+  draggedElement = this;
+  this.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragEnd(e) {
+  this.classList.remove('dragging');
+  document.querySelectorAll('.card-list').forEach(list => {
+    list.classList.remove('drag-over');
+  });
+}
+
+// Set up drop zones
+document.querySelectorAll('.card-list').forEach(list => {
+  list.addEventListener('dragover', e => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    list.classList.add('drag-over');
+  });
+
+  list.addEventListener('dragleave', e => {
+    list.classList.remove('drag-over');
+  });
+
+  list.addEventListener('drop', e => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const taskId = parseInt(draggedElement.dataset.id);
+    const newStatus = list.parentElement.dataset.status;
+
+    // Update task status
+    const task = tasks.find(t => t.id === taskId);
+    if (task) {
+      task.status = newStatus;
+      if (newStatus === 'completed' && !task.completedAt) {
+        task.completedAt = new Date().toISOString();
+      }
+      saveTasks();
+      renderBoard();
+    }
+
+    list.classList.remove('drag-over');
+  });
+});
+
+// Update statistics
+function updateStats() {
+  const selectedWeek = document.getElementById('weekSelector').value;
+  const filteredTasks = selectedWeek === 'all'
+    ? tasks
+    : tasks.filter(t => t.week === selectedWeek);
+
+  const todoCount = filteredTasks.filter(t => t.status === 'todo').length;
+  const inProgressCount = filteredTasks.filter(t => t.status === 'in-progress').length;
+  const completedCount = filteredTasks.filter(t => t.status === 'completed').length;
+  const totalTime = filteredTasks.reduce((sum, t) => sum + parseFloat(t.time), 0);
+
+  document.getElementById('todoCount').textContent = todoCount;
+  document.getElementById('inProgressCount').textContent = inProgressCount;
+  document.getElementById('completedCount').textContent = completedCount;
+  document.getElementById('totalTime').textContent = totalTime.toFixed(1);
+
+  document.getElementById('todoColumnCount').textContent = todoCount;
+  document.getElementById('inProgressColumnCount').textContent = inProgressCount;
+  document.getElementById('completedColumnCount').textContent = completedCount;
+}
+
+// Export to RAG-ready JSON
+function exportToRAG() {
+  const ragData = {
+    exportedAt: new Date().toISOString(),
+    totalTasks: tasks.length,
+    completedTasks: tasks.filter(t => t.status === 'completed').length,
+    totalTimeSpent: tasks.filter(t => t.status === 'completed').reduce((sum, t) => sum + parseFloat(t.time), 0),
+    tasks: tasks.map(task => ({
+      ...task,
+      metadata: {
+        difficulty: task.difficulty,
+        category: task.category,
+        week: task.week,
+        timeEstimate: task.time,
+        status: task.status,
+        completedAt: task.completedAt || null,
+        createdAt: task.createdAt
+      },
+      // RAG-optimized fields
+      searchableText: `${task.title} ${task.description} ${task.category} week ${task.week}`,
+      embedding: null, // Placeholder for future vector embedding
+      tags: [task.category, task.difficulty, `week-${task.week}`, task.status]
+    }))
+  };
+
+  // Download as JSON
+  const blob = new Blob([JSON.stringify(ragData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `occ-kanban-rag-${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+
+  alert(`Exported ${ragData.totalTasks} tasks to RAG-ready JSON.\n\nCompleted: ${ragData.completedTasks}\nTotal time: ${ragData.totalTimeSpent.toFixed(1)}h`);
+}
+
+// Clear completed tasks
+function clearCompleted() {
+  if (confirm('Archive all completed tasks? They will be removed from the board but saved in the export.')) {
+    const completed = tasks.filter(t => t.status === 'completed');
+
+    // Export completed tasks before clearing
+    if (completed.length > 0) {
+      const archiveData = {
+        archivedAt: new Date().toISOString(),
+        tasks: completed
+      };
+      const blob = new Blob([JSON.stringify(archiveData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `occ-kanban-archive-${new Date().toISOString().split('T')[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    tasks = tasks.filter(t => t.status !== 'completed');
+    saveTasks();
+    renderBoard();
+  }
+}
+
+// Delete task
+function deleteTask(id) {
+  if (confirm('Delete this task?')) {
+    tasks = tasks.filter(t => t.id !== id);
+    saveTasks();
+    renderBoard();
+  }
+}
+
+// Edit task (simplified - could be expanded)
+function editTask(id) {
+  alert('Edit functionality coming soon. For now, delete and recreate the task.');
+}
+
+// Week selector change
+document.getElementById('weekSelector').addEventListener('change', renderBoard);
+
+// Initialize
+loadTasks();
+</script>
+
+</body>
+</html>

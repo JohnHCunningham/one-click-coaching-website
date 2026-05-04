@@ -221,12 +221,30 @@ function generateCoverImage(imagePrompt, slug) {
 }
 
 /**
+ * Get related posts for internal linking
+ */
+function getRelatedPosts(currentSlug, blogData) {
+  const blogDir = path.join(__dirname, '..', 'blog');
+  const files = fs.readdirSync(blogDir);
+  const posts = files
+    .filter(f => f.endsWith('.html') && f !== 'index.html' && !f.includes(currentSlug))
+    .map(f => ({
+      slug: f.replace('.html', ''),
+      filename: f
+    }))
+    .slice(0, 3); // Get top 3 posts
+
+  return posts;
+}
+
+/**
  * Create blog post HTML file
  */
 function createBlogHTML(blogData, imagePath) {
   console.log('\n📝 Creating blog post HTML...');
 
   const date = new Date().toISOString().split('T')[0];
+  const relatedPosts = getRelatedPosts(blogData.slug, blogData);
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -255,7 +273,7 @@ function createBlogHTML(blogData, imagePath) {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Umami Analytics -->
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="your-umami-id"></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="675efbd2e57c2ede6f99c1df"></script>
 </head>
 <body>
     <nav style="background:#F4EFE8;padding:20px;border-bottom:1px solid #2A221C;">
@@ -285,6 +303,20 @@ function createBlogHTML(blogData, imagePath) {
         <div style="font-size:18px;line-height:1.8;color:#2A221C;">
             ${blogData.content}
         </div>
+
+        ${relatedPosts.length > 0 ? `
+        <section style="margin-top:60px;padding:32px;background:#F4EFE8;border-radius:12px;">
+            <h3 style="margin-bottom:24px;color:#2A221C;">Related Articles</h3>
+            <div style="display:grid;gap:20px;">
+                ${relatedPosts.map(post => `
+                <a href="${post.filename}" style="display:block;padding:20px;background:white;border-radius:8px;text-decoration:none;color:#2A221C;transition:transform 0.2s;border-left:4px solid #B5583E;">
+                    <div style="font-size:18px;font-weight:600;margin-bottom:8px;color:#2A221C;">${post.slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</div>
+                    <div style="color:#666;font-size:14px;">Read more →</div>
+                </a>
+                `).join('')}
+            </div>
+        </section>
+        ` : ''}
 
         <footer style="margin-top:60px;padding-top:40px;border-top:2px solid #F4EFE8;">
             <h3 style="margin-bottom:20px;">Sources</h3>

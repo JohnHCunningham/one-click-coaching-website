@@ -147,17 +147,24 @@ IMPORTANT:
 
 Generate the blog post now.`;
 
-  const message = await anthropic.messages.create({
+  const stream = await anthropic.messages.create({
     model: 'claude-sonnet-4-5-20250929',
     max_tokens: 64000,
     temperature: 1,
+    stream: true,
     messages: [{
       role: 'user',
       content: prompt
     }]
   });
 
-  const responseText = message.content[0].text;
+  // Collect streaming response
+  let responseText = '';
+  for await (const chunk of stream) {
+    if (chunk.type === 'content_block_delta' && chunk.delta.type === 'text_delta') {
+      responseText += chunk.delta.text;
+    }
+  }
 
   // Extract JSON from response (handle markdown code blocks)
   let jsonMatch = responseText.match(/```json\n([\s\S]*?)\n```/);

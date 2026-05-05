@@ -39,7 +39,8 @@ if (!process.env.KIE_API_KEY) {
 }
 
 const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY
+  apiKey: process.env.ANTHROPIC_API_KEY,
+  timeout: 10 * 60 * 1000, // 10 minutes
 });
 
 /**
@@ -149,7 +150,7 @@ Generate the blog post now.`;
 
   const stream = await anthropic.messages.create({
     model: 'claude-sonnet-4-5-20250929',
-    max_tokens: 64000,
+    max_tokens: 32000,
     temperature: 1,
     stream: true,
     messages: [{

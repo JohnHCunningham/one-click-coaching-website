@@ -41,8 +41,8 @@ jobs:
       - name: Extract output
         id: extract
         run: |
-          # Extract JSON output from log
-          OUTPUT=$(sed -n '/---OUTPUT---/,/---END OUTPUT---/p' blog-output.log | sed '1d;$d' | tr -d '\n' | xargs)
+          # Extract JSON output from log (preserve quotes)
+          OUTPUT=$(sed -n '/---OUTPUT---/,/---END OUTPUT---/p' blog-output.log | sed '1d;$d' | tr -d '\n')
 
           # Extract title and slug for PR
           TITLE=$(echo "$OUTPUT" | jq -r '.title')

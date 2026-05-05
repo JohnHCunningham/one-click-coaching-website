@@ -1,0 +1,74 @@
+╔═══════════════════════════════════════════╗
+║  Automated Blog Post Generator            ║
+║  One Click Coaching                       ║
+╚═══════════════════════════════════════════╝
+
+🤖 Starting automated blog post generation...
+
+📚 Found 14 existing blog posts
+🔍 Researching trending topics...
+
+✅ Generated blog post: "The Sales Coaching Illusion: Why 73% of Managers Think They're Coaching (But Reps Disagree)"
+📊 Reading time: 9 min
+🎯 Keywords: sales coaching effectiveness, manager rep perception gap, sales coaching frequency, actionable sales feedback, sales coaching reality, sales manager coaching time, sales coaching measurement
+
+🎨 Rhetorical devices used:
+   1. Antithesis: 'One group measures input. The other measures outcome.' - Contrasting ideas to highlight the perception gap
+   2. Tricolon: 'Close the perception gap by aligning on what coaching actually is: specific, timely, methodology-based feedback that changes the next call.' - Three parallel elements for rhythm and clarity
+   3. Anaphora: 'Not because people aren't working hard. Because they're measuring the wrong thing.' / 'The same manager. The same reps. The same hours.' - Repetition at beginning of phrases for emphasis
+   4. Epistrophe: 'Not because of lack of effort. Because of lack of alignment...' / 'Stop counting hours. Start counting behavioral changes. Stop asking managers... Start asking reps...' - Repeated endings to anchor message
+   5. Antimetabole: 'You can't improve what you can't see. And you can't see what you're not measuring correctly.' - Reversed structure for memorable insight
+   6. Metaphor: 'The coaching illusion' and 'coaching theater' - Framing the problem as performance vs. reality without using 'like'
+
+🎨 Generating cover image...
+✅ Cover image generated successfully
+
+📝 Creating blog post HTML...
+✅ Created sales-coaching-illusion-manager-rep-perception-gap.html
+
+📋 Updating blog listing...
+✅ Updated blog.html listing
+
+╔═══════════════════════════════════════════╗
+║  ✅ Blog Post Generated Successfully!     ║
+╚═══════════════════════════════════════════╝
+
+Title: The Sales Coaching Illusion: Why 73% of Managers Think They're Coaching (But Reps Disagree)
+Slug: sales-coaching-illusion-manager-rep-perception-gap
+Files created:
+  - blog/sales-coaching-illusion-manager-rep-perception-gap.html
+  - blog/images/sales-coaching-illusion-manager-rep-perception-gap.png
+  - blog.html (updated)
+
+Reasoning:
+This topic was selected because:
+
+1. **Fills a content gap**: While we have posts on coaching frequency (same-day vs weekly) and perception gaps, we haven't directly addressed the measurement illusion—the disconnect between what managers think they're delivering vs. what reps actually receive.
+
+2. **Highly relevant for 2026**: As AI coaching tools proliferate, the question of 'what counts as coaching' becomes critical. This post reframes the conversation from effort to impact.
+
+3. **Targets PAA opportunities**: Questions like 'how much time should sales managers spend coaching' and 'what is effective sales coaching' are trending searches.
+
+4. **Data-driven narrative**: The 73% vs. 23% stat creates an immediate, measurable problem that sales leaders will recognize. The concrete example shows before/after with specific metrics.
+
+5. **Bridges to solution naturally**: The post builds the case that measurement must change before performance can improve—setting up One Click Coaching's automated impact tracking as the inevitable solution.
+
+6. **Avoids duplicate angles**: Different from 'coaching-perception-gap-managers-vs-reps' (which focuses on what coaching feels like) by focusing specifically on measurement and definition alignment.
+
+The post follows all requirements: 1,780 words, 6 rhetorical devices, concrete example with scores, What to Do This Week section, FAQ addressing objections, and 6 authoritative sources from 2026.
+
+✨ Ready for review and PR creation!
+
+
+---OUTPUT---
+{
+  "success": true,
+  "title": "The Sales Coaching Illusion: Why 73% of Managers Think They're Coaching (But Reps Disagree)",
+  "slug": "sales-coaching-illusion-manager-rep-perception-gap",
+  "files": [
+    "blog/sales-coaching-illusion-manager-rep-perception-gap.html",
+    "blog/images/sales-coaching-illusion-manager-rep-perception-gap.png",
+    "blog.html"
+  ]
+}
+---END OUTPUT---

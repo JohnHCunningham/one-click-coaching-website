@@ -391,6 +391,20 @@
   .close .cta-primary:hover { transform: translateY(-1px); }
   .close .cta-secondary { padding: 18px 28px; font-size: 15px; color: var(--bone); border-bottom: 1px solid rgba(244,239,232,0.4); padding-bottom: 8px; border-radius: 0; }
 
+  /* ── embedded form ── */
+  .embed-form { max-width: 520px; margin: 60px auto 0; background: rgba(244,239,232,0.04); border: 1px solid rgba(244,239,232,0.15); border-radius: 12px; padding: 40px; }
+  .embed-form .form-group { margin-bottom: 24px; }
+  .embed-form label { display: block; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone); font-weight: 500; }
+  .embed-form input, .embed-form textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(244,239,232,0.25); padding: 12px 0; color: var(--bone); font-size: 15px; transition: border-color 0.2s; }
+  .embed-form input:focus, .embed-form textarea:focus { outline: none; border-bottom-color: var(--clay); }
+  .embed-form input::placeholder, .embed-form textarea::placeholder { color: rgba(244,239,232,0.35); }
+  .embed-form textarea { resize: vertical; min-height: 90px; font-family: inherit; line-height: 1.6; }
+  .embed-form .submit-btn { background: var(--bone); color: var(--espresso); padding: 16px 32px; border-radius: 999px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: transform 0.15s ease; width: 100%; }
+  .embed-form .submit-btn:hover { transform: translateY(-1px); }
+  .embed-form .success-msg { display: none; text-align: center; color: var(--clay); font-size: 15px; line-height: 1.6; }
+  .embed-form.submitted .success-msg { display: block; }
+  .embed-form.submitted form { display: none; }
+
   /* ── footer ── */
   footer { background: var(--espresso); color: rgba(244,239,232,0.6); padding: 60px 0 40px; border-top: 1px solid rgba(244,239,232,0.1); font-size: 13px; }
   footer .inner { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
@@ -934,6 +948,39 @@
       <a href="contact.html" class="cta-primary">Book a walkthrough →</a>
       <a href="mailto:john@oneclickcoaching.com" class="cta-secondary">Talk to the founder</a>
     </div>
+
+    <div class="embed-form" id="embed-form">
+      <form id="homepage-contact-form" action="https://formspree.io/f/xpqkvrjq" method="POST">
+        <input type="hidden" name="_subject" value="Homepage Contact Form - One Click Coaching" />
+
+        <div class="form-group">
+          <label>Name *</label>
+          <input type="text" name="name" required placeholder="Jane Patel" />
+        </div>
+
+        <div class="form-group">
+          <label>Work email *</label>
+          <input type="email" name="email" required placeholder="jane@company.com" />
+        </div>
+
+        <div class="form-group">
+          <label>Company *</label>
+          <input type="text" name="company" required placeholder="Company Inc." />
+        </div>
+
+        <div class="form-group">
+          <label>What are you trying to fix?</label>
+          <textarea name="message" placeholder="e.g. Reps stopped using our upfront contracts within 60 days of training..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send message →</button>
+      </form>
+
+      <div class="success-msg">
+        <p><strong>Got it.</strong></p>
+        <p>We'll get back to you within 24 hours.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -972,5 +1019,42 @@
 </footer>
 
 <script defer src="/_vercel/insights/script.js"></script>
+
+<script>
+// Homepage embedded form submission
+const homepageForm = document.getElementById('homepage-contact-form');
+const embedFormContainer = document.getElementById('embed-form');
+
+if (homepageForm) {
+  homepageForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const submitBtn = this.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(homepageForm.action, {
+        method: 'POST',
+        body: new FormData(homepageForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        embedFormContainer.classList.add('submitted');
+      } else {
+        alert('Something went wrong. Please try again or email john@oneclickcoaching.com');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    } catch (error) {
+      alert('Something went wrong. Please try again or email john@oneclickcoaching.com');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+</script>
 </body>
 </html>

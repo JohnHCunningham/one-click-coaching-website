@@ -1,0 +1,312 @@
+<!-- ENHANCED VERSION: Add this section to index.html after the header -->
+
+<style>
+  /* Circular Progress Indicators */
+  .circular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+  }
+
+  .circular-card {
+    text-align: center;
+  }
+
+  .circular-progress {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 16px;
+  }
+
+  .circular-progress svg {
+    transform: rotate(-90deg);
+  }
+
+  .circular-progress circle {
+    fill: none;
+    stroke-width: 12;
+  }
+
+  .circular-bg {
+    stroke: rgba(244,239,232,0.1);
+  }
+
+  .circular-fill {
+    stroke: var(--clay);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease;
+  }
+
+  .circular-fill.complete {
+    stroke: var(--success);
+  }
+
+  .circular-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .circular-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--bone);
+    display: block;
+  }
+
+  .circular-label {
+    font-size: 12px;
+    color: var(--stone);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .circular-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--clay);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Daily Quota Section */
+  .daily-quota {
+    background: rgba(244,239,232,0.04);
+    border: 1px solid rgba(244,239,232,0.1);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 40px 0;
+  }
+
+  .daily-quota h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 32px;
+    color: var(--clay);
+  }
+
+  .quota-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .quota-label {
+    font-size: 14px;
+    color: var(--bone);
+    flex: 1;
+  }
+
+  .quota-progress {
+    flex: 2;
+    margin: 0 20px;
+    height: 8px;
+    background: rgba(244,239,232,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .quota-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--clay), var(--terracotta));
+    transition: width 0.5s ease;
+    border-radius: 4px;
+  }
+
+  .quota-progress-fill.complete {
+    background: linear-gradient(90deg, var(--success), #8FA865);
+  }
+
+  .quota-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--clay);
+    min-width: 80px;
+    text-align: right;
+  }
+
+  .quota-value.complete {
+    color: var(--success);
+  }
+</style>
+
+<!-- Circular Progress Section -->
+<section class="circular-grid">
+  <div class="circular-card">
+    <div class="circular-progress">
+      <svg width="180" height="180">
+        <circle class="circular-bg" cx="90" cy="90" r="80"/>
+        <circle class="circular-fill" id="dealsCircle" cx="90" cy="90" r="80"
+                stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+      </svg>
+      <div class="circular-center">
+        <span class="circular-value" id="dealsCircularValue">0</span>
+        <span class="circular-label">of 15</span>
+      </div>
+    </div>
+    <div class="circular-title">Deals Closed</div>
+  </div>
+
+  <div class="circular-card">
+    <div class="circular-progress">
+      <svg width="180" height="180">
+        <circle class="circular-bg" cx="90" cy="90" r="80"/>
+        <circle class="circular-fill" id="repsCircle" cx="90" cy="90" r="80"
+                stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+      </svg>
+      <div class="circular-center">
+        <span class="circular-value" id="repsCircularValue">0</span>
+        <span class="circular-label">of 75</span>
+      </div>
+    </div>
+    <div class="circular-title">Reps Signed</div>
+  </div>
+
+  <div class="circular-card">
+    <div class="circular-progress">
+      <svg width="180" height="180">
+        <circle class="circular-bg" cx="90" cy="90" r="80"/>
+        <circle class="circular-fill" id="mrrCircle" cx="90" cy="90" r="80"
+                stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+      </svg>
+      <div class="circular-center">
+        <span class="circular-value" id="mrrCircularValue" style="font-size: 24px;">$0</span>
+        <span class="circular-label">of $3,750</span>
+      </div>
+    </div>
+    <div class="circular-title">Monthly Revenue</div>
+  </div>
+
+  <div class="circular-card">
+    <div class="circular-progress">
+      <svg width="180" height="180">
+        <circle class="circular-bg" cx="90" cy="90" r="80"/>
+        <circle class="circular-fill" id="timeCircle" cx="90" cy="90" r="80"
+                stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+      </svg>
+      <div class="circular-center">
+        <span class="circular-value" id="daysCircularValue">183</span>
+        <span class="circular-label">days left</span>
+      </div>
+    </div>
+    <div class="circular-title">Time Remaining</div>
+  </div>
+</section>
+
+<!-- Today's Quota Section -->
+<div class="daily-quota">
+  <h2>📋 Today's Quota</h2>
+
+  <div class="quota-item">
+    <div class="quota-label">Connection Requests</div>
+    <div class="quota-progress">
+      <div class="quota-progress-fill" id="todayConnectionsBar" style="width: 0%"></div>
+    </div>
+    <div class="quota-value" id="todayConnections">0 / 10</div>
+  </div>
+
+  <div class="quota-item">
+    <div class="quota-label">Group Comments</div>
+    <div class="quota-progress">
+      <div class="quota-progress-fill" id="todayCommentsBar" style="width: 0%"></div>
+    </div>
+    <div class="quota-value" id="todayComments">0 / 5</div>
+  </div>
+
+  <div class="quota-item">
+    <div class="quota-label">Cold Emails</div>
+    <div class="quota-progress">
+      <div class="quota-progress-fill" id="todayEmailsBar" style="width: 0%"></div>
+    </div>
+    <div class="quota-value" id="todayEmails">0 / 10</div>
+  </div>
+
+  <div class="quota-item">
+    <div class="quota-label">Discovery Calls</div>
+    <div class="quota-progress">
+      <div class="quota-progress-fill" id="todayCallsBar" style="width: 0%"></div>
+    </div>
+    <div class="quota-value" id="todayCalls">0 / 1</div>
+  </div>
+</div>
+
+<script>
+  // Add to your updateDashboard function
+
+  function updateCircularProgress(elementId, current, total) {
+    const circle = document.getElementById(elementId);
+    const circumference = 502.4; // 2 * PI * radius (80)
+    const percentage = Math.min((current / total) * 100, 100);
+    const offset = circumference - (percentage / 100) * circumference;
+
+    circle.style.strokeDashoffset = offset;
+
+    if (percentage >= 100) {
+      circle.classList.add('complete');
+    }
+  }
+
+  function updateTodayQuota(today) {
+    // Connections
+    const connectionsPct = Math.min((today.connections / 10) * 100, 100);
+    document.getElementById('todayConnectionsBar').style.width = `${connectionsPct}%`;
+    document.getElementById('todayConnections').textContent = `${today.connections} / 10`;
+    if (connectionsPct >= 100) {
+      document.getElementById('todayConnectionsBar').classList.add('complete');
+      document.getElementById('todayConnections').classList.add('complete');
+    }
+
+    // Comments
+    const commentsPct = Math.min((today.comments / 5) * 100, 100);
+    document.getElementById('todayCommentsBar').style.width = `${commentsPct}%`;
+    document.getElementById('todayComments').textContent = `${today.comments} / 5`;
+    if (commentsPct >= 100) document.getElementById('todayCommentsBar').classList.add('complete');
+
+    // Emails
+    const emailsPct = Math.min((today.emails / 10) * 100, 100);
+    document.getElementById('todayEmailsBar').style.width = `${emailsPct}%`;
+    document.getElementById('todayEmails').textContent = `${today.emails} / 10`;
+    if (emailsPct >= 100) document.getElementById('todayEmailsBar').classList.add('complete');
+
+    // Calls
+    const callsPct = Math.min((today.calls / 1) * 100, 100);
+    document.getElementById('todayCallsBar').style.width = `${callsPct}%`;
+    document.getElementById('todayCalls').textContent = `${today.calls} / 1`;
+    if (callsPct >= 100) document.getElementById('todayCallsBar').classList.add('complete');
+  }
+
+  // Update circular progress in your updateDashboard function
+  function updateDashboard(data) {
+    // ... existing code ...
+
+    // Update circular progress
+    updateCircularProgress('dealsCircle', data.deals, 15);
+    document.getElementById('dealsCircularValue').textContent = data.deals;
+
+    updateCircularProgress('repsCircle', data.reps, 75);
+    document.getElementById('repsCircularValue').textContent = data.reps;
+
+    updateCircularProgress('mrrCircle', data.mrr, 3750);
+    document.getElementById('mrrCircularValue').textContent = `$${data.mrr}`;
+
+    const elapsed = Math.max(0, Math.floor((new Date() - GOALS.startDate) / (1000 * 60 * 60 * 24)));
+    const remaining = 183 - elapsed;
+    updateCircularProgress('timeCircle', elapsed, 183);
+    document.getElementById('daysCircularValue').textContent = remaining;
+
+    // Update today's quota (fetch from today's entry in Google Sheets)
+    updateTodayQuota({
+      connections: 0, // Pull from today's row
+      comments: 0,
+      emails: 0,
+      calls: 0
+    });
+  }
+</script>

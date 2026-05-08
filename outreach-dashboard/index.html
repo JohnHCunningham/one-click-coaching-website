@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCC Outreach Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --espresso: #2A221C;
+      --terracotta: #B5583E;
+      --bone: #F4EFE8;
+      --clay: #C9A687;
+      --stone: #8C8479;
+      --success: #6C7A4D;
+      --warning: #D4A574;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--espresso);
+      color: var(--bone);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(244,239,232,0.1);
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    header .subtitle {
+      color: var(--clay);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(244,239,232,0.04);
+      border: 1px solid rgba(244,239,232,0.1);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: var(--clay);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    .stat {
+      margin-bottom: 16px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--stone);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--bone);
+    }
+
+    .stat-value.success { color: var(--success); }
+    .stat-value.warning { color: var(--warning); }
+    .stat-value.danger { color: var(--terracotta); }
+
+    .stat-sub {
+      font-size: 13px;
+      color: var(--clay);
+      margin-top: 4px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(244,239,232,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 12px 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--clay), var(--terracotta));
+      transition: width 0.5s ease;
+      border-radius: 4px;
+    }
+
+    .progress-fill.complete {
+      background: linear-gradient(90deg, var(--success), #8FA865);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      color: var(--stone);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px 12px;
+      background: rgba(244,239,232,0.05);
+      border: 1px solid rgba(244,239,232,0.15);
+      border-radius: 6px;
+      color: var(--bone);
+      font-size: 14px;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--clay);
+    }
+
+    button {
+      background: var(--terracotta);
+      color: var(--bone);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .chart-container {
+      position: relative;
+      height: 300px;
+      margin-top: 20px;
+    }
+
+    .milestone {
+      background: rgba(201,166,135,0.1);
+      border-left: 3px solid var(--clay);
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .milestone.achieved {
+      border-left-color: var(--success);
+      background: rgba(108,122,77,0.1);
+    }
+
+    .milestone-icon {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .pace-indicator {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pace-indicator.ahead {
+      background: rgba(108,122,77,0.2);
+      color: var(--success);
+    }
+
+    .pace-indicator.behind {
+      background: rgba(181,88,62,0.2);
+      color: var(--terracotta);
+    }
+
+    .pace-indicator.on-track {
+      background: rgba(201,166,135,0.2);
+      color: var(--clay);
+    }
+
+    #config-section {
+      background: rgba(244,239,232,0.02);
+      border: 1px dashed rgba(244,239,232,0.2);
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    #config-section h3 {
+      margin-bottom: 16px;
+      color: var(--clay);
+    }
+
+    .alert {
+      background: rgba(181,88,62,0.15);
+      border: 1px solid var(--terracotta);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .alert-success {
+      background: rgba(108,122,77,0.15);
+      border-color: var(--success);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>OCC Outreach Dashboard</h1>
+      <div class="subtitle">May 12 - Nov 11, 2026 • 6 Month Sprint</div>
+    </header>
+
+    <!-- Configuration Section -->
+    <div id="config-section">
+      <h3>📊 Setup Required</h3>
+      <div class="form-group">
+        <label>Google Sheet ID</label>
+        <input type="text" id="sheetId" placeholder="Paste your Google Sheet ID here">
+      </div>
+      <button onclick="saveConfig()">Connect Dashboard</button>
+      <p style="margin-top: 12px; font-size: 13px; color: var(--stone);">
+        Open your Google Sheet URL and copy the ID (the long string between /d/ and /edit).
+      </p>
+    </div>
+
+    <!-- Quota Progress -->
+    <div class="grid">
+      <div class="card">
+        <h2>🎯 Deals Progress</h2>
+        <div class="stat">
+          <div class="stat-label">Closed / Target</div>
+          <div class="stat-value" id="dealsProgress">0 / 15</div>
+          <div class="stat-sub" id="dealsPct">0% complete</div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="dealsBar" style="width: 0%"></div>
+        </div>
+        <div class="stat-sub" id="dealsPace"></div>
+      </div>
+
+      <div class="card">
+        <h2>👥 Reps Under Management</h2>
+        <div class="stat">
+          <div class="stat-label">Current / Target</div>
+          <div class="stat-value" id="repsProgress">0 / 75</div>
+          <div class="stat-sub" id="repsPct">0% complete</div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="repsBar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>💰 Monthly Recurring Revenue</h2>
+        <div class="stat">
+          <div class="stat-label">Current / Target</div>
+          <div class="stat-value" id="mrrProgress">$0 / $3,750</div>
+          <div class="stat-sub" id="mrrPct">0% complete</div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="mrrBar" style="width: 0%"></div>
+        </div>
+        <div class="stat-sub">6-Month Projected: <span id="projectedRevenue">$0</span></div>
+      </div>
+
+      <div class="card">
+        <h2>📅 Timeline</h2>
+        <div class="stat">
+          <div class="stat-label">Days Remaining</div>
+          <div class="stat-value" id="daysRemaining">183</div>
+          <div class="stat-sub">Started: May 12, 2026</div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="timeBar" style="width: 0%"></div>
+        </div>
+        <div class="stat-sub" id="timeElapsed">0% of time elapsed</div>
+      </div>
+    </div>
+
+    <!-- Activity Summary -->
+    <div class="grid">
+      <div class="card">
+        <h2>📊 Outreach Activity</h2>
+        <div class="stat">
+          <div class="stat-label">Connections Sent</div>
+          <div class="stat-value" id="totalConnections">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Emails Sent</div>
+          <div class="stat-value" id="totalEmails">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Group Comments</div>
+          <div class="stat-value" id="totalComments">0</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>📞 Conversion Funnel</h2>
+        <div class="stat">
+          <div class="stat-label">Reply Rate</div>
+          <div class="stat-value" id="replyRate">0%</div>
+          <div class="stat-sub" id="repliesCount">0 replies</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Call Booking Rate</div>
+          <div class="stat-value" id="callBookingRate">0%</div>
+          <div class="stat-sub" id="callsBooked">0 calls booked</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Close Rate</div>
+          <div class="stat-value" id="closeRate">0%</div>
+          <div class="stat-sub" id="dealsFromCalls">0 deals closed</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>✨ Milestones</h2>
+        <div id="milestones">
+          <div class="milestone" data-target="connections-50">
+            <span class="milestone-icon">🎯</span> 50 connections sent
+          </div>
+          <div class="milestone" data-target="first-call">
+            <span class="milestone-icon">📞</span> First discovery call
+          </div>
+          <div class="milestone" data-target="first-deal">
+            <span class="milestone-icon">🚀</span> First customer
+          </div>
+          <div class="milestone" data-target="deals-5">
+            <span class="milestone-icon">🌟</span> 5 customers
+          </div>
+          <div class="milestone" data-target="deals-10">
+            <span class="milestone-icon">🎉</span> 10 customers
+          </div>
+          <div class="milestone" data-target="deals-15">
+            <span class="milestone-icon">💰</span> 15 customers (GOAL!)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="grid">
+      <div class="card">
+        <h2>📈 Activity Trends (Last 30 Days)</h2>
+        <div class="chart-container">
+          <canvas id="activityChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🔄 Conversion Funnel</h2>
+        <div class="chart-container">
+          <canvas id="funnelChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Entry Form -->
+    <div class="card" style="max-width: 600px; margin: 0 auto;">
+      <h2>➕ Log Today's Activity</h2>
+      <form id="activityForm">
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="entryDate" required>
+        </div>
+        <div class="form-group">
+          <label>Connection Requests Sent</label>
+          <input type="number" id="connections" min="0" value="0">
+        </div>
+        <div class="form-group">
+          <label>Group Comments Posted</label>
+          <input type="number" id="comments" min="0" value="0">
+        </div>
+        <div class="form-group">
+          <label>Cold Emails Sent</label>
+          <input type="number" id="emails" min="0" value="0">
+        </div>
+        <div class="form-group">
+          <label>Replies Received</label>
+          <input type="number" id="replies" min="0" value="0">
+        </div>
+        <div class="form-group">
+          <label>Discovery Calls Booked</label>
+          <input type="number" id="callsBooked" min="0" value="0">
+        </div>
+        <div class="form-group">
+          <label>Discovery Calls Held</label>
+          <input type="number" id="callsHeld" min="0" value="0">
+        </div>
+        <button type="submit">Save to Google Sheets</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Configuration
+    let SHEET_ID = localStorage.getItem('sheetId') || '';
+    const API_KEY = 'YOUR_GOOGLE_API_KEY'; // We'll add this later
+
+    // Goals
+    const GOALS = {
+      deals: 15,
+      reps: 75,
+      mrr: 3750,
+      startDate: new Date('2026-05-12'),
+      endDate: new Date('2026-11-11'),
+      totalDays: 183
+    };
+
+    // Initialize
+    document.getElementById('entryDate').valueAsDate = new Date();
+
+    if (SHEET_ID) {
+      document.getElementById('config-section').style.display = 'none';
+      loadDashboard();
+    } else {
+      document.getElementById('sheetId').value = SHEET_ID;
+    }
+
+    function saveConfig() {
+      const sheetId = document.getElementById('sheetId').value.trim();
+      if (sheetId) {
+        localStorage.setItem('sheetId', sheetId);
+        SHEET_ID = sheetId;
+        document.getElementById('config-section').style.display = 'none';
+        loadDashboard();
+      }
+    }
+
+    async function loadDashboard() {
+      // This will load data from Google Sheets
+      // For now, using mock data
+      updateDashboard({
+        deals: 0,
+        reps: 0,
+        mrr: 0,
+        connections: 0,
+        emails: 0,
+        comments: 0,
+        replies: 0,
+        callsBooked: 0,
+        callsHeld: 0
+      });
+    }
+
+    function updateDashboard(data) {
+      // Calculate progress
+      const dealsProgress = (data.deals / GOALS.deals) * 100;
+      const repsProgress = (data.reps / GOALS.reps) * 100;
+      const mrrProgress = (data.mrr / GOALS.mrr) * 100;
+
+      // Calculate time elapsed
+      const today = new Date();
+      const elapsed = Math.max(0, Math.floor((today - GOALS.startDate) / (1000 * 60 * 60 * 24)));
+      const remaining = GOALS.totalDays - elapsed;
+      const timeProgress = (elapsed / GOALS.totalDays) * 100;
+
+      // Update deals progress
+      document.getElementById('dealsProgress').textContent = `${data.deals} / ${GOALS.deals}`;
+      document.getElementById('dealsPct').textContent = `${Math.round(dealsProgress)}% complete`;
+      document.getElementById('dealsBar').style.width = `${dealsProgress}%`;
+
+      // Pace indicator
+      const onPace = dealsProgress >= timeProgress;
+      const paceClass = onPace ? 'ahead' : 'behind';
+      const paceText = onPace ? '✓ Ahead of pace' : '⚠ Behind pace';
+      document.getElementById('dealsPace').innerHTML = `<span class="pace-indicator ${paceClass}">${paceText}</span>`;
+
+      if (dealsProgress >= 100) {
+        document.getElementById('dealsBar').classList.add('complete');
+        fireConfetti();
+      }
+
+      // Update reps progress
+      document.getElementById('repsProgress').textContent = `${data.reps} / ${GOALS.reps}`;
+      document.getElementById('repsPct').textContent = `${Math.round(repsProgress)}% complete`;
+      document.getElementById('repsBar').style.width = `${repsProgress}%`;
+
+      // Update MRR progress
+      document.getElementById('mrrProgress').textContent = `$${data.mrr.toLocaleString()} / $${GOALS.mrr.toLocaleString()}`;
+      document.getElementById('mrrPct').textContent = `${Math.round(mrrProgress)}% complete`;
+      document.getElementById('mrrBar').style.width = `${mrrProgress}%`;
+      document.getElementById('projectedRevenue').textContent = `$${(data.mrr * 6).toLocaleString()}`;
+
+      // Update timeline
+      document.getElementById('daysRemaining').textContent = remaining;
+      document.getElementById('timeBar').style.width = `${timeProgress}%`;
+      document.getElementById('timeElapsed').textContent = `${Math.round(timeProgress)}% of time elapsed`;
+
+      // Update activity
+      document.getElementById('totalConnections').textContent = data.connections;
+      document.getElementById('totalEmails').textContent = data.emails;
+      document.getElementById('totalComments').textContent = data.comments;
+
+      // Calculate conversion rates
+      const replyRate = data.emails > 0 ? (data.replies / data.emails) * 100 : 0;
+      const callBookingRate = data.replies > 0 ? (data.callsBooked / data.replies) * 100 : 0;
+      const closeRate = data.callsHeld > 0 ? (data.deals / data.callsHeld) * 100 : 0;
+
+      document.getElementById('replyRate').textContent = `${Math.round(replyRate)}%`;
+      document.getElementById('repliesCount').textContent = `${data.replies} replies`;
+      document.getElementById('callBookingRate').textContent = `${Math.round(callBookingRate)}%`;
+      document.getElementById('callsBooked').textContent = `${data.callsBooked} calls booked`;
+      document.getElementById('closeRate').textContent = `${Math.round(closeRate)}%`;
+      document.getElementById('dealsFromCalls').textContent = `${data.deals} deals closed`;
+
+      // Update milestones
+      checkMilestones(data);
+    }
+
+    function checkMilestones(data) {
+      const milestones = [
+        { id: 'connections-50', condition: data.connections >= 50 },
+        { id: 'first-call', condition: data.callsBooked >= 1 },
+        { id: 'first-deal', condition: data.deals >= 1 },
+        { id: 'deals-5', condition: data.deals >= 5 },
+        { id: 'deals-10', condition: data.deals >= 10 },
+        { id: 'deals-15', condition: data.deals >= 15 }
+      ];
+
+      milestones.forEach(milestone => {
+        const element = document.querySelector(`[data-target="${milestone.id}"]`);
+        if (milestone.condition && !element.classList.contains('achieved')) {
+          element.classList.add('achieved');
+          fireConfetti();
+        }
+      });
+    }
+
+    function fireConfetti() {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#C9A687', '#B5583E', '#F4EFE8', '#6C7A4D']
+      });
+    }
+
+    // Form submission
+    document.getElementById('activityForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!SHEET_ID) {
+        alert('Please configure your Google Sheet ID first');
+        return;
+      }
+
+      // Collect form data
+      const formData = {
+        date: document.getElementById('entryDate').value,
+        connections: parseInt(document.getElementById('connections').value) || 0,
+        comments: parseInt(document.getElementById('comments').value) || 0,
+        emails: parseInt(document.getElementById('emails').value) || 0,
+        replies: parseInt(document.getElementById('replies').value) || 0,
+        callsBooked: parseInt(document.getElementById('callsBooked').value) || 0,
+        callsHeld: parseInt(document.getElementById('callsHeld').value) || 0
+      };
+
+      // TODO: Send to Google Sheets via API
+      console.log('Submitting to Google Sheets:', formData);
+
+      alert('Activity logged! (Once Google Sheets API is connected, this will save automatically)');
+
+      // Reset form
+      document.getElementById('activityForm').reset();
+      document.getElementById('entryDate').valueAsDate = new Date();
+    });
+
+    // Initialize charts
+    const activityCtx = document.getElementById('activityChart').getContext('2d');
+    new Chart(activityCtx, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [
+          {
+            label: 'Connections',
+            data: [0, 0, 0, 0],
+            borderColor: '#C9A687',
+            tension: 0.3
+          },
+          {
+            label: 'Emails',
+            data: [0, 0, 0, 0],
+            borderColor: '#B5583E',
+            tension: 0.3
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#F4EFE8' } }
+        },
+        scales: {
+          y: { ticks: { color: '#8C8479' }, grid: { color: 'rgba(244,239,232,0.1)' } },
+          x: { ticks: { color: '#8C8479' }, grid: { color: 'rgba(244,239,232,0.1)' } }
+        }
+      }
+    });
+
+    const funnelCtx = document.getElementById('funnelChart').getContext('2d');
+    new Chart(funnelCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Emails', 'Replies', 'Calls', 'Deals'],
+        datasets: [{
+          label: 'Conversion Funnel',
+          data: [0, 0, 0, 0],
+          backgroundColor: ['#C9A687', '#B5583E', '#6C7A4D', '#D4A574']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { ticks: { color: '#8C8479' }, grid: { color: 'rgba(244,239,232,0.1)' } },
+          x: { ticks: { color: '#8C8479' }, grid: { color: 'rgba(244,239,232,0.1)' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1283,6 +1283,9 @@ if (homepageForm) {
   const chatMessages = document.getElementById('chat-messages');
   const chatInput = document.getElementById('chat-input');
 
+  // Store conversation history
+  let conversationHistory = [];
+
   chatButton.addEventListener('click', () => {
     chatContainer.classList.add('open');
     chatButton.style.display = 'none';
@@ -1305,7 +1308,10 @@ if (homepageForm) {
     const message = chatInput.value.trim();
     if (!message) return;
 
-    // Add user message
+    // Add user message to history
+    conversationHistory.push({ role: 'user', content: message });
+
+    // Add user message to UI
     addMessage(message, 'user');
     chatInput.value = '';
 
@@ -1317,11 +1323,13 @@ if (homepageForm) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
     try {
-      // Call API
+      // Call API with full conversation history
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message })
+        body: JSON.stringify({
+          messages: conversationHistory
+        })
       });
 
       const data = await response.json();
@@ -1329,7 +1337,10 @@ if (homepageForm) {
       // Remove typing indicator
       typingIndicator.remove();
 
-      // Add assistant response
+      // Add assistant response to history
+      conversationHistory.push({ role: 'assistant', content: data.response });
+
+      // Add assistant response to UI
       addMessage(data.response, 'assistant');
     } catch (error) {
       typingIndicator.remove();

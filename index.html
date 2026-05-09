@@ -1115,15 +1115,34 @@ if (homepageForm) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
   }
 
-  #chat-header h3 {
+  #chat-header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #chat-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+
+  #chat-header-text h3 {
     margin: 0;
     font-size: 18px;
     font-weight: 500;
   }
 
-  #chat-header p {
+  #chat-header-text p {
     margin: 4px 0 0 0;
     font-size: 13px;
     opacity: 0.9;
@@ -1232,15 +1251,18 @@ if (homepageForm) {
 <div id="chat-widget">
   <div id="chat-container">
     <div id="chat-header">
-      <div>
-        <h3>One Click Coaching</h3>
-        <p>Ask me anything about sales coaching</p>
+      <div id="chat-header-content">
+        <div id="chat-avatar">👩‍💼</div>
+        <div id="chat-header-text">
+          <h3>Maya</h3>
+          <p>Sales Coaching Assistant</p>
+        </div>
       </div>
       <button id="close-chat">×</button>
     </div>
     <div id="chat-messages">
       <div class="message assistant">
-        Hi! I'm here to help you understand how One Click Coaching reinforces your sales training. What brings you here today?
+        Hi, I'm Maya! I help sales leaders understand how One Click Coaching reinforces methodology training. What brings you here today?
       </div>
     </div>
     <div id="chat-input-container">

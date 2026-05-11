@@ -26,8 +26,8 @@ Before executing any task, identify which module applies and load the relevant r
 
 | Task | Module | Reference File |
 |------|--------|---------------|
-| LinkedIn content, round planning, performance analysis | Content Strategy | `references/content-strategy.md` |
-| Cold email, icebreakers, outreach sequences | Outreach | `references/outreach.md` |
+| LinkedIn content, round planning, performance analysis, landing pages, ad copy | Content Strategy | `references/content-strategy.md` |
+| Cold email (10/day), icebreakers, LinkedIn personalization, outreach sequences | Outreach | `references/outreach.md` |
 | Competitive questions, market positioning, objection handling | Market Intelligence | `references/market-intelligence.md` |
 | Discovery call prep, demo structure, qualification | Sales Enablement | `references/sales-enablement.md` |
 | Sandler franchisee outreach, partner strategy | Partner Strategy | `references/partner-strategy.md` |
@@ -84,6 +84,15 @@ methodology installed, and vested interest in proving ROI for their clients.
 John's communication style: sparse, weighted, intentional. Rhetorical devices — antithesis,
 asyndeton, tricolon, anadiplosis. Standalone aphorisms. Cinematic scene openings in
 long-form. Loss aversion over aspiration. Contemplative pacing.
+
+**Rhetorical Devices Required for ALL Content:**
+- LinkedIn posts: 3-5 devices
+- Blog posts: 4-6 devices
+- Cold emails: 2-4 devices
+- Landing pages: 4-6 devices
+- Ads: 2-3 devices
+
+**Primary devices:** Antithesis, tricolon, anaphora, metaphor, epistrophe, anadiplosis
 
 Subject lines and hooks: curiosity through restraint. Short, tension-based. Unexpectedly
 specific or holds a tension that demands resolution. Never hype. Never exclamation.

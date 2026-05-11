@@ -1,0 +1,793 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OCC Sandler Call Scoring Schema",
+  "description": "Scores sales calls based on Sandler Submarine methodology + social layer patterns",
+  "version": "1.0.0",
+
+  "scoringFramework": {
+    "compartments": [
+      {
+        "id": 1,
+        "name": "Bonding & Rapport",
+        "weight": 10,
+        "description": "Create trust and emotional safety for candid conversation",
+        "requiredBehaviors": [
+          {
+            "behavior": "Shows genuine curiosity",
+            "detectionCriteria": [
+              "Uses softening statements: 'Out of curiosity...', 'Help me understand...'",
+              "Asks open-ended questions about prospect's world",
+              "Demonstrates active listening (references earlier statements)"
+            ],
+            "scoreWeight": 4,
+            "examples": [
+              "Out of curiosity, how did you end up responsible for sales enablement?",
+              "Help me understand your situation..."
+            ]
+          },
+          {
+            "behavior": "Establishes equal business stature",
+            "detectionCriteria": [
+              "Uses peer language: 'Let's figure out if this makes sense for both of us'",
+              "Avoids subordinate language: 'I'd love to earn your business'",
+              "Shows genuine detachment - comfortable with 'no'"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "This may or may not be a fit, and that's okay",
+              "Let's see if this makes sense for both of us"
+            ]
+          },
+          {
+            "behavior": "Listens more than talks",
+            "detectionCriteria": [
+              "Rep talk time < 40% in this phase",
+              "Uses silence effectively (pauses 3+ seconds)",
+              "Reflects back what prospect says"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "[3-5 second pause after prospect shares something]",
+              "So what I'm hearing is..."
+            ]
+          }
+        ],
+        "antiPatterns": [
+          {
+            "pattern": "Pitches too early",
+            "deduction": -5,
+            "detectionCriteria": [
+              "Mentions product features before pain discussion",
+              "Talks about 'what we do' in first 5 minutes"
+            ]
+          },
+          {
+            "pattern": "Uses subordinate language",
+            "deduction": -2,
+            "detectionCriteria": [
+              "Says 'I'd love to earn your business'",
+              "Asks 'When can I follow up with you?'"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": 2,
+        "name": "Up-Front Contract",
+        "weight": 15,
+        "description": "Set clear expectations: purpose, time, agenda, and that 'no' is okay",
+        "requiredBehaviors": [
+          {
+            "behavior": "Sets clear time boundary",
+            "detectionCriteria": [
+              "Explicitly states meeting duration",
+              "Asks if time still works",
+              "References time in up-front contract"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "So that we respect your time, I have a few questions...",
+              "We said 15 minutes - does that still work?"
+            ]
+          },
+          {
+            "behavior": "Makes 'no' safe and explicit",
+            "detectionCriteria": [
+              "Explicitly gives permission to say no",
+              "Uses phrases like 'and that's okay' or 'this may not be a fit'",
+              "Eliminates 'maybe' as an option"
+            ],
+            "scoreWeight": 5,
+            "examples": [
+              "If we get to the end and it's not a fit, are you comfortable telling me no?",
+              "This might not be for you, and that's okay"
+            ]
+          },
+          {
+            "behavior": "States agenda clearly",
+            "detectionCriteria": [
+              "Outlines what will be discussed",
+              "Explains the purpose of the call",
+              "Gets prospect agreement on agenda"
+            ],
+            "scoreWeight": 4,
+            "examples": [
+              "Here's what I'd like to cover... Fair enough?",
+              "We said we'd use these few minutes to explore whether there's a reason to keep talking. Does that still work?"
+            ]
+          },
+          {
+            "behavior": "Gets explicit agreement",
+            "detectionCriteria": [
+              "Asks 'Fair enough?' or similar confirmation",
+              "Waits for prospect to verbally agree",
+              "Doesn't proceed without agreement"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "Fair enough?",
+              "Does that work for you?",
+              "Sound good?"
+            ]
+          }
+        ],
+        "antiPatterns": [
+          {
+            "pattern": "Skips up-front contract entirely",
+            "deduction": -10,
+            "detectionCriteria": [
+              "Jumps straight into questions without setting expectations",
+              "No mention of time, agenda, or permission to say no"
+            ]
+          },
+          {
+            "pattern": "Vague or weak contract",
+            "deduction": -5,
+            "detectionCriteria": [
+              "Sets time but doesn't make 'no' safe",
+              "Doesn't get explicit agreement"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": 3,
+        "name": "Pain (Pain Funnel)",
+        "weight": 25,
+        "description": "Use Pain Funnel to go from surface symptoms to deep business and personal impact",
+        "requiredBehaviors": [
+          {
+            "behavior": "Level 1: Surface exploration",
+            "detectionCriteria": [
+              "Asks 'Tell me more about that'",
+              "Asks 'Can you give me an example?'",
+              "Gets prospect talking about surface-level issue"
+            ],
+            "scoreWeight": 2,
+            "examples": [
+              "Tell me more about that",
+              "Can you give me an example?",
+              "What does that look like day-to-day?"
+            ]
+          },
+          {
+            "behavior": "Level 2-3: Impact exploration",
+            "detectionCriteria": [
+              "Asks 'How long has that been an issue?'",
+              "Asks 'What does that cost the business?'",
+              "Quantifies impact in time or money"
+            ],
+            "scoreWeight": 4,
+            "examples": [
+              "How long has that been happening?",
+              "What's that costing you?",
+              "What does that do to your pipeline?"
+            ]
+          },
+          {
+            "behavior": "Level 4-5: Personal impact",
+            "detectionCriteria": [
+              "Asks 'How does that affect you personally?'",
+              "Asks 'What happens if nothing changes?'",
+              "Gets prospect to reveal personal consequences"
+            ],
+            "scoreWeight": 6,
+            "examples": [
+              "How does that affect you personally?",
+              "What happens if this doesn't get fixed?",
+              "How does that make you feel?"
+            ]
+          },
+          {
+            "behavior": "Level 6-7: Commitment exploration",
+            "detectionCriteria": [
+              "Asks 'Have you given up trying to fix this?'",
+              "Asks 'Why fix it now versus six months from now?'",
+              "Tests urgency and commitment"
+            ],
+            "scoreWeight": 7,
+            "examples": [
+              "Have you given up on fixing this?",
+              "Why now versus waiting?",
+              "What's different now that makes this urgent?"
+            ]
+          },
+          {
+            "behavior": "Stays in pain (doesn't jump to solution)",
+            "detectionCriteria": [
+              "No product mentions during pain phase",
+              "Asks at least 4-7 pain questions in sequence",
+              "Uses silence effectively between questions"
+            ],
+            "scoreWeight": 6,
+            "examples": [
+              "[Asks follow-up pain questions instead of pitching]",
+              "[Pauses 3-5 seconds after prospect reveals pain]"
+            ]
+          }
+        ],
+        "socialLayerPatterns": [
+          {
+            "pattern": "Pendulum technique",
+            "description": "Pull back before pushing forward - increases psychological desire",
+            "detectionCriteria": [
+              "Uses negative reverse after pain: 'This might not be worth fixing'",
+              "Pulls back when prospect shows interest",
+              "Creates tension by suggesting it may not be a fit"
+            ],
+            "scoreBonus": 3,
+            "examples": [
+              "Honestly, if it's only costing you a few deals a quarter, this might not be worth changing",
+              "Maybe sticking with your current approach is actually the best move"
+            ]
+          },
+          {
+            "pattern": "What then? (roadblock flushing)",
+            "description": "Ask 'What then?' or 'And then what?' to flush hidden objections",
+            "detectionCriteria": [
+              "Uses 'What then?' after prospect describes process",
+              "Asks 'And then what happens?' to find roadblocks",
+              "Goes 3-4 levels deep with 'what then?' questions"
+            ],
+            "scoreBonus": 2,
+            "examples": [
+              "So you talk to your VP... what then?",
+              "And then what happens?",
+              "What has to happen after that?"
+            ]
+          }
+        ],
+        "antiPatterns": [
+          {
+            "pattern": "Spills candy in lobby (pitches before pain)",
+            "deduction": -15,
+            "detectionCriteria": [
+              "Mentions product features before completing pain funnel",
+              "Answers 'How does it work?' without reversing",
+              "Talks about solution before understanding impact"
+            ]
+          },
+          {
+            "pattern": "Stays at surface level (doesn't go deep)",
+            "deduction": -10,
+            "detectionCriteria": [
+              "Asks fewer than 4 pain questions",
+              "Doesn't get to personal impact (level 4-5)",
+              "Doesn't test commitment (level 6-7)"
+            ]
+          },
+          {
+            "pattern": "Interrogates instead of exploring",
+            "deduction": -5,
+            "detectionCriteria": [
+              "Rapid-fire questions without pauses",
+              "Doesn't acknowledge or reflect pain",
+              "Tone feels like cross-examination"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": 4,
+        "name": "Budget",
+        "weight": 15,
+        "description": "Normalize money talk. Understand ability AND willingness to invest.",
+        "requiredBehaviors": [
+          {
+            "behavior": "Normalizes money conversation",
+            "detectionCriteria": [
+              "Explicitly asks about budget",
+              "Uses phrases like 'Can we talk about budget?'",
+              "Doesn't avoid or delay money discussion"
+            ],
+            "scoreWeight": 5,
+            "examples": [
+              "Can we talk a bit about budget so we both know whether it makes sense?",
+              "How do you usually decide what's worth investing in?"
+            ]
+          },
+          {
+            "behavior": "Reverses pricing questions (if asked too early)",
+            "detectionCriteria": [
+              "Doesn't give price before pain is established",
+              "Reverses with 'It varies - can we talk about what you're solving first?'",
+              "Ties budget discussion to pain"
+            ],
+            "scoreWeight": 4,
+            "examples": [
+              "It varies quite a bit. Can we talk about what you're trying to solve first?",
+              "Fair question - what were you thinking of investing to solve [their pain]?"
+            ]
+          },
+          {
+            "behavior": "Tests willingness (not just ability)",
+            "detectionCriteria": [
+              "Asks what they were thinking of investing",
+              "Explores how they typically budget for this type of solution",
+              "Tests if budget is real or just checking price"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "What were you thinking of investing to solve this?",
+              "How does your team typically budget for training reinforcement?"
+            ]
+          },
+          {
+            "behavior": "Disqualifies if budget doesn't exist",
+            "detectionCriteria": [
+              "Uses negative reverse if budget is too low",
+              "Suggests not wasting time if budget isn't there",
+              "Walks away cleanly if no budget"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "If $500/month isn't in the budget, let's not waste your time with a demo",
+              "Sounds like budget isn't allocated yet - should we reconnect when it is?"
+            ]
+          }
+        ],
+        "antiPatterns": [
+          {
+            "pattern": "Gives price before pain",
+            "deduction": -8,
+            "detectionCriteria": [
+              "Answers 'How much?' before pain funnel complete",
+              "Provides pricing without reversing",
+              "Spills candy by revealing price too early"
+            ]
+          },
+          {
+            "pattern": "Avoids budget conversation",
+            "deduction": -10,
+            "detectionCriteria": [
+              "Skips budget discussion entirely",
+              "Moves to decision without knowing budget",
+              "Assumes they'll figure out budget later"
+            ]
+          },
+          {
+            "pattern": "Accepts vague budget answers",
+            "deduction": -5,
+            "detectionCriteria": [
+              "Prospect says 'We'll find budget if it makes sense'",
+              "Rep doesn't test if budget is real",
+              "Moves forward without concrete budget commitment"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": 5,
+        "name": "Decision",
+        "weight": 15,
+        "description": "Understand WHO decides, HOW they decide, and WHEN",
+        "requiredBehaviors": [
+          {
+            "behavior": "Identifies all decision makers",
+            "detectionCriteria": [
+              "Asks 'Besides you, who else is involved?'",
+              "Maps out full decision-making committee",
+              "Doesn't assume prospect is sole decision maker"
+            ],
+            "scoreWeight": 5,
+            "examples": [
+              "Besides you, who else will be involved in deciding?",
+              "Who else has to sign off on this?",
+              "Talk me through who's in the room when this gets decided"
+            ]
+          },
+          {
+            "behavior": "Understands decision process",
+            "detectionCriteria": [
+              "Asks 'How do decisions like this usually get made here?'",
+              "Maps out steps in decision process",
+              "Understands what 'yes' actually looks like procedurally"
+            ],
+            "scoreWeight": 4,
+            "examples": [
+              "Walk me through how decisions like this usually get made",
+              "What does a 'yes' actually look like procedurally?",
+              "What has to happen between now and a signed contract?"
+            ]
+          },
+          {
+            "behavior": "Establishes timeline",
+            "detectionCriteria": [
+              "Asks when decision will be made",
+              "Tests if timeline is real or aspirational",
+              "Uses negative reverse if timeline seems unrealistic"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "When are you looking to have this decided?",
+              "Is that timeline real or are we just hoping?",
+              "What happens if this doesn't get decided by then?"
+            ]
+          },
+          {
+            "behavior": "Flushes roadblocks with 'What then?'",
+            "detectionCriteria": [
+              "Asks 'What then?' after each decision step",
+              "Goes 3-4 levels deep to find hidden objections",
+              "Discovers roadblocks before they happen"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "So you present to your VP... what then?",
+              "And then what happens?",
+              "What could derail this between now and signing?"
+            ]
+          }
+        ],
+        "socialLayerPatterns": [
+          {
+            "pattern": "Prospect's system always wins",
+            "description": "Accept that their buying process will always win - don't fight it",
+            "detectionCriteria": [
+              "Doesn't try to force rep's process onto prospect",
+              "Adapts to prospect's system rather than imposing own",
+              "Shows flexibility in how deal progresses"
+            ],
+            "scoreBonus": 2,
+            "examples": [
+              "Help me understand how this typically works at your company",
+              "What's your normal process for evaluating new vendors?"
+            ]
+          }
+        ],
+        "antiPatterns": [
+          {
+            "pattern": "Assumes prospect is decision maker",
+            "deduction": -10,
+            "detectionCriteria": [
+              "Doesn't ask who else is involved",
+              "Moves to fulfillment without mapping decision committee",
+              "Gets surprised by 'I need to run this by my boss' later"
+            ]
+          },
+          {
+            "pattern": "Accepts vague decision process",
+            "deduction": -8,
+            "detectionCriteria": [
+              "Prospect says 'I'll take it to the team'",
+              "Rep doesn't understand specific steps",
+              "No clarity on what happens next"
+            ]
+          },
+          {
+            "pattern": "Skips decision compartment entirely",
+            "deduction": -12,
+            "detectionCriteria": [
+              "Moves from budget straight to fulfillment",
+              "Doesn't understand decision process",
+              "No timeline established"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": 6,
+        "name": "Fulfillment",
+        "weight": 10,
+        "description": "Present solution ONLY after qualifying. Tie everything back to stated pains.",
+        "requiredBehaviors": [
+          {
+            "behavior": "Waits until qualified",
+            "detectionCriteria": [
+              "Doesn't present until pain, budget, decision are covered",
+              "All 5 prior compartments sealed before fulfillment",
+              "No premature pitching"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "[Fulfillment phase starts AFTER compartments 1-5 complete]"
+            ]
+          },
+          {
+            "behavior": "Maps features to their specific pains",
+            "detectionCriteria": [
+              "References pains prospect mentioned earlier",
+              "Explicitly connects each feature to a stated pain",
+              "Uses their language, not generic benefits"
+            ],
+            "scoreWeight": 4,
+            "examples": [
+              "You mentioned reps revert after training - here's how we solve that...",
+              "Remember you said it's costing 3-4 deals a quarter? This addresses that by..."
+            ]
+          },
+          {
+            "behavior": "Keeps it conversational (not slide deck)",
+            "detectionCriteria": [
+              "Doesn't monologue for more than 2-3 minutes",
+              "Checks in frequently: 'How does this land?'",
+              "Stays in dialogue, not presentation mode"
+            ],
+            "scoreWeight": 2,
+            "examples": [
+              "How does this compare to what you were hoping to see?",
+              "Does this address what you mentioned earlier about [pain]?",
+              "What questions do you have so far?"
+            ]
+          },
+          {
+            "behavior": "Tests alignment throughout",
+            "detectionCriteria": [
+              "Asks 'How does this land?' or similar",
+              "Checks if solution matches their expectations",
+              "Uses negative reverse if they seem lukewarm"
+            ],
+            "scoreWeight": 1,
+            "examples": [
+              "How does this compare to what you had in mind?",
+              "Does this make sense given what you shared?",
+              "I'm sensing some hesitation - what's not sitting right?"
+            ]
+          }
+        ],
+        "socialLayerPatterns": [
+          {
+            "pattern": "Flexible submarine order (if needed)",
+            "description": "All compartments must be sealed, but order can flex if prospect pulls you",
+            "detectionCriteria": [
+              "If prospect asks for features early, gives brief answer then reverses back to pain",
+              "Doesn't rigidly refuse to answer questions",
+              "Eventually covers all compartments even if order flexes"
+            ],
+            "scoreBonus": 2,
+            "examples": [
+              "[Prospect asks 'How does it work?' in pain phase]",
+              "Quick version: we score every call and coach same-day. But before I go deeper - what specifically are you trying to solve?"
+            ]
+          }
+        ],
+        "antiPatterns": [
+          {
+            "pattern": "Presents before qualifying",
+            "deduction": -15,
+            "detectionCriteria": [
+              "Jumps to fulfillment before pain/budget/decision",
+              "Spills candy in lobby",
+              "Leads with features instead of questions"
+            ]
+          },
+          {
+            "pattern": "Generic pitch (doesn't tie to their pains)",
+            "deduction": -8,
+            "detectionCriteria": [
+              "Uses generic benefits instead of their specific pains",
+              "Doesn't reference what prospect said earlier",
+              "Sounds like a canned pitch"
+            ]
+          },
+          {
+            "pattern": "Monologues without checking in",
+            "deduction": -5,
+            "detectionCriteria": [
+              "Talks for 5+ minutes straight",
+              "Doesn't ask 'How does this land?'",
+              "Presentation mode instead of conversation"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": 7,
+        "name": "Post-Sell",
+        "weight": 10,
+        "description": "Prevent buyer's remorse and reinforce decision",
+        "requiredBehaviors": [
+          {
+            "behavior": "Recaps agreement",
+            "detectionCriteria": [
+              "Summarizes what was agreed upon",
+              "Asks if it still feels right",
+              "Gives prospect chance to voice concerns"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "We've agreed on X, Y, Z. Does that still feel right?",
+              "Just to recap, we're moving forward with... sound good?"
+            ]
+          },
+          {
+            "behavior": "Flushes internal pushback",
+            "detectionCriteria": [
+              "Asks who might object internally",
+              "Explores how prospect will handle objections",
+              "Uses 'What then?' to find roadblocks"
+            ],
+            "scoreWeight": 4,
+            "examples": [
+              "Who might push back on this internally?",
+              "How do you think they'll react?",
+              "What will you say when finance asks why now?"
+            ]
+          },
+          {
+            "behavior": "Establishes success criteria and failure signals",
+            "detectionCriteria": [
+              "Asks what success looks like",
+              "Asks what first sign of failure would be",
+              "Sets clear expectations for what happens next"
+            ],
+            "scoreWeight": 3,
+            "examples": [
+              "What does success look like 90 days from now?",
+              "What's the first sign this isn't going as planned?",
+              "What would make you regret this decision?"
+            ]
+          }
+        ],
+        "socialLayerPatterns": [
+          {
+            "pattern": "Negative reverse at stall points ONLY",
+            "description": "Only use negative reverse when deal is stalling, not before",
+            "detectionCriteria": [
+              "Prospect goes dark or stops responding",
+              "Timeline slips without explanation",
+              "Uses 'Should we take this off the table?' to flush truth"
+            ],
+            "scoreBonus": 2,
+            "examples": [
+              "Should we just take this off the table for now?",
+              "Honestly, it feels like this may not be the right time",
+              "Maybe we should reconnect when this becomes more urgent"
+            ]
+          }
+        ],
+        "antiPatterns": [
+          {
+            "pattern": "Skips post-sell entirely",
+            "deduction": -10,
+            "detectionCriteria": [
+              "Closes deal and immediately ends call",
+              "Doesn't address potential objections",
+              "No discussion of next steps or success criteria"
+            ]
+          },
+          {
+            "pattern": "Assumes smooth sailing",
+            "deduction": -5,
+            "detectionCriteria": [
+              "Doesn't ask about internal pushback",
+              "Doesn't establish what could go wrong",
+              "Overly optimistic without testing"
+            ]
+          }
+        ]
+      }
+    ],
+
+    "overallScoringRules": {
+      "maxScore": 100,
+      "passingScore": 70,
+      "compartmentRequirements": {
+        "allMustBeCovered": true,
+        "flexibleOrder": true,
+        "description": "All 7 compartments must be 'sealed' (covered), but order can flex if prospect pulls rep in different direction. However, fulfillment should always come AFTER pain, budget, and decision."
+      },
+      "tonalityScoring": {
+        "weight": 5,
+        "criteria": [
+          {
+            "tonal_quality": "Calm detachment (okay with no)",
+            "detectionCriteria": [
+              "Voice doesn't spike with excitement",
+              "Doesn't sound desperate or needy",
+              "Uses negative reverse genuinely"
+            ],
+            "scoreWeight": 2
+          },
+          {
+            "tonal_quality": "Curious, not interrogating",
+            "detectionCriteria": [
+              "Questions sound exploratory",
+              "Doesn't rapid-fire questions",
+              "Uses pauses and silence"
+            ],
+            "scoreWeight": 2
+          },
+          {
+            "tonal_quality": "Peer-to-peer (not subordinate)",
+            "detectionCriteria": [
+              "Confident without arrogance",
+              "Doesn't use submissive language",
+              "Comfortable challenging prospect"
+            ],
+            "scoreWeight": 1
+          }
+        ]
+      },
+      "socialLayerBonus": {
+        "maxBonus": 10,
+        "description": "Bonus points for advanced Sandler techniques like Pendulum, 'What then?', timing negative reverse correctly, and adapting to prospect's system"
+      }
+    },
+
+    "coachingTriggers": {
+      "highPriority": [
+        {
+          "trigger": "Spills candy in lobby (pitches before pain)",
+          "coachingMessage": "You jumped to features before understanding their pain. Go back to Pain Funnel - get to level 6-7 before presenting solution.",
+          "referenceMaterial": "Sandler Rule: Don't Spill Your Candy in the Lobby"
+        },
+        {
+          "trigger": "Skips up-front contract",
+          "coachingMessage": "You didn't set an up-front contract. Before diving in, set time, agenda, and make 'no' safe. Ask: 'Fair enough?'",
+          "referenceMaterial": "Submarine Compartment 2: Up-Front Contract"
+        },
+        {
+          "trigger": "Stays at surface pain (doesn't go deep)",
+          "coachingMessage": "You only scratched the surface. Use the Pain Funnel to go deeper: How long? What's it cost? How does it affect YOU personally? Why now vs 6 months?",
+          "referenceMaterial": "Pain Funnel: 7 levels from surface to commitment"
+        },
+        {
+          "trigger": "Assumes prospect is decision maker",
+          "coachingMessage": "You didn't map the decision process. Ask: 'Besides you, who else is involved?' Then use 'What then?' to flush roadblocks.",
+          "referenceMaterial": "Submarine Compartment 5: Decision"
+        }
+      ],
+      "mediumPriority": [
+        {
+          "trigger": "Doesn't reverse pricing question",
+          "coachingMessage": "When they ask price before pain, reverse with: 'It varies - can we talk about what you're solving first?'",
+          "referenceMaterial": "Reversing: Answer questions with questions"
+        },
+        {
+          "trigger": "Monologues in fulfillment (doesn't check in)",
+          "coachingMessage": "You talked for too long without checking alignment. Ask: 'How does this land?' every 2-3 minutes.",
+          "referenceMaterial": "Submarine Compartment 6: Fulfillment - keep it conversational"
+        },
+        {
+          "trigger": "Skips post-sell",
+          "coachingMessage": "After they agree, recap what was decided and ask: 'Who might push back internally? How will you handle that?'",
+          "referenceMaterial": "Submarine Compartment 7: Post-Sell - prevent buyer's remorse"
+        }
+      ],
+      "opportunityForExcellence": [
+        {
+          "trigger": "Could use Pendulum technique",
+          "coachingMessage": "Great job on pain. Now try pulling back: 'If this is only costing a few deals, maybe it's not worth changing.' Watch them lean in.",
+          "referenceMaterial": "Social Layer: Pendulum technique"
+        },
+        {
+          "trigger": "Could use 'What then?' to flush roadblocks",
+          "coachingMessage": "Nice work on decision process. Now go deeper with 'What then?' after each step to find hidden roadblocks.",
+          "referenceMaterial": "Social Layer: What then? questions"
+        },
+        {
+          "trigger": "Could establish equal business stature",
+          "coachingMessage": "Good rapport, but avoid subordinate language like 'I'd love to earn your business.' Instead: 'Let's see if this makes sense for both of us.'",
+          "referenceMaterial": "Sandler Rule: Equal Business Stature"
+        }
+      ]
+    }
+  }
+}

@@ -251,6 +251,141 @@
       background: rgba(108,122,77,0.15);
       border-color: var(--success);
     }
+
+    /* Circular Progress Indicators */
+    .circular-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .circular-card {
+      text-align: center;
+    }
+
+    .circular-progress {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 16px;
+    }
+
+    .circular-progress svg {
+      transform: rotate(-90deg);
+    }
+
+    .circular-progress circle {
+      fill: none;
+      stroke-width: 12;
+    }
+
+    .circular-bg {
+      stroke: rgba(244,239,232,0.1);
+    }
+
+    .circular-fill {
+      stroke: var(--clay);
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1s ease;
+    }
+
+    .circular-fill.complete {
+      stroke: var(--success);
+    }
+
+    .circular-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .circular-value {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--bone);
+      display: block;
+    }
+
+    .circular-label {
+      font-size: 12px;
+      color: var(--stone);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .circular-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--clay);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Daily Quota Section */
+    .daily-quota {
+      background: rgba(244,239,232,0.04);
+      border: 1px solid rgba(244,239,232,0.1);
+      border-radius: 12px;
+      padding: 32px;
+      margin: 40px 0;
+    }
+
+    .daily-quota h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 32px;
+      color: var(--clay);
+    }
+
+    .quota-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .quota-label {
+      font-size: 14px;
+      color: var(--bone);
+      flex: 1;
+    }
+
+    .quota-progress {
+      flex: 2;
+      margin: 0 20px;
+      height: 8px;
+      background: rgba(244,239,232,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .quota-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--clay), var(--terracotta));
+      transition: width 0.5s ease;
+      border-radius: 4px;
+    }
+
+    .quota-progress-fill.complete {
+      background: linear-gradient(90deg, var(--success), #8FA865);
+    }
+
+    .quota-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--clay);
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .quota-value.complete {
+      color: var(--success);
+    }
   </style>
 </head>
 <body>
@@ -273,59 +408,68 @@
       </p>
     </div>
 
-    <!-- Quota Progress -->
-    <div class="grid">
-      <div class="card">
-        <h2>🎯 Deals Progress</h2>
-        <div class="stat">
-          <div class="stat-label">Closed / Target</div>
-          <div class="stat-value" id="dealsProgress">0 / 15</div>
-          <div class="stat-sub" id="dealsPct">0% complete</div>
+    <!-- Circular Progress Indicators -->
+    <section class="circular-grid">
+      <div class="circular-card">
+        <div class="circular-progress">
+          <svg width="180" height="180">
+            <circle class="circular-bg" cx="90" cy="90" r="80"/>
+            <circle class="circular-fill" id="dealsCircle" cx="90" cy="90" r="80"
+                    stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+          </svg>
+          <div class="circular-center">
+            <span class="circular-value" id="dealsCircularValue">0</span>
+            <span class="circular-label">of 15</span>
+          </div>
         </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="dealsBar" style="width: 0%"></div>
-        </div>
-        <div class="stat-sub" id="dealsPace"></div>
+        <div class="circular-title">🎯 Deals Closed</div>
       </div>
 
-      <div class="card">
-        <h2>👥 Reps Under Management</h2>
-        <div class="stat">
-          <div class="stat-label">Current / Target</div>
-          <div class="stat-value" id="repsProgress">0 / 75</div>
-          <div class="stat-sub" id="repsPct">0% complete</div>
+      <div class="circular-card">
+        <div class="circular-progress">
+          <svg width="180" height="180">
+            <circle class="circular-bg" cx="90" cy="90" r="80"/>
+            <circle class="circular-fill" id="repsCircle" cx="90" cy="90" r="80"
+                    stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+          </svg>
+          <div class="circular-center">
+            <span class="circular-value" id="repsCircularValue">0</span>
+            <span class="circular-label">of 75</span>
+          </div>
         </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="repsBar" style="width: 0%"></div>
-        </div>
+        <div class="circular-title">👥 Reps Signed</div>
       </div>
 
-      <div class="card">
-        <h2>💰 Monthly Recurring Revenue</h2>
-        <div class="stat">
-          <div class="stat-label">Current / Target</div>
-          <div class="stat-value" id="mrrProgress">$0 / $3,750</div>
-          <div class="stat-sub" id="mrrPct">0% complete</div>
+      <div class="circular-card">
+        <div class="circular-progress">
+          <svg width="180" height="180">
+            <circle class="circular-bg" cx="90" cy="90" r="80"/>
+            <circle class="circular-fill" id="mrrCircle" cx="90" cy="90" r="80"
+                    stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+          </svg>
+          <div class="circular-center">
+            <span class="circular-value" id="mrrCircularValue" style="font-size: 24px;">$0</span>
+            <span class="circular-label">of $3,750</span>
+          </div>
         </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="mrrBar" style="width: 0%"></div>
-        </div>
-        <div class="stat-sub">6-Month Projected: <span id="projectedRevenue">$0</span></div>
+        <div class="circular-title">💰 Monthly Revenue</div>
       </div>
 
-      <div class="card">
-        <h2>📅 Timeline</h2>
-        <div class="stat">
-          <div class="stat-label">Days Remaining</div>
-          <div class="stat-value" id="daysRemaining">183</div>
-          <div class="stat-sub">Started: May 12, 2026</div>
+      <div class="circular-card">
+        <div class="circular-progress">
+          <svg width="180" height="180">
+            <circle class="circular-bg" cx="90" cy="90" r="80"/>
+            <circle class="circular-fill" id="timeCircle" cx="90" cy="90" r="80"
+                    stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+          </svg>
+          <div class="circular-center">
+            <span class="circular-value" id="daysCircularValue">183</span>
+            <span class="circular-label">days left</span>
+          </div>
         </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="timeBar" style="width: 0%"></div>
-        </div>
-        <div class="stat-sub" id="timeElapsed">0% of time elapsed</div>
+        <div class="circular-title">📅 Time Remaining</div>
       </div>
-    </div>
+    </section>
 
     <!-- Activity Summary -->
     <div class="grid">
@@ -406,6 +550,43 @@
       </div>
     </div>
 
+    <!-- Today's Quota Section -->
+    <div class="daily-quota">
+      <h2>📋 Today's Quota</h2>
+
+      <div class="quota-item">
+        <div class="quota-label">Connection Requests</div>
+        <div class="quota-progress">
+          <div class="quota-progress-fill" id="todayConnectionsBar" style="width: 0%"></div>
+        </div>
+        <div class="quota-value" id="todayConnections">0 / 10</div>
+      </div>
+
+      <div class="quota-item">
+        <div class="quota-label">Group Comments</div>
+        <div class="quota-progress">
+          <div class="quota-progress-fill" id="todayCommentsBar" style="width: 0%"></div>
+        </div>
+        <div class="quota-value" id="todayComments">0 / 5</div>
+      </div>
+
+      <div class="quota-item">
+        <div class="quota-label">Cold Emails</div>
+        <div class="quota-progress">
+          <div class="quota-progress-fill" id="todayEmailsBar" style="width: 0%"></div>
+        </div>
+        <div class="quota-value" id="todayEmails">0 / 10</div>
+      </div>
+
+      <div class="quota-item">
+        <div class="quota-label">Discovery Calls</div>
+        <div class="quota-progress">
+          <div class="quota-progress-fill" id="todayCallsBar" style="width: 0%"></div>
+        </div>
+        <div class="quota-value" id="todayCalls">0 / 1</div>
+      </div>
+    </div>
+
     <!-- Quick Entry Form -->
     <div class="card" style="max-width: 600px; margin: 0 auto;">
       <h2>➕ Log Today's Activity</h2>
@@ -446,7 +627,6 @@
   <script>
     // Configuration
     let SHEET_ID = localStorage.getItem('sheetId') || '';
-    const API_KEY = 'YOUR_GOOGLE_API_KEY'; // We'll add this later
 
     // Goals
     const GOALS = {
@@ -479,18 +659,128 @@
     }
 
     async function loadDashboard() {
-      // This will load data from Google Sheets
-      // For now, using mock data
-      updateDashboard({
-        deals: 0,
-        reps: 0,
-        mrr: 0,
-        connections: 0,
-        emails: 0,
-        comments: 0,
-        replies: 0,
-        callsBooked: 0,
-        callsHeld: 0
+      try {
+        // Fetch Daily Activity data
+        const activityUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Daily Activity`;
+        const activityResponse = await fetch(activityUrl);
+        const activityCsv = await activityResponse.text();
+        const activityRows = parseCSV(activityCsv);
+
+        // Calculate totals from Daily Activity sheet
+        let totalConnections = 0;
+        let totalComments = 0;
+        let totalEmails = 0;
+        let totalReplies = 0;
+        let totalCallsBooked = 0;
+        let totalCallsHeld = 0;
+
+        // Today's data
+        let todayConnections = 0;
+        let todayComments = 0;
+        let todayEmails = 0;
+        let todayCalls = 0;
+
+        const todayStr = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+
+        // Skip header row (index 0), sum the rest
+        for (let i = 1; i < activityRows.length; i++) {
+          const row = activityRows[i];
+          if (row.length >= 8 && row[0]) { // Has date and data
+            totalConnections += parseInt(row[1]) || 0;
+            totalComments += parseInt(row[2]) || 0;
+            totalEmails += parseInt(row[3]) || 0;
+            totalReplies += parseInt(row[4]) || 0;
+            totalCallsBooked += parseInt(row[5]) || 0;
+            totalCallsHeld += parseInt(row[6]) || 0;
+
+            // Check if this is today's row
+            if (row[0].includes(todayStr)) {
+              todayConnections = parseInt(row[1]) || 0;
+              todayComments = parseInt(row[2]) || 0;
+              todayEmails = parseInt(row[3]) || 0;
+              todayCalls = parseInt(row[6]) || 0; // Calls Held
+            }
+          }
+        }
+
+        // Fetch Deals Pipeline data
+        const dealsUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Deals Pipeline`;
+        const dealsResponse = await fetch(dealsUrl);
+        const dealsCsv = await dealsResponse.text();
+        const dealsRows = parseCSV(dealsCsv);
+
+        // Count closed deals and sum MRR
+        let closedDeals = 0;
+        let totalReps = 0;
+        let totalMRR = 0;
+
+        for (let i = 1; i < dealsRows.length; i++) {
+          const row = dealsRows[i];
+          if (row.length >= 6 && row[3] === 'Closed Won') {
+            closedDeals++;
+            totalReps += parseInt(row[2]) || 0;
+            totalMRR += parseFloat(row[5]) || 0;
+          }
+        }
+
+        // Update dashboard with real data
+        updateDashboard({
+          deals: closedDeals,
+          reps: totalReps,
+          mrr: totalMRR,
+          connections: totalConnections,
+          emails: totalEmails,
+          comments: totalComments,
+          replies: totalReplies,
+          callsBooked: totalCallsBooked,
+          callsHeld: totalCallsHeld,
+          todayConnections: todayConnections,
+          todayComments: todayComments,
+          todayEmails: todayEmails,
+          todayCalls: todayCalls
+        });
+
+      } catch (error) {
+        console.error('Error loading dashboard:', error);
+        alert('Could not load data from Google Sheets. Make sure the sheet is shared as "Anyone with the link can view".');
+
+        // Show mock data on error
+        updateDashboard({
+          deals: 0,
+          reps: 0,
+          mrr: 0,
+          connections: 0,
+          emails: 0,
+          comments: 0,
+          replies: 0,
+          callsBooked: 0,
+          callsHeld: 0
+        });
+      }
+    }
+
+    // Simple CSV parser
+    function parseCSV(csv) {
+      const lines = csv.split('\n');
+      return lines.map(line => {
+        // Simple split on comma (handles quoted fields)
+        const result = [];
+        let current = '';
+        let inQuotes = false;
+
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            result.push(current.trim());
+            current = '';
+          } else {
+            current += char;
+          }
+        }
+        result.push(current.trim());
+        return result;
       });
     }
 
@@ -505,38 +795,6 @@
       const elapsed = Math.max(0, Math.floor((today - GOALS.startDate) / (1000 * 60 * 60 * 24)));
       const remaining = GOALS.totalDays - elapsed;
       const timeProgress = (elapsed / GOALS.totalDays) * 100;
-
-      // Update deals progress
-      document.getElementById('dealsProgress').textContent = `${data.deals} / ${GOALS.deals}`;
-      document.getElementById('dealsPct').textContent = `${Math.round(dealsProgress)}% complete`;
-      document.getElementById('dealsBar').style.width = `${dealsProgress}%`;
-
-      // Pace indicator
-      const onPace = dealsProgress >= timeProgress;
-      const paceClass = onPace ? 'ahead' : 'behind';
-      const paceText = onPace ? '✓ Ahead of pace' : '⚠ Behind pace';
-      document.getElementById('dealsPace').innerHTML = `<span class="pace-indicator ${paceClass}">${paceText}</span>`;
-
-      if (dealsProgress >= 100) {
-        document.getElementById('dealsBar').classList.add('complete');
-        fireConfetti();
-      }
-
-      // Update reps progress
-      document.getElementById('repsProgress').textContent = `${data.reps} / ${GOALS.reps}`;
-      document.getElementById('repsPct').textContent = `${Math.round(repsProgress)}% complete`;
-      document.getElementById('repsBar').style.width = `${repsProgress}%`;
-
-      // Update MRR progress
-      document.getElementById('mrrProgress').textContent = `$${data.mrr.toLocaleString()} / $${GOALS.mrr.toLocaleString()}`;
-      document.getElementById('mrrPct').textContent = `${Math.round(mrrProgress)}% complete`;
-      document.getElementById('mrrBar').style.width = `${mrrProgress}%`;
-      document.getElementById('projectedRevenue').textContent = `$${(data.mrr * 6).toLocaleString()}`;
-
-      // Update timeline
-      document.getElementById('daysRemaining').textContent = remaining;
-      document.getElementById('timeBar').style.width = `${timeProgress}%`;
-      document.getElementById('timeElapsed').textContent = `${Math.round(timeProgress)}% of time elapsed`;
 
       // Update activity
       document.getElementById('totalConnections').textContent = data.connections;
@@ -554,6 +812,29 @@
       document.getElementById('callsBooked').textContent = `${data.callsBooked} calls booked`;
       document.getElementById('closeRate').textContent = `${Math.round(closeRate)}%`;
       document.getElementById('dealsFromCalls').textContent = `${data.deals} deals closed`;
+
+      // Update circular progress indicators
+      updateCircularProgress('dealsCircle', data.deals, GOALS.deals);
+      document.getElementById('dealsCircularValue').textContent = data.deals;
+
+      updateCircularProgress('repsCircle', data.reps, GOALS.reps);
+      document.getElementById('repsCircularValue').textContent = data.reps;
+
+      updateCircularProgress('mrrCircle', data.mrr, GOALS.mrr);
+      document.getElementById('mrrCircularValue').textContent = `$${data.mrr.toLocaleString()}`;
+
+      // Reuse elapsed that was calculated earlier
+      const daysLeft = GOALS.totalDays - elapsed;
+      updateCircularProgress('timeCircle', elapsed, GOALS.totalDays);
+      document.getElementById('daysCircularValue').textContent = daysLeft;
+
+      // Update today's quota (from today's data if available)
+      updateTodayQuota({
+        connections: data.todayConnections || 0,
+        comments: data.todayComments || 0,
+        emails: data.todayEmails || 0,
+        calls: data.todayCalls || 0
+      });
 
       // Update milestones
       checkMilestones(data);
@@ -585,6 +866,59 @@
         origin: { y: 0.6 },
         colors: ['#C9A687', '#B5583E', '#F4EFE8', '#6C7A4D']
       });
+    }
+
+    function updateCircularProgress(elementId, current, total) {
+      const circle = document.getElementById(elementId);
+      if (!circle) return;
+
+      const circumference = 502.4; // 2 * PI * radius (80)
+      const percentage = Math.min((current / total) * 100, 100);
+      const offset = circumference - (percentage / 100) * circumference;
+
+      circle.style.strokeDashoffset = offset;
+
+      if (percentage >= 100) {
+        circle.classList.add('complete');
+      }
+    }
+
+    function updateTodayQuota(today) {
+      // Connections
+      const connectionsPct = Math.min((today.connections / 10) * 100, 100);
+      document.getElementById('todayConnectionsBar').style.width = `${connectionsPct}%`;
+      document.getElementById('todayConnections').textContent = `${today.connections} / 10`;
+      if (connectionsPct >= 100) {
+        document.getElementById('todayConnectionsBar').classList.add('complete');
+        document.getElementById('todayConnections').classList.add('complete');
+      }
+
+      // Comments
+      const commentsPct = Math.min((today.comments / 5) * 100, 100);
+      document.getElementById('todayCommentsBar').style.width = `${commentsPct}%`;
+      document.getElementById('todayComments').textContent = `${today.comments} / 5`;
+      if (commentsPct >= 100) {
+        document.getElementById('todayCommentsBar').classList.add('complete');
+        document.getElementById('todayComments').classList.add('complete');
+      }
+
+      // Emails
+      const emailsPct = Math.min((today.emails / 10) * 100, 100);
+      document.getElementById('todayEmailsBar').style.width = `${emailsPct}%`;
+      document.getElementById('todayEmails').textContent = `${today.emails} / 10`;
+      if (emailsPct >= 100) {
+        document.getElementById('todayEmailsBar').classList.add('complete');
+        document.getElementById('todayEmails').classList.add('complete');
+      }
+
+      // Calls
+      const callsPct = Math.min((today.calls / 1) * 100, 100);
+      document.getElementById('todayCallsBar').style.width = `${callsPct}%`;
+      document.getElementById('todayCalls').textContent = `${today.calls} / 1`;
+      if (callsPct >= 100) {
+        document.getElementById('todayCallsBar').classList.add('complete');
+        document.getElementById('todayCalls').classList.add('complete');
+      }
     }
 
     // Form submission

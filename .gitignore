@@ -14,3 +14,5 @@ node_modules/
 .idea/
 .vercel
 .env*.local
+env-edit.txt
+add-slack-credentials.sh

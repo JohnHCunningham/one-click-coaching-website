@@ -715,11 +715,16 @@ function setupDropZones() {
     newList.addEventListener('drop', e => {
       e.preventDefault();
       e.stopPropagation();
+      console.log('Drop event triggered', newList.parentElement.dataset.status);
 
-      if (!draggedElement) return;
+      if (!draggedElement) {
+        console.log('No dragged element!');
+        return;
+      }
 
       const taskId = parseInt(draggedElement.dataset.id);
       const newStatus = newList.parentElement.dataset.status;
+      console.log('Moving task', taskId, 'to', newStatus);
 
       // Update task status
       const task = tasks.find(t => t.id === taskId);
@@ -792,6 +797,7 @@ function createCard(task) {
 let draggedElement = null;
 
 function handleDragStart(e) {
+  console.log('Drag started', this);
   draggedElement = this;
   this.classList.add('dragging');
   e.dataTransfer.effectAllowed = 'move';

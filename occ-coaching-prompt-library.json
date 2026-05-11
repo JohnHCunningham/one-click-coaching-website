@@ -1,0 +1,717 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OCC Sandler Coaching Prompt Library",
+  "description": "Coaching prompts mapped to call scoring schema - delivered same-day after calls",
+  "version": "1.0.0",
+
+  "coachingLibrary": {
+    "compartment1_bondingRapport": {
+      "compartmentName": "Bonding & Rapport",
+      "objective": "Build trust and emotional safety so prospects tell you the truth",
+
+      "commonIssues": [
+        {
+          "issue": "Jumps straight to questions without rapport",
+          "detectedWhen": "Call starts with qualifying questions in first 60 seconds",
+          "coachingPrompt": {
+            "headline": "⚡ Build rapport BEFORE interrogating",
+            "problem": "You jumped straight into qualifying questions. Prospects shut down when they feel interrogated.",
+            "impact": "Without rapport, you get surface-level answers. They won't share real pain.",
+            "fix": "Spend 2-3 minutes building rapport first. Show genuine curiosity about THEIR world.",
+            "sayThis": [
+              "Out of curiosity, how did you end up responsible for [their area]?",
+              "Help me understand your situation...",
+              "Before we dive in, tell me a bit about your world..."
+            ],
+            "notThat": [
+              "❌ So, how many reps do you have? (Too abrupt)",
+              "❌ Let me ask you some questions... (Interrogation mode)",
+              "❌ Tell me about your pain points. (Generic)"
+            ],
+            "practice": "On your next 3 calls, open with 'Out of curiosity...' and see how they open up.",
+            "videoReference": "Sandler Bonding & Rapport module, 3:45"
+          }
+        },
+        {
+          "issue": "Uses subordinate language",
+          "detectedWhen": "Rep says 'I'd love to earn your business' or 'When can I follow up?'",
+          "coachingPrompt": {
+            "headline": "🎯 Equal stature: You're peers, not subordinate",
+            "problem": "You used subordinate language that positions you as a vendor begging for business.",
+            "impact": "When you sound needy, prospects leverage that. They sense desperation and discount you.",
+            "fix": "Position as equals. You're both evaluating if this makes sense.",
+            "sayThis": [
+              "Let's figure out if this makes sense for both of us",
+              "This may or may not be a fit, and that's okay",
+              "If this isn't right, are you comfortable telling me no?"
+            ],
+            "notThat": [
+              "❌ I'd love to earn your business",
+              "❌ When can I follow up with you?",
+              "❌ What can I do to win this deal?"
+            ],
+            "practice": "Replace every 'I'd love to...' with 'Let's figure out if...' for one week.",
+            "videoReference": "Sandler Equal Business Stature, 7:20"
+          }
+        },
+        {
+          "issue": "Talks too much (doesn't listen)",
+          "detectedWhen": "Rep talk time > 50% in bonding phase",
+          "coachingPrompt": {
+            "headline": "🔇 Listen more than you talk",
+            "problem": "You talked 65% of the time in the first 5 minutes. Prospects don't trust people who monologue.",
+            "impact": "When you talk too much, you don't learn. And prospects feel sold TO, not heard.",
+            "fix": "Aim for 30-40% talk time in discovery. Ask, then SHUT UP and listen.",
+            "sayThis": [
+              "[Ask question] → [3-5 second silence]",
+              "Tell me more about that...",
+              "Help me understand..."
+            ],
+            "notThat": [
+              "❌ [Ask question then immediately add 3 more sentences]",
+              "❌ [Fill every silence with more talking]",
+              "❌ Oh I know exactly what you mean, we have clients who..."
+            ],
+            "practice": "After asking a question, count to 5 silently before saying ANYTHING. Tolerate the silence.",
+            "videoReference": "Sandler Active Listening, 12:10"
+          }
+        }
+      ]
+    },
+
+    "compartment2_upFrontContract": {
+      "compartmentName": "Up-Front Contract",
+      "objective": "Set clear expectations and make 'no' safe BEFORE diving in",
+
+      "commonIssues": [
+        {
+          "issue": "Skips up-front contract entirely",
+          "detectedWhen": "No mention of time, agenda, or permission to say no",
+          "coachingPrompt": {
+            "headline": "🚨 ALWAYS set an up-front contract",
+            "problem": "You jumped straight into questions without setting expectations. This creates hidden resistance.",
+            "impact": "Without a contract, prospects feel ambushed. They're thinking 'How long is this? Where's this going? Can I say no?' instead of focusing on your questions.",
+            "fix": "Set an up-front contract EVERY TIME. Takes 30 seconds, saves 30 minutes of wasted calls.",
+            "template": "So that we respect your time, here's what I'd like to do: [AGENDA]. We have [TIME]. If we get to the end and it's not a fit, are you comfortable telling me no so we don't create maybes? Fair enough?",
+            "sayThis": [
+              "I have a few questions to see if we're even a fit. Fair enough?",
+              "If this isn't right, are you comfortable saying no?",
+              "We said 15 minutes - does that still work?"
+            ],
+            "notThat": [
+              "❌ [Immediately starts asking questions]",
+              "❌ This will only take a minute... [then goes 20 minutes]",
+              "❌ So tell me about your business..."
+            ],
+            "practice": "Script your up-front contract word-for-word. Memorize it. Use it on EVERY call for 2 weeks.",
+            "videoReference": "Sandler Up-Front Contract, 2:30"
+          }
+        },
+        {
+          "issue": "Doesn't make 'no' safe",
+          "detectedWhen": "Contract sets time/agenda but doesn't give permission to say no",
+          "coachingPrompt": {
+            "headline": "✅ Make 'no' safe and explicit",
+            "problem": "You set time and agenda, but you didn't give them permission to say no. They're still guarded.",
+            "impact": "If 'no' isn't safe, prospects create maybes. They ghost you instead of being honest.",
+            "fix": "Explicitly say: 'If this isn't a fit, are you comfortable telling me no?'",
+            "sayThis": [
+              "If we get to the end and it's not a fit, are you comfortable telling me no so we don't create maybes?",
+              "This may not be for you, and that's okay",
+              "No is a perfectly acceptable answer - I promise I won't be offended"
+            ],
+            "notThat": [
+              "❌ I think you're going to love this",
+              "❌ [Assumes they'll say yes if they're interested]",
+              "❌ I'm confident we can help you"
+            ],
+            "practice": "End your up-front contract with 'Fair enough?' and WAIT for them to say yes.",
+            "videoReference": "Sandler Making No Safe, 5:15"
+          }
+        }
+      ]
+    },
+
+    "compartment3_pain": {
+      "compartmentName": "Pain (Pain Funnel)",
+      "objective": "Go from surface symptoms → deep business impact → personal consequences → commitment",
+
+      "commonIssues": [
+        {
+          "issue": "Spills candy in lobby (pitches before pain)",
+          "detectedWhen": "Mentions product features before completing pain funnel",
+          "coachingPrompt": {
+            "headline": "🍬 DON'T SPILL YOUR CANDY IN THE LOBBY",
+            "problem": "You jumped to features in minute 4. They asked 'How does it work?' and you answered. You gave away your expertise too early.",
+            "impact": "When you pitch before understanding deep pain, you lose leverage. They got what they wanted (information) without committing to anything.",
+            "fix": "REVERSE the question. Answer with a question. Don't spill your candy until you're qualified.",
+            "sayThis": [
+              "Good question - what specifically are you trying to solve that's driving that question?",
+              "Before I answer that, can we talk about what's not working today?",
+              "I could show you how it works, but if it doesn't solve your specific problem, that's a waste of time. What's going on?"
+            ],
+            "notThat": [
+              "❌ Oh great question! Here's how it works... [launches into demo]",
+              "❌ We have an AI that scores calls and... [feature dump]",
+              "❌ Let me show you... [screen share]"
+            ],
+            "practice": "Next 5 times someone asks 'How does it work?' — REVERSE with 'What specifically are you trying to solve?' Count how many go deeper into pain.",
+            "videoReference": "Sandler Don't Spill Your Candy, 8:45"
+          }
+        },
+        {
+          "issue": "Stays at surface pain (doesn't go deep)",
+          "detectedWhen": "Asks fewer than 4 pain questions OR doesn't get to personal impact",
+          "coachingPrompt": {
+            "headline": "⬇️ Go DEEPER on pain - use the Pain Funnel",
+            "problem": "You stopped at surface pain. They said 'reps aren't using the methodology' and you moved on. That's level 1 of 7.",
+            "impact": "Surface pain doesn't create urgency. They'll say 'Let me think about it' because you didn't connect it to real cost or personal consequences.",
+            "fix": "Use the Pain Funnel to go 6-7 levels deep. Surface → Impact → Personal → Commitment.",
+            "painFunnelLevels": [
+              "Level 1 (Surface): 'Tell me more about that.' 'Can you give me an example?'",
+              "Level 2 (Duration): 'How long has that been happening?'",
+              "Level 3 (Impact): 'What does that cost the business?' 'What does that do to your pipeline?'",
+              "Level 4 (Personal): 'How does that affect YOU personally?' 'How does that make you feel?'",
+              "Level 5 (Consequences): 'What happens if nothing changes?' 'What does that mean for your team?'",
+              "Level 6 (Gave up?): 'Have you given up trying to fix this?'",
+              "Level 7 (Why now?): 'Why fix it now versus six months from now?'"
+            ],
+            "sayThis": [
+              "Tell me more about that → How long has that been an issue? → What's that costing you? → How does that affect YOU personally? → What happens if nothing changes?",
+              "[After they share surface pain] → Can you give me an example? → What does that do to your numbers? → How does that land on you?",
+              "Why now versus waiting another quarter?"
+            ],
+            "notThat": [
+              "❌ [Hears surface pain] → Oh we can help with that! [pitches]",
+              "❌ [Asks one pain question] → Great, so let me show you...",
+              "❌ [Doesn't ask about personal impact]"
+            ],
+            "practice": "On your next call, ask 7 pain questions in a row. See how deep you can go before they say 'That's exactly why I need to fix this NOW.'",
+            "videoReference": "Sandler Pain Funnel Mastery, 15:30"
+          }
+        },
+        {
+          "issue": "Interrogates instead of explores",
+          "detectedWhen": "Rapid-fire questions without pauses or acknowledgment",
+          "coachingPrompt": {
+            "headline": "🧭 Explore pain, don't interrogate",
+            "problem": "You asked 6 pain questions in 90 seconds without pausing. It felt like an interrogation.",
+            "impact": "When you rapid-fire questions, prospects shut down. They give shorter answers and guard the truth.",
+            "fix": "Ask a question → PAUSE 3-5 seconds → Acknowledge what they said → Ask next question.",
+            "sayThis": [
+              "[Ask question] → [Wait 3-5 seconds] → [Let them finish] → 'That sounds frustrating' → [Next question]",
+              "Tell me more about that... [silence]",
+              "Help me understand how that affects you... [silence]"
+            ],
+            "notThat": [
+              "❌ How long has that been happening? What's it costing? How does that affect you? [machine gun]",
+              "❌ [Asks question, prospect starts answering, rep interrupts with next question]",
+              "❌ [Zero pauses, zero acknowledgment]"
+            ],
+            "practice": "After EVERY pain question, count to 5 silently. Let them think. Let them expand. Silence is your friend.",
+            "videoReference": "Sandler Tonality & Pacing, 9:20"
+          }
+        },
+        {
+          "issue": "Doesn't use Pendulum technique",
+          "detectedWhen": "Opportunity to pull back but rep keeps pushing forward",
+          "coachingPrompt": {
+            "headline": "↔️ Advanced: Use the Pendulum technique",
+            "problem": "You got great pain, but you didn't pull back. They said it's costing 3-4 deals a quarter, and you immediately moved to budget.",
+            "impact": "When you always push forward, you create resistance. Pull back to create psychological desire.",
+            "fix": "After uncovering pain, PULL BACK with negative reverse. Let THEM chase YOU.",
+            "sayThis": [
+              "Honestly, if it's only 3-4 deals a quarter, this might not be worth changing.",
+              "Maybe sticking with your current approach is the right move.",
+              "I'm not sure we're the right fit here - this seems pretty minor.",
+              "If the team is okay with the current results, you probably don't need this."
+            ],
+            "notThat": [
+              "❌ [Hears pain] → Great! Let me show you how we solve that! [pushes]",
+              "❌ [Immediately moves to next compartment without pulling back]",
+              "❌ So let's talk about budget... [too eager]"
+            ],
+            "psychology": "When you pull back, the prospect's brain says 'Wait, I DO have a problem!' and they lean in. This is the Pendulum: pull back before pushing forward.",
+            "practice": "Next time you uncover strong pain (7+ out of 10), pull back with 'Maybe this isn't worth fixing.' Watch them INSIST it is.",
+            "videoReference": "Sandler Pendulum Technique, 22:40"
+          }
+        }
+      ]
+    },
+
+    "compartment4_budget": {
+      "compartmentName": "Budget",
+      "objective": "Normalize money conversation. Qualify ability AND willingness to invest.",
+
+      "commonIssues": [
+        {
+          "issue": "Avoids budget conversation",
+          "detectedWhen": "Moves to decision or fulfillment without discussing budget",
+          "coachingPrompt": {
+            "headline": "💰 ALWAYS talk about money",
+            "problem": "You skipped budget entirely. You got to decision without knowing if they have $500/month.",
+            "impact": "You'll waste weeks on deals that can't afford you. Budget is a qualifier, not a closer.",
+            "fix": "Normalize money. Make it conversational. Ask BEFORE you invest time in fulfillment.",
+            "sayThis": [
+              "Can we talk a bit about budget so we both know whether this even makes sense to keep going?",
+              "How do you usually decide what's worth investing in for this kind of problem?",
+              "What were you thinking of investing to solve this?",
+              "Just so I know where we are - do you have budget allocated or would this need approval?"
+            ],
+            "notThat": [
+              "❌ [Skips budget, hopes they'll figure it out later]",
+              "❌ We'll talk pricing after the demo",
+              "❌ [Waits for them to ask 'How much?']"
+            ],
+            "practice": "On your next 3 calls, say this exact phrase: 'Can we talk about budget so we both know if this makes sense?' See how they respond.",
+            "videoReference": "Sandler Normalizing Money, 6:50"
+          }
+        },
+        {
+          "issue": "Gives price before pain is established",
+          "detectedWhen": "Prospect asks 'How much?' early and rep answers without reversing",
+          "coachingPrompt": {
+            "headline": "🔄 REVERSE pricing questions if asked too early",
+            "problem": "They asked 'What does this cost?' in minute 3 and you answered. You spilled your candy.",
+            "impact": "When you give price before pain, they anchor on cost without understanding value. You lose leverage.",
+            "fix": "REVERSE the pricing question. Tie it back to pain.",
+            "sayThis": [
+              "Fair question - it varies quite a bit depending on what you need. Can we talk about what you're trying to solve first so I can give you a meaningful range?",
+              "Good question. Before I answer that - what were you thinking of investing to solve [their pain]?",
+              "I could throw a number at you, but if it doesn't solve your problem, price doesn't matter. What's going on?"
+            ],
+            "notThat": [
+              "❌ It's $50 per rep per month [too early]",
+              "❌ I'll send you pricing after this call [dodging]",
+              "❌ [Gives price before understanding pain/budget]"
+            ],
+            "practice": "Next time someone asks price early, reverse with: 'What were YOU thinking of investing to solve this?' and see what they say.",
+            "videoReference": "Sandler Reversing Price Questions, 11:25"
+          }
+        },
+        {
+          "issue": "Accepts vague budget answers",
+          "detectedWhen": "Prospect says 'We'll find budget if it makes sense' and rep moves on",
+          "coachingPrompt": {
+            "headline": "🎯 Test if budget is REAL",
+            "problem": "They said 'We'll find budget if it makes sense' and you accepted that. That's not a real budget.",
+            "impact": "Vague budget = deal dies in procurement. You need to know if they CAN and WILL invest.",
+            "fix": "Test the budget. Use negative reverse if it's vague.",
+            "sayThis": [
+              "'We'll find budget' - I've heard that before and it usually means there's no budget. Should we reconnect when budget is actually allocated?",
+              "So there's no budget allocated yet - is that right? Who would need to approve this and what's that process?",
+              "If $500/month isn't in the budget, let's not waste your time with a demo."
+            ],
+            "notThat": [
+              "❌ Great, we'll find budget! [too optimistic]",
+              "❌ [Accepts vague answer and moves forward]",
+              "❌ I'm sure you can get it approved [assumes]"
+            ],
+            "practice": "When you hear vague budget answers, use negative reverse: 'Sounds like there's no budget - should we pause this?' Forces them to reveal truth.",
+            "videoReference": "Sandler Testing Budget Commitment, 14:10"
+          }
+        }
+      ]
+    },
+
+    "compartment5_decision": {
+      "compartmentName": "Decision",
+      "objective": "Understand WHO decides, HOW they decide, WHEN. Flush roadblocks with 'What then?'",
+
+      "commonIssues": [
+        {
+          "issue": "Assumes prospect is decision maker",
+          "detectedWhen": "Doesn't ask 'Who else is involved?'",
+          "coachingPrompt": {
+            "headline": "👥 NEVER assume they're the decision maker",
+            "problem": "You moved to fulfillment without asking who else is involved. Then at the end they said 'I need to run this by my VP.'",
+            "impact": "Surprise decision makers kill deals. You pitched to the wrong person and now you're stuck.",
+            "fix": "ALWAYS map the decision committee. Assume they're NOT the sole decision maker.",
+            "sayThis": [
+              "Besides you, who else will be involved in deciding whether we move forward?",
+              "Walk me through who's in the room when this gets decided.",
+              "Who else has to sign off on this?",
+              "If you say yes, what happens next? Who else weighs in?"
+            ],
+            "notThat": [
+              "❌ [Assumes they can decide alone]",
+              "❌ So should we move forward? [without understanding decision process]",
+              "❌ Great, I'll send over a contract [then finds out CFO has to approve]"
+            ],
+            "practice": "On EVERY call, ask 'Besides you, who else is involved?' Even if they're the CEO. See what you uncover.",
+            "videoReference": "Sandler Mapping Decision Makers, 7:35"
+          }
+        },
+        {
+          "issue": "Doesn't understand decision process",
+          "detectedWhen": "Knows who decides but not HOW they decide",
+          "coachingPrompt": {
+            "headline": "🗺️ Map the PROCESS, not just the people",
+            "problem": "You asked who's involved, but you didn't understand the PROCESS. How does this actually get decided?",
+            "impact": "Without understanding the process, you can't navigate it. The deal stalls and you don't know why.",
+            "fix": "Ask 'Walk me through how decisions like this usually get made here.'",
+            "sayThis": [
+              "Walk me through how decisions like this usually get made at your company.",
+              "What does a 'yes' actually look like procedurally?",
+              "What has to happen between now and a signed contract?",
+              "What's your normal process for evaluating new vendors?"
+            ],
+            "notThat": [
+              "❌ [Knows who decides but not the steps]",
+              "❌ So you'll take it to your team? [vague]",
+              "❌ [Doesn't understand approval process]"
+            ],
+            "practice": "After you map WHO is involved, ask 'Walk me through how this usually gets decided.' Then use 'What then?' to go deeper.",
+            "videoReference": "Sandler Decision Process Mapping, 10:15"
+          }
+        },
+        {
+          "issue": "Doesn't use 'What then?' to flush roadblocks",
+          "detectedWhen": "Accepts decision process at face value without going deeper",
+          "coachingPrompt": {
+            "headline": "🔍 Advanced: Flush roadblocks with 'What then?'",
+            "problem": "They said 'I present to my VP, then we decide.' You accepted that. You didn't ask 'What then?'",
+            "impact": "Hidden roadblocks kill deals. 'What then?' questions reveal obstacles BEFORE they surprise you.",
+            "fix": "After each step in the decision process, ask 'What then?' or 'And then what happens?' Go 3-4 levels deep.",
+            "sayThis": [
+              "So you present to your VP... what then?",
+              "And then what happens?",
+              "What has to happen after that?",
+              "What could derail this between now and signing?",
+              "Who might push back and why?"
+            ],
+            "notThat": [
+              "❌ [Accepts 'I'll take it to my team' without drilling down]",
+              "❌ [Doesn't uncover hidden objections]",
+              "❌ Sounds good! [without understanding what could go wrong]"
+            ],
+            "example": "You: 'So you present to your VP... what then?'\nThem: 'She'll want to see ROI data.'\nYou: 'And then what happens?'\nThem: 'Then it goes to finance for approval.'\nYou: 'What then?'\nThem: 'Well, finance will want to see if we have budget this quarter... which we might not.'\n\n→ You just found the real roadblock.",
+            "practice": "On your next call, after they describe the decision process, ask 'What then?' 4 times in a row. Count how many roadblocks you uncover.",
+            "videoReference": "Sandler What Then Questions, 18:50"
+          }
+        },
+        {
+          "issue": "Doesn't adapt to prospect's system",
+          "detectedWhen": "Rep tries to force their process onto prospect's buying system",
+          "coachingPrompt": {
+            "headline": "🔧 Prospect's system ALWAYS wins",
+            "problem": "They said 'We need to do a 30-day trial first' and you pushed back with 'We don't usually do trials.' Their system always wins.",
+            "impact": "When you fight their process, you lose. Accept that their buying system will win and work within it.",
+            "fix": "Ask 'Help me understand how this typically works at your company' and ADAPT to their system.",
+            "sayThis": [
+              "Help me understand how this typically works at your company.",
+              "What's your normal process for evaluating new vendors?",
+              "Walk me through what happens on your side.",
+              "[After they explain] → Okay, so we need to work within that. What's the best way to do this given your process?"
+            ],
+            "notThat": [
+              "❌ We don't usually do trials [fighting their system]",
+              "❌ Our process is... [imposing your process]",
+              "❌ Can we skip the committee and just decide? [unrealistic]"
+            ],
+            "practice": "When they describe their buying process, say 'Help me understand how that works' instead of explaining YOUR process.",
+            "videoReference": "Sandler Prospect's System Wins, 13:40"
+          }
+        }
+      ]
+    },
+
+    "compartment6_fulfillment": {
+      "compartmentName": "Fulfillment",
+      "objective": "Present solution ONLY after qualifying. Tie features to their specific pains.",
+
+      "commonIssues": [
+        {
+          "issue": "Presents before qualifying (didn't seal compartments 1-5)",
+          "detectedWhen": "Jumps to fulfillment before pain/budget/decision are covered",
+          "coachingPrompt": {
+            "headline": "⛔ DON'T present until you're QUALIFIED",
+            "problem": "You started presenting in minute 6. Pain, budget, and decision weren't covered. You spilled your candy.",
+            "impact": "When you present too early, you have no leverage. They got your expertise for free and now they'll shop you.",
+            "fix": "Seal compartments 1-5 BEFORE fulfillment. No exceptions.",
+            "checklist": [
+              "✅ Bonding & Rapport: Do they trust you?",
+              "✅ Up-Front Contract: Are expectations set?",
+              "✅ Pain: Did you go 6-7 levels deep?",
+              "✅ Budget: Do you know if they can afford it?",
+              "✅ Decision: Do you know who decides and how?",
+              "→ ONLY THEN present solution"
+            ],
+            "sayThis": [
+              "[Before presenting] → 'Based on what you've shared - [recap their pain] - here's how we'd solve that...'",
+              "[If they ask for demo before qualifying] → 'Happy to show you, but can we talk about what you're solving first so I know what to focus on?'"
+            ],
+            "notThat": [
+              "❌ Let me show you how it works! [without qualifying]",
+              "❌ [Starts demo in minute 5]",
+              "❌ [Pitches before understanding pain/budget/decision]"
+            ],
+            "practice": "Next 5 calls: don't present ANYTHING until compartments 1-5 are sealed. Force yourself to qualify first.",
+            "videoReference": "Sandler Sealing Compartments, 16:20"
+          }
+        },
+        {
+          "issue": "Generic pitch (doesn't tie to their specific pains)",
+          "detectedWhen": "Uses generic benefits instead of referencing their stated pains",
+          "coachingPrompt": {
+            "headline": "🎯 Map features to THEIR pains, not generic benefits",
+            "problem": "You said 'We score calls and provide coaching.' That's generic. You didn't reference the pains they told you.",
+            "impact": "Generic pitches sound like spam. Prospects tune out because you're not speaking to THEIR problem.",
+            "fix": "Reference the EXACT pains they mentioned. Use THEIR words, not yours.",
+            "template": "You mentioned [THEIR PAIN] - here's how we solve that: [FEATURE TIED TO THAT SPECIFIC PAIN]. Does that address what you were talking about?",
+            "sayThis": [
+              "You mentioned reps revert to old habits after training - we solve that by scoring EVERY call so you catch drift before deals stall.",
+              "You said you can't prove ROI on training - our dashboard shows methodology adherence vs close rates, so you can prove what's working.",
+              "Remember you said it's costing 3-4 deals a quarter? This addresses that by coaching same-day instead of weeks later."
+            ],
+            "notThat": [
+              "❌ We have AI that scores calls [generic]",
+              "❌ Our platform provides coaching [not tied to their pain]",
+              "❌ We integrate with Gong and Salesforce [features without context]"
+            ],
+            "practice": "Before presenting ANY feature, say 'You mentioned [their pain]...' to tie it back to what they told you.",
+            "videoReference": "Sandler Pain-Focused Fulfillment, 12:05"
+          }
+        },
+        {
+          "issue": "Monologues without checking alignment",
+          "detectedWhen": "Talks for 5+ minutes straight without asking 'How does this land?'",
+          "coachingPrompt": {
+            "headline": "💬 Keep fulfillment CONVERSATIONAL",
+            "problem": "You talked for 7 minutes straight in fulfillment. That's a monologue, not a conversation.",
+            "impact": "When you monologue, you lose them. They zone out. You don't know if it's landing.",
+            "fix": "Present for 2-3 minutes MAX, then check in. Make it a dialogue.",
+            "sayThis": [
+              "[Present for 2-3 minutes] → 'How does this land compared to what you were hoping to see?'",
+              "Does this address what you mentioned earlier about [pain]?",
+              "What questions do you have so far?",
+              "I'm sensing some hesitation - what's not sitting right?"
+            ],
+            "notThat": [
+              "❌ [Talks for 7+ minutes without pausing]",
+              "❌ [Screen shares and walks through every feature]",
+              "❌ [Doesn't check if it's landing]"
+            ],
+            "practice": "Set a timer. Present for 2 minutes, then ask 'How does this land?' Repeat. Never monologue for more than 2 minutes.",
+            "videoReference": "Sandler Conversational Fulfillment, 9:30"
+          }
+        }
+      ]
+    },
+
+    "compartment7_postSell": {
+      "compartmentName": "Post-Sell",
+      "objective": "Prevent buyer's remorse. Flush objections BEFORE they happen.",
+
+      "commonIssues": [
+        {
+          "issue": "Skips post-sell (closes and ends call)",
+          "detectedWhen": "Prospect agrees to move forward and rep immediately ends call",
+          "coachingPrompt": {
+            "headline": "🛡️ ALWAYS do post-sell - prevent buyer's remorse",
+            "problem": "They said yes and you ended the call. You didn't prevent buyer's remorse or flush objections.",
+            "impact": "Deals die AFTER the yes. They ghost you because they got cold feet and you didn't address it.",
+            "fix": "After they agree, do post-sell. Recap, flush objections, set success criteria.",
+            "sayThis": [
+              "Great! Just to recap, we've agreed on [X, Y, Z]. Does that still feel right?",
+              "Who might push back on this internally? How will you handle that?",
+              "What's the first sign this isn't going as planned?",
+              "What would make you regret this decision in 90 days?"
+            ],
+            "notThat": [
+              "❌ Great! I'll send over the contract. Talk soon! [ends call]",
+              "❌ [Assumes smooth sailing after yes]",
+              "❌ [Doesn't address potential objections]"
+            ],
+            "practice": "After EVERY yes, ask 'Who might push back internally?' See how many hidden objections you uncover.",
+            "videoReference": "Sandler Post-Sell Fundamentals, 5:45"
+          }
+        },
+        {
+          "issue": "Doesn't flush internal pushback",
+          "detectedWhen": "Doesn't ask who might object or how they'll handle it",
+          "coachingPrompt": {
+            "headline": "🚧 Flush internal roadblocks NOW",
+            "problem": "They said yes, but you didn't ask who might push back. Deals die from internal objections you didn't see coming.",
+            "impact": "CFO, VP, or teammate will object later. If you don't prepare the champion now, they'll crumble.",
+            "fix": "Ask 'Who might push back?' and 'How will you handle that?' before they leave the call.",
+            "sayThis": [
+              "Who might push back on this internally?",
+              "How do you think finance will react when they see this?",
+              "What will you say when your VP asks why now?",
+              "Who's going to be skeptical and why?",
+              "What objections do you expect and how will you handle them?"
+            ],
+            "notThat": [
+              "❌ [Assumes no one will object]",
+              "❌ I'm sure your team will love this [overly optimistic]",
+              "❌ [Doesn't prepare champion for objections]"
+            ],
+            "practice": "After they agree, ask 'Who might push back and why?' Then ask 'What will you say to them?' Coach them through it.",
+            "videoReference": "Sandler Flushing Internal Objections, 11:20"
+          }
+        },
+        {
+          "issue": "Uses negative reverse too early (before stall)",
+          "detectedWhen": "Uses 'Should we take this off the table?' during active discussion",
+          "coachingPrompt": {
+            "headline": "⏰ Timing: Negative reverse ONLY at stall points",
+            "problem": "You used negative reverse while they were still engaged. 'Should we take this off the table?' before there was a stall.",
+            "impact": "Negative reverse at the wrong time backfires. They say 'Yeah, let's pause' when they were actually moving forward.",
+            "fix": "ONLY use negative reverse when the deal is STALLING. Not before.",
+            "whenToUse": [
+              "✅ They go dark for 2+ weeks",
+              "✅ Timeline slips with no explanation",
+              "✅ They're vague and non-committal",
+              "✅ You feel them pulling away"
+            ],
+            "whenNOTtoUse": [
+              "❌ During active conversation",
+              "❌ Right after they say yes",
+              "❌ When they're still engaged"
+            ],
+            "sayThis": [
+              "[ONLY when stalled] → 'Should we just take this off the table for now?'",
+              "[ONLY when they go dark] → 'Honestly, it feels like this may not be the right time. Should we reconnect when it's more urgent?'",
+              "[ONLY when timeline slips] → 'Maybe we should pause this until you have more clarity.'"
+            ],
+            "notThat": [
+              "❌ [Uses negative reverse during active discussion]",
+              "❌ [Uses it as a closing technique]",
+              "❌ [Uses it when they're still moving forward]"
+            ],
+            "practice": "Save negative reverse for when deals STALL. If they're moving forward, don't use it.",
+            "videoReference": "Sandler Negative Reverse Timing, 14:55"
+          }
+        }
+      ]
+    },
+
+    "tonalityCoaching": {
+      "category": "Tonality & Delivery",
+      "objective": "Sound calm, curious, and detached - not desperate or interrogating",
+
+      "commonIssues": [
+        {
+          "issue": "Sounds desperate or needy",
+          "detectedWhen": "Voice spikes with excitement when prospect shows interest",
+          "coachingPrompt": {
+            "headline": "😌 Stay calm - be okay with NO",
+            "problem": "Your voice spiked when they said 'This sounds interesting.' You sounded excited/desperate.",
+            "impact": "Prospects sense desperation and leverage it. They discount you or ghost you.",
+            "fix": "Calm detachment. You're evaluating if THEY'RE a fit, not begging for business.",
+            "sayThis": [
+              "[Calm, even tone] → 'Let's figure out if this makes sense for both of us.'",
+              "[Matter-of-fact] → 'This may or may not be a fit, and that's okay.'",
+              "[Genuinely detached] → 'I'm not sure we're the right fit here.'"
+            ],
+            "notThat": [
+              "❌ [Excited spike] → 'Oh that's GREAT! We can definitely help!'",
+              "❌ [Eager tone] → 'I'd LOVE to work with you!'",
+              "❌ [Desperate] → 'When can we get started?!'"
+            ],
+            "practice": "Record your next 3 calls. Listen for voice spikes. Practice calm, even delivery.",
+            "videoReference": "Sandler Tonality Mastery, 8:15"
+          }
+        },
+        {
+          "issue": "Interrogation tone (not curious)",
+          "detectedWhen": "Questions sound like cross-examination instead of exploration",
+          "coachingPrompt": {
+            "headline": "🧭 Be CURIOUS, not interrogating",
+            "problem": "Your questions sounded like an interrogation. 'How many reps? What's your close rate? How much training?' - rapid fire, no warmth.",
+            "impact": "Interrogation = resistance. Curiosity = openness. Your tone determines what they share.",
+            "fix": "Soften your questions. Sound genuinely curious about their world.",
+            "sayThis": [
+              "[Curious] → 'Out of curiosity, how did you end up in this role?'",
+              "[Exploratory] → 'Help me understand what's going on...'",
+              "[Warm] → 'Tell me more about that...' [with genuine interest]"
+            ],
+            "notThat": [
+              "❌ [Interrogating] → 'How many reps do you have?'",
+              "❌ [Transactional] → 'What's your budget?'",
+              "❌ [Robotic] → 'Tell me about your pain points.'"
+            ],
+            "practice": "Start every question with 'Out of curiosity...' or 'Help me understand...' for one week. Notice how responses change.",
+            "videoReference": "Sandler Curious vs Interrogating, 6:40"
+          }
+        }
+      ]
+    },
+
+    "advancedTechniques": {
+      "category": "Advanced Sandler Techniques",
+      "objective": "Master social layer patterns for maximum effectiveness",
+
+      "techniques": [
+        {
+          "technique": "Pendulum (Pull Back Before Push)",
+          "when": "After uncovering strong pain (7+ out of 10)",
+          "how": "Use negative reverse to pull back. Let THEM chase YOU.",
+          "examples": [
+            "Honestly, if it's only costing a few deals a quarter, this might not be worth changing.",
+            "Maybe sticking with your current approach is actually the best move.",
+            "I'm not sure we're the right fit - this seems pretty minor."
+          ],
+          "psychology": "When you pull back, their brain says 'Wait, I DO have a problem!' Pendulum creates psychological desire.",
+          "practice": "Next time you uncover 8/10 pain, pull back with 'Maybe this isn't worth fixing.' Count how often they INSIST it is.",
+          "videoReference": "Sandler Pendulum Mastery, 19:35"
+        },
+        {
+          "technique": "What Then? (Roadblock Flushing)",
+          "when": "During Decision compartment to uncover hidden obstacles",
+          "how": "After they describe each step in decision process, ask 'What then?' Go 3-4 levels deep.",
+          "examples": [
+            "So you present to your VP... what then?",
+            "And then what happens?",
+            "What has to happen after that?",
+            "What could derail this?"
+          ],
+          "psychology": "'What then?' forces them to think through the REAL process. Hidden roadblocks surface.",
+          "practice": "On your next call, ask 'What then?' 4 times in a row during decision mapping. See what you uncover.",
+          "videoReference": "Sandler What Then Questions, 18:50"
+        },
+        {
+          "technique": "Prospect's System Always Wins",
+          "when": "When prospect describes their buying process",
+          "how": "Accept their system. Adapt to it. Don't fight it.",
+          "examples": [
+            "Help me understand how this typically works at your company.",
+            "What's your normal process for evaluating vendors?",
+            "Walk me through what happens on your side."
+          ],
+          "psychology": "Their buying system will always win. Fighting it creates resistance. Adapting builds trust.",
+          "practice": "When they describe their process, say 'Help me understand how that works' instead of explaining YOUR process.",
+          "videoReference": "Sandler System Adaptation, 13:40"
+        },
+        {
+          "technique": "Negative Reverse at Stall Points ONLY",
+          "when": "Deal is stalling, timeline slips, or prospect goes dark",
+          "how": "Pull the deal OFF the table. Force them to reveal truth.",
+          "examples": [
+            "Should we just take this off the table for now?",
+            "Honestly, it feels like this may not be the right time.",
+            "Maybe we should pause this until you have more clarity."
+          ],
+          "psychology": "When you pull back at a stall, they either confirm it's dead (saving you time) or re-engage (revealing real objection).",
+          "practice": "Next time a deal goes dark for 2+ weeks, send: 'Should we take this off the table?' See what happens.",
+          "videoReference": "Sandler Negative Reverse Timing, 14:55"
+        }
+      ]
+    }
+  },
+
+  "coachingDeliveryGuidelines": {
+    "timing": "Deliver coaching same-day after call (while fresh)",
+    "tone": "Direct but supportive. Focus on IMPROVEMENT, not criticism.",
+    "format": "Headline → Problem → Impact → Fix → Say This/Not That → Practice",
+    "prioritization": {
+      "highPriority": "Critical mistakes that kill deals (spilling candy, skipping compartments)",
+      "mediumPriority": "Technique improvements (reversing, pain funnel depth)",
+      "opportunityForExcellence": "Advanced techniques (Pendulum, What Then?)"
+    },
+    "practiceAssignments": "Every coaching prompt includes a specific practice assignment for next 3-5 calls",
+    "videoReferences": "Each prompt links to specific Sandler training module timestamp",
+    "progressTracking": "Track improvement over time - are they fixing the issues or repeating them?"
+  }
+}

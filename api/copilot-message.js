@@ -7,7 +7,12 @@ import { WebClient } from '@slack/web-api';
 import { createHmac } from 'crypto';
 import Anthropic from '@anthropic-ai/sdk';
 import { sql } from '@vercel/postgres';
-import intents from '../sales-copilot-intents.json' assert { type: 'json' };
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+// Load intents
+const intentsPath = join(process.cwd(), 'sales-copilot-intents.json');
+const intents = JSON.parse(readFileSync(intentsPath, 'utf-8'));
 
 const slack = new WebClient(process.env.SLACK_BOT_TOKEN);
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });

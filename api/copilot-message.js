@@ -150,22 +150,23 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Get raw body
+    const event = req.body;
+
+    // URL verification (no signature check needed for this)
+    if (event.type === 'url_verification') {
+      console.log('URL verification requested');
+      return res.status(200).json({ challenge: event.challenge });
+    }
+
+    // Get raw body for signature verification
     const body = JSON.stringify(req.body);
     const timestamp = req.headers['x-slack-request-timestamp'] || '';
     const signature = req.headers['x-slack-signature'] || '';
 
-    // Verify signature
+    // Verify signature for all other events
     if (!verifySlackSignature(body, timestamp, signature)) {
       console.error('Invalid signature');
       return res.status(401).json({ error: 'Invalid signature' });
-    }
-
-    const event = req.body;
-
-    // URL verification
-    if (event.type === 'url_verification') {
-      return res.status(200).json({ challenge: event.challenge });
     }
 
     // Handle app mention

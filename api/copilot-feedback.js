@@ -4,7 +4,14 @@
  */
 
 import { createHmac } from 'crypto';
-import { sql } from '@vercel/postgres';
+import pkg from 'pg';
+const { Pool } = pkg;
+
+// Database connection pool
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+  ssl: { rejectUnauthorized: false }
+});
 
 /**
  * Verify Slack signature
@@ -30,12 +37,12 @@ function verifySlackSignature(body, timestamp, signature) {
  */
 async function logFeedback(data) {
   try {
-    await sql`
-      INSERT INTO copilot_feedback
-      (user_id, intent_name, helpful, created_at)
-      VALUES
-      (${data.user_id}, ${data.intent_name}, ${data.helpful}, NOW())
-    `;
+    await pool.query(
+      `INSERT INTO copilot_feedback
+       (user_id, intent_name, helpful, created_at)
+       VALUES ($1, $2, $3, NOW())`,
+      [data.user_id, data.intent_name, data.helpful]
+    );
   } catch (error) {
     console.error('Error logging feedback:', error);
   }

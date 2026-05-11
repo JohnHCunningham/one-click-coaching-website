@@ -6,7 +6,8 @@
 import { WebClient } from '@slack/web-api';
 import { createHmac } from 'crypto';
 import Anthropic from '@anthropic-ai/sdk';
-import { sql } from '@vercel/postgres';
+import pkg from 'pg';
+const { Pool } = pkg;
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
@@ -16,6 +17,12 @@ const intents = JSON.parse(readFileSync(intentsPath, 'utf-8'));
 
 const slack = new WebClient(process.env.SLACK_BOT_TOKEN);
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+// Database connection pool
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+  ssl: { rejectUnauthorized: false }
+});
 
 /**
  * Verify Slack signature
@@ -110,13 +117,13 @@ Use Slack-friendly formatting (markdown: **bold**, \`code\`, bullet lists).`;
  */
 async function logInteraction(data) {
   try {
-    await sql`
-      INSERT INTO copilot_interactions
-      (user_id, team_id, question, intent_matched, response, channel, slack_timestamp, created_at)
-      VALUES
-      (${data.user_id}, ${data.team_id || null}, ${data.question}, ${data.intent_matched},
-       ${data.response}, ${data.channel}, ${data.slack_timestamp}, NOW())
-    `;
+    await pool.query(
+      `INSERT INTO copilot_interactions
+       (user_id, team_id, question, intent_matched, response, channel, slack_timestamp, created_at)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, NOW())`,
+      [data.user_id, data.team_id || null, data.question, data.intent_matched,
+       data.response, data.channel, data.slack_timestamp]
+    );
   } catch (error) {
     console.error('Error logging interaction:', error);
   }
@@ -127,12 +134,13 @@ async function logInteraction(data) {
  */
 async function ensureUser(slackUserId, teamId) {
   try {
-    await sql`
-      INSERT INTO users (id, slack_user_id, team_id, created_at, last_active)
-      VALUES (${slackUserId}, ${slackUserId}, ${teamId || null}, NOW(), NOW())
-      ON CONFLICT (slack_user_id)
-      DO UPDATE SET last_active = NOW()
-    `;
+    await pool.query(
+      `INSERT INTO users (id, slack_user_id, team_id, created_at, last_active)
+       VALUES ($1, $2, $3, NOW(), NOW())
+       ON CONFLICT (slack_user_id)
+       DO UPDATE SET last_active = NOW()`,
+      [slackUserId, slackUserId, teamId || null]
+    );
   } catch (error) {
     console.error('Error ensuring user:', error);
   }

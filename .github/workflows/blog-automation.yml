@@ -2,10 +2,10 @@ name: Automated Blog Post Generation
 
 on:
   schedule:
-    # Tuesdays at 9:00 AM EST (14:00 UTC)
-    - cron: '0 14 * * 2'
-    # Thursdays at 9:00 AM EST (14:00 UTC)
-    - cron: '0 14 * * 4'
+    # Tuesdays at 9:00 AM EDT (13:00 UTC, accounts for ~2hr GitHub Actions delay)
+    - cron: '0 13 * * 2'
+    # Thursdays at 9:00 AM EDT (13:00 UTC, accounts for ~2hr GitHub Actions delay)
+    - cron: '0 13 * * 4'
 
   # Allow manual trigger for testing
   workflow_dispatch:

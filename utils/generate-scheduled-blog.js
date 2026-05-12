@@ -150,7 +150,7 @@ Generate the blog post now.`;
 
   const stream = await anthropic.messages.create({
     model: 'claude-sonnet-4-5-20250929',
-    max_tokens: 32000,
+    max_tokens: 64000,
     temperature: 1,
     stream: true,
     messages: [{
@@ -161,10 +161,20 @@ Generate the blog post now.`;
 
   // Collect streaming response
   let responseText = '';
+  let stopReason = null;
   for await (const chunk of stream) {
     if (chunk.type === 'content_block_delta' && chunk.delta.type === 'text_delta') {
       responseText += chunk.delta.text;
     }
+    if (chunk.type === 'message_delta' && chunk.delta.stop_reason) {
+      stopReason = chunk.delta.stop_reason;
+    }
+  }
+
+  // Check if response was truncated
+  if (stopReason === 'max_tokens') {
+    console.error('⚠️  Warning: Response was truncated due to max_tokens limit');
+    throw new Error('Claude response exceeded max_tokens limit. Response was truncated.');
   }
 
   // Extract JSON from response (handle markdown code blocks)

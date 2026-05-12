@@ -5,26 +5,26 @@
 
 🤖 Starting automated blog post generation...
 
-📚 Found 16 existing blog posts
+📚 Found 17 existing blog posts
 🔍 Researching trending topics...
 
-✅ Generated blog post: "The Forgotten Middle: Why Your Average Sales Reps Stay Average (And How to Fix It)"
+✅ Generated blog post: "Why Adding More Sales Training Makes Methodology Drift Worse"
 📊 Reading time: 9 min
-🎯 Keywords: average sales rep performance, sales team middle performers, sales coaching distribution, improving average sales reps, sales performance management, methodology reinforcement middle tier
+🎯 Keywords: sales training effectiveness, methodology drift, sales training ROI, sales certification programs, sales training failure, continuous sales coaching, sales methodology execution
 
 🎨 Rhetorical devices used:
-   1. Tricolon: 'Pressure reveals habit. Training teaches knowledge. Coaching builds execution.' (Conclusion section - three parallel phrases building to the solution)
-   2. Antithesis: 'Bottom performers demand attention. Top performers earn it. The middle gets office hours and quarterly reviews.' (Contrasting how different tiers are treated)
-   3. Metaphor: 'The forgotten middle isn't a capacity problem. It's a visibility problem.' (Implicit comparison making abstract concept concrete)
-   4. Anaphora: 'Not because they're failing. Because they're not failing enough to worry about, and not succeeding enough to celebrate.' (Repetition of 'not/because' structure)
-   5. Polyptoton: 'Your bottom 20% are bleeding revenue. Your top 20% are generating it.' (Using different forms of value creation/destruction)
-   6. Epistrophe: 'Then decide: Keep managing by quota attainment or start coaching by methodology adherence?' (Repeated ending structure in CTA - echoes the decision-making theme)
+   1. Antithesis: 'Training teaches what to do. Pressure reveals what they actually do.'
+   2. Epistrophe: 'They need more feedback. They need faster correction. They need a system...'
+   3. Tricolon: 'They don't train more. They reinforce faster. They don't add workshops. They close feedback loops. They don't certify and hope. They measure and correct.'
+   4. Antimetabole: 'Training fills the mind. Coaching changes the behavior.'
+   5. Metaphor: 'Training teaches the map. Coaching walks the terrain.'
+   6. Anaphora: 'Not because reps are careless. Because behavior change requires repetition...'
 
 🎨 Generating cover image...
 ✅ Cover image generated successfully
 
 📝 Creating blog post HTML...
-✅ Created forgotten-middle-average-sales-reps-stay-average.html
+✅ Created more-sales-training-makes-drift-worse.html
 
 📋 Updating blog listing...
 ✅ Updated blog.html listing
@@ -33,29 +33,15 @@
 ║  ✅ Blog Post Generated Successfully!     ║
 ╚═══════════════════════════════════════════╝
 
-Title: The Forgotten Middle: Why Your Average Sales Reps Stay Average (And How to Fix It)
-Slug: forgotten-middle-average-sales-reps-stay-average
+Title: Why Adding More Sales Training Makes Methodology Drift Worse
+Slug: more-sales-training-makes-drift-worse
 Files created:
-  - blog/forgotten-middle-average-sales-reps-stay-average.html
-  - blog/images/forgotten-middle-average-sales-reps-stay-average.png
+  - blog/more-sales-training-makes-drift-worse.html
+  - blog/images/more-sales-training-makes-drift-worse.png
   - blog.html (updated)
 
 Reasoning:
-This topic was selected because it addresses a critical gap in existing content and aligns perfectly with the One Click Coaching value proposition. Here's why:
-
-1. **Unique Angle**: None of the existing 16 blog posts specifically address the middle-tier performer coaching gap, despite this being where most revenue opportunity exists (60% of the team).
-
-2. **Timely for 2026**: As companies face pressure to do more with existing headcount, optimizing middle performers is more strategic than perpetually fixing bottom performers or hoping top performers carry the team.
-
-3. **Featured Snippet Opportunity**: The PAA questions ('What happens to average performers without coaching?' and 'Why do managers focus on top/bottom performers?') are directly answerable and target decision-makers searching for coaching allocation strategies.
-
-4. **Connects to Core Theme**: The post ties directly to methodology drift—middle performers know the methodology but execute it inconsistently, which is precisely what AI coaching reinforcement solves.
-
-5. **Data-Driven**: Multiple 2025-2026 sources provide concrete statistics (73% less coaching time, 9.5x ROI differential) that make the case compelling without hype.
-
-6. **Actionable**: The 'What to Do This Week' section gives sales leaders immediate steps to audit their coaching distribution and calculate the revenue impact on their specific team.
-
-The post follows the CLAUDE.md framework with calm, confident tone, uses 6 rhetorical devices effectively, includes a concrete before/after example with methodology scores, and addresses objections in the FAQ section. It's 1,847 words, perfectly positioned for the 1200-2000 word target.
+This topic addresses a critical misconception that sales leaders face: the belief that more training solves methodology drift. It hasn't been covered in existing posts and targets the high-value insight that training and coaching are fundamentally different solutions to different problems. The post leverages the certification-to-execution gap concept (not yet covered), provides concrete before/after data, answers implicit PAA questions about training effectiveness, and positions continuous reinforcement as the inevitable solution. It's timely for 2026 as organizations are increasingly questioning traditional training ROI and looking for systematic alternatives. The topic naturally incorporates featured snippet opportunities around 'why sales training fails' and 'certification-to-execution gap' while maintaining the brand voice of calm, experienced pattern recognition rather than hype.
 
 ✨ Ready for review and PR creation!
 
@@ -63,11 +49,11 @@ The post follows the CLAUDE.md framework with calm, confident tone, uses 6 rheto
 ---OUTPUT---
 {
   "success": true,
-  "title": "The Forgotten Middle: Why Your Average Sales Reps Stay Average (And How to Fix It)",
-  "slug": "forgotten-middle-average-sales-reps-stay-average",
+  "title": "Why Adding More Sales Training Makes Methodology Drift Worse",
+  "slug": "more-sales-training-makes-drift-worse",
   "files": [
-    "blog/forgotten-middle-average-sales-reps-stay-average.html",
-    "blog/images/forgotten-middle-average-sales-reps-stay-average.png",
+    "blog/more-sales-training-makes-drift-worse.html",
+    "blog/images/more-sales-training-makes-drift-worse.png",
     "blog.html"
   ]
 }

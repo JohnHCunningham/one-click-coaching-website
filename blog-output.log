@@ -5,26 +5,26 @@
 
 🤖 Starting automated blog post generation...
 
-📚 Found 17 existing blog posts
+📚 Found 18 existing blog posts
 🔍 Researching trending topics...
 
-✅ Generated blog post: "Why Adding More Sales Training Makes Methodology Drift Worse"
+✅ Generated blog post: "The Discovery Call Paradox: Why Buyers Say Your Reps Ask Bad Questions"
 📊 Reading time: 9 min
-🎯 Keywords: sales training effectiveness, methodology drift, sales training ROI, sales certification programs, sales training failure, continuous sales coaching, sales methodology execution
+🎯 Keywords: discovery call questions, sales discovery skills, buyer experience gap, sales questioning technique, discovery call feedback, SPIN selling execution, sales methodology visibility
 
 🎨 Rhetorical devices used:
-   1. Antithesis: 'Training teaches what to do. Pressure reveals what they actually do.'
-   2. Epistrophe: 'They need more feedback. They need faster correction. They need a system...'
-   3. Tricolon: 'They don't train more. They reinforce faster. They don't add workshops. They close feedback loops. They don't certify and hope. They measure and correct.'
-   4. Antimetabole: 'Training fills the mind. Coaching changes the behavior.'
-   5. Metaphor: 'Training teaches the map. Coaching walks the terrain.'
-   6. Anaphora: 'Not because reps are careless. Because behavior change requires repetition...'
+   1. Antithesis: 'Leaders measure intent, not execution. You measure whether training happened. Buyers measure whether the call was valuable.'
+   2. Tricolon: 'They know SPIN. They know the Pain Funnel. They know the Three Whys.'
+   3. Epistrophe: 'The gap stays. Buyers keep having mediocre experiences. Pipeline stays bloated with unqualified deals.'
+   4. Anaphora: 'Weak discovery means weak qualification. Weak qualification means bloated pipeline. Bloated pipeline means wasted demos. Wasted demos means longer sales cycles.'
+   5. Metaphor: 'That's like judging a pilot's skill based solely on whether the plane landed, ignoring everything that happened in the cockpit.'
+   6. Polyptoton: 'You can't coach what you can't see. And you can't see 96% of the calls your reps are having.'
 
 🎨 Generating cover image...
 ✅ Cover image generated successfully
 
 📝 Creating blog post HTML...
-✅ Created more-sales-training-makes-drift-worse.html
+✅ Created discovery-call-paradox-buyers-say-reps-ask-bad-questions.html
 
 📋 Updating blog listing...
 ✅ Updated blog.html listing
@@ -33,15 +33,15 @@
 ║  ✅ Blog Post Generated Successfully!     ║
 ╚═══════════════════════════════════════════╝
 
-Title: Why Adding More Sales Training Makes Methodology Drift Worse
-Slug: more-sales-training-makes-drift-worse
+Title: The Discovery Call Paradox: Why Buyers Say Your Reps Ask Bad Questions
+Slug: discovery-call-paradox-buyers-say-reps-ask-bad-questions
 Files created:
-  - blog/more-sales-training-makes-drift-worse.html
-  - blog/images/more-sales-training-makes-drift-worse.png
+  - blog/discovery-call-paradox-buyers-say-reps-ask-bad-questions.html
+  - blog/images/discovery-call-paradox-buyers-say-reps-ask-bad-questions.png
   - blog.html (updated)
 
 Reasoning:
-This topic addresses a critical misconception that sales leaders face: the belief that more training solves methodology drift. It hasn't been covered in existing posts and targets the high-value insight that training and coaching are fundamentally different solutions to different problems. The post leverages the certification-to-execution gap concept (not yet covered), provides concrete before/after data, answers implicit PAA questions about training effectiveness, and positions continuous reinforcement as the inevitable solution. It's timely for 2026 as organizations are increasingly questioning traditional training ROI and looking for systematic alternatives. The topic naturally incorporates featured snippet opportunities around 'why sales training fails' and 'certification-to-execution gap' while maintaining the brand voice of calm, experienced pattern recognition rather than hype.
+This topic was selected because: (1) It addresses a critical gap not covered in existing posts—the disconnect between manager perception and buyer reality in discovery calls. (2) It targets high-intent PAA questions about discovery skills and SPIN selling. (3) It's timely for 2026 as more research emerges about buyer experience gaps. (4) It creates featured snippet opportunities with direct answers to 'What is the discovery call paradox?' (5) It connects methodology training (SPIN, Pain Funnel) to execution visibility—core to One Click Coaching's value prop. (6) The 39-point perception gap is a compelling, data-driven hook. (7) It addresses a problem sales leaders feel but can't articulate: 'Why does pipeline quality stay weak despite all our discovery training?'
 
 ✨ Ready for review and PR creation!
 
@@ -49,11 +49,11 @@ This topic addresses a critical misconception that sales leaders face: the belie
 ---OUTPUT---
 {
   "success": true,
-  "title": "Why Adding More Sales Training Makes Methodology Drift Worse",
-  "slug": "more-sales-training-makes-drift-worse",
+  "title": "The Discovery Call Paradox: Why Buyers Say Your Reps Ask Bad Questions",
+  "slug": "discovery-call-paradox-buyers-say-reps-ask-bad-questions",
   "files": [
-    "blog/more-sales-training-makes-drift-worse.html",
-    "blog/images/more-sales-training-makes-drift-worse.png",
+    "blog/discovery-call-paradox-buyers-say-reps-ask-bad-questions.html",
+    "blog/images/discovery-call-paradox-buyers-say-reps-ask-bad-questions.png",
     "blog.html"
   ]
 }

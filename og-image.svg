@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#2A221C"/>
+  <circle cx="600" cy="280" r="120" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+  <circle cx="600" cy="280" r="85" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+  <circle cx="600" cy="280" r="50" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+  <circle cx="600" cy="280" r="16" fill="#B5583E"/>
+  <text x="600" y="460" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="52" fill="#F4EFE8" letter-spacing="-1">
+    One Click <tspan font-style="italic" fill="#C9A687">Coaching</tspan>
+  </text>
+  <text x="600" y="510" text-anchor="middle" font-family="monospace" font-size="16" fill="rgba(244,239,232,0.5)" letter-spacing="4">
+    AI SALES COACHING PLATFORM
+  </text>
+  <text x="600" y="560" text-anchor="middle" font-family="monospace" font-size="13" fill="rgba(244,239,232,0.35)" letter-spacing="3">
+    THE SCORE METHOD™ — MAKE TRAINING STICK
+  </text>
+</svg>

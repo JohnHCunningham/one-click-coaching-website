@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InMail Batch — 05_24-emails-1_2</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f0eb;
+    padding: 40px 20px;
+    color: #2d2d2d;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e8e2da;
+  }
+  .card-num {
+    font-size: 12px;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .card-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+  }
+  .card-company {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 2px;
+  }
+  .card-meta {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  .field-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .subject-box {
+    background: #faf7f2;
+    border: 1px solid #e8e2da;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #b85c3a;
+    font-weight: 500;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .subject-box:hover { background: #f0ebe0; }
+  .subject-box.copied { background: #e8f5e9; border-color: #81c784; color: #2e7d32; }
+  .body-box {
+    background: #faf7f2;
+    border: 1px solid #e8e2da;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .body-box:hover { background: #f0ebe0; }
+  .body-box.copied { background: #e8f5e9; border-color: #81c784; }
+  .copy-btn {
+    display: inline-block;
+    background: #b85c3a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: all 0.2s;
+  }
+  .copy-btn:hover { background: #9a4d31; }
+  .copy-btn.copied { background: #43a047; }
+  .summary {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e8e2da;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+  }
+  .summary strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>InMail Batch — 05_24-emails-1_2</h1>
+<p class="subtitle">11 drafts · All V-A (sales leadership) · All connection notes (2nd-degree, no subject field in LinkedIn)</p>
+
+<div class="card" id="card-1">
+  <div class="card-num">PROSPECT 1</div>
+  <div class="card-name">Greg Grant</div>
+  <div class="card-company">Regional Sales Director · Foss National Leasing</div>
+  <div class="card-meta">Fleet leasing | 30 reps | Mississauga, ON | 1yr in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-1', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-1">Fleet leasing sales consistency?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-1', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-1">Greg — Foss National's coast-to-coast fleet management model means your sales team handles everything from four-vehicle fleets to 4,000. That range of client complexity is an advantage, but it's also a coaching challenge.
+
+Every leasing conversation has its own dynamics, but the underlying discipline of qualifying consistently across accounts — that's what separates strong regional teams from uneven ones.
+
+How do you reinforce sales discipline across a team of 30 managing such different client profiles?
+
+Regards</div>
+</div>
+<div class="card" id="card-2">
+  <div class="card-num">PROSPECT 2</div>
+  <div class="card-name">Matt Hall</div>
+  <div class="card-company">Vice President of Sales · SafeStart</div>
+  <div class="card-meta">Safety consulting | 17 reps | Toronto, ON | 5+ yrs in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-2', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-2">Consultative sales consistency at scale?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-2', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-2">Matt — SafeStart's human-factors approach to safety means your sales team isn't selling a product. They're selling a behavioral change framework.
+
+That's a consultative sale that demands real discovery skills. But the gap between understanding the methodology and executing it consistently in front of a safety director — that's where most B2B consulting teams lose their edge.
+
+After the training workshop, what does reinforcement actually look like day-to-day for your 17 reps?
+
+Regards</div>
+</div>
+<div class="card" id="card-3">
+  <div class="card-num">PROSPECT 3</div>
+  <div class="card-name">Tyler McNaughton</div>
+  <div class="card-company">VP Strategic Accounts · Conquest Planning</div>
+  <div class="card-meta">Financial planning SaaS | 16 reps | Burlington, ON | 2 yrs in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-3', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-3">Financial planning SaaS sales consistency?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-3', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-3">Tyler — Conquest Planning's AI-driven approach to financial advice puts a sophisticated tool in the hands of advisors. But the tool is only as good as the discovery conversation that precedes it.
+
+When your strategic accounts team works with enterprise wealth management firms, the gap between what the software CAN do and what the rep consistently uncovers in discovery — that's where revenue lives or leaks.
+
+How do you ensure your 16 reps are applying the same consultative rigor across every major account?
+
+Regards</div>
+</div>
+<div class="card" id="card-4">
+  <div class="card-num">PROSPECT 4</div>
+  <div class="card-name">Sam Morovati</div>
+  <div class="card-company">Vice President of Global Sales · Delta-Q Technologies</div>
+  <div class="card-meta">Industrial electrification | 17 reps | GTA | $100M+ P&L | 6 yrs in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-4', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-4">Global industrial sales consistency?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-4', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-4">Sam — scaling a $100M+ P&L across three continents means your sales methodology has to survive translation into different markets, different buyer cultures, and different channel dynamics.
+
+You've built the CRM infrastructure to track pipeline. The next layer — the one most global sales leaders wrestle with — is whether the methodology that works in the training room is actually showing up in rep behavior across all three regions.
+
+Curious how you think about reinforcement and coaching consistency across a team that spread across the Americas, Europe, and Asia.
+
+Regards</div>
+</div>
+<div class="card" id="card-5">
+  <div class="card-num">PROSPECT 5</div>
+  <div class="card-name">Mat Barrett</div>
+  <div class="card-company">Vice President of Sales · WELLSTAR Technologies</div>
+  <div class="card-meta">Healthcare SaaS | 7 reps | Hamilton, ON | 2 yrs in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-5', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-5">Healthcare SaaS sales team consistency?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-5', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-5">Mat — selling healthcare technology to Canadian providers means navigating complex buying committees, regulatory constraints, and long sales cycles. Your reps need more than product knowledge — they need a disciplined discovery process that surfaces the real integration pain.
+
+Most healthcare SaaS teams train on methodology once and hope it sticks. The ones that outperform build reinforcement into the weekly rhythm.
+
+How do you currently ensure your 7 reps maintain that consultative edge across every provider conversation?
+
+Regards</div>
+</div>
+<div class="card" id="card-6">
+  <div class="card-num">PROSPECT 6</div>
+  <div class="card-name">Andrew Kelly</div>
+  <div class="card-company">Vice President of Sales, North East · Strategy</div>
+  <div class="card-meta">AI-powered BI | 561 employees | Toronto, ON | 2 yrs in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-6', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-6">Enterprise BI sales consistency?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-6', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-6">Andrew — Strategy's AI-powered business intelligence platform competes in one of the most crowded, fast-moving markets in enterprise SaaS. The differentiator isn't just the tech — it's whether your sales team can run discovery conversations that surface the real analytics gap, not just the obvious one.
+
+At Strategy's scale, the distance between a rep who nails the methodology and one who drifts back to feature-selling — that's millions in pipeline.
+
+How do you coach consistency across your North East team when every enterprise deal looks different on the surface?
+
+Regards</div>
+</div>
+<div class="card" id="card-7">
+  <div class="card-num">PROSPECT 7</div>
+  <div class="card-name">Dan Drori</div>
+  <div class="card-company">Chief Revenue Officer · Wyse Meter Solutions</div>
+  <div class="card-meta">Utilities/energy | 15 reps | Toronto, ON | 6 months in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-7', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-7">Building a consistent sales approach?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-7', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-7">Dan — six months into the CRO role at Wyse, you've had enough time to see where the team is strong and where the gaps live.
+
+When you step into a revenue leadership role, the first thing you notice isn't the talent — it's the variance. Two reps running the same playbook can produce completely different outcomes because their discovery discipline isn't the same.
+
+As you're building your commercial approach, how are you assessing where your 15 reps are consistent — and where the coaching opportunities are?
+
+Regards</div>
+</div>
+<div class="card" id="card-8">
+  <div class="card-num">PROSPECT 8</div>
+  <div class="card-name">Peter Nickel</div>
+  <div class="card-company">Managing Director, Enterprise Sales Consulting · Aravo Solutions</div>
+  <div class="card-meta">Risk/compliance SaaS | 20 reps | Waterloo, ON | 3 months in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-8', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-8">Building your enterprise sales approach?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-8', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-8">Peter — three months into leading enterprise sales consulting at Aravo. That's the window where you've seen enough to spot patterns but you're still forming your coaching strategy.
+
+Aravo's third-party risk platform solves a complex problem. The rep who can surface the real compliance pain in discovery versus the rep who defaults to feature demos — that gap determines whether you win the enterprise deals or lose to a competitor who asked better questions.
+
+As you're building your team's approach, how are you thinking about consistency and reinforcement?
+
+Regards</div>
+</div>
+<div class="card" id="card-9">
+  <div class="card-num">PROSPECT 9</div>
+  <div class="card-name">Brian Gerskup</div>
+  <div class="card-company">Sales Director · Cambridge Computer</div>
+  <div class="card-meta">AI/HPC infrastructure | 37 reps | Vaughan, ON | 2 yrs in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-9', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-9">HPC infrastructure sales consistency?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-9', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-9">Brian — Cambridge Computer's focus on AI factories and high-performance compute puts your team in front of technical buyers who know their stack. The sale isn't about explaining what HPC is — it's about uncovering where their current infrastructure creates friction.
+
+With 37 reps, the variance between the ones who run deep technical discovery and the ones who take the order — that's the difference between being a trusted advisor and being a vendor.
+
+How do you keep that discovery discipline consistent across a team that size?
+
+Regards</div>
+</div>
+<div class="card" id="card-10">
+  <div class="card-num">PROSPECT 10</div>
+  <div class="card-name">Chris Balarezo</div>
+  <div class="card-company">Vice President of Sales · dahl Valve Limited</div>
+  <div class="card-meta">Building materials/plumbing | 6 reps | GTA | 3 yrs in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-10', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-10">Distribution sales team consistency?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-10', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-10">Chris — dahl Valve's position in the Canadian plumbing market means your reps are managing relationships across distributors, wholesalers, and contractors. Every channel partner has different priorities.
+
+The challenge in distribution sales isn't product knowledge — it's whether your team runs the same disciplined discovery with every partner, or whether the relationship shortcuts the process.
+
+After nearly three years leading the team, how do you think about coaching consistency across those different channel conversations?
+
+Regards</div>
+</div>
+<div class="card" id="card-11">
+  <div class="card-num">PROSPECT 11</div>
+  <div class="card-name">Ron Reddick</div>
+  <div class="card-company">Vice President of Global Sales · Searidge Technologies</div>
+  <div class="card-meta">Aviation SaaS | 8 reps | Ottawa, ON | 2 yrs in role</div>
+  
+  <div class="field-label">Subject / Hook</div>
+  <button class="copy-btn" onclick="copyText('subject-11', this)">📋 Copy Subject</button>
+  <div class="subject-box" id="subject-11">Aviation SaaS sales consistency globally?</div>
+  
+  <div class="field-label">Message Body</div>
+  <button class="copy-btn" onclick="copyText('body-11', this)">📋 Copy Body</button>
+  <div class="body-box" id="body-11">Ron — Searidge's AI-driven air traffic solutions sit at the intersection of mission-critical infrastructure and complex government procurement. Your sales cycle isn't just long — it's multi-stakeholder, heavily regulated, and zero-margin-for-error.
+
+That environment demands a level of consultative rigor that most SaaS sales teams never need. But the training-to-execution gap doesn't care about industry complexity — it shows up everywhere.
+
+How do you ensure your 8 reps maintain that level of discovery discipline across different global aviation authorities?
+
+Regards</div>
+</div>
+<div class="summary">
+  <strong>Batch:</strong> 05_24-emails-1_2 &nbsp;|&nbsp; <strong>Drafts:</strong> 11 &nbsp;|&nbsp; <strong>Skipped:</strong> 1 (Sean Hobson — 5/10) &nbsp;|&nbsp; <strong>Duplicates:</strong> 0
+</div>
+</div>
+
+<script>
+function copyText(elementId, btn) {
+  const el = document.getElementById(elementId);
+  const text = el.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    el.classList.add('copied');
+    btn.classList.add('copied');
+    btn.innerText = '✓ Copied!';
+    setTimeout(() => {
+      el.classList.remove('copied');
+      btn.classList.remove('copied');
+      btn.innerText = elementId.startsWith('subject') ? '📋 Copy Subject' : '📋 Copy Body';
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>

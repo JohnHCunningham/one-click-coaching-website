@@ -1,13 +1,8 @@
 name: Automated Blog Post Generation
 
 on:
-  schedule:
-    # Tuesdays at 9:00 AM EDT (13:00 UTC, accounts for ~2hr GitHub Actions delay)
-    - cron: '0 13 * * 2'
-    # Thursdays at 9:00 AM EDT (13:00 UTC, accounts for ~2hr GitHub Actions delay)
-    - cron: '0 13 * * 4'
-
-  # Allow manual trigger for testing
+  # Scheduling has moved to Hermes cron so draft generation can pass through
+  # OCC critic/advisor review before publishing. Keep manual trigger for testing.
   workflow_dispatch:
 
 permissions:

@@ -1,75 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://oneclickcoaching.com/</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://www.oneclickcoaching.com/</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://oneclickcoaching.com/pricing</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.oneclickcoaching.com/pricing.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://oneclickcoaching.com/about</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.oneclickcoaching.com/blog.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://oneclickcoaching.com/contact</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://oneclickcoaching.com/brand</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://oneclickcoaching.com/security</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://www.oneclickcoaching.com/about.html</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://oneclickcoaching.com/privacy</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://oneclickcoaching.com/terms</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://oneclickcoaching.com/ai-usage</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://oneclickcoaching.com/subprocessors</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://www.oneclickcoaching.com/contact.html</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/87-percent-problem-sales-training-forgotten.html</loc>
+    <lastmod>2026-01-28</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oneclickcoaching.com/cookies</loc>
-    <lastmod>2025-11-20</lastmod>
+    <loc>https://www.oneclickcoaching.com/blog/sales-methodology-under-pressure-30-percent-increase.html</loc>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oneclickcoaching.com/sitemap</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://www.oneclickcoaching.com/blog/same-day-coaching-vs-weekly-1on1s.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/real-cost-of-winging-it-sales-process.html</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/best-rep-worst-hire-sales-team.html</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/why-200k-sales-training-disappears-day-60.html</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/coaching-perception-gap-managers-vs-reps.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/3-3-3-rule-fails-without-reinforcement.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/30-60-90-rule-onboarding-drift.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/black-box-problem-ai-sales-coaching-trust.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/48-hour-feedback-window-delayed-coaching-cost.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/sales-coaching-illusion-manager-rep-perception-gap.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/forgotten-middle-average-sales-reps-stay-average.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/more-sales-training-makes-drift-worse.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/cognitive-load-sales-calls-why-reps-revert.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/sandler-methodology-execution-gap.html</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/meddic-qualification-ai-analysis.html</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/talk-ratio-killing-sales.html</loc>
+    <lastmod>2024-12-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.oneclickcoaching.com/blog/bottom-third-to-all-star.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

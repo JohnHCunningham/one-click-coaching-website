@@ -5,7 +5,7 @@
 <title>One Click Coaching — AI Sales Coaching Platform | Make Selling Visible</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="One Click Coaching turns rep activity, call transcripts, and methodology execution into a single feed — so managers coach the behavior, not just the outcome. $50/rep/month." />
-<meta name="keywords" content="AI sales coaching, sales methodology, MEDDIC, Sandler, sales training, rep coaching, call analysis, sales enablement" />
+<meta name="keywords" content="AI sales coaching, SCORE Method, methodology drift, sales coaching platform, sales reinforcement, sales training ROI, call scoring software, MEDDIC, Sandler, Challenger, SPIN, Gap Selling, sales enablement, rep coaching, AI coaching software" />
 <meta name="author" content="One Click Coaching Inc." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.oneclickcoaching.com/" />
@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://www.oneclickcoaching.com/" />
 <meta property="og:title" content="One Click Coaching — AI Sales Coaching Platform" />
 <meta property="og:description" content="Turn rep activity, call transcripts, and methodology execution into a single feed. Coach the behavior, not just the outcome." />
-<meta property="og:image" content="https://www.oneclickcoaching.com/og-image.jpg" />
+<meta property="og:image" content="https://www.oneclickcoaching.com/og-image.svg" />
 <meta property="og:site_name" content="One Click Coaching" />
 
 <!-- Twitter -->
@@ -23,11 +23,42 @@
 <meta name="twitter:url" content="https://www.oneclickcoaching.com/" />
 <meta name="twitter:title" content="One Click Coaching — AI Sales Coaching Platform" />
 <meta name="twitter:description" content="Turn rep activity, call transcripts, and methodology execution into a single feed. Coach the behavior, not just the outcome." />
-<meta name="twitter:image" content="https://www.oneclickcoaching.com/og-image.jpg" />
+<meta name="twitter:image" content="https://www.oneclickcoaching.com/og-image.svg" />
 
 <!-- Theme Color -->
 <meta name="theme-color" content="#2A221C" />
 <meta name="msapplication-TileColor" content="#2A221C" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "One Click Coaching",
+  "url": "https://www.oneclickcoaching.com",
+  "logo": "https://www.oneclickcoaching.com/og-image.svg",
+  "description": "AI sales coaching platform that scores every call against your methodology, delivers same-day coaching, and proves training ROI. The SCORE Method™ makes sales training permanent.",
+  "founder": {
+    "@type": "Person",
+    "name": "John Cunningham"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/one-click-coaching"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "One Click Coaching",
+  "url": "https://www.oneclickcoaching.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.oneclickcoaching.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -102,8 +133,8 @@
   .hero-mock .sidebar .s-item.active .bu { background: var(--terracotta); }
   .hero-mock .main { padding: 32px 36px; display: flex; flex-direction: column; gap: 28px; }
   .hero-mock .crumb-row { display: flex; justify-content: space-between; align-items: center; }
-  .hero-mock .crumb-row h4 { font-family: 'Instrument Serif', serif; font-size: 28px; letter-spacing: -0.02em; font-weight: 400; }
-  .hero-mock .crumb-row h4 em { color: var(--clay); }
+  .hero-mock .crumb-row .crumb-h4 { font-family: 'Instrument Serif', serif; font-size: 28px; letter-spacing: -0.02em; font-weight: 400; }
+  .hero-mock .crumb-row .crumb-h4 em { color: var(--clay); }
   .hero-mock .crumb-row .filter-chips { display: flex; gap: 6px; }
   .hero-mock .crumb-row .chip { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: rgba(244,239,232,0.6); padding: 6px 12px; border: 1px solid rgba(244,239,232,0.15); border-radius: 999px; text-transform: uppercase; }
   .hero-mock .crumb-row .chip.on { background: var(--bone); color: var(--espresso); border-color: var(--bone); }
@@ -192,7 +223,7 @@
   .rep-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(42,34,28,0.2); }
   .rep-card .hd-band { padding: 26px 36px; display: flex; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); }
   .rep-card .av-lg { width: 56px; height: 56px; border-radius: 50%; background: var(--clay); color: var(--espresso); font-family: 'Instrument Serif', serif; font-size: 26px; display: flex; align-items: center; justify-content: center; }
-  .rep-card .id-block h4 { font-family: 'Instrument Serif', serif; font-size: 30px; letter-spacing: -0.02em; line-height: 1; }
+  .rep-card .id-block .rep-name { font-family: 'Instrument Serif', serif; font-size: 30px; letter-spacing: -0.02em; line-height: 1; }
   .rep-card .id-block .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--stone); text-transform: uppercase; margin-top: 6px; }
   .rep-card .score-big { margin-left: auto; text-align: right; }
   .rep-card .score-big .n { font-family: 'Instrument Serif', serif; font-size: 56px; line-height: 1; letter-spacing: -0.025em; }
@@ -422,7 +453,32 @@
     .pillars .grid { grid-template-columns: 1fr; gap: 8px; }
     .panel .stat-big { font-size: 80px; }
     footer .inner { grid-template-columns: 1fr; }
+    .score-columns { grid-template-columns: 1fr; gap: 32px; }
   }
+
+  /* SCORE Method */
+  section.score-method { padding: 120px 0; border-bottom: 1px solid var(--line); background: var(--paper); }
+  .score-header { margin-bottom: 64px; }
+  .score-header h2 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 6vw, 72px); line-height: 1.06; letter-spacing: -0.03em; color: var(--espresso); }
+  .score-header h2 em { color: var(--terracotta); font-style: italic; }
+  .score-lede { margin-top: 28px; max-width: 560px; font-size: 18px; line-height: 1.55; color: var(--stone); }
+  .score-columns { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+  .score-drift-col { display: flex; flex-direction: column; gap: 16px; }
+  .drift-stat-row { display: flex; align-items: baseline; gap: 16px; padding: 18px 20px; background: #fff; border-left: 3px solid var(--clay); border-radius: 0 8px 8px 0; }
+  .drift-num { font-family: 'Instrument Serif', serif; font-size: 40px; color: var(--terracotta); line-height: 1; flex-shrink: 0; }
+  .drift-txt { font-size: 14px; color: var(--stone); line-height: 1.45; }
+  .score-steps-col { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
+  .score-step { display: grid; grid-template-columns: 52px 1fr; border-bottom: 1px solid var(--line); }
+  .score-step:last-child { border-bottom: none; }
+  .step-letter { display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 24px; color: #fff; background: var(--terracotta); }
+  .score-step:nth-child(2) .step-letter { background: var(--clay-2); }
+  .score-step:nth-child(3) .step-letter { background: var(--terracotta); }
+  .score-step:nth-child(4) .step-letter { background: var(--clay-2); }
+  .score-step:nth-child(5) .step-letter { background: var(--clay); }
+  .step-body { padding: 16px 20px; }
+  .step-title { font-size: 15px; font-weight: 600; color: var(--espresso); margin-bottom: 3px; }
+  .step-desc { font-size: 13px; color: var(--stone); line-height: 1.5; }
+  .score-foot { margin-top: 40px; font-size: 14px; color: var(--stone); font-style: italic; text-align: center; }
 </style>
 </head>
 <body>
@@ -439,7 +495,7 @@
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </div>
-    <a href="https://tidycal.com/aiautomations/sales-coach" class="cta">Book Demo</a>
+    <a href="https://app.oneclickcoaching.com" class="cta">Login</a>
   </div>
 </nav>
 
@@ -447,7 +503,7 @@
   <div class="wrap">
     <div class="eyebrow mono">AI SALES COACHING FOR B2B TEAMS</div>
     <h1>Your reps forgot the training.<br>We make it <em>stick.</em></h1>
-    <p class="lede">You spent $15k per rep on Sandler training. Within 90 days, they're back to pitching features. <strong>One Click Coaching</strong> scores every call, coaches same-day, and proves your training ROI — $50/rep/month.</p>
+    <p class="lede">You spent $15k per rep on methodology training. Within 90 days, they're back to pitching features. <strong>One Click Coaching</strong> scores every call against your framework, coaches same-day, and proves your training ROI — $50/rep/month.</p>
     <div class="ctas">
       <a href="#close" class="cta-primary">See what reps receive <span>→</span></a>
       <a href="#product" class="cta-secondary">Watch demo (2 min)</a>
@@ -489,7 +545,7 @@
         </aside>
         <div class="main">
           <div class="crumb-row">
-            <h4>Team — <em>week 14</em></h4>
+            <div class="crumb-h4">Team — <em>week 14</em></div>
             <div class="filter-chips">
               <span class="chip on">7 days</span>
               <span class="chip">30 days</span>
@@ -652,6 +708,31 @@
   </div>
 </section>
 
+<section class="score-method">
+  <div class="wrap">
+    <div class="score-header">
+      <div class="num mono">§ 01.6 — The SCORE Method™</div>
+      <h2>DRIFT happens.<br><em>SCORE</em> makes it permanent.</h2>
+      <p class="score-lede">The SCORE Method™ is not training. It is the system that makes training permanent. Five steps. Continuous. Automatic. Call by call.</p>
+    </div>
+    <div class="score-columns">
+      <div class="score-drift-col">
+        <div class="drift-stat-row"><span class="drift-num">84%</span><span class="drift-txt">of training content forgotten within 30 days without reinforcement</span></div>
+        <div class="drift-stat-row"><span class="drift-num">90%</span><span class="drift-txt">gone within 90 days — regardless of training quality</span></div>
+        <div class="drift-stat-row"><span class="drift-num">2%</span><span class="drift-txt">of training content applied in real selling situations</span></div>
+      </div>
+      <div class="score-steps-col">
+        <div class="score-step"><div class="step-letter">S</div><div class="step-body"><div class="step-title">Surface</div><div class="step-desc">The gap between what was trained and what happened on the call — made visible, automatically</div></div></div>
+        <div class="score-step"><div class="step-letter">C</div><div class="step-body"><div class="step-title">Capture</div><div class="step-desc">Every conversation analyzed against the methodology your team was trained in — no manual input, no rep friction</div></div></div>
+        <div class="score-step"><div class="step-letter">O</div><div class="step-body"><div class="step-title">Observe</div><div class="step-desc">Rep behaviour measured call by call — managers see exactly where drift is happening, across the whole team</div></div></div>
+        <div class="score-step"><div class="step-letter">R</div><div class="step-body"><div class="step-title">Reinforce</div><div class="step-desc">Specific feedback delivered before the next call — not in the debrief next week, when it's already too late</div></div></div>
+        <div class="score-step"><div class="step-letter">E</div><div class="step-body"><div class="step-title">Embed</div><div class="step-desc">Permanent behaviour change. Not a training event. A new standard — executed on every call, by every rep</div></div></div>
+      </div>
+    </div>
+    <p class="score-foot">Works with the methodology your team already runs. One Click Coaching makes it permanent.</p>
+  </div>
+</section>
+
 <section class="product" id="product">
   <div class="wrap inner">
     <div>
@@ -745,7 +826,7 @@
       <div class="hd-band">
         <span class="av-lg">J</span>
         <div class="id-block">
-          <h4>Jordan Kim</h4>
+          <div class="rep-name">Jordan Kim</div>
           <div class="role">AE · Enterprise · 47 calls this month</div>
         </div>
         <div class="score-big">
@@ -874,15 +955,11 @@
     <div class="connect-grid">
       <div class="conn"><span class="badge live">Live</span><div><div class="name">Fathom</div><div class="cat">Meetings · Transcripts</div></div><div class="oauth">OAuth · 1-click connect</div></div>
       <div class="conn"><span class="badge live">Live</span><div><div class="name">HubSpot</div><div class="cat">CRM · Activity · Deals</div></div><div class="oauth">OAuth · 1-click connect</div></div>
-      <div class="conn"><span class="badge live">Live</span><div><div class="name">Fireflies</div><div class="cat">Meetings · Transcripts</div></div><div class="oauth">OAuth · 1-click connect</div></div>
-      <div class="conn"><span class="badge live">Live</span><div><div class="name">Otter</div><div class="cat">Meetings · Transcripts</div></div><div class="oauth">OAuth · 1-click connect</div></div>
-      <div class="conn"><span class="badge live">Live</span><div><div class="name">Aircall</div><div class="cat">Phone · Call data</div></div><div class="oauth">OAuth · 1-click connect</div></div>
       <div class="conn"><span class="badge soon">Q2</span><div><div class="name">Salesforce</div><div class="cat">CRM · Enterprise</div></div><div class="oauth">OAuth coming</div></div>
       <div class="conn"><span class="badge soon">Q2</span><div><div class="name">Gong</div><div class="cat">Revenue intel</div></div><div class="oauth">OAuth coming</div></div>
-      <div class="conn custom"><span class="badge live">Included</span><div><div class="name">Our <em>own CRM</em></div><div class="cat">Zero monthly fees</div></div><div class="oauth">Built-in alternative</div></div>
     </div>
     <div class="connect-foot">
-      <p class="ft-txt">Don't want to pay monthly for a separate CRM? <strong>Use ours.</strong> One Click Coaching includes a lightweight deal and activity tracker — no extra seats, no extra bill. Or bring your own via OAuth.</p>
+      <p class="ft-txt">On an annual plan? Additional integrations can be added at no extra cost — within the provider's scope. We work with your stack, not against it.</p>
       <a href="contact.html" class="cta" style="background:var(--espresso);color:var(--bone);padding:12px 22px;border-radius:999px;font-size:13px;font-weight:500">Request an integration →</a>
     </div>
   </div>
@@ -945,7 +1022,7 @@
     <span class="eyebrow mono">See it on your team</span>
     <h2>One walkthrough.<br><em>One decision.</em></h2>
     <div class="ctas">
-      <a href="contact.html" class="cta-primary">Book a walkthrough →</a>
+      <a href="https://tidycal.com/aiautomations/execution-exploration" class="cta-primary">Book a walkthrough →</a>
       <a href="mailto:john@oneclickcoaching.com" class="cta-secondary">Talk to the founder</a>
     </div>
 

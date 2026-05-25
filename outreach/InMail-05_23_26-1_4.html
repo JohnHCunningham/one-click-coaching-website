@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InMail Drafts — 05/23/26-1/4</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f5f0eb;
+    padding: 20px;
+  }
+  .header {
+    max-width: 720px;
+    margin: 0 auto 24px auto;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+  }
+  .header .meta {
+    font-size: 14px;
+    color: #666;
+  }
+  .card {
+    max-width: 720px;
+    margin: 0 auto 20px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    padding: 24px;
+  }
+  .card .prospect-header {
+    margin-bottom: 14px;
+  }
+  .card .prospect-header .num {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .card .prospect-header h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 2px 0;
+  }
+  .card .prospect-header .meta-line {
+    font-size: 13px;
+    color: #666;
+  }
+  .card .field {
+    margin-bottom: 14px;
+  }
+  .card .field-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .card .field-content {
+    background: #f8f7f5;
+    border: 1px solid #e8e5e0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-wrap;
+    position: relative;
+  }
+  .card .field-content.subject {
+    color: #1a5276;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .card .copy-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .card .copy-btn:hover {
+    background: #f0f0f0;
+    border-color: #aaa;
+  }
+  .card .copy-btn.copied {
+    background: #27ae60;
+    color: #fff;
+    border-color: #27ae60;
+  }
+  .footer {
+    max-width: 720px;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📋 InMail Drafts — 05/23/26-1/4</h1>
+  <div class="meta">
+19 drafts from 24 prospects • 4 duplicates removed • 1 quality filtered</div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#1 • V-A</div>
+    <h3>Jeff Wilkie</h3>
+    <div class="meta-line">Vice President of Sales · 4Point</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-1">Ottawa sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-1" onclick="copyField('subj-1', 'btn-subj-1')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-1">Hi Jeff — Vice President of Sales at 4Point.
+
+After your team completes sales training, how do you reinforce it with your reps day-to-day?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at 4Point. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-1" onclick="copyField('body-1', 'btn-body-1')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#2 • V-A</div>
+    <h3>Drew Stark</h3>
+    <div class="meta-line">Vice President of Sales · Bigeye</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-2">Greater Toronto Area sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-2" onclick="copyField('subj-2', 'btn-subj-2')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-2">Hi Drew — 2 months into Vice President of Sales at Bigeye.
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Bigeye. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-2" onclick="copyField('body-2', 'btn-body-2')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#3 • V-A</div>
+    <h3>David Carroll</h3>
+    <div class="meta-line">Vice President, Sales · Encircle</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-3">Waterloo sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-3" onclick="copyField('subj-3', 'btn-subj-3')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-3">Hi David — 9 months into Vice President, Sales at Encircle.
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Encircle. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-3" onclick="copyField('body-3', 'btn-body-3')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#4 • V-A</div>
+    <h3>Robert Dickie CIM®</h3>
+    <div class="meta-line">Vice President, Sales Operations · Lysander Funds Limited</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-4">Toronto sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-4" onclick="copyField('subj-4', 'btn-subj-4')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-4">Hi Robert — 7 months into Vice President, Sales Operations at Lysander Funds Limited.
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Lysander Funds Limited. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-4" onclick="copyField('body-4', 'btn-body-4')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#5 • V-A</div>
+    <h3>Tony DiFranco</h3>
+    <div class="meta-line">Executive Vice President of Sales and Marketing · CES Transformers</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-5">Burlington sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-5" onclick="copyField('subj-5', 'btn-subj-5')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-5">Hi Tony — 11 months into Executive Vice President of Sales and Marketing at CES Transformers.
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at CES Transformers. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-5" onclick="copyField('body-5', 'btn-body-5')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#6 • V-A</div>
+    <h3>David Mann</h3>
+    <div class="meta-line">Director of Sales · tax.com</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-6">Greater Toronto Area sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-6" onclick="copyField('subj-6', 'btn-subj-6')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-6">Hi David — Director of Sales at tax.com.
+
+After your team completes sales training, how do you reinforce it with your reps day-to-day?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at tax.com. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-6" onclick="copyField('body-6', 'btn-body-6')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#7 • V-A</div>
+    <h3>Amy Webb</h3>
+    <div class="meta-line">Vice President National Sales · Bridgewater Bank</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-7">Canada sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-7" onclick="copyField('subj-7', 'btn-subj-7')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-7">Hi Amy — 7 months into Vice President National Sales at Bridgewater Bank.
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Bridgewater Bank. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-7" onclick="copyField('body-7', 'btn-body-7')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#8 • V-A</div>
+    <h3>Jim Wamsley</h3>
+    <div class="meta-line">VP Sales &amp; Marketing · Province Electric Supply Ltd.</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-8">Mississauga sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-8" onclick="copyField('subj-8', 'btn-subj-8')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-8">Hi Jim — 5 months into VP Sales &amp; Marketing at Province Electric Supply Ltd..
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Province Electric Supply Ltd.. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-8" onclick="copyField('body-8', 'btn-body-8')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#9 • V-A</div>
+    <h3>Kate Devine</h3>
+    <div class="meta-line">Vice President of Sales - Canada · GHP Group, Inc.</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-9">Kitchener sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-9" onclick="copyField('subj-9', 'btn-subj-9')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-9">Hi Kate — 3 months into Vice President of Sales - Canada at GHP Group, Inc..
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at GHP Group, Inc.. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-9" onclick="copyField('body-9', 'btn-body-9')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#10 • V-A</div>
+    <h3>Steve Hong</h3>
+    <div class="meta-line">Vice President of Global Sales and Marketing · Lorex Technology</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-10">Markham sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-10" onclick="copyField('subj-10', 'btn-subj-10')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-10">Hi Steve — 11 months into Vice President of Global Sales and Marketing at Lorex Technology.
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Lorex Technology. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-10" onclick="copyField('body-10', 'btn-body-10')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#11 • V-A</div>
+    <h3>Colin Robinson</h3>
+    <div class="meta-line">VP Sales · Fritz-Alder Precast</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-11">Canada sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-11" onclick="copyField('subj-11', 'btn-subj-11')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-11">Hi Colin — 5 months into VP Sales at Fritz-Alder Precast.
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Fritz-Alder Precast. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-11" onclick="copyField('body-11', 'btn-body-11')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#12 • V-A</div>
+    <h3>Peter E</h3>
+    <div class="meta-line">Executive VP Sales and Client Services  · Marsham Natural Products Broker</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-12">Markham sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-12" onclick="copyField('subj-12', 'btn-subj-12')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-12">Hi Peter — Executive VP Sales and Client Services  at Marsham Natural Products Broker.
+
+After your team completes sales training, how do you reinforce it with your reps day-to-day?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Marsham Natural Products Broker. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-12" onclick="copyField('body-12', 'btn-body-12')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#13 • V-A</div>
+    <h3>Paul Stirrett</h3>
+    <div class="meta-line">VP Sales · Linear Transfer Automation Inc.</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-13">Barrie sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-13" onclick="copyField('subj-13', 'btn-subj-13')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-13">Hi Paul — 7 months into VP Sales at Linear Transfer Automation Inc..
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Linear Transfer Automation Inc.. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-13" onclick="copyField('body-13', 'btn-body-13')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#14 • V-A</div>
+    <h3>Doug F</h3>
+    <div class="meta-line">Vice President of Sales · Commercial Bakeries Corp.</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-14">Oakville sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-14" onclick="copyField('subj-14', 'btn-subj-14')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-14">Hi Doug — 9 months into Vice President of Sales at Commercial Bakeries Corp..
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Commercial Bakeries Corp.. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-14" onclick="copyField('body-14', 'btn-body-14')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#15 • V-A</div>
+    <h3>Gregg Avery</h3>
+    <div class="meta-line">Vice President Sales &amp; Marketing · Terra Breads, Inc.</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-15">Greater Toronto Area sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-15" onclick="copyField('subj-15', 'btn-subj-15')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-15">Hi Gregg — 11 months into Vice President Sales &amp; Marketing at Terra Breads, Inc..
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Terra Breads, Inc.. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-15" onclick="copyField('body-15', 'btn-body-15')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#16 • V-A</div>
+    <h3>Paul Lukas</h3>
+    <div class="meta-line">Sr. VP of Global Sales and Marketing · Technophar</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-16">Windsor sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-16" onclick="copyField('subj-16', 'btn-subj-16')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-16">Hi Paul — 7 months into Sr. VP of Global Sales and Marketing at Technophar.
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at Technophar. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-16" onclick="copyField('body-16', 'btn-body-16')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#17 • V-A</div>
+    <h3>Louis Lacchin</h3>
+    <div class="meta-line">VP Sales · EdenPark</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-17">Toronto sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-17" onclick="copyField('subj-17', 'btn-subj-17')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-17">Hi Louis — VP Sales at EdenPark.
+
+After your team completes sales training, how do you reinforce it with your reps day-to-day?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at EdenPark. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-17" onclick="copyField('body-17', 'btn-body-17')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#18 • V-A</div>
+    <h3>Tim Davison</h3>
+    <div class="meta-line">Vice President, Sales and Marketing · The Talent Company</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-18">Toronto sales team consistency?</div>
+    <button class="copy-btn" id="btn-subj-18" onclick="copyField('subj-18', 'btn-subj-18')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-18">Hi Tim — 7 months into Vice President, Sales and Marketing at The Talent Company.
+
+When you're stepping into a new leadership role, how do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every methodology works in the training room. The question is what survives 90 days on the floor.
+
+Curious how you think about that at The Talent Company. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-18" onclick="copyField('body-18', 'btn-body-18')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prospect-header">
+    <div class="num">#19 • V-B</div>
+    <h3>Ian Potter</h3>
+    <div class="meta-line">Vice President-Strategic Partnerships &amp; Business Development · Canadian Energy</div>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Subject</div>
+    <div class="field-content subject" id="subj-19">Discovery calls that convert?</div>
+    <button class="copy-btn" id="btn-subj-19" onclick="copyField('subj-19', 'btn-subj-19')">📋 Copy Subject</button>
+  </div>
+  
+  <div class="field">
+    <div class="field-label">Message</div>
+    <div class="field-content" id="body-19">Hi Ian — 10 months into Vice President-Strategic Partnerships &amp; Business Development at Canadian Energy.
+
+When your team runs discovery calls with prospects, what's the biggest challenge in uncovering their real needs?
+
+Everyone trains on qualification frameworks — but what separates the calls that convert from the ones that just feel productive?
+
+Curious how you think about that at Canadian Energy. Worth connecting.
+
+Regards</div>
+    <button class="copy-btn" id="btn-body-19" onclick="copyField('body-19', 'btn-body-19')">📋 Copy Message</button>
+  </div>
+</div>
+
+<div class="footer">
+  Generated by InMail CSV Watcher · 05/23/26-1/4
+</div>
+
+<script>
+function copyField(fieldId, btnId) {
+  const el = document.getElementById(fieldId);
+  const btn = document.getElementById(btnId);
+  const text = el.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerText;
+    btn.innerText = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerText = orig;
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>

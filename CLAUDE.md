@@ -1,5 +1,9 @@
 # One Click Coaching Landing Page - Project Instructions
 
+## Master Reference
+
+Read OCC-BRAIN.md before responding to any question about OCC's product, positioning, or strategy.
+
 ## Project Overview
 This is the landing page for One Click Coaching (oneclickcoaching.com), an AI-powered sales coaching platform that reinforces methodology training (Sandler, MEDDIC, Challenger, SPIN, Gap Selling).
 

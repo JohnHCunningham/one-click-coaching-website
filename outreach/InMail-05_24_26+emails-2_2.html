@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InMail Drafts — 05/24/26 List 2/2 (+emails)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: #f5f0eb;
+    color: #1a1a1a;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #1a1a1a;
+  }
+  .subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  .summary {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .summary span { font-weight: 600; }
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  .card-header h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  .card-header .meta {
+    font-size: 0.8rem;
+    color: #888;
+    text-align: right;
+    line-height: 1.4;
+  }
+  .card-header .score {
+    display: inline-block;
+    background: #e8f4e8;
+    color: #2d6a2d;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+  }
+  .subject-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .subject-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 0.05em;
+    min-width: 55px;
+  }
+  .subject-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2b5797;
+    flex: 1;
+    padding: 8px 12px;
+    background: #f0f4fa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .subject-text:hover { background: #e4ecf6; }
+  .message-box {
+    position: relative;
+  }
+  .message-text {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #333;
+    padding: 14px 16px;
+    background: #fafafa;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    white-space: pre-wrap;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .message-text:hover { background: #f3f3f3; }
+  .btn-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .copy-btn {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    background: #fff;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .copy-btn:hover { background: #f5f5f5; border-color: #bbb; }
+  .copy-btn.copied {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+  }
+  .footer {
+    text-align: center;
+    color: #999;
+    font-size: 0.78rem;
+    margin-top: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>InMail Drafts — 05/24/26 List 2/2 (+emails)</h1>
+<p class="subtitle">9 strong fits from 14 prospects · Evaboot export with verified emails</p>
+
+<div class="summary">
+  <div>Drafts: <span>9</span></div>
+  <div>Duplicates: <span>0</span></div>
+  <div>Skipped: <span>5</span></div>
+  <div>Source: <span>05_24_26+emails-2_2</span></div>
+</div>
+
+<!-- 1. Douglas Jarvis -->
+<div class="card">
+  <div class="card-header">
+    <div><h2>1. Douglas Jarvis <span class="score">9/10</span></h2></div>
+    <div class="meta">Sales Director — Business Development<br>ThinkOn · IT Services<br>Kingston, ON · 21 reps · 11 mo</div>
+  </div>
+  <div class="subject-row">
+    <span class="subject-label">Subject</span>
+    <div class="subject-text" onclick="copyText(this,'subject-1')" id="subject-1">Cloud services sales consistency?</div>
+    <button class="copy-btn" onclick="copyFromId('subject-1',this)">Copy</button>
+  </div>
+  <div class="message-box">
+    <div class="message-text" onclick="copyText(this,'body-1')" id="body-1">Hi Douglas — 11 months into Sales Director at ThinkOn.
+
+As you're building your approach with the sales team, one question keeps surfacing for leaders at this stage.
+
+How do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every rep has their own style and every account has different dynamics, but the underlying discipline of qualifying and delivering value consistently — that's where great teams separate from good ones.
+
+Curious how you're thinking about that at ThinkOn. Worth connecting.
+
+Regards</div>
+    <div class="btn-row"><button class="copy-btn" onclick="copyFromId('body-1',this)">Copy Body</button></div>
+  </div>
+</div>
+
+<!-- 2. Max Woo -->
+<div class="card">
+  <div class="card-header">
+    <div><h2>2. Max Woo <span class="score">9/10</span></h2></div>
+    <div class="meta">Head of Sales Development<br>Landbase · Tech / SaaS<br>Toronto, ON · 6 reps · 11 mo</div>
+  </div>
+  <div class="subject-row">
+    <span class="subject-label">Subject</span>
+    <div class="subject-text" onclick="copyText(this,'subject-2')" id="subject-2">SaaS sales development consistency?</div>
+    <button class="copy-btn" onclick="copyFromId('subject-2',this)">Copy</button>
+  </div>
+  <div class="message-box">
+    <div class="message-text" onclick="copyText(this,'body-2')" id="body-2">Hi Max — 11 months into Head of Sales Development at Landbase.
+
+As you're building your approach with the SDR team, one question keeps surfacing for leaders at this stage.
+
+How do you assess where the team's outreach is consistent — and where it isn't?
+
+Every SDR has their own style and every prospect responds differently, but the underlying discipline of qualifying and messaging consistently — that's where great pipelines start and mediocre ones stall.
+
+Curious how you're thinking about that at Landbase. Worth connecting.
+
+Regards</div>
+    <div class="btn-row"><button class="copy-btn" onclick="copyFromId('body-2',this)">Copy Body</button></div>
+  </div>
+</div>
+
+<!-- 3. Samantha Bennett -->
+<div class="card">
+  <div class="card-header">
+    <div><h2>3. Samantha Bennett <span class="score">9/10</span></h2></div>
+    <div class="meta">VP Sales, North America<br>TRG Staffing Solutions<br>Canada · 10 reps · 9 mo</div>
+  </div>
+  <div class="subject-row">
+    <span class="subject-label">Subject</span>
+    <div class="subject-text" onclick="copyText(this,'subject-3')" id="subject-3">Staffing sales consistency?</div>
+    <button class="copy-btn" onclick="copyFromId('subject-3',this)">Copy</button>
+  </div>
+  <div class="message-box">
+    <div class="message-text" onclick="copyText(this,'body-3')" id="body-3">Hi Samantha — 9 months into VP Sales, North America at TRG Staffing Solutions.
+
+As you're building your approach with the North American team, one question keeps surfacing for leaders at this stage.
+
+How do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every recruiter has their own style and every client has different dynamics, but the underlying discipline of qualifying and delivering value consistently — that's where great teams separate from good ones.
+
+Curious how you're thinking about that at TRG. Worth connecting.
+
+Regards</div>
+    <div class="btn-row"><button class="copy-btn" onclick="copyFromId('body-3',this)">Copy Body</button></div>
+  </div>
+</div>
+
+<!-- 4. Mike M -->
+<div class="card">
+  <div class="card-header">
+    <div><h2>4. Mike M <span class="score">7/10</span></h2></div>
+    <div class="meta">Head of Sales<br>PlaySpace · Health Services<br>2 mo · ⚠️ partial data</div>
+  </div>
+  <div class="subject-row">
+    <span class="subject-label">Subject</span>
+    <div class="subject-text" onclick="copyText(this,'subject-4')" id="subject-4">Sales leadership and consistency?</div>
+    <button class="copy-btn" onclick="copyFromId('subject-4',this)">Copy</button>
+  </div>
+  <div class="message-box">
+    <div class="message-text" onclick="copyText(this,'body-4')" id="body-4">Hi Mike — 2 months into Head of Sales at PlaySpace.
+
+As you're building your approach with the team, one question keeps surfacing for leaders at this stage.
+
+How do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every rep has their own style and every account has different dynamics, but the underlying discipline of qualifying and delivering value consistently — that's where great teams separate from good ones.
+
+Curious how you're thinking about that at PlaySpace. Worth connecting.
+
+Regards</div>
+    <div class="btn-row"><button class="copy-btn" onclick="copyFromId('body-4',this)">Copy Body</button></div>
+  </div>
+</div>
+
+<!-- 5. Jonathan Seibel -->
+<div class="card">
+  <div class="card-header">
+    <div><h2>5. Jonathan Seibel <span class="score">7/10</span></h2></div>
+    <div class="meta">Director, Sales Development<br>Wiza · Software<br>Toronto, ON · 13 reps · 11 mo</div>
+  </div>
+  <div class="subject-row">
+    <span class="subject-label">Subject</span>
+    <div class="subject-text" onclick="copyText(this,'subject-5')" id="subject-5">SaaS sales development consistency?</div>
+    <button class="copy-btn" onclick="copyFromId('subject-5',this)">Copy</button>
+  </div>
+  <div class="message-box">
+    <div class="message-text" onclick="copyText(this,'body-5')" id="body-5">Hi Jonathan — 11 months into Director of Sales Development at Wiza.
+
+As you're building your approach with the SDR team, one question keeps surfacing for leaders at this stage.
+
+How do you assess where the team's outreach and qualification is consistent — and where it isn't?
+
+Every SDR has their own style and every prospect responds differently, but the underlying discipline of qualifying and messaging consistently — that's where great pipelines start and mediocre ones stall.
+
+Curious how you're thinking about that at Wiza. Worth connecting.
+
+Regards</div>
+    <div class="btn-row"><button class="copy-btn" onclick="copyFromId('body-5',this)">Copy Body</button></div>
+  </div>
+</div>
+
+<!-- 6. Judy Webster -->
+<div class="card">
+  <div class="card-header">
+    <div><h2>6. Judy Webster <span class="score">7/10</span></h2></div>
+    <div class="meta">VP Sales &amp; Service<br>Patient NEWS · Advertising<br>St. Catharines, ON · 10 reps · 1 mo</div>
+  </div>
+  <div class="subject-row">
+    <span class="subject-label">Subject</span>
+    <div class="subject-text" onclick="copyText(this,'subject-6')" id="subject-6">Sales team consistency?</div>
+    <button class="copy-btn" onclick="copyFromId('subject-6',this)">Copy</button>
+  </div>
+  <div class="message-box">
+    <div class="message-text" onclick="copyText(this,'body-6')" id="body-6">Hi Judy — one month into VP Sales &amp; Service at Patient NEWS.
+
+As you're building your approach with the sales and service team, one question keeps surfacing for leaders at this stage.
+
+How do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every rep has their own style and every account has different dynamics, but the underlying discipline of qualifying and delivering value consistently — that's where great teams separate from good ones.
+
+Curious how you're thinking about that at Patient NEWS. Worth connecting.
+
+Regards</div>
+    <div class="btn-row"><button class="copy-btn" onclick="copyFromId('body-6',this)">Copy Body</button></div>
+  </div>
+</div>
+
+<!-- 7. Jacob Letourneau -->
+<div class="card">
+  <div class="card-header">
+    <div><h2>7. Jacob Letourneau <span class="score">6/10</span></h2></div>
+    <div class="meta">VP of Sales<br>FlowChat · Software / SaaS<br>Toronto, ON · 5 reps · 7 mo</div>
+  </div>
+  <div class="subject-row">
+    <span class="subject-label">Subject</span>
+    <div class="subject-text" onclick="copyText(this,'subject-7')" id="subject-7">SaaS sales team consistency?</div>
+    <button class="copy-btn" onclick="copyFromId('subject-7',this)">Copy</button>
+  </div>
+  <div class="message-box">
+    <div class="message-text" onclick="copyText(this,'body-7')" id="body-7">Hi Jacob — 7 months into VP of Sales at FlowChat.
+
+As you're building your approach with the team, one question keeps surfacing for leaders at this stage.
+
+How do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every rep has their own style and every deal has different dynamics, but the underlying discipline of qualifying and delivering value consistently — that's where great SaaS teams separate from good ones.
+
+Curious how you're thinking about that at FlowChat. Worth connecting.
+
+Regards</div>
+    <div class="btn-row"><button class="copy-btn" onclick="copyFromId('body-7',this)">Copy Body</button></div>
+  </div>
+</div>
+
+<!-- 8. David Lillicrap -->
+<div class="card">
+  <div class="card-header">
+    <div><h2>8. David Lillicrap MBA <span class="score">6/10</span></h2></div>
+    <div class="meta">VP Sales — Canada<br>Cérélia North America · Food Mfg<br>Milton, ON · 11 reps · 5 mo</div>
+  </div>
+  <div class="subject-row">
+    <span class="subject-label">Subject</span>
+    <div class="subject-text" onclick="copyText(this,'subject-8')" id="subject-8">National sales team consistency?</div>
+    <button class="copy-btn" onclick="copyFromId('subject-8',this)">Copy</button>
+  </div>
+  <div class="message-box">
+    <div class="message-text" onclick="copyText(this,'body-8')" id="body-8">Hi David — 5 months into VP of Sales, Canada at Cérélia North America.
+
+As you're building your approach with the Canadian team, one question keeps surfacing for leaders at this stage.
+
+How do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every rep has their own style and every account has different dynamics, but the underlying discipline of qualifying and delivering value consistently — that's where great teams separate from good ones.
+
+Curious how you're thinking about that at Cérélia. Worth connecting.
+
+Regards</div>
+    <div class="btn-row"><button class="copy-btn" onclick="copyFromId('body-8',this)">Copy Body</button></div>
+  </div>
+</div>
+
+<!-- 9. Thomas Ephraim -->
+<div class="card">
+  <div class="card-header">
+    <div><h2>9. Thomas Ephraim <span class="score">6/10</span></h2></div>
+    <div class="meta">VP GTM Sales &amp; Strategic Alliances<br>Authenticom · Information Services<br>Canada · 18 reps · 2 mo</div>
+  </div>
+  <div class="subject-row">
+    <span class="subject-label">Subject</span>
+    <div class="subject-text" onclick="copyText(this,'subject-9')" id="subject-9">GTM sales consistency?</div>
+    <button class="copy-btn" onclick="copyFromId('subject-9',this)">Copy</button>
+  </div>
+  <div class="message-box">
+    <div class="message-text" onclick="copyText(this,'body-9')" id="body-9">Hi Thomas — 2 months into VP of GTM Sales and Strategic Alliances at Authenticom.
+
+As you're building your GTM approach with the team, one question keeps surfacing for leaders at this stage.
+
+How do you assess where the team's consultative approach is consistent — and where it isn't?
+
+Every rep has their own style and every account has different dynamics, but the underlying discipline of qualifying and delivering value consistently — that's where great teams separate from good ones.
+
+Curious how you're thinking about that at Authenticom. Worth connecting.
+
+Regards</div>
+    <div class="btn-row"><button class="copy-btn" onclick="copyFromId('body-9',this)">Copy Body</button></div>
+  </div>
+</div>
+
+<div class="footer">Generated Mon May 25 · 9 strong fits from Evaboot export 05_24_26+emails-2_2</div>
+
+<script>
+function copyText(el, id) {
+  navigator.clipboard.writeText(el.innerText);
+  // Flash feedback
+  el.style.background = '#d4edda';
+  setTimeout(() => { el.style.background = ''; }, 600);
+}
+function copyFromId(id, btn) {
+  const el = document.getElementById(id);
+  navigator.clipboard.writeText(el.innerText);
+  btn.classList.add('copied');
+  btn.textContent = 'Copied!';
+  setTimeout(() => {
+    btn.classList.remove('copied');
+    btn.textContent = btn.textContent.includes('Subject') ? 'Copy' : 'Copy Body';
+  }, 1500);
+}
+</script>
+</body>
+</html>

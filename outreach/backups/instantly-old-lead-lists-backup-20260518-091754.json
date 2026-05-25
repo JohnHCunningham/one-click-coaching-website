@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1ee09790-d828-4179-b2f8-fad29bc88675",
+    "organization_id": "f10533bd-7dbc-407d-a8a4-2fcc56b84871",
+    "name": "Legal",
+    "timestamp_created": "2025-03-26T00:50:09.390Z",
+    "owned_by": "8fd9b9ce-a377-403e-86bf-cce4ecf521a6"
+  },
+  {
+    "id": "23aedfb5-16ab-41b7-b11f-80dd2cc73b23",
+    "organization_id": "f10533bd-7dbc-407d-a8a4-2fcc56b84871",
+    "name": "Financial advisors",
+    "timestamp_created": "2025-03-18T17:05:26.796Z",
+    "owned_by": "8fd9b9ce-a377-403e-86bf-cce4ecf521a6"
+  },
+  {
+    "id": "21a8e8bf-896a-442f-8d05-e4e762180cb6",
+    "organization_id": "f10533bd-7dbc-407d-a8a4-2fcc56b84871",
+    "name": "lawncare",
+    "timestamp_created": "2025-03-18T14:29:01.044Z",
+    "owned_by": "8fd9b9ce-a377-403e-86bf-cce4ecf521a6"
+  },
+  {
+    "id": "6bedbc0b-bf80-422c-bf1f-baea7c1a6b0d",
+    "organization_id": "f10533bd-7dbc-407d-a8a4-2fcc56b84871",
+    "name": "Moving companies",
+    "timestamp_created": "2025-03-18T13:10:12.553Z",
+    "owned_by": "8fd9b9ce-a377-403e-86bf-cce4ecf521a6"
+  },
+  {
+    "id": "7506e7e6-aff3-487b-b980-fc23be5b3e80",
+    "organization_id": "f10533bd-7dbc-407d-a8a4-2fcc56b84871",
+    "name": "HVAC",
+    "timestamp_created": "2025-02-25T20:05:42.872Z",
+    "owned_by": "8fd9b9ce-a377-403e-86bf-cce4ecf521a6"
+  },
+  {
+    "id": "93b82024-7182-4b71-8884-8c68bf1eca40",
+    "organization_id": "f10533bd-7dbc-407d-a8a4-2fcc56b84871",
+    "name": "Accountants",
+    "timestamp_created": "2025-02-25T16:46:29.034Z",
+    "owned_by": "8fd9b9ce-a377-403e-86bf-cce4ecf521a6"
+  },
+  {
+    "id": "a91be41e-7794-40a6-943a-ba7fc00ad22e",
+    "organization_id": "f10533bd-7dbc-407d-a8a4-2fcc56b84871",
+    "name": "eye_care",
+    "timestamp_created": "2025-02-25T15:10:51.495Z",
+    "owned_by": "8fd9b9ce-a377-403e-86bf-cce4ecf521a6"
+  }
+]

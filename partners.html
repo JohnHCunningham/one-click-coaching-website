@@ -79,24 +79,32 @@
   nav.top .lockup { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
   nav.top .lockup svg { width: 26px; height: 26px; flex-shrink: 0; }
   nav.top .lockup .wm { font-family: 'Instrument Serif', serif; font-size: 22px; letter-spacing: -0.01em; white-space: nowrap; }
-  nav.top .links { display: flex; gap: 36px; font-size: 14px; color: var(--stone); }
+  nav.top .links { display: none; gap: 36px; font-size: 14px; color: var(--stone); pointer-events: none; }
   nav.top .links a:hover { color: var(--ink); }
   nav.top .links a.active { color: var(--terracotta); font-weight: 500; }
-  nav.top .cta { background: var(--espresso); color: var(--bone); padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform 0.15s ease; }
+  nav.top .cta { display: none; background: var(--espresso); color: var(--bone); padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform 0.15s ease; pointer-events: none; }
   nav.top .cta:hover { transform: translateY(-1px); }
 
-  /* hamburger */
-  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:60}
-  .hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s}
-  .hamburger span+span{margin-top:5px}
-  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .hamburger.open span:nth-child(2){opacity:0}
-  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .mobile-menu{display:none;position:fixed;inset:0;z-index:55;background:rgba(26,21,17,0.96);flex-direction:column;align-items:center;justify-content:center;gap:32px}
-  .mobile-menu.open{display:flex}
-  .mobile-menu a{color:var(--bone);font-size:22px;font-weight:300;letter-spacing:-0.01em}
-  .mobile-menu a:hover{color:var(--clay)}
-  .mobile-menu .cta-mobile{background:var(--terracotta);color:var(--bone);padding:14px 32px;border-radius:999px;font-size:16px;font-weight:500;margin-top:8px}
+  /* ── hamburger ── */
+  .hamburger { display: block; background: none; border: none; cursor: pointer; padding: 8px; z-index: 60; position: relative; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+  .hamburger span + span { margin-top: 5px; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999999; background: red; flex-direction: column; align-items: center; justify-content: center; gap: 32px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
+  .mobile-menu.open { display: flex !important; pointer-events: auto; opacity: 1; background: lime !important; }
+  .mobile-menu a { color: yellow; font-size: 32px; font-weight: 700; letter-spacing: -0.01em; }
+  .mobile-menu a:hover { color: var(--clay); }
+  .mobile-menu .cta-mobile { background: var(--terracotta); color: var(--bone); padding: 14px 32px; border-radius: 999px; font-size: 16px; font-weight: 500; margin-top: 8px; }
+
+  /* ── desktop nav (≥901px) ── */
+  @media (min-width: 901px) {
+    .hamburger { display: none !important; }
+    nav.top .links { display: flex !important; pointer-events: auto !important; }
+    nav.top .cta { display: inline-flex !important; pointer-events: auto !important; }
+  }
 
   /* ── hero ── */
   section.hero { padding: 120px 0 100px; border-bottom: 1px solid var(--line); }
@@ -262,8 +270,6 @@
 
   @media (max-width: 900px) {
     .wrap { padding: 0 24px; }
-    nav.top .links,nav.top .cta { display: none; }
-    .hamburger{display:block}
     .hero { padding: 80px 0 60px; }
     .hero h1 { font-size: 40px; }
     .hero .lede { font-size: 17px; }
@@ -284,26 +290,24 @@
     .who-grid { grid-template-columns: 1fr; }
   }
 
-  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:60}
-  .hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s}
-  .hamburger span+span{margin-top:5px}
-  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .hamburger.open span:nth-child(2){opacity:0}
-  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .mobile-menu{display:none;position:fixed;inset:0;z-index:55;background:rgba(26,21,17,0.96);flex-direction:column;align-items:center;justify-content:center;gap:32px}
-  .mobile-menu.open{display:flex}
-  .mobile-menu a{color:var(--bone);font-size:22px;font-weight:300;letter-spacing:-0.01em}
-  .mobile-menu a:hover{color:var(--clay)}
-  .mobile-menu .cta-mobile{background:var(--terracotta);color:var(--bone);padding:14px 32px;border-radius:999px;font-size:16px;font-weight:500;margin-top:8px}
-  @media(max-width:900px){nav.top .links,nav.top .cta{display:none}.hamburger{display:block}}
 </style>
 
 <script>
-function toggleMenu(){
-  document.getElementById('mobileMenu').classList.toggle('open');
-  document.querySelector('.hamburger').classList.toggle('open');
-  document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';
-}
+  // ── Mobile menu ──
+  function toggleMenu(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    console.log('toggleMenu called!', new Date().toISOString());
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    console.log('Menu element:', menu, 'Has open class:', menu.classList.contains('open'));
+    menu.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    console.log('After toggle - Has open class:', menu.classList.contains('open'));
+  }
 </script>
 
 </head>
@@ -324,17 +328,17 @@ function toggleMenu(){
       <a href="contact.html">Contact</a>
     </div>
     <a href="https://app.oneclickcoaching.com" class="cta">Login</a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <button type="button" class="hamburger" onclick="toggleMenu(event)" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" onclick="toggleMenu()">Home</a>
-    <a href="index.html#product" onclick="toggleMenu()">How It Works</a>
-    <a href="pricing.html" onclick="toggleMenu()">Pricing</a>
-    <a href="partners.html" onclick="toggleMenu()">Partners</a>
-    <a href="blog.html" onclick="toggleMenu()">Blog</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a href="index.html" onclick="toggleMenu(event)">Home</a>
+    <a href="index.html#product" onclick="toggleMenu(event)">How It Works</a>
+    <a href="pricing.html" onclick="toggleMenu(event)">Pricing</a>
+    <a href="partners.html" onclick="toggleMenu(event)">Partners</a>
+    <a href="blog.html" onclick="toggleMenu(event)">Blog</a>
+    <a href="contact.html" onclick="toggleMenu(event)">Contact</a>
     <a href="https://app.oneclickcoaching.com" class="cta-mobile">Login</a>
   </div>
 </nav>

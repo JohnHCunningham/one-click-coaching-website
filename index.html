@@ -598,17 +598,17 @@
       <a href="contact.html">Contact</a>
     </div>
     <a href="https://app.oneclickcoaching.com" class="cta">Login</a>
-    <button type="button" class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <button type="button" class="hamburger" onclick="toggleMenu(event)" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#" onclick="toggleMenu()">Home</a>
-    <a href="#product" onclick="toggleMenu()">How It Works</a>
-    <a href="pricing.html" onclick="toggleMenu()">Pricing</a>
-    <a href="partners.html" onclick="toggleMenu()">Partners</a>
-    <a href="blog.html" onclick="toggleMenu()">Blog</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a href="#" onclick="toggleMenu(event)">Home</a>
+    <a href="#product" onclick="toggleMenu(event)">How It Works</a>
+    <a href="pricing.html" onclick="toggleMenu(event)">Pricing</a>
+    <a href="partners.html" onclick="toggleMenu(event)">Partners</a>
+    <a href="blog.html" onclick="toggleMenu(event)">Blog</a>
+    <a href="contact.html" onclick="toggleMenu(event)">Contact</a>
     <a href="https://app.oneclickcoaching.com" class="cta-mobile">Login</a>
   </div>
 </nav>
@@ -1606,11 +1606,19 @@ if (homepageForm) {
   }
 
   // ── Mobile menu ──
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-    document.querySelector('.hamburger').classList.toggle('open');
-    document.body.style.overflow = 
-      document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+  function toggleMenu(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    console.log('toggleMenu called!', new Date().toISOString());
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    console.log('Menu element:', menu, 'Has open class:', menu.classList.contains('open'));
+    menu.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    console.log('After toggle - Has open class:', menu.classList.contains('open'));
   }
 
   // ── Demo video modal ──

@@ -127,7 +127,7 @@
       <a href="contact.html">Contact</a>
     </div>
     <a href="https://oneclickcoaching-xeso.vercel.app/login" class="cta">Sign In →</a>
-    <button type="button" class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <button type="button" class="hamburger" onclick="toggleMenu(event)" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -142,7 +142,11 @@
 </nav>
 
 <script>
-function toggleMenu(){
+function toggleMenu(event){
+  if(event){
+    event.preventDefault();
+    event.stopPropagation();
+  }
   document.getElementById('mobileMenu').classList.toggle('open');
   document.querySelector('.hamburger').classList.toggle('open');
   document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';

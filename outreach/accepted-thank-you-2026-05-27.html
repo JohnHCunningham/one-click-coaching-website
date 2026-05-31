@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accepted — Thank You Notes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { 
+    font-family: -apple-system, 'Inter', sans-serif;
+    background: #F4EFE8; 
+    padding: 40px 20px; 
+    color: #2A221C;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 22px; margin-bottom: 4px; color: #1A1511; }
+  .subtitle { color: #8F847A; margin-bottom: 28px; font-size: 14px; }
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #C9A687;
+  }
+  .card h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #2A221C; }
+  .card .status { font-size: 12px; color: #B5583E; margin-bottom: 12px; }
+  .note { 
+    font-size: 14px; line-height: 1.6; color: #2A221C;
+    background: #fafaf8; padding: 12px 14px; border-radius: 6px;
+    border: 1px solid #C9A687; margin-bottom: 10px;
+    white-space: pre-wrap;
+  }
+  .copy-btn {
+    background: #B5583E; color: #fff; border: none;
+    border-radius: 4px; padding: 8px 18px; font-size: 13px;
+    font-weight: 600; cursor: pointer; transition: all 0.15s;
+  }
+  .copy-btn.copied { background: #2A221C; }
+  .score { text-align: center; margin-top: 32px; color: #6E6358; font-size: 14px; }
+</style>
+</head>
+<body>
+<h1>Accepted — Thank You Notes</h1>
+<p class="subtitle">5 connections accepted · May 27, 2026 · 2nd-degree outreach</p>
+
+<div class="card" style="opacity:0.5">
+  <h3>~~ Rosario Perri — NOT A FIT</h3>
+  <div class="status" style="color:#8F847A">Not set up for our service. Do not contact.</div>
+</div>
+
+<div class="card" style="opacity:0.5">
+  <h3>~~ John Kilbride — NOT INTERESTED</h3>
+  <div class="status" style="color:#8F847A">Declined / not interested. Do not contact.</div>
+</div>
+
+<div class="card">
+  <h3>1. Nicole Power</h3>
+  <div class="status">✓ Accepted — send thank you</div>
+  <div class="note" id="n1">Hi Nicole — thanks for connecting. Looking forward to following your work. All the best.</div>
+  <button class="copy-btn" onclick="copyIt('n1', this)">Copy Note</button>
+</div>
+
+<div class="card">
+  <h3>2. Joanna Dragif</h3>
+  <div class="status">✓ Accepted — send thank you</div>
+  <div class="note" id="n2">Hi Joanna — thanks for connecting. I enjoy following what sales leaders are building. All the best.</div>
+  <button class="copy-btn" onclick="copyIt('n2', this)">Copy Note</button>
+</div>
+
+<div class="card">
+  <h3>3. Chris Hooper</h3>
+  <div class="status">✓ Accepted — send thank you</div>
+  <div class="note" id="n4">Hi Chris — thanks for connecting. Great to have another sales leader in the network. All the best.</div>
+  <button class="copy-btn" onclick="copyIt('n4', this)">Copy Note</button>
+</div>
+
+<div class="card">
+  <h3>5. Matt Meghory</h3>
+  <div class="status">✓ Accepted — send thank you</div>
+  <div class="note" id="n5">Hi Matt — thanks for connecting. Looking forward to following what you're building. All the best.</div>
+  <button class="copy-btn" onclick="copyIt('n5', this)">Copy Note</button>
+</div>
+
+<div class="card">
+  <h3>6. Angela Yaseldyk</h3>
+  <div class="status">✓ Accepted — send thank you</div>
+  <div class="note" id="n6">Hi Angela — thanks for connecting. Great to connect with another sales leader. All the best.</div>
+  <button class="copy-btn" onclick="copyIt('n6', this)">Copy Note</button>
+</div>
+
+<div class="score">6 accepted today · 39 notes sent · 15% acceptance rate</div>
+
+<script>
+function copyIt(id, btn) {
+  const el = document.getElementById(id);
+  navigator.clipboard.writeText(el.textContent);
+  btn.textContent = '✓ Copied';
+  btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = 'Copy Note'; btn.classList.remove('copied'); }, 2000);
+}
+</script>
+</body>
+</html>

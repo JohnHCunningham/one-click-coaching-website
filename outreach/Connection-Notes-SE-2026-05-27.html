@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — Sales Enablement · May 27</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Inter', sans-serif; background: #F4EFE8; padding: 40px 20px; color: #2A221C; max-width: 700px; margin: 0 auto; }
+  h1 { font-size: 22px; margin-bottom: 4px; color: #1A1511; }
+  .subtitle { color: #8F847A; margin-bottom: 28px; font-size: 14px; }
+  .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 16px; border: 1px solid #C9A687; }
+  .card h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: #2A221C; }
+  .card .count { display: inline-block; background: #B5583E; color: #fff; border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; font-size: 12px; margin-right: 8px; }
+  .meta { font-size: 13px; color: #6E6358; margin-bottom: 14px; }
+  .field-row { display: flex; align-items: flex-start; gap: 10px; }
+  .field-label { font-size: 12px; font-weight: 600; color: #6E6358; text-transform: uppercase; min-width: 44px; padding-top: 4px; }
+  .field-content { flex: 1; font-size: 14px; line-height: 1.6; color: #2A221C; background: #fafaf8; padding: 10px 14px; border-radius: 4px; border: 1px solid #C9A687; white-space: pre-wrap; }
+  .copy-btn { background: #B5583E; color: #fff; border: none; border-radius: 4px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+  .copy-btn.copied { background: #2A221C; }
+</style>
+</head>
+<body>
+<h1>Connection Notes — Sales Enablement</h1>
+<p class="subtitle">11 profiles · May 27, 2026 · 2nd-degree</p>
+
+<div class="card">
+  <h3><span class="count">1</span> Justin Sykes — Director of Sales, Knak</h3>
+  <div class="meta">Software Development | 14 reps | 3mo in role | Ottawa, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n1">Hi Justin — 3mo leading sales at Knak. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n1', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">2</span> Jennifer Zaremba — Sales Executive, Opti9 Tech</h3>
+  <div class="meta">IT Services and IT Consulting | 23 reps | 6mo in role | Ottawa, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n2">Hi Jennifer — 6mo leading sales at Opti9 Tech. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n2', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">3</span> Lennie A Monteiro — Country Manager, RectorSeal</h3>
+  <div class="meta">Manufacturing | 72 reps | 8mo in role | Toronto, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n3">Hi Lennie A — 8mo leading sales at RectorSeal. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n3', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">4</span> Adnan Glavas — Director of Strategic Partnerships, Wave HQ</h3>
+  <div class="meta">Software Development | 4 reps | 4mo in role | London, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n4">Hi Adnan — 4mo leading sales at Wave HQ. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n4', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">5</span> Amanda Martyniuk — Head Of Sales, eShipper</h3>
+  <div class="meta">Transportation, Logistics, Supply Chain and Storage | 18 reps | 3mo in role | Brampton, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n5">Hi Amanda — 3mo leading sales at eShipper. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n5', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">6</span> Daniel St Pierre — Account Manager/Cisco Specialist, THINQ Technologies Ltd. | DirectDial.com</h3>
+  <div class="meta">Information Technology & Services | 21 reps | 4mo in role | London, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n6">Hi Daniel — 4mo leading sales at THINQ Technologies Ltd. | DirectDial.com. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n6', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">7</span> Ajay B — Head of Sales, A1 Global College of Health, Business and Technology</h3>
+  <div class="meta">Higher Education | 3 reps | 11mo in role | Mississauga, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n7">Hi Ajay — 11mo leading sales at A1 Global College of Health, Business and Technology. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n7', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">8</span> Erin Neal — Enterprise Sales Manager, Riverside</h3>
+  <div class="meta">Software Development | 53 reps | 8mo in role | Toronto, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n8">Hi Erin — 8mo leading sales at Riverside. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n8', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">9</span> Fahim Shaikh — Senior Sales Manager, Nitro Software</h3>
+  <div class="meta">Software Development | 65 reps | 5mo in role | Mississauga, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n9">Hi Fahim — 5mo leading sales at Nitro Software. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n9', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">10</span> Samaran Jeevanantham — Education and Prevention Coordinator, Responsible Gambling Council (RGC)</h3>
+  <div class="meta">Gambling Facilities and Casinos | 3 reps | 7mo in role | Concord, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n10">Hi Samaran — 7mo leading sales at Responsible Gambling Council (RGC). Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n10', this)">Copy</button>
+  </div>
+</div>
+<div class="card">
+  <h3><span class="count">11</span> Kaitlin Sinclair — Client Success Team Lead, BIS Safety Software</h3>
+  <div class="meta">E-Learning Providers | 4 reps | 8mo in role | Fergus, Ontario, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Note</span>
+    <span class="field-content" id="n11">Hi Kaitlin — 8mo leading sales at BIS Safety Software. Would be great to connect — I work with B2B sales leaders on making methodology training stick.</span>
+    <button class="copy-btn" onclick="copyIt('n11', this)">Copy</button>
+  </div>
+</div>
+
+<div style="text-align:center;margin-top:32px;color:#6E6358;font-size:14px">11 notes ready · all under 300 chars · 2nd-degree only</div>
+
+<script>
+function copyIt(id, btn) {
+  navigator.clipboard.writeText(document.getElementById(id).textContent);
+  btn.textContent = '✓ Copied';
+  btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+}
+</script>
+</body>
+</html>

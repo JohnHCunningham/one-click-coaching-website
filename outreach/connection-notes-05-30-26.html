@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — 05-30-26 (12 Ready)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #F4EFE8; color: #6E6358; padding: 30px; }
+  .header { background: linear-gradient(135deg, #1A1511 0%, #2A221C 100%); color: #C9A687; padding: 24px 30px; border-radius: 8px 8px 0 0; }
+  .header h1 { font-size: 18px; color: #C9A687; }
+  .header .sub { font-size: 12px; color: #8F847A; margin-top: 4px; }
+  .card { background: white; padding: 18px 24px; border-bottom: 1px solid #C9A687; }
+  .card:last-child { border-radius: 0 0 8px 8px; }
+  .num { color: #B5583E; font-weight: bold; font-size: 14px; }
+  .name { color: #2A221C; font-weight: bold; font-size: 15px; }
+  .meta { color: #8F847A; font-size: 12px; margin: 2px 0 6px 0; }
+  .note-box { background: #F4EFE8; border: 1px solid #C9A687; border-radius: 6px; padding: 12px 14px; margin: 8px 0; font-size: 13px; line-height: 1.5; cursor: pointer; position: relative; transition: background 0.2s; }
+  .note-box:hover { background: #e8dfd5; }
+  .copy-btn { position: absolute; top: 6px; right: 8px; background: #B5583E; color: white; border: none; border-radius: 4px; padding: 4px 10px; font-size: 10px; cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+  .note-box:hover .copy-btn { opacity: 1; }
+  .char-count { color: #8F847A; font-size: 10px; text-align: right; }
+  .footer { background: #2A221C; color: #C9A687; padding: 16px 30px; border-radius: 0 0 8px 8px; font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Connection Notes — Ready to Send</h1>
+  <div class="sub">Batch: 05-30-26 · 12 notes ready · Source: linkedin-notes-05-30-26.md (Claude Pro)</div>
+</div>
+
+<div class="card">
+  <div class="num">1</div>
+  <div class="name">Tony Loaiza</div>
+  <div class="meta">Head of Sales · Zesty</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Tony — building GTM at a Kubernetes cost-optimization company means selling a technical product to buyers who've heard every pitch. How do you keep your reps executing consistently across a complex enterprise sale? Worth connecting.
+  </div>
+  <div class="char-count">273 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">2</div>
+  <div class="name">Jed Schneiderman</div>
+  <div class="meta">Head of Sales and Marketing · SimplyAsk.ai</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Jed — running sales and marketing together at an AI automation startup means your reps need to be sharp on consultative selling, not just product demos. How do you reinforce that discipline day-to-day once they're in the field? Worth connecting.
+  </div>
+  <div class="char-count">252 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">3</div>
+  <div class="name">Shannon Moran</div>
+  <div class="meta">Sales Manager · catworkx</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Shannon — stepping into a global GTM role at an Atlassian Platinum partner means inheriting a team mid-stride. How are you getting a read on where your reps' methodology is holding and where it's drifting? Worth connecting.
+  </div>
+  <div class="char-count">233 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">4</div>
+  <div class="name">Dan DeHart</div>
+  <div class="meta">VP of Sales · Advantage Design Group</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Dan — 20+ years building high-performing sales teams means you've watched methodology stick in the room and fade in the field. How do you reinforce execution consistency with a team of 8 in a relationship-driven sale? Worth connecting.
+  </div>
+  <div class="char-count">243 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">5</div>
+  <div class="name">Joe Santangelo</div>
+  <div class="meta">VP of Employer Sales · RethinkFirst</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Joe — selling workforce neurodiversity strategy to HR buyers is a nuanced, consultative sale. With a 30-person team, how do you make sure reps are running that discovery well on every call, not just the ones you're on? Worth connecting.
+  </div>
+  <div class="char-count">245 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">6</div>
+  <div class="name">Brian Goff</div>
+  <div class="meta">Director of Sales · BlinkOps</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Brian — selling security automation means reps need to speak to both technical and business buyers without losing the thread. With 31 reps, how do you catch methodology drift before it shows up in your pipeline? Worth connecting.
+  </div>
+  <div class="char-count">238 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">7</div>
+  <div class="name">Shane Sullivan</div>
+  <div class="meta">Vice President of Sales · Nephros</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Shane — new to the VP role at Nephros, with 12 reps selling into healthcare and life science. How are you assessing where the team's consultative approach is consistent versus where individual habits are running the show? Worth connecting.
+  </div>
+  <div class="char-count">247 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">8</div>
+  <div class="name">Shad Good</div>
+  <div class="meta">VP of Sales – North America · IceCure Medical</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Shad — 8 reps selling a cryoablation device into surgical settings is a high-stakes, relationship-driven sale. How do you make sure your reps are running consistent discovery with interventional radiologists across different regions? Worth connecting.
+  </div>
+  <div class="char-count">258 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">9</div>
+  <div class="name">Luke Forrest</div>
+  <div class="meta">VP of Sales · Bridgit</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Luke — just stepped into the VP role at Bridgit, selling workforce intelligence to construction leaders. How are you getting a baseline read on how your 22 reps are actually running the methodology versus how they think they're running it? Worth connecting.
+  </div>
+  <div class="char-count">264 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">10</div>
+  <div class="name">John Lepto</div>
+  <div class="meta">Sr. Director of Sales · Rightsline</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi John — new to the role at Rightsline, scaling a B2B SaaS sales team in IP rights management. As you step in, how are you diagnosing where your 18 reps are executing the methodology well versus where the gaps are hiding? Worth connecting.
+  </div>
+  <div class="char-count">247 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">11</div>
+  <div class="name">Elizabeth Durkin</div>
+  <div class="meta">Vice President of Sales · Rovema North America</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Elizabeth — 11 reps selling engineered packaging solutions means long sales cycles and technical buyers who need to be handled precisely. How do you keep your team's consultative approach consistent across accounts when you can't be in every conversation? Worth connecting.
+  </div>
+  <div class="char-count">278 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">12</div>
+  <div class="name">Kristen "Kiki" Enderle</div>
+  <div class="meta">VP of Regional Sales · Pixellot</div>
+  <div class="note-box" onclick="copyNote(this)">
+    <button class="copy-btn">Copy</button>
+    Hi Kiki — Pixellot's push into automated sports production for scholastic and collegiate markets is a genuinely different sell. When your reps run discovery with athletic directors, what separates the calls that build urgency from the ones that just feel productive? Worth connecting.
+  </div>
+  <div class="char-count">287 chars</div>
+</div>
+
+<div class="footer">
+  12 connection notes ready · Source: linkedin-notes-05-30-26.md · Monday AM send
+</div>
+
+<script>
+function copyNote(el) {
+  const text = el.innerText.replace('Copy','').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = el.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    btn.style.background = '#2E7D32';
+    setTimeout(() => { btn.textContent = 'Copy'; btn.style.background = '#B5583E'; }, 1500);
+  });
+}
+</script>
+</body>
+</html>

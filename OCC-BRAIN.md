@@ -50,7 +50,7 @@ John enrolled in Dale Carnegie. Earned three pens — their marker of competence
 **Pricing:** $50/rep/month. All-in. No tiers. No setup fee. 30-day money-back.
 **Founder's Deal:** Free setup (normally $700–800). John personally configures first account.
 
-**Methodologies (live):** Sandler, MEDDIC, Challenger Sales, SPIN Selling, Gap Selling + any custom framework.
+**Methodologies (live):** Sandler, MEDDPICC, Challenger Sales, SPIN Selling, Gap Selling + any custom framework.
 
 **Integrations (live — OAuth, one click):** Fathom, Fireflies, Otter, HubSpot, Aircall
 **Integrations (coming Q2):** Salesforce, Gong
@@ -82,7 +82,7 @@ Channel 1 — Direct outreach to companies
 
 Channel 2 — White label to training organizations
 - Sandler franchisees (250 worldwide)
-- SPIN, Challenger, MEDDIC consultants
+- SPIN, Challenger, MEDDPICC consultants
 - Independent sales training firms
 - One Sandler franchisee already in conversation (confirmation pending)
 
@@ -133,7 +133,7 @@ Schedule: 2x/week (Mon + Thu). Next posts up through June 5.
 6. The 87% Problem (May 22)
 7. Methodology Under Pressure: 30% Increase (May 26)
 8. Sandler Execution Gap (May 29)
-9. MEDDIC + AI (June 2)
+9. MEDDPICC + AI (June 2)
 10. Talk Ratio Killing Sales (June 5)
 
 ---

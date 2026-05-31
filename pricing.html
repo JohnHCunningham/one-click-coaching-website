@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Pricing — One Click Coaching | $50/Rep/Month AI Sales Coaching</title>
+<title>Pricing — One Click Coaching | $85/Rep/Month AI Sales Coaching</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Simple pricing: $50 per rep per month. Every feature included. No tiers, no gates, no surprise add-ons. 14-day free trial — credit card required." />
-<meta name="keywords" content="sales coaching pricing, AI coaching cost, SCORE Method, sales training ROI, methodology drift, MEDDIC coaching, AI sales coaching platform, sales reinforcement, call scoring software" />
+<meta name="description" content="Simple pricing: $85 per rep per month. Every feature included. No tiers, no gates, no surprise add-ons. 14-day free trial — credit card required." />
+<meta name="keywords" content="sales coaching pricing, AI coaching cost, SCORE Method, sales training ROI, methodology drift, MEDDPICC coaching, AI sales coaching platform, sales reinforcement, call scoring software" />
 <meta name="author" content="One Click Coaching Inc." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.oneclickcoaching.com/pricing" />
@@ -13,15 +13,15 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.oneclickcoaching.com/pricing" />
-<meta property="og:title" content="Pricing — One Click Coaching | $50/Rep/Month" />
-<meta property="og:description" content="Simple pricing: $50 per rep per month. Every feature included. No tiers, no gates. 30-day free trial." />
+<meta property="og:title" content="Pricing — One Click Coaching | $85/Rep/Month" />
+<meta property="og:description" content="Simple pricing: $85 per rep per month. Every feature included. No tiers, no gates. 14-day free trial." />
 <meta property="og:image" content="https://www.oneclickcoaching.com/og-image.svg" />
 <meta property="og:site_name" content="One Click Coaching" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Pricing — One Click Coaching | $50/Rep/Month" />
-<meta name="twitter:description" content="Simple pricing: $50 per rep per month. Every feature included. No tiers, no gates. 30-day free trial." />
+<meta name="twitter:title" content="Pricing — One Click Coaching | $85/Rep/Month" />
+<meta name="twitter:description" content="Simple pricing: $85 per rep per month. Every feature included. No tiers, no gates. 14-day free trial." />
 
 <!-- Theme Color -->
 <meta name="theme-color" content="#2A221C" />
@@ -50,7 +50,21 @@
   nav.top .links{display:flex;gap:36px;font-size:14px;color:var(--stone)}
   nav.top .links a.active{color:var(--ink)}
   nav.top .links a:hover{color:var(--ink)}
-  nav.top .cta{background:var(--espresso);color:var(--bone);padding:10px 20px;border-radius:999px;font-size:13px;font-weight:500}
+  nav.top .cta{background:var(--espresso);color:var(--bone);padding:10px 20px;border-radius:999px;font-size:13px;font-weight:500;transition:transform .15s}
+  nav.top .cta:hover{transform:translateY(-1px)}
+
+  /* hamburger */
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:60}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s}
+  .hamburger span+span{margin-top:5px}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{display:none;position:fixed;inset:0;z-index:55;background:rgba(26,21,17,0.96);flex-direction:column;align-items:center;justify-content:center;gap:32px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{color:var(--bone);font-size:22px;font-weight:300;letter-spacing:-0.01em}
+  .mobile-menu a:hover{color:var(--clay)}
+  .mobile-menu .cta-mobile{background:var(--terracotta);color:var(--bone);padding:14px 32px;border-radius:999px;font-size:16px;font-weight:500;margin-top:8px}
 
   /* Hero */
   section.hero{padding:120px 0 60px;text-align:center}
@@ -167,7 +181,8 @@
 
   @media (max-width:900px){
     .wrap{padding:0 24px}
-    nav.top .links{display:none}
+    nav.top .links,nav.top .cta{display:none}
+    .hamburger{display:block}
     .plan-card{grid-template-columns:1fr;gap:40px;padding:40px}
     .plan-right{padding-left:0;border-left:none;border-top:1px solid var(--line);padding-top:32px}
     .plan-left h2{font-size:48px}
@@ -177,6 +192,14 @@
     footer .inner{grid-template-columns:1fr}
   }
 </style>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.querySelector('.hamburger').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';
+}
+</script>
 
 <script type="application/ld+json">
 {
@@ -188,7 +211,7 @@
       "name": "How much does One Click Coaching cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$50 per rep per month. Every feature included — no tiers, no gates. Annual billing is $500/rep/year. 14-day free trial with credit card required."
+        "text": "$85 per rep per month. Every feature included — no tiers, no gates. Annual billing is $850/rep/year. 14-day free trial with credit card required."
       }
     },
     {
@@ -204,7 +227,7 @@
       "name": "What sales methodologies does it support?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sandler, MEDDIC/MEDDPICC, SPIN Selling, Challenger, and Gap Selling. Custom frameworks supported on request. The SCORE Method works with whatever methodology your team already runs."
+        "text": "Sandler, MEDDPICC, SPIN Selling, Challenger, and Gap Selling. Custom frameworks supported on request. The SCORE Method works with whatever methodology your team already runs."
       }
     },
     {
@@ -243,6 +266,18 @@
       <a href="contact.html">Contact</a>
     </div>
     <a href="https://oneclickcoaching-xeso.vercel.app/login" class="cta">Sign In →</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="index.html#product" onclick="toggleMenu()">How It Works</a>
+    <a href="pricing.html" onclick="toggleMenu()">Pricing</a>
+    <a href="partners.html" onclick="toggleMenu()">Partners</a>
+    <a href="blog.html" onclick="toggleMenu()">Blog</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a href="https://oneclickcoaching-xeso.vercel.app/login" class="cta-mobile">Sign In</a>
   </div>
 </nav>
 
@@ -261,7 +296,7 @@
         <span class="label">The whole platform</span>
         <h2>Per <em>seat</em>.<br>Monthly.</h2>
         <div class="price-big">
-          <span class="amt">$50</span>
+          <span class="amt">$85</span>
           <span class="unit">per rep<br>per month</span>
         </div>
         <p class="sub">Billed monthly per active rep. Cancel or scale anytime. 14-day free trial — credit card required to start. If your team's close rate doesn't move, cancel before it ends.</p>
@@ -272,7 +307,7 @@
       </div>
       <div class="plan-right">
         <div class="feature"><span class="check">✓</span><span class="txt"><strong>Unlimited call analysis.</strong> Every call from your meeting tool flows in automatically.</span></div>
-        <div class="feature"><span class="check">✓</span><span class="txt"><strong>Every methodology.</strong> Sandler, MEDDIC, Challenger, SPIN, Gap, custom.</span></div>
+        <div class="feature"><span class="check">✓</span><span class="txt"><strong>Every methodology.</strong> Sandler, MEDDPICC, Challenger, SPIN, Gap, custom.</span></div>
         <div class="feature"><span class="check">✓</span><span class="txt"><strong>Manager dashboard.</strong> Team execution scores, rep-by-rep visibility.</span></div>
         <div class="feature"><span class="check">✓</span><span class="txt"><strong>OAuth integrations.</strong> Fathom, Fireflies, Otter, HubSpot, Aircall — one click to connect.</span></div>
         <div class="feature"><span class="check">✓</span><span class="txt"><strong>Adaptive learning memory.</strong> AI remembers what works for each rep.</span></div>
@@ -300,7 +335,7 @@
       </div>
       <div class="calc-row">
         <span class="label">Rate</span>
-        <span class="val">$50 <span style="font-size:14px;color:rgba(244,239,232,0.5);letter-spacing:0">/ rep / mo</span></span>
+        <span class="val">$85 <span style="font-size:14px;color:rgba(244,239,232,0.5);letter-spacing:0">/ rep / mo</span></span>
       </div>
       <div class="calc-divider"></div>
       <div class="total-row">
@@ -354,7 +389,7 @@
       <div class="inc-item">
         <span class="n">01</span>
         <h3>All five <em>methodologies</em>.</h3>
-        <p>Sandler, MEDDIC, Challenger, SPIN, Gap. Plus custom frameworks — describe your process, the AI learns it.</p>
+        <p>Sandler, MEDDPICC, Challenger, SPIN, Gap. Plus custom frameworks — describe your process, the AI learns it.</p>
       </div>
       <div class="inc-item">
         <span class="n">02</span>
@@ -393,7 +428,7 @@
     <div class="faq-list">
       <div class="faq-item"><div class="faq-q"><div class="q-text">How is a seat counted?</div><span class="plus"></span></div><div class="faq-a">A seat is any active rep or manager who logs into the platform in a given month. Add or remove seats any time — we prorate the change to the day.</div></div>
       <div class="faq-item"><div class="faq-q"><div class="q-text">Is there a minimum team size?</div><span class="plus"></span></div><div class="faq-a">No minimum. You can start with a single rep and scale up. There's no per-team floor, no setup fee, no onboarding charge.</div></div>
-      <div class="faq-item"><div class="faq-q"><div class="q-text">What about annual billing?</div><span class="plus"></span></div><div class="faq-a">Annual commits get two months free — effectively $500/rep/year instead of $600. Contact us for enterprise multi-year pricing.</div></div>
+      <div class="faq-item"><div class="faq-q"><div class="q-text">What about annual billing?</div><span class="plus"></span></div><div class="faq-a">Annual commits get two months free — effectively $850/rep/year instead of $1,020. Contact us for enterprise multi-year pricing.</div></div>
       <div class="faq-item"><div class="faq-q"><div class="q-text">Can we try it first?</div><span class="plus"></span></div><div class="faq-a">Yes — 14-day free trial. Credit card required to start. If you're not seeing execution lift, cancel before the trial ends and you won't be charged.</div></div>
       <div class="faq-item"><div class="faq-q"><div class="q-text">What about 50+ rep teams?</div><span class="plus"></span></div><div class="faq-a">Teams over 50 seats get volume pricing, a dedicated success manager, custom integrations, white-label options, and SLA guarantees. Talk to us.</div></div>
       <div class="faq-item"><div class="faq-q"><div class="q-text">Can I cancel anytime?</div><span class="plus"></span></div><div class="faq-a">Yes. No contracts, no cancellation fees. Your data stays accessible for 30 days after cancellation so you can export everything.</div></div>

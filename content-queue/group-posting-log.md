@@ -13,6 +13,7 @@ Each post goes to the designated group AND to John's profile feed.
 
 | 2026-05-21 | The Challenger Sale | Challenger methodology drift | Challenger | Teach-Tailor-Take Control fading after training |
 | 2026-05-26 | Linking Sales Leaders | Manager bandwidth — they know but can't reinforce | Agnostic | One manager covering eight reps can't sit in on every call |
+| 2026-05-27 | Sandler Sales Training | Pipeline mirage — CRM stages vs methodology abandonment | Sandler | Deals look alive but Up-Front Contract died weeks ago |
 
 ## Posting Rules
 
@@ -39,9 +40,7 @@ Each post goes to the designated group AND to John's profile feed.
 - Specific call moment: the exact second methodology disappears
 - The spreadsheet lie: CRM stages vs what actually happened on the call
 - Peer pressure: when the team norm is to skip the methodology
-- Coaching cadence: monthly review vs daily reinforcement
-- The pipeline mirage: deals that look alive but methodology died weeks ago
-
+- ~~Coaching cadence: monthly review vs daily reinforcement~~
 ## Angle Bank (used)
 
 - Trainers' quiet burden (Sandler)
@@ -49,3 +48,5 @@ Each post goes to the designated group AND to John's profile feed.
 - Methodology momentum loss (Agnostic)
 - Specific call moment: the exact second methodology disappears (Challenger)
 - Manager bandwidth: they know but can't reinforce (Agnostic)
+- Coaching cadence: monthly review vs daily reinforcement (Agnostic)
+- Pipeline mirage: deals alive in CRM but methodology died weeks ago (Sandler)

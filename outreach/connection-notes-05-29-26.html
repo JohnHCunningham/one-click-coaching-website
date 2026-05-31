@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — 05-29-26 (13 Ready)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #F4EFE8; color: #6E6358; padding: 30px; }
+  .header { background: linear-gradient(135deg, #1A1511 0%, #2A221C 100%); color: #C9A687; padding: 24px 30px; border-radius: 8px 8px 0 0; }
+  .header h1 { font-size: 18px; color: #C9A687; }
+  .header .sub { font-size: 12px; color: #8F847A; margin-top: 4px; }
+  .card { background: white; padding: 18px 24px; border-bottom: 1px solid #C9A687; }
+  .card:last-child { border-radius: 0 0 8px 8px; }
+  .num { color: #B5583E; font-weight: bold; font-size: 14px; }
+  .name { color: #2A221C; font-weight: bold; font-size: 15px; }
+  .meta { color: #8F847A; font-size: 12px; margin: 2px 0 6px 0; }
+  .note-box { background: #F4EFE8; border: 1px solid #C9A687; border-radius: 6px; padding: 12px 14px; margin: 8px 0; font-size: 13px; line-height: 1.5; cursor: pointer; position: relative; transition: background 0.2s; }
+  .note-box:hover { background: #e8dfd5; }
+  .copy-btn { position: absolute; top: 6px; right: 8px; background: #B5583E; color: white; border: none; border-radius: 4px; padding: 4px 10px; font-size: 10px; cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+  .note-box:hover .copy-btn { opacity: 1; }
+  .char-count { color: #8F847A; font-size: 10px; text-align: right; }
+  .footer { background: #2A221C; color: #C9A687; padding: 16px 30px; border-radius: 0 0 8px 8px; font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Connection Notes — Ready to Send</h1>
+  <div class="sub">Batch: 05-29-26 · 13 notes ready · Source: notes-05_29_26-1_1.csv · 27 profiles → 13 SEND / 14 SKIP</div>
+</div>
+
+<div class="card">
+  <div class="num">1</div>
+  <div class="name">Brad Noble</div>
+  <div class="meta">Head of Sales and BD · OpenBorder · Technology · Naples, FL</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Brad — OpenBorder's play in cross-border ecommerce logistics means a consultative sale where reps have to navigate both tech and trade complexity. How do you keep your team's discovery consistent when every merchant's pain looks a little different? Worth connecting.</div>
+  <div class="char-count">269 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">2</div>
+  <div class="name">Robert Matthews</div>
+  <div class="meta">VP Sales and BD · Findability Sciences · Tech/AI · Newburyport, MA</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Robert — selling enterprise AI decisioning means your reps are leading conversations most buyers haven't had before. How do you reinforce the methodology when the product is ahead of the market's language? Worth connecting.</div>
+  <div class="char-count">226 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">3</div>
+  <div class="name">Nate Tall</div>
+  <div class="meta">VP of Sales · JobNimbus · Software · Vineyard, UT</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Nate — roofing and construction CRM is a space where the product has to match the pace of the contractor, not the other way around. How do you keep your reps running a consistent qualification process when the buyer isn't sitting behind a desk? Worth connecting.</div>
+  <div class="char-count">265 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">4</div>
+  <div class="name">Chad Probst</div>
+  <div class="meta">Sr. VP of Sales · BillingTree/REPAY · Fintech · Scottsdale, AZ</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Chad — payments is one of the noisiest spaces in B2B. When every competitor sounds the same, how do you make sure your reps are leading with insight instead of features? Worth connecting.</div>
+  <div class="char-count">190 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">5</div>
+  <div class="name">Michael Dalley</div>
+  <div class="meta">Head of Sales and GTM · Nextworld · Software · Austin, TX</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Michael — selling a no-code ERP platform means your reps are displacing legacy systems, not just winning feature bake-offs. How do you keep the team sharp on the business case when the technical conversation wants to take over? Worth connecting.</div>
+  <div class="char-count">248 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">6</div>
+  <div class="name">Shalin Kadakia</div>
+  <div class="meta">VP Sales and Operations · Accorian · Security · New York, NY</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Shalin — cybersecurity compliance consulting is a trust sale. Every rep needs to sound like an advisor, not an auditor. How do you maintain that consistency across a growing team? Worth connecting.</div>
+  <div class="char-count">200 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">7</div>
+  <div class="name">Royce Luque</div>
+  <div class="meta">VP of Sales · Flowhub · Software · Miami, FL</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Royce — cannabis retail tech is a unique space where compliance and commerce intersect. Your reps have to speak to both the operator and the regulator mindset. How do you train for that dual fluency and keep it from drifting? Worth connecting.</div>
+  <div class="char-count">246 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">8</div>
+  <div class="name">Adam Khan</div>
+  <div class="meta">VP of Sales · Wagepoint · Software · Edmonton, AB, Canada</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Adam — Edmonton-based, selling payroll and HR tech into the SMB space across North America. When your ICP ranges from Main Street to mid-market, how do you keep qualification tight without overcomplicating it? Worth connecting.</div>
+  <div class="char-count">230 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">9</div>
+  <div class="name">Jay Maples</div>
+  <div class="meta">VP Sales · OLOID · Software · Richmond, TX</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Jay — selling facial authentication and passwordless security means prospects either get it immediately or need a full education. How do you keep your reps from defaulting to feature dumps on the calls that need a consultative approach? Worth connecting.</div>
+  <div class="char-count">257 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">10</div>
+  <div class="name">Joseph Gullo</div>
+  <div class="meta">VP of Sales · Wahsega · Software · Atlanta, GA</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Joseph — selling IoT and communications hardware into schools and healthcare means long procurement cycles and multiple stakeholders. How do you make sure your reps are managing the process without losing the consultative edge? Worth connecting.</div>
+  <div class="char-count">248 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">11</div>
+  <div class="name">Michael Williams</div>
+  <div class="meta">VP Enterprise Sales · Tracker · Software · Topsfield, MA</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Michael — enterprise risk management software means six-figure deals and C-suite buyers who've seen every pitch. How do you keep your team's methodology from softening when the cycle drags past six months? Worth connecting.</div>
+  <div class="char-count">226 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">12</div>
+  <div class="name">Olsen Antos</div>
+  <div class="meta">SVP Sales and Ops · CETDIGIT · IT Services · Dover, DE</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Olsen — cloud services and digital transformation is a packed market. When buyers can get infrastructure from anyone, how do your reps differentiate on the advisory piece, not the spec sheet? Worth connecting.</div>
+  <div class="char-count">212 chars</div>
+</div>
+
+<div class="card">
+  <div class="num">13</div>
+  <div class="name">Bob Bauer</div>
+  <div class="meta">VP Sales / Co-Founder · DispatchTrack · Software · San Jose, CA</div>
+  <div class="note-box" onclick="copyNote(this)"><button class="copy-btn">Copy</button>Hi Bob — co-founder carrying the sales VP title means you've built the playbook yourself. Now that DispatchTrack is scaling, how do you make sure the team is running your methodology, not just their own instincts? Worth connecting.</div>
+  <div class="char-count">231 chars</div>
+</div>
+
+<div class="footer">
+  13 connection notes ready · Source: notes-05_29_26-1_1.csv · 27 profiles → 13 SEND / 14 SKIP · Monday AM
+</div>
+
+<script>
+function copyNote(el) {
+  const text = el.innerText.replace('Copy','').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = el.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    btn.style.background = '#2E7D32';
+    setTimeout(() => { btn.textContent = 'Copy'; btn.style.background = '#B5583E'; }, 1500);
+  });
+}
+</script>
+</body>
+</html>

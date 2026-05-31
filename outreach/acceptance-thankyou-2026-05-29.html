@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acceptance Thank-You Notes — May 29, 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F4EFE8; color: #2A221C; padding: 24px; max-width: 700px; margin: 0 auto; }
+  h1 { font-size: 20px; color: #1A1511; margin-bottom: 4px; }
+  .subtitle { color: #8F847A; font-size: 14px; margin-bottom: 24px; }
+  .card { background: #fff; border: 1px solid #C9A687; border-radius: 8px; padding: 16px; margin-bottom: 10px; }
+  .name { font-size: 15px; font-weight: 600; color: #1A1511; margin-bottom: 8px; }
+  .message { font-size: 14px; color: #6E6358; line-height: 1.5; margin-bottom: 10px; }
+  .copy-btn { background: #B5583E; color: #fff; border: none; padding: 6px 14px; border-radius: 5px; font-size: 12px; cursor: pointer; }
+  .copy-btn:hover { background: #9A4A34; }
+  .copy-btn.copied { background: #6B8E6B; }
+  .count { background: #B5583E; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 12px; display: inline-block; margin-left: 8px; }
+  .flag { background: #F4EFE8; border-left: 3px solid #B5583E; padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 16px; font-size: 13px; color: #6E6358; }
+  .flag strong { color: #B5583E; }
+</style>
+</head>
+<body>
+
+<h1>Acceptance Thank-You Notes <span class="count">10</span></h1>
+<p class="subtitle">May 29, 2026 — Short, warm, no pitch. Click to copy, paste into LinkedIn message.</p>
+
+<div class="flag">
+  <strong>⚠️ Cross-reference:</strong> 8 of these 10 are also in your NA-1/NA-2 connection forms from this morning. <strong>Skip them in the connection forms</strong> — they already accepted. Only Michael Zelek and Winson Chan are NOT in today's forms.
+</div>
+
+<div class="card"><div class="name">Michael Zelek</div><div class="message">Michael — thanks for connecting. Appreciate it.</div><button class="copy-btn" onclick="copyMsg(this, 'Michael — thanks for connecting. Appreciate it.')">Copy</button></div>
+
+<div class="card"><div class="name">Cliff Elam</div><div class="message">Cliff — thanks for the connection. Good to be in touch.</div><button class="copy-btn" onclick="copyMsg(this, 'Cliff — thanks for the connection. Good to be in touch.')">Copy</button></div>
+
+<div class="card"><div class="name">Winson Chan</div><div class="message">Winson — thanks for connecting. Look forward to following your work.</div><button class="copy-btn" onclick="copyMsg(this, 'Winson — thanks for connecting. Look forward to following your work.')">Copy</button></div>
+
+<div class="card"><div class="name">Chris Crear</div><div class="message">Chris — appreciate the connection. Good to have you in the network.</div><button class="copy-btn" onclick="copyMsg(this, 'Chris — appreciate the connection. Good to have you in the network.')">Copy</button></div>
+
+<div class="card"><div class="name">Maroun Chahine</div><div class="message">Maroun — thanks for accepting. Look forward to staying connected.</div><button class="copy-btn" onclick="copyMsg(this, 'Maroun — thanks for accepting. Look forward to staying connected.')">Copy</button></div>
+
+<div class="card"><div class="name">Bryan McCreedy</div><div class="message">Bryan — thanks for the connection. Appreciate you reaching back.</div><button class="copy-btn" onclick="copyMsg(this, 'Bryan — thanks for the connection. Appreciate you reaching back.')">Copy</button></div>
+
+<div class="card"><div class="name">Scott Fristachi</div><div class="message">Scott — thanks for connecting. Good to be in your network.</div><button class="copy-btn" onclick="copyMsg(this, 'Scott — thanks for connecting. Good to be in your network.')">Copy</button></div>
+
+<div class="card"><div class="name">Zack Ward</div><div class="message">Zack — appreciate the connection. Look forward to following along.</div><button class="copy-btn" onclick="copyMsg(this, 'Zack — appreciate the connection. Look forward to following along.')">Copy</button></div>
+
+<div class="card"><div class="name">Lester Sydney</div><div class="message">Lester — thanks for connecting. Glad to be in touch.</div><button class="copy-btn" onclick="copyMsg(this, 'Lester — thanks for connecting. Glad to be in touch.')">Copy</button></div>
+
+<div class="card"><div class="name">William Wacker</div><div class="message">William — thanks for the connection. Good to be connected.</div><button class="copy-btn" onclick="copyMsg(this, 'William — thanks for the connection. Good to be connected.')">Copy</button></div>
+
+<script>
+function copyMsg(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>

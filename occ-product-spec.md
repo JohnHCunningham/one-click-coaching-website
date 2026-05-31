@@ -446,7 +446,7 @@ type User = {
   role: 'rep' | 'manager' | 'admin';
   team_id: string;
   onboarded_at: Date;
-  methodology: 'sandler' | 'meddic' | 'challenger' | 'spin' | 'gap';
+  methodology: 'sandler' | 'meddpicc' | 'challenger' | 'spin' | 'gap';
 }
 ```
 

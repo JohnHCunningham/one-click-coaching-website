@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connection Notes — 05-29-26 2/3 (18)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #F4EFE8;
+    color: #2A221C;
+    padding: 32px 20px;
+  }
+  .container { max-width: 680px; margin: 0 auto; }
+  .header {
+    background: linear-gradient(135deg, #1A1511 0%, #2A221C 100%);
+    color: #F4EFE8;
+    padding: 24px 28px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+  .header h1 { font-size: 18px; margin-bottom: 4px; }
+  .header .meta { color: #C9A687; font-size: 12px; }
+  .card {
+    background: #fff;
+    border: 1px solid #C9A687;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    transition: box-shadow 0.15s;
+  }
+  .card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .card-num { font-size: 11px; color: #8F847A; font-weight: 600; }
+  .card-name { font-size: 15px; font-weight: 700; color: #1A1511; }
+  .card-company { font-size: 13px; color: #6E6358; }
+  .card-detail { font-size: 11px; color: #8F847A; margin-bottom: 11px; }
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 4px;
+    font-weight: 600;
+  }
+  .tag-new { background: #FDE8E0; color: #B5583E; }
+  .note-box {
+    background: #FDFAF3;
+    border-left: 3px solid #B5583E;
+    padding: 11px 14px;
+    font-size: 13px;
+    line-height: 1.55;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    position: relative;
+    transition: background 0.15s;
+  }
+  .note-box:hover { background: #F8F1E5; }
+  .note-box.copied { background: #E8F5E9; border-left-color: #388E3C; }
+  .chars { font-size: 10px; color: #8F847A; text-align: right; margin-top: 4px; }
+  .copy-hint {
+    font-size: 10px;
+    color: #C9A687;
+    text-align: right;
+    margin-top: 2px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .card:hover .copy-hint { opacity: 1; }
+  .warning-card { border-left: 3px solid #E8B84B; }
+  .summary {
+    background: #fff;
+    border: 1px solid #C9A687;
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-top: 24px;
+    text-align: center;
+    font-size: 13px;
+    color: #6E6358;
+  }
+  .summary strong { color: #B5583E; }
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #8F847A;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>Connection Notes — Ready to Send</h1>
+  <div class="meta">Sales Nav: notes-05-29-26 2/3 &nbsp;|&nbsp; 18 notes &nbsp;|&nbsp; Monday AM</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">1</span>
+    <span class="card-num">202 chars</span>
+  </div>
+  <div class="card-name">Brad Noble</div>
+  <div class="card-company">OpenBorder</div>
+  <div class="card-detail">Head of Sales &nbsp;·&nbsp; 11 mo &nbsp;·&nbsp; 5 reps &nbsp;·&nbsp; SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Brad — 5 reps, global ecommerce motion. At that size, one rep who drifts from the process doesn't get noticed until a deal's gone. Worth a conversation about what consistency looks like across the team?</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">2</span>
+    <span class="card-num">180 chars</span>
+  </div>
+  <div class="card-name">Jama Drake</div>
+  <div class="card-company">Fieldwire by Hilti</div>
+  <div class="card-detail">VP Global Sales &nbsp;·&nbsp; 11 mo &nbsp;·&nbsp; 91 reps &nbsp;·&nbsp; Construction SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Jama — you tripled revenue by building a GTM that reps could actually run. 91 reps later, the question isn't whether the process works. It's whether every rep runs it the same way.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">3</span>
+    <span class="card-num">180 chars</span>
+  </div>
+  <div class="card-name">Gus Pasquini <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">Buddy's Kitchen</div>
+  <div class="card-detail">SVP Sales &nbsp;·&nbsp; 3 mo &nbsp;·&nbsp; 9 reps &nbsp;·&nbsp; Food & Bev</div>
+  <div class="note-box" onclick="copyNote(this)">Gus — 3 months in. You're still pattern-matching: which reps execute, which ones drift when no one's watching. Most SVPs don't get clean data on that until a quarter goes sideways.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">4</span>
+    <span class="card-num">192 chars</span>
+  </div>
+  <div class="card-name">Nate Tall <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">JobNimbus</div>
+  <div class="card-detail">VP Sales &nbsp;·&nbsp; 0 mo &nbsp;·&nbsp; 59 reps &nbsp;·&nbsp; Construction SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Nate — day one at JobNimbus. Before the quarter's narrative gets written, you're reading the room: which reps close, which ones stall, which coaching is actually landing. That window is short.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">5</span>
+    <span class="card-num">187 chars</span>
+  </div>
+  <div class="card-name">Michael Dalley <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">Nextworld</div>
+  <div class="card-detail">Head of Sales & GTM &nbsp;·&nbsp; 4 mo &nbsp;·&nbsp; 12 reps &nbsp;·&nbsp; No-code SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Michael — 4 months into Nextworld, 12 reps, no-code positioning that requires a specific sales motion. Three-time CRO means you've seen what happens when reps improvise that conversation.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card warning-card">
+  <div class="card-header">
+    <span class="card-num">6</span>
+    <span class="card-num">151 chars</span>
+  </div>
+  <div class="card-name">Phil Hammond ⚠️</div>
+  <div class="card-company">Integrated Sales Execution Group</div>
+  <div class="card-detail">Fractional VP Sales &nbsp;·&nbsp; 3 mo &nbsp;·&nbsp; Consulting</div>
+  <div class="note-box" onclick="copyNote(this)">Phil — you install sales accountability for companies that can't see their own gaps. Curious what your clients' reps actually do between your sessions.</div>
+  <div class="copy-hint">⚠️ Fractional consultant — referral/co-sell, not buyer</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">7</span>
+    <span class="card-num">168 chars</span>
+  </div>
+  <div class="card-name">Shalin Kadakia <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">Accorian</div>
+  <div class="card-detail">VP Sales & Ops &nbsp;·&nbsp; 3 mo &nbsp;·&nbsp; 11 reps &nbsp;·&nbsp; Cybersecurity</div>
+  <div class="note-box" onclick="copyNote(this)">Shalin — 3 months in at Accorian, 11 reps in a market where consultants either earn trust fast or lose deals to the incumbent. That consistency question shows up early.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">8</span>
+    <span class="card-num">150 chars</span>
+  </div>
+  <div class="card-name">Royce Luque</div>
+  <div class="card-company">Flowhub</div>
+  <div class="card-detail">VP Sales &nbsp;·&nbsp; 10 mo &nbsp;·&nbsp; 21 reps &nbsp;·&nbsp; Cannabis SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Royce — 'revenue is a science' is the right frame. The part most teams skip: scoring what the rep actually does on the call, not just what they close.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">9</span>
+    <span class="card-num">170 chars</span>
+  </div>
+  <div class="card-name">Darrell Hacker</div>
+  <div class="card-company">Federal Government Advisors</div>
+  <div class="card-detail">VP Sales &nbsp;·&nbsp; 9 mo &nbsp;·&nbsp; 10 advisors &nbsp;·&nbsp; Professional Services</div>
+  <div class="note-box" onclick="copyNote(this)">Darrell — federal advisory sales is high-stakes, long-cycle. With 10 advisors in that environment, one rep who skips a step in the qualification doesn't just lose a deal.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">10</span>
+    <span class="card-num">187 chars</span>
+  </div>
+  <div class="card-name">Adam Khan <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">Wagepoint</div>
+  <div class="card-detail">VP Sales &nbsp;·&nbsp; 1 mo &nbsp;·&nbsp; 15 reps &nbsp;·&nbsp; Payroll SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Adam — one month at Wagepoint. SMB motion means high volume, fast cycles. You're already learning which reps can run that at scale and which ones burn pipeline on the wrong conversations.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">11</span>
+    <span class="card-num">181 chars</span>
+  </div>
+  <div class="card-name">Matthew Crandall <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">CheckedUp</div>
+  <div class="card-detail">VP Sponsorship Sales &nbsp;·&nbsp; 2 mo &nbsp;·&nbsp; 52 reps &nbsp;·&nbsp; Healthcare Media</div>
+  <div class="note-box" onclick="copyNote(this)">Matthew — 2 months in, sponsorship team of 52. Healthcare advertisers are specific buyers. You're already seeing which reps know how to run that conversation and which ones wing it.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">12</span>
+    <span class="card-num">183 chars</span>
+  </div>
+  <div class="card-name">Danny Schnyder <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">Eagle Materials</div>
+  <div class="card-detail">VP Sales & Marketing &nbsp;·&nbsp; 0 mo &nbsp;·&nbsp; 8 reps &nbsp;·&nbsp; Building Materials</div>
+  <div class="note-box" onclick="copyNote(this)">Danny — first week at Eagle Materials, 8 reps. Before the quarter sets a narrative, you're reading who runs the process and who's been doing it their own way since before you arrived.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">13</span>
+    <span class="card-num">167 chars</span>
+  </div>
+  <div class="card-name">Jay Maples <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">OLOID</div>
+  <div class="card-detail">VP Sales &nbsp;·&nbsp; 3 mo &nbsp;·&nbsp; 7 reps &nbsp;·&nbsp; Identity SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Jay — 7 reps, 3 months in. You coach. The gap at that size isn't finding talent — it's knowing whether the coaching is actually changing what reps do on the next call.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">14</span>
+    <span class="card-num">180 chars</span>
+  </div>
+  <div class="card-name">Joseph Gullo <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">Wahsega</div>
+  <div class="card-detail">VP Sales &nbsp;·&nbsp; 3 mo &nbsp;·&nbsp; 14 reps &nbsp;·&nbsp; EdTech SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Joseph — 3 months into Wahsega, 14 reps in a channel where public sector buyers move slow and reps either earn trust or stall. You're still learning which reps know the difference.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">15</span>
+    <span class="card-num">188 chars</span>
+  </div>
+  <div class="card-name">David Stelzl <span class="tag tag-new">NEW</span></div>
+  <div class="card-company">Hive Pro</div>
+  <div class="card-detail">Sales Director East &nbsp;·&nbsp; 1 mo &nbsp;·&nbsp; 13 reps &nbsp;·&nbsp; Cybersecurity</div>
+  <div class="note-box" onclick="copyNote(this)">David — one month at Hive Pro. Exposure management is a new enough category that every rep pitches it differently. You're probably already seeing which versions of the story actually land.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">16</span>
+    <span class="card-num">201 chars</span>
+  </div>
+  <div class="card-name">Michael Williams</div>
+  <div class="card-company">Tracker</div>
+  <div class="card-detail">VP Enterprise Sales &nbsp;·&nbsp; 7 mo &nbsp;·&nbsp; 12 reps &nbsp;·&nbsp; Staffing Tech SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Michael — staffing tech is a specific sale. With 12 reps each narrating it differently, you find out fast which version of the story converts and which ones produce a lot of 'I need to think about it.'</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">17</span>
+    <span class="card-num">164 chars</span>
+  </div>
+  <div class="card-name">Olsen Antos</div>
+  <div class="card-company">CETDIGIT</div>
+  <div class="card-detail">SVP Sales & Ops &nbsp;·&nbsp; 11 mo &nbsp;·&nbsp; 4 consultants &nbsp;·&nbsp; CRM Consulting</div>
+  <div class="note-box" onclick="copyNote(this)">Olsen — CRM implementations live and die on the consultant who runs the discovery. With 4 consultants, there's no margin for the ones who skip the qualifying steps.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">18</span>
+    <span class="card-num">177 chars</span>
+  </div>
+  <div class="card-name">Bob Bauer ⭐</div>
+  <div class="card-company">DispatchTrack</div>
+  <div class="card-detail">VP Sales & Co-Founder &nbsp;·&nbsp; 10 mo &nbsp;·&nbsp; 21 reps &nbsp;·&nbsp; Logistics SaaS</div>
+  <div class="note-box" onclick="copyNote(this)">Bob — 21 reps now carrying the story you spent 10 years telling yourself. The question isn't whether the pitch works. It's whether it works the same way without you in the room.</div>
+  <div class="copy-hint">Click note to copy</div>
+</div>
+
+<div class="summary">
+  <strong>18 notes ready</strong> &nbsp;·&nbsp; 11 new-in-role (&le;4 mo) &nbsp;·&nbsp; Monday AM &nbsp;·&nbsp; Source: Claude Pro 05-29-26 2/3<br>
+  ⚠️ Phil Hammond (#6) — fractional consultant, not a buyer. Treat as referral/co-sell.
+</div>
+
+<div class="footer">One Click Coaching &nbsp;·&nbsp; Click any note to copy</div>
+
+</div>
+
+<script>
+function copyNote(el) {
+  const text = el.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    el.classList.add('copied');
+    const hint = el.nextElementSibling;
+    const orig = hint ? hint.textContent : '';
+    if (hint) hint.textContent = 'Copied! ✓';
+    setTimeout(() => {
+      el.classList.remove('copied');
+      if (hint) hint.textContent = orig;
+    }, 1500);
+  });
+}
+</script>
+</body>
+</html>

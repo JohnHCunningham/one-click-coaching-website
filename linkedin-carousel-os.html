@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>One Click Coaching — LinkedIn Carousel</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #1A1511;
+    --espresso: #2A221C;
+    --terracotta: #B5583E;
+    --bone: #F4EFE8;
+    --clay: #C9A687;
+    --stone: #6E6358;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* Each slide is exactly 1080×1080 — one per printed page */
+  .slide {
+    width: 1080px;
+    height: 1080px;
+    background: var(--ink);
+    color: var(--bone);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 120px;
+    page-break-after: always;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+  }
+  .slide:last-child { page-break-after: auto; }
+
+  .serif { font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -0.02em; }
+  .mono { font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; font-size: 13px; }
+
+  /* ── Slide 1: Hook ── */
+  .s1 .big-line {
+    font-family: 'Instrument Serif', serif;
+    font-size: 88px;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    text-align: center;
+    max-width: 800px;
+  }
+  .s1 .big-line em { color: var(--terracotta); font-style: italic; }
+  .s1 .sub {
+    margin-top: 40px;
+    font-size: 22px;
+    color: var(--stone);
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+  .s1 .logo-mono {
+    position: absolute;
+    bottom: 60px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: rgba(244,239,232,0.25);
+    text-transform: uppercase;
+  }
+
+  /* ── Slide 2: Comparison Left ── */
+  .split-slide { display: flex; width: 100%; height: 100%; }
+  .split-half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px;
+  }
+  .split-half.left { background: #1E1814; }
+  .split-half.right { background: #15110E; }
+  .split-icon { font-size: 72px; margin-bottom: 32px; }
+  .split-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 20px;
+  }
+  .split-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 38px;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+  .split-half.right .split-title { color: rgba(244,239,232,0.55); }
+
+  /* ── Slide 3: Statement ── */
+  .statement-slide .big-stat {
+    font-family: 'Instrument Serif', serif;
+    font-size: 140px;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: var(--bone);
+  }
+  .statement-slide .big-stat em { color: var(--terracotta); font-size: 48px; font-style: normal; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.08em; }
+  .statement-slide .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: var(--clay);
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+  .statement-slide .stat-sub {
+    font-size: 22px;
+    color: var(--stone);
+    margin-top: 40px;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* ── Slide 4: Coaching Card ── */
+  .card-stack { display: flex; flex-direction: column; gap: 24px; width: 720px; }
+  .coaching-card {
+    background: var(--espresso);
+    border-left: 4px solid var(--terracotta);
+    padding: 28px 32px;
+    border-radius: 0 8px 8px 0;
+  }
+  .card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--terracotta);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .card-body {
+    font-size: 20px;
+    line-height: 1.45;
+    color: rgba(244,239,232,0.85);
+    font-family: 'Instrument Serif', serif;
+    letter-spacing: -0.01em;
+  }
+  .small-note {
+    margin-top: 48px;
+    font-size: 16px;
+    color: var(--stone);
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* ── Slide 5: Flow ── */
+  .flow-row { display: flex; align-items: center; gap: 0; margin: 40px 0; }
+  .flow-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--espresso);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--stone);
+    text-transform: uppercase;
+  }
+  .flow-circle.lit { background: var(--terracotta); color: var(--bone); }
+  .flow-arrow { width: 40px; height: 2px; background: var(--clay); }
+  .flow-text { font-size: 20px; color: var(--clay); text-align: center; margin-top: 32px; font-style: italic; }
+
+  /* ── Slide 6: CTA ── */
+  .cta-slide .cta-big {
+    font-family: 'Instrument Serif', serif;
+    font-size: 64px;
+    letter-spacing: -0.02em;
+    color: var(--bone);
+    margin-bottom: 16px;
+  }
+  .cta-slide .cta-trial {
+    font-size: 24px;
+    color: var(--terracotta);
+    margin-bottom: 50px;
+  }
+  .cta-line {
+    width: 180px;
+    height: 2px;
+    background: var(--terracotta);
+    margin: 0 auto 50px;
+  }
+  .cta-slide .cta-close {
+    font-size: 22px;
+    color: var(--stone);
+    font-style: italic;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* ── Slide 7: Feature ── */
+  .feature-big {
+    font-family: 'Instrument Serif', serif;
+    font-size: 56px;
+    line-height: 1.08;
+    text-align: center;
+    max-width: 750px;
+    letter-spacing: -0.02em;
+  }
+  .feature-big em { color: var(--terracotta); font-style: italic; }
+  .feature-sub {
+    margin-top: 36px;
+    font-size: 20px;
+    color: var(--stone);
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  /* ── Slide 8: Quote-style ── */
+  .quote-slide .mark {
+    font-family: 'Instrument Serif', serif;
+    font-size: 120px;
+    line-height: 0.5;
+    color: var(--clay);
+    font-style: italic;
+    margin-bottom: 50px;
+  }
+  .quote-slide blockquote {
+    font-family: 'Instrument Serif', serif;
+    font-size: 48px;
+    line-height: 1.1;
+    text-align: center;
+    max-width: 750px;
+    letter-spacing: -0.02em;
+  }
+  .quote-slide blockquote em { color: var(--terracotta); }
+
+  /* ── Slide 9: List ── */
+  .list-slide { align-items: flex-start; padding-left: 160px; }
+  .list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+  .list-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 48px;
+    color: var(--clay);
+    line-height: 1;
+    min-width: 50px;
+  }
+  .list-text {
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--bone);
+    max-width: 600px;
+  }
+  .list-text .dim { color: var(--stone); font-size: 17px; margin-top: 6px; display: block; }
+
+  /* ── Slide 10: Closing ── */
+  .close-slide .big-close {
+    font-family: 'Instrument Serif', serif;
+    font-size: 72px;
+    line-height: 1.05;
+    text-align: center;
+    max-width: 800px;
+    letter-spacing: -0.02em;
+  }
+  .close-slide .big-close em { color: var(--clay); font-style: italic; }
+  .close-slide .url {
+    margin-top: 60px;
+    font-family: 'Instrument Serif', serif;
+    font-size: 52px;
+    color: var(--bone);
+    letter-spacing: -0.02em;
+  }
+  .close-slide .trial {
+    font-size: 20px;
+    color: var(--terracotta);
+    margin-top: 12px;
+  }
+
+  /* ── Footer logo ── */
+  .logo-foot {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    opacity: 0.55;
+  }
+  .logo-foot svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .logo-foot .wm {
+    font-family: 'Instrument Serif', serif;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    white-space: nowrap;
+  }
+
+  /* ── Print settings ── */
+  @media print {
+    body { margin: 0; }
+    .slide { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Hook -->
+<div class="slide s1">
+  <div class="big-line">You bought the <em>apps.</em><br>You have no <em>operating system.</em></div>
+  <div class="sub">Sales is the only high-stakes discipline without a real coaching infrastructure.</div>
+  <div class="logo-mono">One Click Coaching</div>
+  <div class="logo-foot">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+    <span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>
+  </div>
+</div>
+
+<!-- Slide 2: The gap -->
+<div class="slide">
+  <div class="split-slide">
+    <div class="split-half left">
+      <div class="split-icon">&#127908;</div>
+      <div class="split-label">Athletes &amp; Surgeons</div>
+      <div class="split-title">Real-time coaching<br>infrastructure</div>
+    </div>
+    <div class="split-half right">
+      <div class="split-icon">&#128187;</div>
+      <div class="split-label">Sales Reps</div>
+      <div class="split-title">A two-day workshop.<br>A CRM.</div>
+    </div>
+  </div>
+  <div class="logo-foot">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+    <span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>
+  </div>
+</div>
+
+<!-- Slide 3: The stat -->
+<div class="slide statement-slide">
+  <div class="big-stat">92% <em>&rarr;</em> 23%</div>
+  <div class="stat-label">Methodology adherence · 90 days</div>
+    <div class="stat-sub">The rep who crushed the roleplay.<br>The quarter where the pipeline looked full.<br>The close rate that told a different story.</div>
+  <div class="logo-foot">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+    <span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>
+  </div>
+</div>
+
+<!-- Slide 4: What they get -->
+<div class="slide">
+  <div class="feature-big" style="margin-bottom:50px;">Four minutes after the call ends,<br>the rep has <em>coaching.</em></div>
+  <div class="card-stack">
+    <div class="coaching-card">
+      <div class="card-label">Discovery</div>
+      <div class="card-body">Strong problem statement — moved to solution 3 min early. Let the pain breathe.</div>
+    </div>
+    <div class="coaching-card">
+      <div class="card-label">Qualification</div>
+      <div class="card-body">Economic buyer present. Didn't ask about decision criteria. That's where deals stall.</div>
+    </div>
+    <div class="coaching-card">
+      <div class="card-label">Next Call</div>
+      <div class="card-body">Open with: "Help me understand how that connects to your priorities."</div>
+    </div>
+  </div>
+  <div class="small-note">Not a chatbot. Manager approves every card.</div>
+  <div class="logo-foot">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+    <span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>
+  </div>
+</div>
+
+<!-- Slide 5: How it works -->
+<div class="slide">
+  <div class="feature-big">Five steps.<br><em>Every call. No exceptions.</em></div>
+  <div class="flow-row">
+    <div class="flow-circle lit">CALL</div>
+    <div class="flow-arrow"></div>
+    <div class="flow-circle">ANALYZE</div>
+    <div class="flow-arrow"></div>
+    <div class="flow-circle">SCORE</div>
+    <div class="flow-arrow"></div>
+    <div class="flow-circle">COACH</div>
+    <div class="flow-arrow"></div>
+    <div class="flow-circle">REINFORCE</div>
+  </div>
+  <div class="flow-text">Zero rep clicks. Works off Fathom + HubSpot.</div>
+  <div class="logo-foot">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+    <span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>
+  </div>
+</div>
+
+<!-- Slide 6: The reframe -->
+<div class="slide quote-slide">
+  <div class="mark">&ldquo;</div>
+    <blockquote>This is not a training problem.<br>It is a <em>reinforcement</em> problem.<br>And you have been solving it<br>with more training.</blockquote>
+  <div class="logo-foot">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+    <span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>
+  </div>
+</div>
+
+<!-- Slide 7: Bandwidth -->
+<div class="slide">
+  <div class="feature-big">The manager doesn't do the work.<br>They <em>approve</em> the work.<br><br>That's not same-day feedback.<br>That's <em>infinite coaching bandwidth.</em></div>
+    <div class="feature-sub">Managed by the leader. Internalized by the rep. Built toward mastery — not just exposure.</div>
+  <div class="logo-foot">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+    <span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>
+  </div>
+</div>
+
+<!-- Slide 8: The hidden costs -->
+<div class="slide list-slide" style="justify-content:center;">
+  <div style="margin-bottom:60px;">
+    <div class="feature-big" style="text-align:left;">What you're<br>actually losing:</div>
+  </div>
+  <div class="list-item">
+    <div class="list-num">01</div>
+    <div class="list-text">The deals you would have won.<span class="dim">Methodology abandoned by week six.</span></div>
+  </div>
+  <div class="list-item">
+    <div class="list-num">02</div>
+    <div class="list-text">The rep who plateaued.<span class="dim">Crushed the roleplay. Reverted on the live call.</span></div>
+  </div>
+  <div class="list-item">
+    <div class="list-num">03</div>
+    <div class="list-text">The re-training tax.<span class="dim">The second training engagement you'll buy next year because the first one decayed.</span></div>
+  </div>
+</div>
+
+<!-- Slide 9: The math -->
+<div class="slide quote-slide">
+  <div class="mark">&ldquo;</div>
+    <blockquote>One rep who improves<br>by <em>20%</em> outperforms<br>a hire you hadn't made yet.</blockquote>
+  <div class="logo-foot">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+    <span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>
+  </div>
+</div>
+
+<!-- Slide 10: CTA -->
+<div class="slide cta-slide">
+  <div class="big-close">You have the <em>methodology.</em><br>You have the <em>team.</em><br>You need the infrastructure<br>to close them.</div>
+  <div class="url">oneclickcoaching.com</div>
+  <div class="trial">14-day free trial · No credit card</div>
+  <div class="cta-line"></div>
+  <div class="logo-foot">
+    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
+    <span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>
+  </div>
+</div>
+
+</body>
+<script>
+// Inject logo into every slide
+document.querySelectorAll('.slide').forEach(slide => {
+  const logo = document.createElement('div');
+  logo.className = 'logo-foot';
+  logo.innerHTML = '<svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg><span class="wm">One Click <em style="font-style:italic;color:var(--terracotta);">Coaching</em></span>';
+  slide.appendChild(logo);
+});
+</script>
+</html>

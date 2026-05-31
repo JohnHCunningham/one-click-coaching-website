@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InMail Batch — 05/22/26 (3 prospects)</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 0 auto; padding: 20px; background: #f5f2ee; color: #241a14; }
+  h1 { font-size: 18px; margin-bottom: 4px; }
+  h2 { font-size: 13px; color: #75685f; font-weight: normal; margin-top: 0; margin-bottom: 20px; }
+  .card { background: white; border-radius: 10px; padding: 18px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .card h3 { margin: 0 0 2px 0; font-size: 14px; }
+  .card .meta { font-size: 12px; color: #75685f; margin-bottom: 12px; }
+  .count { display: inline-block; background: #b5583e; color: white; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 10px; margin-right: 6px; }
+  .field-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+  .field-label { font-size: 11px; color: #75685f; font-weight: 600; min-width: 50px; padding-top: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .field-content { flex: 1; background: #f9f7f4; border: 1px solid #e8e2da; border-radius: 6px; padding: 10px 12px; font-size: 13px; line-height: 1.55; color: #241a14; white-space: pre-wrap; }
+  .copy-btn { font-size: 11px; background: #f0ece6; border: 1px solid #d8cbbf; border-radius: 4px; padding: 3px 8px; cursor: pointer; color: #75685f; font-weight: 600; white-space: nowrap; align-self: flex-start; margin-top: 8px; }
+  .copy-btn:hover { background: #e0d8cf; }
+  .copy-btn.copied { background: #b5583e; color: white; border-color: #b5583e; }
+  .instructions { font-size: 11px; color: #b5a99f; text-align: center; margin-top: 24px; }
+</style>
+<script>
+function copyIt(id, btn) {
+  const el = document.getElementById(id);
+  navigator.clipboard.writeText(el.innerText).then(() => {
+    const orig = btn.innerText;
+    btn.innerText = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.innerText = orig; btn.classList.remove('copied'); }, 1200);
+  });
+}
+</script>
+</head>
+<body>
+<h1>InMail Batch</h1>
+<h2>List: 05/22/26 — 3 ready to send (from 33 total, 30 duplicates removed)</h2>
+
+<!-- 1. Andy Tait -->
+<div class="card">
+  <h3><span class="count">1</span> Andy Tait — VP of Sales, GoodLeaf Farms</h3>
+  <div class="meta">Food &amp; Beverage | 201–500 emp | 5 reps | 9 months in role | GTA, Canada</div>
+  <div class="field-row">
+    <span class="field-label">Subject</span>
+    <span class="field-content" id="s1">Controlled environment sales consistency?</span>
+    <button class="copy-btn" onclick="copyIt('s1', this)">Copy</button>
+  </div>
+  <div class="field-row">
+    <span class="field-label">Body</span>
+    <span class="field-content" id="b1">Andy —
+
+9 months into leading sales at GoodLeaf Farms.
+
+Controlled-environment agriculture is built on precision and consistency — every grow cycle measured and optimized. The same principles that separate great sales teams from good ones.
+
+With a lean team of 5, every rep's discovery and closing process carries disproportionate weight. The training room teaches the methodology. What survives 90 days on the floor is a different question entirely.
+
+Curious how you're approaching consistency as you build out the team.
+
+Regards</span>
+    <button class="copy-btn" onclick="copyIt('b1', this)">Copy</button>
+  </div>
+</div>
+
+<!-- 2. Matthew Monych -->
+<div class="card">
+  <h3><span class="count">2</span> Matthew Monych — SVP, Sales &amp; Success, Giatec</h3>
+  <div class="meta">Construction Tech / IoT | 51–200 emp | 30 reps | 10 months in role | Cantley, Quebec</div>
+  <div class="field-row">
+    <span class="field-label">Subject</span>
+    <span class="field-content" id="s2">Construction tech sales consistency?</span>
+    <button class="copy-btn" onclick="copyIt('s2', this)">Copy</button>
+  </div>
+  <div class="field-row">
+    <span class="field-label">Body</span>
+    <span class="field-content" id="b2">Matthew —
+
+10 months into the SVP role at Giatec.
+
+Smart concrete sensors and IoT are a long way from traditional construction. That technical differentiation puts real weight on your sales team's ability to communicate value — not just features.
+
+With 30 reps across sales and success, the question isn't whether they know the methodology.
+
+It's whether it holds under the pressure of a complex technical sale, where the buyer's skepticism is earned and the margin for error is thin.
+
+Curious how you're approaching consistency across a team that size.
+
+Regards</span>
+    <button class="copy-btn" onclick="copyIt('b2', this)">Copy</button>
+  </div>
+</div>
+
+<!-- 3. Maria Malesevic -->
+<div class="card">
+  <h3><span class="count">3</span> Maria Malesevic — VP Sales &amp; Marketing, Techdinamics Integrations</h3>
+  <div class="meta">Logistics / Supply Chain Tech | 51–200 emp | 9 reps | 10 months in role | United States</div>
+  <div class="field-row">
+    <span class="field-label">Subject</span>
+    <span class="field-content" id="s3">Logistics tech sales consistency?</span>
+    <button class="copy-btn" onclick="copyIt('s3', this)">Copy</button>
+  </div>
+  <div class="field-row">
+    <span class="field-label">Body</span>
+    <span class="field-content" id="b3">Maria —
+
+10 months leading sales and marketing at Techdinamics.
+
+Order management and fulfillment is a space where the technical complexity is high and the buyer's tolerance for confusion is zero. Your reps have to bridge that gap on every call — translating complex integrations into clear business value.
+
+The question is whether the discovery and qualification process stays sharp across 9 people.
+
+Or whether it drifts toward the path of least resistance when the pressure is on.
+
+Curious how you're thinking about consistency as you build out the team.
+
+Regards</span>
+    <button class="copy-btn" onclick="copyIt('b3', this)">Copy</button>
+  </div>
+</div>
+
+<div class="instructions">Click each field's Copy button — pastes directly into Sales Navigator InMail. Subject copies separately from Body.</div>
+</body>
+</html>

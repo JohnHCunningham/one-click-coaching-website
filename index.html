@@ -459,40 +459,37 @@
   footer .meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,239,232,0.4); line-height: 1.8; }
   footer .bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(244,239,232,0.1); display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,239,232,0.4); }
 
-  @media (max-width: 900px) {
-    .wrap { padding: 0 24px; }
-    nav.top .links, nav.top .cta { display: none; }
-    .hamburger { display: block; }
-    .hero { padding: 100px 0 80px; }
-    .sec-head, .product .inner, .method .inner { grid-template-columns: 1fr; gap: 24px; }
-    .pillars .grid { grid-template-columns: 1fr; gap: 8px; }
-    .panel .stat-big { font-size: 80px; }
-    footer .inner { grid-template-columns: 1fr; }
-    .analysis .hd, .rep-detail .hd { grid-template-columns: 1fr; gap: 32px; }
-    .analysis-mock .layout { grid-template-columns: 1fr; }
-    .analysis-mock .transcript { border-right: none; border-bottom: 1px solid var(--line); }
-    .hero-mock .body { grid-template-columns: 1fr; }
-    .hero-mock .sidebar { display: none; }
-    .hero-mock .kpi-row { grid-template-columns: repeat(2, 1fr); }
-    .hero-mock .main { padding: 20px; }
-    .rep-detail .layout { grid-template-columns: 1fr; }
-    .brain .inner { grid-template-columns: 1fr; gap: 40px; }
-    .proof-grid { grid-template-columns: 1fr; gap: 24px; }
-    .score-columns { grid-template-columns: 1fr !important; gap: 24px !important; }
-    .score-header h2 { font-size: 32px !important; line-height: 1.1 !important; }
-    .score-header { margin-bottom: 32px !important; }
-    .score-lede { font-size: 15px !important; }
-    .drift-stat-row { padding: 12px 14px !important; }
-    .drift-num { font-size: 28px !important; }
-    .drift-txt { font-size: 13px !important; }
-    .step-body { padding: 10px 12px !important; }
-    .step-letter { font-size: 18px !important; min-width: 38px !important; }
-    .step-title { font-size: 13px !important; }
-    .step-desc { font-size: 12px !important; }
-    .score-step { grid-template-columns: 38px 1fr !important; }
-    .score-foot { font-size: 12px !important; margin-top: 24px !important; }
-    section.score-method { padding: 60px 0 !important; overflow-x: hidden !important; }
-  }
+  body.mobile .wrap { padding: 0 24px; }
+  body.mobile nav.top .links, body.mobile nav.top .cta { display: none; }
+  body.mobile .hamburger { display: block; }
+  body.mobile .hero { padding: 100px 0 80px; }
+  body.mobile .sec-head, body.mobile .product .inner, body.mobile .method .inner { grid-template-columns: 1fr; gap: 24px; }
+  body.mobile .pillars .grid { grid-template-columns: 1fr; gap: 8px; }
+  body.mobile .panel .stat-big { font-size: 80px; }
+  body.mobile footer .inner { grid-template-columns: 1fr; }
+  body.mobile .analysis .hd, body.mobile .rep-detail .hd { grid-template-columns: 1fr; gap: 32px; }
+  body.mobile .analysis-mock .layout { grid-template-columns: 1fr; }
+  body.mobile .analysis-mock .transcript { border-right: none; border-bottom: 1px solid var(--line); }
+  body.mobile .hero-mock .body { grid-template-columns: 1fr; }
+  body.mobile .hero-mock .sidebar { display: none; }
+  body.mobile .hero-mock .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  body.mobile .hero-mock .main { padding: 20px; }
+  body.mobile .rep-detail .layout { grid-template-columns: 1fr; }
+  body.mobile .brain .inner { grid-template-columns: 1fr; gap: 40px; }
+  body.mobile .proof-grid { grid-template-columns: 1fr; gap: 24px; }
+  body.mobile .score-columns { grid-template-columns: 1fr; gap: 24px; }
+  body.mobile .score-header h2 { font-size: 32px; line-height: 1.1; }
+  body.mobile .score-lede { font-size: 15px; }
+  body.mobile .drift-stat-row { padding: 12px 14px; }
+  body.mobile .drift-num { font-size: 28px; }
+  body.mobile .drift-txt { font-size: 13px; }
+  body.mobile .step-body { padding: 10px 12px; }
+  body.mobile .step-letter { font-size: 18px; min-width: 38px; }
+  body.mobile .step-title { font-size: 13px; }
+  body.mobile .step-desc { font-size: 12px; }
+  body.mobile .score-step { grid-template-columns: 38px 1fr; }
+  body.mobile .score-foot { font-size: 12px; margin-top: 24px; }
+  body.mobile section.score-method { padding: 60px 0; overflow-x: hidden; }
 
   /* SCORE Method */
   section.score-method { padding: 120px 0; border-bottom: 1px solid var(--line); background: var(--paper); }
@@ -1576,6 +1573,17 @@ if (homepageForm) {
     chatMessages.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
+
+  // ── Mobile detection ──
+  function checkMobile() {
+    if (window.innerWidth <= 900) {
+      document.body.classList.add('mobile');
+    } else {
+      document.body.classList.remove('mobile');
+    }
+  }
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
 
   // ── Mobile menu ──
   function toggleMenu() {

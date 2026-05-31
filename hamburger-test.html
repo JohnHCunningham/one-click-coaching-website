@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { margin: 0; font-family: Arial; }
+.test-nav { background: #f0f0f0; padding: 20px; }
+.hamburger { 
+  background: red; 
+  border: 3px solid blue; 
+  padding: 20px; 
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+.mobile-menu { 
+  display: none; 
+  position: fixed; 
+  top: 0; left: 0; right: 0; bottom: 0; 
+  background: rgba(0,0,0,0.9); 
+  color: white; 
+  font-size: 30px;
+  padding: 50px;
+  z-index: 9999;
+}
+.mobile-menu.open { display: block; }
+.status { 
+  background: yellow; 
+  padding: 20px; 
+  margin: 20px;
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+<div class="test-nav">
+  <button class="hamburger" onclick="testClick()">
+    TAP ME - BIG RED BUTTON
+  </button>
+</div>
+
+<div class="status" id="status">
+  Status: Waiting for click...
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <h1>✓ MENU IS OPEN!</h1>
+  <p>If you see this, JavaScript is working!</p>
+  <button onclick="testClick()" style="font-size:24px; padding:20px;">Close Menu</button>
+</div>
+
+<script>
+function testClick() {
+  document.getElementById('status').innerHTML = 'Status: Button was clicked! Count: ' + (window.clickCount = (window.clickCount || 0) + 1);
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+</script>
+
+<h2 style="padding:20px;">Diagnostic Info:</h2>
+<div style="padding:20px; background:#f0f0f0; margin:20px;">
+  <p>Screen width: <span id="width"></span>px</p>
+  <p>User agent: <span id="ua"></span></p>
+</div>
+
+<script>
+document.getElementById('width').textContent = window.innerWidth;
+document.getElementById('ua').textContent = navigator.userAgent;
+</script>
+
+</body>
+</html>

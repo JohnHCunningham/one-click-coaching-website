@@ -468,7 +468,6 @@
     .pillars .grid { grid-template-columns: 1fr; gap: 8px; }
     .panel .stat-big { font-size: 80px; }
     footer .inner { grid-template-columns: 1fr; }
-    .score-columns { grid-template-columns: 1fr; gap: 32px; }
     .analysis .hd, .rep-detail .hd { grid-template-columns: 1fr; gap: 32px; }
     .analysis-mock .layout { grid-template-columns: 1fr; }
     .analysis-mock .transcript { border-right: none; border-bottom: 1px solid var(--line); }
@@ -479,20 +478,20 @@
     .rep-detail .layout { grid-template-columns: 1fr; }
     .brain .inner { grid-template-columns: 1fr; gap: 40px; }
     .proof-grid { grid-template-columns: 1fr; gap: 24px; }
-    .score-columns { grid-template-columns: 1fr; gap: 24px; }
-    .score-header h2 { font-size: 32px; line-height: 1.1; }
-    .score-header { margin-bottom: 32px; }
-    .score-lede { font-size: 15px; }
-    .drift-stat-row { padding: 12px 14px; }
-    .drift-num { font-size: 28px; }
-    .drift-txt { font-size: 13px; }
-    .step-body { padding: 10px 12px; }
-    .step-letter { font-size: 18px; min-width: 38px; }
-    .step-title { font-size: 13px; }
-    .step-desc { font-size: 12px; }
-    .score-step { grid-template-columns: 38px 1fr; }
-    .score-foot { font-size: 12px; margin-top: 24px; }
-    section.score-method { padding: 60px 0; overflow-x: hidden; }
+    .score-columns { grid-template-columns: 1fr !important; gap: 24px !important; }
+    .score-header h2 { font-size: 32px !important; line-height: 1.1 !important; }
+    .score-header { margin-bottom: 32px !important; }
+    .score-lede { font-size: 15px !important; }
+    .drift-stat-row { padding: 12px 14px !important; }
+    .drift-num { font-size: 28px !important; }
+    .drift-txt { font-size: 13px !important; }
+    .step-body { padding: 10px 12px !important; }
+    .step-letter { font-size: 18px !important; min-width: 38px !important; }
+    .step-title { font-size: 13px !important; }
+    .step-desc { font-size: 12px !important; }
+    .score-step { grid-template-columns: 38px 1fr !important; }
+    .score-foot { font-size: 12px !important; margin-top: 24px !important; }
+    section.score-method { padding: 60px 0 !important; overflow-x: hidden !important; }
   }
 
   /* SCORE Method */
@@ -576,6 +575,7 @@
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="toggleMenu()">Home</a>
     <a href="#product" onclick="toggleMenu()">How It Works</a>
     <a href="pricing.html" onclick="toggleMenu()">Pricing</a>
     <a href="partners.html" onclick="toggleMenu()">Partners</a>

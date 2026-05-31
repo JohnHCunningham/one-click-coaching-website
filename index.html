@@ -108,8 +108,8 @@
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(26,21,17,0.96); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
-  .mobile-menu.open { display: flex; }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(26,21,17,0.96); flex-direction: column; align-items: center; justify-content: center; gap: 32px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
+  .mobile-menu.open { display: flex; pointer-events: auto; opacity: 1; }
   .mobile-menu a { color: var(--bone); font-size: 22px; font-weight: 300; letter-spacing: -0.01em; }
   .mobile-menu a:hover { color: var(--clay); }
   .mobile-menu .cta-mobile { background: var(--terracotta); color: var(--bone); padding: 14px 32px; border-radius: 999px; font-size: 16px; font-weight: 500; margin-top: 8px; }

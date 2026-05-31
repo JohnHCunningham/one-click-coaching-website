@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: Arial; padding: 20px; }
+  .test-box { 
+    background: #f0f0f0; 
+    padding: 20px; 
+    margin: 10px 0;
+    border: 2px solid #333;
+  }
+  @media (max-width: 768px) {
+    .test-box { background: lightblue; }
+    .test-box::before { content: "✓ 768px breakpoint WORKING"; display: block; font-weight: bold; }
+  }
+  @media (max-width: 900px) {
+    .test-box { border-color: green; }
+  }
+</style>
+</head>
+<body>
+  <h1>Mobile Responsive Test</h1>
+  <div class="test-box">
+    If this box is LIGHT BLUE with GREEN border, responsive CSS is working!
+    <br>Screen width: <span id="width"></span>px
+  </div>
+  <script>
+    document.getElementById('width').textContent = window.innerWidth;
+    window.addEventListener('resize', () => {
+      document.getElementById('width').textContent = window.innerWidth;
+    });
+  </script>
+</body>
+</html>

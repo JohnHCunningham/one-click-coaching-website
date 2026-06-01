@@ -95,13 +95,13 @@
   nav.top .lockup { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
   nav.top .lockup svg { width: 26px; height: 26px; flex-shrink: 0; }
   nav.top .lockup .wm { font-family: 'Instrument Serif', serif; font-size: 22px; letter-spacing: -0.01em; white-space: nowrap; }
-  nav.top .links { display: none; gap: 36px; font-size: 14px; color: var(--stone); pointer-events: none; }
+  nav.top .links { display: none; gap: 36px; font-size: 14px; color: var(--stone); pointer-events: none; visibility: hidden; }
   nav.top .links a:hover { color: var(--ink); }
-  nav.top .cta { display: none; background: var(--espresso); color: var(--bone); padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform 0.15s ease; pointer-events: none; }
+  nav.top .cta { display: none; background: var(--espresso); color: var(--bone); padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform 0.15s ease; pointer-events: none; visibility: hidden; }
   nav.top .cta:hover { transform: translateY(-1px); }
 
   /* ── hamburger ── */
-  .hamburger { display: block; background: none; border: none; cursor: pointer; padding: 8px; z-index: 60; position: relative; }
+  .hamburger { display: block; background: none; border: none; cursor: pointer; padding: 8px; z-index: 99999; position: relative; isolation: isolate; }
   .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
   .hamburger span + span { margin-top: 5px; }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -117,8 +117,8 @@
   /* ── desktop nav (≥901px) ── */
   @media (min-width: 901px) {
     .hamburger { display: none !important; }
-    nav.top .links { display: flex !important; pointer-events: auto !important; }
-    nav.top .cta { display: inline-flex !important; pointer-events: auto !important; }
+    nav.top .links { display: flex !important; pointer-events: auto !important; visibility: visible !important; }
+    nav.top .cta { display: inline-flex !important; pointer-events: auto !important; visibility: visible !important; }
   }
 
   /* ── hero ── */

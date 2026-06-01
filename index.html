@@ -101,7 +101,7 @@
   nav.top .cta:hover { transform: translateY(-1px); }
 
   /* ── hamburger ── */
-  .hamburger { display: block; background: none; border: none; cursor: pointer; padding: 8px; z-index: 99999; position: relative; isolation: isolate; }
+  .hamburger { display: block; background: none; border: none; cursor: pointer; padding: 8px; z-index: 99999; position: relative; isolation: isolate; order: 999; margin-left: auto; }
   .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
   .hamburger span + span { margin-top: 5px; }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -586,6 +586,9 @@
 
 <nav class="top">
   <div class="wrap inner">
+    <button type="button" class="hamburger" onclick="toggleMenu(event)" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
     <a href="#" class="lockup">
       <svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
       <span class="wm">One Click <em>Coaching</em></span>
@@ -598,9 +601,6 @@
       <a href="contact.html">Contact</a>
     </div>
     <a href="https://app.oneclickcoaching.com" class="cta">Login</a>
-    <button type="button" class="hamburger" onclick="toggleMenu(event)" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
@@ -1610,6 +1610,7 @@ if (homepageForm) {
     if (event) {
       event.preventDefault();
       event.stopPropagation();
+      event.stopImmediatePropagation();
     }
     console.log('toggleMenu called!', new Date().toISOString());
     const menu = document.getElementById('mobileMenu');
@@ -1619,7 +1620,27 @@ if (homepageForm) {
     hamburger.classList.toggle('open');
     document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
     console.log('After toggle - Has open class:', menu.classList.contains('open'));
+    return false;
   }
+
+  // Capture hamburger clicks before anything else can interfere
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        toggleMenu(e);
+      }, true); // true = capture phase
+
+      hamburger.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+      }, true);
+    }
+  });
 
   // ── Demo video modal ──
   function openDemoModal() {

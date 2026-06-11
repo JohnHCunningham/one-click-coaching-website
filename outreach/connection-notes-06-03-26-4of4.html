@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — notes-06-03-26-4/4</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F0EB; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; color: #3B2F2A; }
+  .header { max-width: 680px; margin: 0 auto 24px; }
+  .header h1 { font-size: 1.5rem; color: #4A3728; }
+  .header p { font-size: 0.9rem; color: #8B7355; margin-top: 4px; }
+  .stats { display: flex; gap: 16px; margin-top: 8px; font-size: 0.85rem; }
+  .stat { background: #EDE5D9; padding: 3px 10px; border-radius: 4px; }
+  .stat.send { background: #D4E8D0; color: #3A5A32; }
+  .stat.skip { background: #F0E0D0; color: #8B5A3A; }
+  .card { max-width: 680px; margin: 0 auto 16px; background: #FFFBF7; border: 1px solid #E0D5C7; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .card-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .num { font-size: 1.1rem; font-weight: 700; color: #C06E48; min-width: 28px; }
+  .name { font-size: 1.1rem; font-weight: 700; color: #3B2F2A; }
+  .meta { font-size: 0.85rem; color: #8B7355; margin-bottom: 12px; }
+  .note-box { background: #FAF6F0; border: 1px solid #E0D5C7; border-radius: 6px; padding: 14px; font-size: 0.95rem; line-height: 1.5; position: relative; }
+  .copy-btn { position: absolute; top: 8px; right: 10px; background: #C06E48; color: #FFF; border: none; border-radius: 4px; padding: 3px 10px; font-size: 0.75rem; cursor: pointer; }
+  .copy-btn:hover { background: #A0583A; }
+  .char-count { text-align: right; font-size: 0.75rem; color: #A09080; margin-top: 4px; }
+  .skipped { max-width: 680px; margin: 32px auto 0; }
+  .skipped h2 { font-size: 1rem; color: #8B7355; margin-bottom: 8px; }
+  .skip-item { font-size: 0.85rem; color: #A09080; padding: 3px 0; }
+  .footer { max-width: 680px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #E0D5C7; text-align: center; font-size: 0.85rem; color: #8B7355; }
+</style>
+<script>
+function copyNote(el, event) {
+  event.stopPropagation();
+  const btn = el.querySelector('.copy-btn');
+  const text = el.innerText.replace('Copy', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  });
+}
+</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Connection Notes — Ready to Send</h1>
+  <p>Sales Nav list: <strong>notes-06-03-26-4/4</strong> · 2 notes · Wed, June 3, 2026</p>
+  <div class="stats">
+    <span class="stat send">2 SEND</span>
+    <span class="stat skip">15 SKIP</span>
+    <span class="stat">12% yield</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">1</span><span class="name">Ed Greene</span></div>
+  <div class="meta">VP of Sales · Arraya Solutions · IT Services & Consulting · Morristown, NJ</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Ed — 2 months in, leading 12 reps at an 86-person SaaS and cloud consultancy. You came from OpSec and Talkwalker — you've seen what a structured sales motion looks like. Right now you're still reading what's actually happening on calls vs. what you're being told. Curious what you're finding.</div>
+  <div class="char-count">281 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">2</span><span class="name">Adam Hearn</span></div>
+  <div class="meta">VP Sales - North America · Lunio · Software Development · Greater Chicago Area</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Adam — 8 months building Lunio's US presence from scratch — 13 reps, new market, agency and direct. The hardest part of that build isn't the strategy. It's getting rep execution consistent before you have enough data to know what's working. Curious where you are on that right now.</div>
+  <div class="char-count">272 chars</div>
+</div>
+
+<div class="skipped">
+  <h2>Skipped (15) — Click to expand</h2>
+  <details>
+    <summary style="cursor:pointer; color:#8B7355; font-size:0.85rem;">Show reasons</summary>
+    <div class="skip-item">Nathan Bliss — 228 employees, 29 reps; above ceiling; past new-role window</div>
+    <div class="skip-item">Chris Waters — 175 employees (too large); Director, not VP Sales</div>
+    <div class="skip-item">Scott Witte — Closed profile</div>
+    <div class="skip-item">Joe Fairley MBA — Roofing/construction; BD/marketing title</div>
+    <div class="skip-item">R Bruce Scott — 998 employees (enterprise)</div>
+    <div class="skip-item">Amber Cox — Closed profile; senior living/hospitality</div>
+    <div class="skip-item">Jeffrey Blake — 340 employees (too large); defense/aerospace</div>
+    <div class="skip-item">Brien J Brandenburg — 304 employees (too large); reverse mortgage</div>
+    <div class="skip-item">Ken Loney CBPA — 431 employees, 129 reps</div>
+    <div class="skip-item">Chip Minto — 353 employees (too large); utilities</div>
+    <div class="skip-item">Bryan S — 264 employees (too large); 31-rep fintech</div>
+    <div class="skip-item">Steve Griffith — Closed profile; fractional CRO/consultant</div>
+    <div class="skip-item">Troy J Sacco — Entertainment/amusement; enterprise</div>
+    <div class="skip-item">Moris Mirzadeh — Consumer electronics/retail; no headcount; 24yr role</div>
+    <div class="skip-item">Christopher Stone — Closed profile; Oracle ERP consulting</div>
+  </details>
+</div>
+
+<div class="footer">notes-06-03-26-4/4 · June 3, 2026 · 2/17 sent</div>
+
+</body>
+</html>

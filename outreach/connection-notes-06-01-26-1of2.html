@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — notes-06-01-26-1/2</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F0EB; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; color: #3B2F2A; }
+  .header { max-width: 680px; margin: 0 auto 24px; }
+  .header h1 { font-size: 1.5rem; color: #4A3728; }
+  .header p { font-size: 0.9rem; color: #8B7355; margin-top: 4px; }
+  .card { max-width: 680px; margin: 0 auto 16px; background: #FFFBF7; border: 1px solid #E0D5C7; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .card-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .num { font-size: 1.1rem; font-weight: 700; color: #C06E48; min-width: 28px; }
+  .name { font-size: 1.1rem; font-weight: 700; color: #3B2F2A; }
+  .meta { font-size: 0.85rem; color: #8B7355; margin-bottom: 12px; }
+  .note-box { background: #FAF6F0; border: 1px solid #E0D5C7; border-radius: 6px; padding: 14px; font-size: 0.95rem; line-height: 1.5; cursor: pointer; position: relative; transition: border-color 0.2s; }
+  .note-box:hover { border-color: #C06E48; }
+  .copy-btn { position: absolute; top: 8px; right: 10px; background: #C06E48; color: #FFF; border: none; border-radius: 4px; padding: 3px 10px; font-size: 0.75rem; cursor: pointer; }
+  .copy-btn:hover { background: #A0583A; }
+  .char-count { text-align: right; font-size: 0.75rem; color: #A09080; margin-top: 4px; }
+  .footer { max-width: 680px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #E0D5C7; text-align: center; font-size: 0.85rem; color: #8B7355; }
+  .copied { color: #4A7C3F; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Connection Notes — Ready to Send</h1>
+  <p>
+    Sales Nav list: <strong>notes-06-01-26-1/2</strong> &nbsp;·&nbsp; 14 notes &nbsp;·&nbsp; Mon, June 2, 2026
+  </p>
+</div>
+
+<!-- 1. Eric Temple — Conexiant -->
+<div class="card">
+  <div class="card-header"><span class="num">1</span><span class="name">Eric Temple</span></div>
+  <div class="meta">VP Sales, Dental and Vision · Conexiant · Portland, OR</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Eric — 11 months into VP Sales at Conexiant in healthcare media means you've had enough time to see patterns. Curious if you're noticing a gap between what your reps learned in training and what they actually execute day-to-day.
+  </div>
+  <div class="char-count">~175 chars</div>
+</div>
+
+<!-- 2. Trevor Hurlbert — LimoLink -->
+<div class="card">
+  <div class="card-header"><span class="num">2</span><span class="name">Trevor Hurlbert</span></div>
+  <div class="meta">VP of Sales · LimoLink · Cedar Rapids, IA</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Trevor — 5 months into the VP role at LimoLink with a 29-rep team — that's a lot to inherit and assess fast. Curious how you're identifying who's actually coachable versus who just looks the part.
+  </div>
+  <div class="char-count">~173 chars</div>
+</div>
+
+<!-- 3. Michael Riley — Chalice AI -->
+<div class="card">
+  <div class="card-header"><span class="num">3</span><span class="name">Michael Riley</span></div>
+  <div class="meta">Head of Sales and Customer Success · Chalice AI · US</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Michael — running both Sales and CS at Chalice AI on a 7-person team means every rep problem costs twice. Curious how you're staying ahead of coaching with that kind of split focus.
+  </div>
+  <div class="char-count">~155 chars</div>
+</div>
+
+<!-- 4. Mark Wojtowicz — Theragen -->
+<div class="card">
+  <div class="card-header"><span class="num">4</span><span class="name">Mark Wojtowicz</span></div>
+  <div class="meta">VP of Sales · Theragen · Charlotte Metro</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Mark — 3 months into VP Sales at Theragen — you're still building your read on the team. Curious what you're using to tell the difference between a rep having a bad quarter and a rep with a real skill gap.
+  </div>
+  <div class="char-count">~197 chars</div>
+</div>
+
+<!-- 5. Rudy Ricci — Binalyze -->
+<div class="card">
+  <div class="card-header"><span class="num">5</span><span class="name">Rudy Ricci</span></div>
+  <div class="meta">VP of Sales · Binalyze · US</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Rudy — building revenue engines at BeyondTrust, Kaspersky, now Binalyze in cybersecurity SaaS. Curious what you're using to keep MEDDPICC consistent across reps when the deals get complex.
+  </div>
+  <div class="char-count">~180 chars</div>
+</div>
+
+<!-- 6. Peter Katai — BM2 Freight Services -->
+<div class="card">
+  <div class="card-header"><span class="num">6</span><span class="name">Peter Katai</span></div>
+  <div class="meta">EVP of Sales · BM2 Freight Services · Greater Chicago</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Peter — 1 month into EVP Sales at BM2 Freight — you're still in pattern-recognition mode, figuring out which reps actually execute versus which ones just talk well in pipeline reviews. Worth connecting.
+  </div>
+  <div class="char-count">~172 chars</div>
+</div>
+
+<!-- 7. Bo Steed — Proactive Health -->
+<div class="card">
+  <div class="card-header"><span class="num">7</span><span class="name">Bo Steed</span></div>
+  <div class="meta">VP of Sales · Proactive Health · Lehi, UT</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Bo — 4 months in as VP at Proactive Health with 13 reps — right at the point where you know who can perform but not yet sure what's holding the others back. Curious how you're diagnosing that.
+  </div>
+  <div class="char-count">~183 chars</div>
+</div>
+
+<!-- 8. Roger Moore — SPEVCO -->
+<div class="card">
+  <div class="card-header"><span class="num">8</span><span class="name">Roger Moore</span></div>
+  <div class="meta">Director of Sales · SPEVCO · Greensboro, NC</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Roger — specialty vehicle sales at SPEVCO with a 6-person team. Curious how you're keeping the team sharp between deals when the cycles are long and the activity is low. Worth connecting.
+  </div>
+  <div class="char-count">~172 chars</div>
+</div>
+
+<!-- 9. Kristina Bompiani — Impilo -->
+<div class="card">
+  <div class="card-header"><span class="num">9</span><span class="name">Kristina Bompiani</span></div>
+  <div class="meta">Head of Sales · Impilo · Greater Pittsburgh</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Kristina — built revenue in restaurant tech, medical devices, dental, digital health. New industry, same result is a standard you clearly hold. Curious how you hold your team to it at Impilo.
+  </div>
+  <div class="char-count">~195 chars</div>
+</div>
+
+<!-- 10. Ed Smith — Standard AI -->
+<div class="card">
+  <div class="card-header"><span class="num">10</span><span class="name">Ed Smith</span></div>
+  <div class="meta">VP of Sales · Standard AI · Phoenix, AZ</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Ed — 3 months into VP Sales at Standard AI, 25 years in the game — you know what good looks like. Curious how you're getting your team to that standard when most AI sales playbooks don't exist yet.
+  </div>
+  <div class="char-count">~180 chars</div>
+</div>
+
+<!-- 11. Robert Amaral — AISquared -->
+<div class="card">
+  <div class="card-header"><span class="num">11</span><span class="name">Robert Amaral</span></div>
+  <div class="meta">VP of Sales · AISquared · US</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Robert — VP Sales at AISquared with a 5-rep team selling enterprise AI integration. Curious how you're keeping the message consistent when every deal requires a custom case. Worth connecting.
+  </div>
+  <div class="char-count">~159 chars</div>
+</div>
+
+<!-- 12. Jason Dill — Prime Data Centers -->
+<div class="card">
+  <div class="card-header"><span class="num">12</span><span class="name">Jason Dill</span></div>
+  <div class="meta">VP of Sales · Prime Data Centers · Los Angeles, CA</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Jason — Equinix, Zayo, EdgeConneX, now VP Sales at Prime Data Centers. Curious what changes about coaching when the brand gets smaller but the deal complexity stays the same. Worth connecting.
+  </div>
+  <div class="char-count">~183 chars</div>
+</div>
+
+<!-- 13. Brian Burke — Octave -->
+<div class="card">
+  <div class="card-header"><span class="num">13</span><span class="name">Brian Burke</span></div>
+  <div class="meta">National Sales Director · Octave · Boston, MA</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Brian — 2 months in as National Sales Director at Octave, second startup in a row. You know the first 90 days are for reading the team. Curious what patterns you're already seeing.
+  </div>
+  <div class="char-count">~172 chars</div>
+</div>
+
+<!-- 14. Bobby Boyle — Nash -->
+<div class="card">
+  <div class="card-header"><span class="num">14</span><span class="name">Bobby Boyle</span></div>
+  <div class="meta">VP of Sales · Nash · Charleston, SC</div>
+  <div class="note-box" onclick="copyNote(this, event)">
+    <button class="copy-btn">Copy</button>
+    Hi Bobby — VP Sales at Nash, 19 reps in last-mile logistics — that's a competitive space where top-of-funnel looks fine until it suddenly doesn't. Curious how you're staying ahead of rep consistency.
+  </div>
+  <div class="char-count">~188 chars</div>
+</div>
+
+<div class="footer">
+  14 notes ready · <strong>notes-06-01-26-1/2</strong> · June 2, 2026
+</div>
+
+<script>
+function copyNote(el, event) {
+  if (event.target.classList.contains('copy-btn')) {
+    const text = el.innerText.replace(/^Copy\n?/, '').trim();
+    navigator.clipboard.writeText(text);
+    const btn = el.querySelector('.copy-btn');
+    btn.textContent = 'Copied! ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acceptance Thank-You Notes — June 10, 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; padding: 20px; color: #222; }
+  h1 { font-size: 1.4rem; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+  .card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .card.vip { border-left: 4px solid #f5a623; }
+  .name { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; }
+  .meta { color: #888; font-size: 0.8rem; margin-bottom: 10px; }
+  .message { font-size: 0.95rem; line-height: 1.5; color: #333; padding: 10px; background: #f9f9f9; border-radius: 6px; margin-bottom: 10px; }
+  .copy-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .copy-btn:hover { background: #1d4ed8; }
+  .copy-btn.copied { background: #16a34a; }
+  .badge {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 24px 0; }
+</style>
+</head>
+<body>
+
+<h1>Acceptance Thank-You Notes</h1>
+<div class="subtitle">8 acceptances — June 10, 2026 | All Sandler batches + Intl | First name only in body</div>
+
+<!-- 1. Dave Mattson ⭐ -->
+<div class="card vip">
+  <div class="name">1. Dave Mattson <span class="badge">⭐ VIP</span></div>
+  <div class="meta">Executive Chairman · Sandler Corporate</div>
+  <div class="message" id="msg1">Dave — thanks for connecting. Good to be in your network.</div>
+  <button class="copy-btn" onclick="copyMsg('msg1', this)">Copy</button>
+</div>
+
+<!-- 2. Sarah Kodadek -->
+<div class="card">
+  <div class="name">2. Sarah Kodadek</div>
+  <div class="meta">VP Enterprise Sales · Sandler · Brave Leaders</div>
+  <div class="message" id="msg2">Sarah — thanks for connecting. Good to be in your network.</div>
+  <button class="copy-btn" onclick="copyMsg('msg2', this)">Copy</button>
+</div>
+
+<!-- 3. Thomas Niesen -->
+<div class="card">
+  <div class="name">3. Thomas Niesen</div>
+  <div class="meta">CEO · Sandler Training Dallas</div>
+  <div class="message" id="msg3">Thomas — thanks for connecting. Good to be in your network.</div>
+  <button class="copy-btn" onclick="copyMsg('msg3', this)">Copy</button>
+</div>
+
+<!-- 4. Michael Castiglione -->
+<div class="card">
+  <div class="name">4. Michael Castiglione</div>
+  <div class="meta">Owner · Sandler Training Los Angeles</div>
+  <div class="message" id="msg4">Michael — thanks for connecting. Good to be in your network.</div>
+  <button class="copy-btn" onclick="copyMsg('msg4', this)">Copy</button>
+</div>
+
+<!-- 5. Ed Kerr -->
+<div class="card">
+  <div class="name">5. Ed Kerr</div>
+  <div class="meta">Revenue Coach · Sandler Franchisee</div>
+  <div class="message" id="msg5">Ed — thanks for connecting. Good to be in your network.</div>
+  <button class="copy-btn" onclick="copyMsg('msg5', this)">Copy</button>
+</div>
+
+<!-- 6. David Pritchard -->
+<div class="card">
+  <div class="name">6. David Pritchard</div>
+  <div class="meta">Managing Director · Sandler Training London</div>
+  <div class="message" id="msg6">David — thanks for connecting. Good to be in your network.</div>
+  <button class="copy-btn" onclick="copyMsg('msg6', this)">Copy</button>
+</div>
+
+<!-- 7. Luca Mengoli -->
+<div class="card">
+  <div class="name">7. Luca Mengoli</div>
+  <div class="meta">Manager, SDR EMEA Mid-Market · Datadog</div>
+  <div class="message" id="msg7">Luca — thanks for connecting. Good to be in your network.</div>
+  <button class="copy-btn" onclick="copyMsg('msg7', this)">Copy</button>
+</div>
+
+<!-- 8. Thomas Hogan -->
+<div class="card">
+  <div class="name">8. Thomas Hogan</div>
+  <div class="meta">SVP Global Sales · Melinda's Foods</div>
+  <div class="message" id="msg8">Thomas — thanks for connecting. Good to be in your network.</div>
+  <button class="copy-btn" onclick="copyMsg('msg8', this)">Copy</button>
+</div>
+
+<script>
+function copyMsg(id, btn) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+
+</body>
+</html>

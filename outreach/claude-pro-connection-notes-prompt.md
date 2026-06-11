@@ -17,6 +17,7 @@ VP Sales, Sales Managers, Sales Enablement leaders, CROs at companies with rough
 - **No "Regards" or sign-off.** This is a connection note, not an email. Don't close with "Regards," "Best," "John."
 - **One warm, personalized sentence.** Show you looked at their profile. Reference their industry, role, company, or something specific — NOT generic flattery.
 - **End with a soft bridge.** "Worth connecting" or "Curious how you approach that" — never a pitch, never a call-to-action.
+- **NEVER invent biographical details.** If the data doesn't explicitly state how long they've been in role, team size, company growth stage, or recent moves — do NOT mention any of these. Fabricated personalization is worse than neutral personalization. "Sales Director at SmartJobBoard" is correct. "Just stepped into the Sales Director role" is fiction. Three people have flagged us for this. Do not do it.
 
 ## Two Message Types
 
@@ -76,6 +77,19 @@ Note: Hi Sarah — scaling a 40-person SaaS sales team through Series B is no sm
 
 - Every note must prove you read their profile. If the note could apply to 3+ other people in the batch, rewrite it.
 - Industry language matters. "Advisors" for financial services, "reps" for B2B SaaS, "consultants" for professional services.
-- New in role (<12 months)? Ask how they're assessing team consistency as they step in. They're in evaluation mode.
 - Never mention One Click Coaching. Never pitch. Never ask for a call. This is a handshake, not a sale.
 - Shorter is better. If it's 200 characters and feels personal, that's better than 290 characters that feels crafty.
+
+## Nurture Sequence — Middle of Funnel
+
+If a connection accepts but has ZERO interaction after 2-3 weeks (no DMs, no comments, no engagement), send one nurture message:
+
+**Template:**
+"Hey [Name] — been following your work from a distance. Curious what you're seeing in [their domain] right now. What's actually working?"
+
+**Rules:**
+- Reference their actual domain (sales leadership, coaching, team development — not generic)
+- Ask what's working, not what's broken — positive frame gets replies
+- No pitch. No product. No "let me tell you about OCC."
+- If they reply, have a real conversation. The ask comes later.
+- If they don't reply, let it go. One touch, no chase.

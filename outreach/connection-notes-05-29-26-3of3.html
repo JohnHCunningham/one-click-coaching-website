@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — notes-05-29-26-3/3</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F0EB; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; color: #3B2F2A; }
+  .header { max-width: 680px; margin: 0 auto 24px; }
+  .header h1 { font-size: 1.5rem; color: #4A3728; }
+  .header p { font-size: 0.9rem; color: #8B7355; margin-top: 4px; }
+  .card { max-width: 680px; margin: 0 auto 16px; background: #FFFBF7; border: 1px solid #E0D5C7; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .card-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .num { font-size: 1.1rem; font-weight: 700; color: #C06E48; min-width: 28px; }
+  .name { font-size: 1.1rem; font-weight: 700; color: #3B2F2A; }
+  .meta { font-size: 0.85rem; color: #8B7355; margin-bottom: 12px; }
+  .note-box { background: #FAF6F0; border: 1px solid #E0D5C7; border-radius: 6px; padding: 14px; font-size: 0.95rem; line-height: 1.5; cursor: pointer; position: relative; transition: border-color 0.2s; }
+  .note-box:hover { border-color: #C06E48; }
+  .copy-btn { position: absolute; top: 8px; right: 10px; background: #C06E48; color: #FFF; border: none; border-radius: 4px; padding: 3px 10px; font-size: 0.75rem; cursor: pointer; }
+  .copy-btn:hover { background: #A0583A; }
+  .char-count { text-align: right; font-size: 0.75rem; color: #A09080; margin-top: 4px; }
+  .footer { max-width: 680px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #E0D5C7; text-align: center; font-size: 0.85rem; color: #8B7355; }
+  .copied { color: #4A7C3F; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Connection Notes — Ready to Send</h1>
+  <p>Sales Nav list: <strong>notes-05-29-26-3/3</strong> &nbsp;·&nbsp; 13 notes &nbsp;·&nbsp; Tue, June 2, 2026</p>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">1</span><span class="name">Brian Wool</span></div>
+  <div class="meta">VP of Sales · Enformion · Greater Chicago Area</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Brian — 4 months in the seat, 3 exits behind you, 12-rep team at a data analytics SaaS. The build-and-scale phase is also the moment inconsistency gets expensive. Curious what your coaching cadence looks like right now.</div>
+  <div class="char-count">~230 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">2</span><span class="name">Richard Klauer</span></div>
+  <div class="meta">VP of US Sales · Valencia Technologies · San Francisco Bay Area</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Richard — brand new in the role at Valencia Technologies. Your team moving between clinical, strategic, economic, and operational lenses doesn't build itself. Wondering what your rep development infrastructure looks like at day one.</div>
+  <div class="char-count">~215 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">3</span><span class="name">Nathan Crafts</span></div>
+  <div class="meta">VP of Sales · Modulate · Greater Boston</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Nathan — startup to $20M is the range you've helped 4 companies navigate. 8-rep team at Modulate — that's the exact moment where coaching consistency either compounds or costs you. Worth connecting.</div>
+  <div class="char-count">~200 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">4</span><span class="name">Andrew Gallagher</span></div>
+  <div class="meta">VP of Sales · CellSite Solutions · Iowa City-Cedar Rapids Area</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Andrew — $95M in personal sales since 2019, now running a 5-rep team in telecom. The jump from top producer to VP is the one that breaks most people. Curious how you're closing that gap with your team.</div>
+  <div class="char-count">~195 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">5</span><span class="name">Bradley Ha</span></div>
+  <div class="meta">VP of Sales · Lev · New York City Metropolitan Area</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Bradley — three VP roles, always 0-to-$15M ARR, 18-rep team at Lev. You know the phase where process either sticks or doesn't. Curious what your coaching infrastructure looks like at this stage of the build.</div>
+  <div class="char-count">~200 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">6</span><span class="name">Michael Flournoy</span></div>
+  <div class="meta">Head of Sales & BD · Whip Around · Charlotte, NC</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Michael — took a 50-person org from playbook to 4,000% growth — that's a coaching story as much as a sales story. 10 reps at Whip Around now. Curious what your rep development cadence looks like.</div>
+  <div class="char-count">~195 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">7</span><span class="name">Rachel Krug</span></div>
+  <div class="meta">VP of Sales · Eyes On Eyecare · Greater Boston</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Rachel — doubled ARR at Virtual Field, 391% GMV at Bulletin — both turnarounds driven by process, not just personnel. 10-rep team at Eyes On Eyecare. Curious what rep development looks like in this chapter.</div>
+  <div class="char-count">~215 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">8</span><span class="name">Gregory T Lande</span></div>
+  <div class="meta">AVP Sales, NE & Midwest · Surgical Theater · Red Bank, NJ</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Gregory — 2 months into regional leadership at a surgical tech company — that's the window where you're learning which reps have methodology installed and which don't. Curious how you're running that assessment.</div>
+  <div class="char-count">~205 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">9</span><span class="name">Holly Hockemeier</span></div>
+  <div class="meta">VP of Sales · Marvin Behavioral Health · Denver, CO</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Holly — 3 months into the role at Marvin Behavioral Health, 20+ years in health tech. The early window is when you see exactly where the team's execution gaps are. Curious how you're structuring rep coaching at this stage.</div>
+  <div class="char-count">~200 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">10</span><span class="name">Cody P</span></div>
+  <div class="meta">VP of Sales · Routable · Washington DC-Baltimore Area</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Cody — 3 months in, 7-rep team at a Seed-to-Series B fintech. You've built the process before — curious what your coaching cadence looks like in the first 90 days when the team is still forming around it.</div>
+  <div class="char-count">~195 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">11</span><span class="name">Andy Zschach</span></div>
+  <div class="meta">Head of Sales Global · Terzo · Los Angeles, CA</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Andy — 2 months in, 12 reps, built a full GTM from scratch at Terzo. You know the gap between installing a sales playbook and having reps execute it consistently. Curious what your coaching infrastructure looks like day one.</div>
+  <div class="char-count">~230 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">12</span><span class="name">Kevin McKay</span></div>
+  <div class="meta">VP of Sales · MVD Entertainment Group · Whitinsville, MA</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Kevin — 5 reps, 5 months in, staff coaching listed as a core competency. Entertainment distribution runs on relationships — curious how you're reinforcing sales process with a small team where every rep carries real weight.</div>
+  <div class="char-count">~220 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">13</span><span class="name">Rich Royka</span></div>
+  <div class="meta">VP of Sales · Blue Mountain Arts · Slingerlands, NY</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Rich — 30+ awards across 25 years, 9-rep team, brand new in the role. The moment you inherit a team is the moment you find out what was actually getting coached before you arrived. Curious what you're seeing.</div>
+  <div class="char-count">~230 chars</div>
+</div>
+
+<div class="footer">
+  13 notes ready · <strong>notes-05-29-26-3/3</strong> · June 2, 2026
+</div>
+
+<script>
+function copyNote(el, event) {
+  if (event.target.classList.contains('copy-btn')) {
+    const text = el.innerText.replace(/^Copy\n?/, '').trim();
+    navigator.clipboard.writeText(text);
+    const btn = el.querySelector('.copy-btn');
+    btn.textContent = 'Copied! ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  }
+}
+</script>
+
+</body>
+</html>

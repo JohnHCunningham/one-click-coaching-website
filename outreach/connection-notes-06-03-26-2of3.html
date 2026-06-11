@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — notes-06-03-26-2/3</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F0EB; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; color: #3B2F2A; }
+  .header { max-width: 680px; margin: 0 auto 24px; }
+  .header h1 { font-size: 1.5rem; color: #4A3728; }
+  .header p { font-size: 0.9rem; color: #8B7355; margin-top: 4px; }
+  .card { max-width: 680px; margin: 0 auto 16px; background: #FFFBF7; border: 1px solid #E0D5C7; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .card-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .num { font-size: 1.1rem; font-weight: 700; color: #C06E48; min-width: 28px; }
+  .name { font-size: 1.1rem; font-weight: 700; color: #3B2F2A; }
+  .meta { font-size: 0.85rem; color: #8B7355; margin-bottom: 12px; }
+  .note-box { background: #FAF6F0; border: 1px solid #E0D5C7; border-radius: 6px; padding: 14px; font-size: 0.95rem; line-height: 1.5; position: relative; }
+  .copy-btn { position: absolute; top: 8px; right: 10px; background: #C06E48; color: #FFF; border: none; border-radius: 4px; padding: 3px 10px; font-size: 0.75rem; cursor: pointer; }
+  .copy-btn:hover { background: #A0583A; }
+  .char-count { text-align: right; font-size: 0.75rem; color: #A09080; margin-top: 4px; }
+  .footer { max-width: 680px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #E0D5C7; text-align: center; font-size: 0.85rem; color: #8B7355; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Connection Notes — Ready to Send</h1>
+  <p>Sales Nav list: <strong>notes-06-03-26-2/3</strong> · 6 notes · Wed, June 3, 2026</p>
+</div>
+
+<div class="card"><div class="card-header"><span class="num">1</span><span class="name">Marta Scolaro</span></div><div class="meta">VP Strategic Sales · SERVPRO Team TMC · Jacksonville, FL</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Marta — 7 months in. Your background — CRM rebuilds, GTM restructuring, KPI frameworks — tells me you've inherited a sales org and you're assessing what's actually working on the floor. Curious what rep consistency looks like right now.</div><div class="char-count">~278 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">2</span><span class="name">Tony Zuanich</span></div><div class="meta">SVP Sales & Marketing · Tabulera · Pleasanton, CA</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Tony — you've written about AI tool sets as a force multiplier. At 45 people with 2 reps on the floor, you know exactly which calls move deals and which ones don't. Curious whether your coaching keeps pace with what you're seeing.</div><div class="char-count">~260 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">3</span><span class="name">Jason Thompson</span></div><div class="meta">VP of Sales · IOTAP Inc. · Charleston, SC</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Jason — CPA turned VP Sales, 20 years straddling finance and revenue. At IOTAP with 4 reps, you're close enough to every call to know the gap between what reps say in a deal review and what actually happens on the call.</div><div class="char-count">~250 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">4</span><span class="name">Joseph Sopracasa</span></div><div class="meta">Director Sales & BD · Hairmax · Boca Raton, FL</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Joseph — 3 months in, mapping a 7-rep team across retail, Amazon, D2C, and professional channels. Coming from DoctorLogic where you drove 60%+ of revenue solo, you know what good execution looks like. Wondering what you're seeing from the team.</div><div class="char-count">~289 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">5</span><span class="name">Ryan McNitzky</span></div><div class="meta">VP of Sales · SiteOwl · Austin, TX</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Ryan — you wrote that you're focused on challenging, coaching, developing people to heights they never thought they could attain. With 4 reps and a SaaS model, the delta between what you coach and what shows up on calls is the real leverage point. Curious how you're closing that gap.</div><div class="char-count">~288 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">6</span><span class="name">Tony Schroer</span></div><div class="meta">VP of Sales · NETFORMIC USA · Dallas, TX</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Tony — leading a 1-rep sales org at a German-founded digital agency scaling into North America — complex deals, international dynamics, no margin for rep inconsistency. Curious what the call-level execution looks like to get there.</div><div class="char-count">~284 chars</div></div>
+
+<div class="footer">6 notes ready · <strong>notes-06-03-26-2/3</strong> · June 3, 2026</div>
+
+<script>
+function copyNote(el, event) {
+  if (event.target.classList.contains('copy-btn')) {
+    const text = el.innerText.replace(/^Copy\n?/, '').trim();
+    navigator.clipboard.writeText(text);
+    const btn = el.querySelector('.copy-btn');
+    btn.textContent = 'Copied! ✓';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+  }
+}
+</script>
+</body>
+</html>

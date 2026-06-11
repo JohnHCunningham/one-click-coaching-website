@@ -1,61 +1,62 @@
-Date,Name,Company,Title,Message Type,Status
-2026-05-27,Justin Sykes,,,Connection Note,Pending
-2026-05-27,Jennifer Zaremba,,,Connection Note,Pending
-2026-05-27,Lennie A Monteiro,,,Connection Note,Pending
-2026-05-27,Adnan Glavas,,,Connection Note,Pending
-2026-05-27,Amanda Martyniuk,,,Connection Note,Pending
-2026-05-27,Daniel St Pierre,,,Connection Note,Pending
-2026-05-27,Ajay B,,,Connection Note,Pending
-2026-05-27,Erin Neal,,,Connection Note,Pending
-2026-05-27,Fahim Shaikh,,,Connection Note,Pending
-2026-05-27,Samaran Jeevanantham,,,Connection Note,Pending
-2026-05-27,Kaitlin Sinclair,,,Connection Note,Pending
-2026-05-27,Sajeer Salih,,,Connection Note,Pending
-2026-05-27,Sonya Aquilina,,,Connection Note,Pending
-2026-05-27,Walter Andri,,,Connection Note,Pending
-2026-05-27,John Mann,,,Connection Note,Pending
-2026-05-27,John Mageau,,,Connection Note,Pending
-2026-05-27,John Kolic,,,Connection Note,Pending
-2026-05-27,Adrian Wright,,,Connection Note,Pending
-2026-05-27,Grant Ferguson,,,Connection Note,Pending
-2026-05-27,Genevieve Robertson,,,Connection Note,Pending
-2026-05-27,Trevor Fulop,,,Connection Note,Pending
-2026-05-27,Chris Turner,,,Connection Note,Pending
-2026-05-27,Rob Iaboni,,,Connection Note,Pending
-2026-05-27,Scott Cull,,,Connection Note,Pending
-2026-05-27,Jordan Kideckel,,,Connection Note,Pending
-2026-05-27,Reuben Menezes,,,Connection Note,Pending
-2026-05-27,Neil Green,,,Connection Note,Pending
-2026-05-27,Stephen Shinnan,,,Connection Note,Pending
-2026-05-27,Steven Morris,,,Connection Note,Pending
-2026-05-27,Priyansh Joshi,,,Connection Note,Pending
-2026-05-27,Sergio Munoz,,,Connection Note,Pending
-2026-05-27,Michael Zelek,,,Connection Note,Pending
-2026-05-27,Dave Vander Ploeg,,,Connection Note,Pending
-2026-05-27,Rachita D,,,Connection Note,Pending
-2026-05-27,Kerry Quail,,,Connection Note,Pending
-2026-05-27,Todd Watson,,,Connection Note,Pending
-2026-05-27,Mark Greenberg,,,Connection Note,Pending
-2026-05-27,Stefan Eyram,,,Connection Note,Pending
-2026-05-27,Vikki Karakousis,,,Connection Note,Pending
-2026-05-27,Sean Anderson,,,Connection Note,Pending
-2026-05-27,Nathan Gicante,,,Connection Note,Pending
-2026-05-27,Tyler Grochot,,,Connection Note,Pending
-2026-05-27,Philip Marmina,,,Connection Note,Pending
-2026-05-27,Folarin Odunayo,,,Connection Note,Pending
-2026-05-27,Brett Robinson,,,Connection Note,Pending
-2026-05-27,Morgan Frese,,,Connection Note,Pending
-2026-05-27,Andrew Barlett,,,Connection Note,Pending
-2026-05-27,Justine Tindall,,,Connection Note,Pending
-2026-05-27,Chris Saracino,,,Connection Note,Pending
-2026-05-27,Jeff Fritsch,,,Connection Note,Pending
-2026-05-27,Winson Chan,,,Connection Note,Pending
-2026-05-27,Cory Gosselin,,,Connection Note,Pending
-2026-05-27,Shawn Sauve,,,Connection Note,Pending
-2026-05-27,Arun Singh,,,Connection Note,Pending
-2026-05-27,Gary Fearnall,,,Connection Note,Pending
-2026-05-27,Anisha Singla,,,Connection Note,Pending
-2026-05-27,Daryl Papoushek,,,Connection Note,Pending
-2026-05-27,Akhil K,,,Connection Note,Pending
-2026-05-27,Mohammad Mourra,,,Connection Note,Pending
-2026-05-27,Joel Friedman,,,Connection Note,Pending
+     1|Date,Name,Company,Title,Message Type,Status
+     2|2026-05-27,Justin Sykes,,,Connection Note,Pending
+     3|2026-05-27,Jennifer Zaremba,,,Connection Note,Pending
+     4|2026-05-27,Lennie A Monteiro,,,Connection Note,Pending
+     5|2026-05-27,Adnan Glavas,,,Connection Note,Pending
+     6|2026-05-27,Amanda Martyniuk,,,Connection Note,Pending
+     7|2026-05-27,Daniel St Pierre,,,Connection Note,Pending
+     8|2026-05-27,Ajay B,,,Connection Note,Pending
+     9|2026-05-27,Erin Neal,,,Connection Note,Accepted
+    10|2026-05-27,Fahim Shaikh,,,Connection Note,Pending
+    11|2026-05-27,Samaran Jeevanantham,,,Connection Note,Accepted
+    12|2026-05-27,Kaitlin Sinclair,,,Connection Note,Pending
+    13|2026-05-27,Sajeer Salih,,,Connection Note,Pending
+    14|2026-05-27,Sonya Aquilina,,,Connection Note,Pending
+    15|2026-05-27,Walter Andri,,,Connection Note,Pending
+    16|2026-05-27,John Mann,,,Connection Note,Pending
+    17|2026-05-27,John Mageau,,,Connection Note,Pending
+    18|2026-05-27,John Kolic,,,Connection Note,Pending
+    19|2026-05-27,Adrian Wright,,,Connection Note,Pending
+    20|2026-05-27,Grant Ferguson,,,Connection Note,Pending
+    21|2026-05-27,Genevieve Robertson,,,Connection Note,Pending
+    22|2026-05-27,Trevor Fulop,,,Connection Note,Pending
+    23|2026-05-27,Chris Turner,,,Connection Note,Pending
+    24|2026-05-27,Rob Iaboni,,,Connection Note,Pending
+    25|2026-05-27,Scott Cull,,,Connection Note,Pending
+    26|2026-05-27,Jordan Kideckel,,,Connection Note,Pending
+    27|2026-05-27,Reuben Menezes,,,Connection Note,Pending
+    28|2026-05-27,Neil Green,,,Connection Note,Pending
+    29|2026-05-27,Stephen Shinnan,,,Connection Note,Pending
+    30|2026-05-27,Steven Morris,,,Connection Note,Pending
+    31|2026-05-27,Priyansh Joshi,,,Connection Note,Pending
+    32|2026-05-27,Sergio Munoz,,,Connection Note,Pending
+    33|2026-05-27,Michael Zelek,,,Connection Note,Pending
+    34|2026-05-27,Dave Vander Ploeg,,,Connection Note,Pending
+    35|2026-05-27,Rachita D,,,Connection Note,Pending
+    36|2026-05-27,Kerry Quail,,,Connection Note,Pending
+    37|2026-05-27,Todd Watson,,,Connection Note,Pending
+    38|2026-05-27,Mark Greenberg,,,Connection Note,Pending
+    39|2026-05-27,Stefan Eyram,,,Connection Note,Pending
+    40|2026-05-27,Vikki Karakousis,,,Connection Note,Pending
+    41|2026-05-27,Sean Anderson,,,Connection Note,Pending
+    42|2026-05-27,Nathan Gicante,,,Connection Note,Pending
+    43|2026-05-27,Tyler Grochot,,,Connection Note,Pending
+    44|2026-05-27,Philip Marmina,,,Connection Note,Pending
+    45|2026-05-27,Folarin Odunayo,,,Connection Note,Pending
+    46|2026-05-27,Brett Robinson,,,Connection Note,Pending
+    47|2026-05-27,Morgan Frese,,,Connection Note,Pending
+    48|2026-05-27,Andrew Barlett,,,Connection Note,Pending
+    49|2026-05-27,Justine Tindall,,,Connection Note,Pending
+    50|2026-05-27,Chris Saracino,,,Connection Note,Pending
+    51|2026-05-27,Jeff Fritsch,,,Connection Note,Pending
+    52|2026-05-27,Winson Chan,,,Connection Note,Pending
+    53|2026-05-27,Cory Gosselin,,,Connection Note,Pending
+    54|2026-05-27,Shawn Sauve,,,Connection Note,Pending
+    55|2026-05-27,Arun Singh,,,Connection Note,Pending
+    56|2026-05-27,Gary Fearnall,,,Connection Note,Pending
+    57|2026-05-27,Anisha Singla,,,Connection Note,Pending
+    58|2026-05-27,Daryl Papoushek,,,Connection Note,Pending
+    59|2026-05-27,Akhil K,,,Connection Note,Pending
+    60|2026-05-27,Mohammad Mourra,,,Connection Note,Pending
+    61|2026-05-27,Joel Friedman,,,Connection Note,Pending
+    62|

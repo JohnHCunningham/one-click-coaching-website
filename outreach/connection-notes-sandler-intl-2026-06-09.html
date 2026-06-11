@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Connection Notes — Sandler International</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #F4EFE8; font-family: 'Inter', -apple-system, sans-serif; padding: 40px; color: #1A1511; }
+  h1 { font-family: 'Instrument Serif', 'Georgia', serif; font-size: 28px; margin-bottom: 4px; }
+  .sub { color: #8F847A; font-size: 13px; margin-bottom: 4px; }
+  .count { color: #B5583E; font-size: 13px; margin-bottom: 24px; }
+  .card { background: #FBF8F3; border: 1px solid #D9D0C2; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .card.skipped { opacity: 0.5; border-style: dashed; }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+  .num { font-size: 12px; color: #B5583E; font-weight: 600; min-width: 24px; }
+  .name { font-weight: 600; font-size: 15px; color: #2A221C; }
+  .flag { font-size: 11px; padding: 2px 8px; border-radius: 999px; font-weight: 500; }
+  .flag-nonsandler { background: #F0E8D8; color: #8B7355; }
+  .flag-skip { background: #F0E0E0; color: #8B5555; }
+  .flag-vip { background: #E8F0E4; color: #557355; }
+  .meta { font-size: 12px; color: #8F847A; margin-bottom: 10px; }
+  .note-box { font-size: 14px; color: #6E6358; line-height: 1.55; margin-bottom: 12px; cursor: pointer; padding: 8px; border-radius: 6px; transition: background 0.15s; }
+  .note-box:hover { background: #F4EFE8; }
+  .card button { background: #2A221C; color: #F4EFE8; border: none; padding: 8px 18px; border-radius: 999px; font-size: 12px; font-weight: 500; cursor: pointer; }
+  .card button.copied { background: #B5583E; }
+  .char-count { font-size: 11px; color: #B5A99A; margin-left: 8px; }
+</style>
+</head>
+<body>
+<h1>🌍 Sandler Partner Connect — International</h1>
+<p class="sub">June 9, 2026 — Sales Nav Export "sandler-intl" · 27 profiles</p>
+<p class="count">22 SEND · 5 SKIP — click note to copy, then paste into LinkedIn</p>
+
+<!-- 1. Arjay G — Sandler Singapore -->
+<div class="card">
+  <div class="card-header"><span class="num">1</span><span class="name">Arjay G</span><span class="flag flag-vip">🇸🇬 Singapore</span></div>
+  <div class="meta">Managing Director · Sandler</div>
+  <div class="note-box" onclick="copyNote(this, 'Arjay — Managing Director, Sandler Singapore. You\'re focused on behavior reinforcement and sustainable growth systems. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Arjay — Managing Director, Sandler Singapore. You're focused on behavior reinforcement and sustainable growth systems. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Arjay — Managing Director, Sandler Singapore. You\'re focused on behavior reinforcement and sustainable growth systems. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">286 chars</span>
+</div>
+
+<!-- 2. Shaun Thomson — Sandler UK -->
+<div class="card">
+  <div class="card-header"><span class="num">2</span><span class="name">Shaun Thomson</span><span class="flag flag-vip">🇬🇧 UK Founder</span></div>
+  <div class="meta">UK Founder & CEO · Sandler Training UK · Greater Oxford Area</div>
+  <div class="note-box" onclick="copyNote(this, 'Shaun — UK Founder & CEO, Sandler UK, 25+ offices. You understand the reinforcement problem at scale. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Shaun — UK Founder & CEO, Sandler UK, 25+ offices. You understand the reinforcement problem at scale. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Shaun — UK Founder & CEO, Sandler UK, 25+ offices. You understand the reinforcement problem at scale. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">288 chars</span>
+</div>
+
+<!-- 3. Simon Carstens — SKIPPED by Claude, but John wants to connect -->
+<div class="card">
+  <div class="card-header"><span class="num">3</span><span class="name">Simon Carstens</span><span class="flag flag-nonsandler">Partnership</span></div>
+  <div class="meta">Partnership / Alliance · Sandler Training ANZ · Auckland, NZ</div>
+  <div class="note-box" onclick="copyNote(this, 'Simon — Partnership & Alliance, Sandler ANZ. You see the full ecosystem from the inside. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Simon — Partnership & Alliance, Sandler ANZ. You see the full ecosystem from the inside. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Simon — Partnership & Alliance, Sandler ANZ. You see the full ecosystem from the inside. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">260 chars</span>
+</div>
+
+<!-- 4. David Pritchard — Sandler London -->
+<div class="card">
+  <div class="card-header"><span class="num">4</span><span class="name">David Pritchard</span></div>
+  <div class="meta">Managing Director · Sandler Training UK (London)</div>
+  <div class="note-box" onclick="copyNote(this, 'David — Managing Director, Sandler London. You help founders and CEOs grow revenue through repeatable, scalable systems. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">David — Managing Director, Sandler London. You help founders and CEOs grow revenue through repeatable, scalable systems. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'David — Managing Director, Sandler London. You help founders and CEOs grow revenue through repeatable, scalable systems. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">284 chars</span>
+</div>
+
+<!-- 5. Chris Ginnelly — GTM Performance / Sandler -->
+<div class="card">
+  <div class="card-header"><span class="num">5</span><span class="name">Chris Ginnelly</span></div>
+  <div class="meta">Managing Partner · GTM Performance Ltd / Sandler · London</div>
+  <div class="note-box" onclick="copyNote(this, 'Chris — Managing Partner, GTM Performance. You\'re building world-class sales cultures with Sandler. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Chris — Managing Partner, GTM Performance. You're building world-class sales cultures with Sandler. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Chris — Managing Partner, GTM Performance. You\'re building world-class sales cultures with Sandler. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">278 chars</span>
+</div>
+
+<!-- 6. Rebekah Tucker — Sandler ANZ -->
+<div class="card">
+  <div class="card-header"><span class="num">6</span><span class="name">Rebekah Tucker</span><span class="flag flag-vip">🇦🇺 CEO ANZ</span></div>
+  <div class="meta">CEO · Sandler Training ANZ · Greater Sydney Area</div>
+  <div class="note-box" onclick="copyNote(this, 'Rebekah — CEO, Sandler ANZ. You\'ve already identified the coaching visibility problem. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Would enjoy comparing notes.')">Rebekah — CEO, Sandler ANZ. You've already identified the coaching visibility problem. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div>
+  <button onclick="copyBtn(this, 'Rebekah — CEO, Sandler ANZ. You\'ve already identified the coaching visibility problem. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Would enjoy comparing notes.')">Copy</button>
+  <span class="char-count">265 chars</span>
+</div>
+
+<!-- 7. Justin Stephenson — Sandler London -->
+<div class="card">
+  <div class="card-header"><span class="num">7</span><span class="name">Justin Stephenson</span></div>
+  <div class="meta">Senior Partner · GTM Performance Ltd / Sandler · London</div>
+  <div class="note-box" onclick="copyNote(this, 'Justin — Senior Partner, Sandler London. You help leaders close the gap between where revenue is and where it could be. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Justin — Senior Partner, Sandler London. You help leaders close the gap between where revenue is and where it could be. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Justin — Senior Partner, Sandler London. You help leaders close the gap between where revenue is and where it could be. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">293 chars</span>
+</div>
+
+<!-- 8. Paul James — Sandler Central -->
+<div class="card">
+  <div class="card-header"><span class="num">8</span><span class="name">Paul James</span></div>
+  <div class="meta">Owner · Sandler Central · Todenham, England</div>
+  <div class="note-box" onclick="copyNote(this, 'Paul — Owner, Sandler Central. Royal Navy, now helping companies stop being ghosted and start assertive conversations. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete. Worth comparing notes.')">Paul — Owner, Sandler Central. Royal Navy, now helping companies stop being ghosted and start assertive conversations. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Paul — Owner, Sandler Central. Royal Navy, now helping companies stop being ghosted and start assertive conversations. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete. Worth comparing notes.')">Copy</button>
+  <span class="char-count">294 chars</span>
+</div>
+
+<!-- 9. Will Palmer — Sandler South Coast -->
+<div class="card">
+  <div class="card-header"><span class="num">9</span><span class="name">Will Palmer</span></div>
+  <div class="meta">Managing Director · Sandler Training South Coast · Southampton</div>
+  <div class="note-box" onclick="copyNote(this, 'Will — MD, Sandler South Coast. You help transform the predictability of sales revenues. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Will — MD, Sandler South Coast. You help transform the predictability of sales revenues. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Will — MD, Sandler South Coast. You help transform the predictability of sales revenues. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">269 chars</span>
+</div>
+
+<!-- 10. Simon Darlaston — Sandler Harrogate -->
+<div class="card">
+  <div class="card-header"><span class="num">10</span><span class="name">Simon Darlaston</span></div>
+  <div class="meta">Managing Partner · Sandler Training UK (Harrogate)</div>
+  <div class="note-box" onclick="copyNote(this, 'Simon — Managing Partner, Sandler Harrogate. You help owners go from good to great — consistent performance, predictable revenue. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Simon — Managing Partner, Sandler Harrogate. You help owners go from good to great — consistent performance, predictable revenue. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Simon — Managing Partner, Sandler Harrogate. You help owners go from good to great — consistent performance, predictable revenue. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">295 chars</span>
+</div>
+
+<!-- 11. Luca Mengoli — Datadog (non-Sandler, adjusted) -->
+<div class="card">
+  <div class="card-header"><span class="num">11</span><span class="name">Luca Mengoli</span><span class="flag flag-nonsandler">non-Sandler</span></div>
+  <div class="meta">Manager, Sales Development EMEA · Datadog · Amsterdam</div>
+  <div class="note-box" onclick="copyNote(this, 'Luca — Mid-Market SDR leader at Datadog, Sandler practitioner. You\'re already thinking in methodology adoption. Different angle, same problem: I\'ve built a diagnostics layer scoring calls against the Sandler framework to track behavior over time. Worth comparing notes.')">Luca — Mid-Market SDR leader at Datadog, Sandler practitioner. You're already thinking in methodology adoption. Different angle, same problem: I've built a diagnostics layer scoring calls against the Sandler framework to track behavior over time. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Luca — Mid-Market SDR leader at Datadog, Sandler practitioner. You\'re already thinking in methodology adoption. Different angle, same problem: I\'ve built a diagnostics layer scoring calls against the Sandler framework to track behavior over time. Worth comparing notes.')">Copy</button>
+  <span class="char-count">292 chars</span>
+</div>
+
+<!-- 12. Paul Hillis — Sandler Birmingham -->
+<div class="card">
+  <div class="card-header"><span class="num">12</span><span class="name">Paul Hillis</span></div>
+  <div class="meta">Regional Director · Sandler · Birmingham</div>
+  <div class="note-box" onclick="copyNote(this, 'Paul — Regional Director, Sandler Birmingham. You help founders move from grind to repeatable systems. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Paul — Regional Director, Sandler Birmingham. You help founders move from grind to repeatable systems. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Paul — Regional Director, Sandler Birmingham. You help founders move from grind to repeatable systems. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">280 chars</span>
+</div>
+
+<!-- 13. Andy McCreadie — Sandler South West -->
+<div class="card">
+  <div class="card-header"><span class="num">13</span><span class="name">Andy McCreadie</span></div>
+  <div class="meta">CEO · Sandler South West · Greater Exeter Area</div>
+  <div class="note-box" onclick="copyNote(this, 'Andy — CEO, Sandler South West. 20 years running the Devon office, working with SMEs to enterprise. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Andy — CEO, Sandler South West. 20 years running the Devon office, working with SMEs to enterprise. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Andy — CEO, Sandler South West. 20 years running the Devon office, working with SMEs to enterprise. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">272 chars</span>
+</div>
+
+<!-- 14. Tal Peer — SKIP -->
+<div class="card skipped">
+  <div class="card-header"><span class="num">14</span><span class="name">Tal Peer</span><span class="flag flag-skip">SKIP</span></div>
+  <div class="meta">Senior Sales Manager · Getnet · Munich</div>
+  <div class="note-box">⊘ SKIP — Fintech/payments. No Sandler connection. Wrong industry.</div>
+</div>
+
+<!-- 15. Paul Glynn — Sandler Southern Counties -->
+<div class="card">
+  <div class="card-header"><span class="num">15</span><span class="name">Paul Glynn</span></div>
+  <div class="meta">Owner · Sandler Training UK (Southern Counties) · Staines-Upon-Thames</div>
+  <div class="note-box" onclick="copyNote(this, 'Paul — Owner, Sandler Southern Counties. You focus on empowering revenue generators, not just training salespeople. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Paul — Owner, Sandler Southern Counties. You focus on empowering revenue generators, not just training salespeople. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Paul — Owner, Sandler Southern Counties. You focus on empowering revenue generators, not just training salespeople. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">290 chars</span>
+</div>
+
+<!-- 16. Anneli Thomson — Sandler UK -->
+<div class="card">
+  <div class="card-header"><span class="num">16</span><span class="name">Anneli Thomson</span></div>
+  <div class="meta">Managing Director · Sandler Training UK · Chipping Norton</div>
+  <div class="note-box" onclick="copyNote(this, 'Anneli — MD, Sandler UK. You work on lasting performance improvement, not the quick fix. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Anneli — MD, Sandler UK. You work on lasting performance improvement, not the quick fix. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Anneli — MD, Sandler UK. You work on lasting performance improvement, not the quick fix. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">274 chars</span>
+</div>
+
+<!-- 17. Caroline Robinson — Sandler Cambridge -->
+<div class="card">
+  <div class="card-header"><span class="num">17</span><span class="name">Caroline Robinson</span></div>
+  <div class="meta">Director · Sandler Training Cambridge · Greater Cambridge Area</div>
+  <div class="note-box" onclick="copyNote(this, 'Caroline — Director, Sandler Cambridge. You focus on lasting skill and behaviour change in consultative sales. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Caroline — Director, Sandler Cambridge. You focus on lasting skill and behaviour change in consultative sales. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Caroline — Director, Sandler Cambridge. You focus on lasting skill and behaviour change in consultative sales. White-label diagnostics layer scoring calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">283 chars</span>
+</div>
+
+<!-- 18. Katya Leonov Zusman — SKIP -->
+<div class="card skipped">
+  <div class="card-header"><span class="num">18</span><span class="name">Katya Leonov Zusman</span><span class="flag flag-skip">SKIP</span></div>
+  <div class="meta">Managing Director · Piper Sandler · London</div>
+  <div class="note-box">⊘ SKIP — Piper Sandler is an investment bank. Wrong Sandler entirely.</div>
+</div>
+
+<!-- 19. Tom Nation — Sandler SW (John wants to connect) -->
+<div class="card">
+  <div class="card-header"><span class="num">19</span><span class="name">Tom Nation</span><span class="flag flag-nonsandler">Associate</span></div>
+  <div class="meta">Associate · Sandler South West · United Kingdom</div>
+  <div class="note-box" onclick="copyNote(this, 'Tom — Associate, Sandler South West. You\'re in the trenches seeing what sticks and what slides. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Tom — Associate, Sandler South West. You're in the trenches seeing what sticks and what slides. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Tom — Associate, Sandler South West. You\'re in the trenches seeing what sticks and what slides. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">261 chars</span>
+</div>
+
+<!-- 20. Jacob Wardrop — eviFile (non-Sandler, adjusted) -->
+<div class="card">
+  <div class="card-header"><span class="num">20</span><span class="name">Jacob Wardrop</span><span class="flag flag-nonsandler">non-Sandler</span></div>
+  <div class="meta">Chief Commercial Officer · eviFile · United Kingdom</div>
+  <div class="note-box" onclick="copyNote(this, 'Jacob — CCO, eviFile. Sandler practitioner running a B2B team. Different angle, same problem: a diagnostics layer scoring calls against the Sandler framework, tracking methodology adoption per rep over time. Worth comparing notes.')">Jacob — CCO, eviFile. Sandler practitioner running a B2B team. Different angle, same problem: a diagnostics layer scoring calls against the Sandler framework, tracking methodology adoption per rep over time. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Jacob — CCO, eviFile. Sandler practitioner running a B2B team. Different angle, same problem: a diagnostics layer scoring calls against the Sandler framework, tracking methodology adoption per rep over time. Worth comparing notes.')">Copy</button>
+  <span class="char-count">268 chars</span>
+</div>
+
+<!-- 21. Simon Finneran — Sandler Canary Wharf ⭐ -->
+<div class="card">
+  <div class="card-header"><span class="num">21</span><span class="name">Simon Finneran</span><span class="flag flag-vip">⭐ Franchisee of Year</span></div>
+  <div class="meta">Managing Director · Sandler Training UK (Canary Wharf) · London</div>
+  <div class="note-box" onclick="copyNote(this, 'Simon — MD, Sandler London Canary Wharf. Franchisee of the Year. You run a data-driven performance consultancy. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Simon — MD, Sandler London Canary Wharf. Franchisee of the Year. You run a data-driven performance consultancy. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Simon — MD, Sandler London Canary Wharf. Franchisee of the Year. You run a data-driven performance consultancy. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">295 chars</span>
+</div>
+
+<!-- 22. Sinead Adam — SKIP -->
+<div class="card skipped">
+  <div class="card-header"><span class="num">22</span><span class="name">Sinead Adam</span><span class="flag flag-skip">SKIP</span></div>
+  <div class="meta">UK/EMEA CFO · Piper Sandler · Greater Aberdeen Area</div>
+  <div class="note-box">⊘ SKIP — Piper Sandler investment bank. Wrong industry. Finance role.</div>
+</div>
+
+<!-- 23. Paul van den Hoven — Sandler NL -->
+<div class="card">
+  <div class="card-header"><span class="num">23</span><span class="name">Paul van den Hoven</span><span class="flag flag-vip">🇳🇱 Netherlands</span></div>
+  <div class="meta">MD/Owner · Sandler Midden Nederland · IJsselstein, Netherlands</div>
+  <div class="note-box" onclick="copyNote(this, 'Paul — MD, Sandler Midden Nederland. You believe reinforcement gives everyone a real chance to grow. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Would enjoy comparing notes.')">Paul — MD, Sandler Midden Nederland. You believe reinforcement gives everyone a real chance to grow. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div>
+  <button onclick="copyBtn(this, 'Paul — MD, Sandler Midden Nederland. You believe reinforcement gives everyone a real chance to grow. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Would enjoy comparing notes.')">Copy</button>
+  <span class="char-count">290 chars</span>
+</div>
+
+<!-- 24. Tim Duffy — Empower Sales / Sandler -->
+<div class="card">
+  <div class="card-header"><span class="num">24</span><span class="name">Tim Duffy</span></div>
+  <div class="meta">Managing Director · Sandler / Empower Sales · Hemel Hempstead</div>
+  <div class="note-box" onclick="copyNote(this, 'Tim — MD, Empower Sales / Sandler. Enterprise sales background, now training. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Tim — MD, Empower Sales / Sandler. Enterprise sales background, now training. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Tim — MD, Empower Sales / Sandler. Enterprise sales background, now training. White-label diagnostics layer scoring every rep call against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">255 chars</span>
+</div>
+
+<!-- 25. Jeremy Thomson — Sales Lift (non-Sandler, adjusted) -->
+<div class="card">
+  <div class="card-header"><span class="num">25</span><span class="name">Jeremy Thomson</span><span class="flag flag-nonsandler">non-Sandler</span></div>
+  <div class="meta">Founder · Sales Lift · London</div>
+  <div class="note-box" onclick="copyNote(this, 'Jeremy — Founder, Sales Lift. HubSpot partner, Sandler-trained. You\'re already bridging methodology and technology. Different angle, same problem: diagnostics layer scoring calls against the Sandler framework, tracking adoption over time. Worth comparing notes.')">Jeremy — Founder, Sales Lift. HubSpot partner, Sandler-trained. You're already bridging methodology and technology. Different angle, same problem: diagnostics layer scoring calls against the Sandler framework, tracking adoption over time. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Jeremy — Founder, Sales Lift. HubSpot partner, Sandler-trained. You\'re already bridging methodology and technology. Different angle, same problem: diagnostics layer scoring calls against the Sandler framework, tracking adoption over time. Worth comparing notes.')">Copy</button>
+  <span class="char-count">291 chars</span>
+</div>
+
+<!-- 26. Berkeley Harris — Sandler Bristol -->
+<div class="card">
+  <div class="card-header"><span class="num">26</span><span class="name">Berkeley Harris</span></div>
+  <div class="meta">Managing Director · Sandler Bristol · Greater Bristol Area</div>
+  <div class="note-box" onclick="copyNote(this, 'Berkeley — MD, Sandler Bristol. You help companies remove the pressure of growth by raising management and sales skills. White-label diagnostics layer scoring rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Berkeley — MD, Sandler Bristol. You help companies remove the pressure of growth by raising management and sales skills. White-label diagnostics layer scoring rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Berkeley — MD, Sandler Bristol. You help companies remove the pressure of growth by raising management and sales skills. White-label diagnostics layer scoring rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">289 chars</span>
+</div>
+
+<!-- 27. Roy Johnson — Sandler Franchisee of Year ⭐ -->
+<div class="card">
+  <div class="card-header"><span class="num">27</span><span class="name">Roy Johnson</span><span class="flag flag-vip">⭐ Franchisee of Year</span></div>
+  <div class="meta">Franchisee of the Year · Sandler Training · Biddulph, England</div>
+  <div class="note-box" onclick="copyNote(this, 'Roy — Sandler Franchisee of the Year. You train an honourable, step-by-step approach that makes sales stick. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Roy — Sandler Franchisee of the Year. You train an honourable, step-by-step approach that makes sales stick. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div>
+  <button onclick="copyBtn(this, 'Roy — Sandler Franchisee of the Year. You train an honourable, step-by-step approach that makes sales stick. I\'ve built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers\' work, don\'t compete with it. Worth comparing notes.')">Copy</button>
+  <span class="char-count">284 chars</span>
+</div>
+
+<script>
+function copyNote(el, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    el.style.background = '#E8F0E4';
+    setTimeout(() => { el.style.background = ''; }, 800);
+  });
+}
+function copyBtn(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 800);
+  });
+}
+</script>
+</body>
+</html>

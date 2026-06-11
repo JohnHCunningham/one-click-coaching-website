@@ -1,0 +1,154 @@
+<!-- ═══════════════════════════════════════════════
+     ONE CLICK COACHING - NAVIGATION COMPONENT
+     Mobile-First Design
+     ═══════════════════════════════════════════════ -->
+
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-line">
+  <div class="container">
+    <div class="flex items-center justify-between py-5">
+
+      <!-- Logo / Lockup -->
+      <a href="/" class="flex items-center gap-3 z-50">
+        <svg viewBox="0 0 200 200" class="w-7 h-7 flex-shrink-0" aria-hidden="true">
+          <circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/>
+          <circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/>
+          <circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/>
+          <circle cx="100" cy="100" r="12" fill="#B5583E"/>
+        </svg>
+        <span class="font-serif text-xl tracking-tight whitespace-nowrap">
+          One Click <em class="text-terracotta">Coaching</em>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation (hidden on mobile, visible lg+) -->
+      <div class="hidden lg:flex items-center gap-9">
+        <a href="/#product" class="text-sm text-stone hover:text-ink transition-colors">How It Works</a>
+        <a href="/pricing.html" class="text-sm text-stone hover:text-ink transition-colors">Pricing</a>
+        <a href="/partners.html" class="text-sm text-stone hover:text-ink transition-colors">Partners</a>
+        <a href="/blog.html" class="text-sm text-stone hover:text-ink transition-colors">Blog</a>
+        <a href="/contact.html" class="text-sm text-stone hover:text-ink transition-colors">Contact</a>
+      </div>
+
+      <!-- Desktop CTA (hidden on mobile, visible lg+) -->
+      <a href="https://app.oneclickcoaching.com"
+         class="hidden lg:inline-flex btn-primary">
+        Login
+      </a>
+
+      <!-- Hamburger Button (visible on mobile, hidden lg+) -->
+      <button
+        type="button"
+        class="lg:hidden relative z-50 p-2 -mr-2"
+        onclick="toggleMenu(event)"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu">
+        <div class="w-6 h-5 flex flex-col justify-between hamburger-icon">
+          <span class="block w-full h-0.5 bg-ink rounded transition-all duration-300"></span>
+          <span class="block w-full h-0.5 bg-ink rounded transition-all duration-300"></span>
+          <span class="block w-full h-0.5 bg-ink rounded transition-all duration-300"></span>
+        </div>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay (fullscreen, hidden by default) -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-40 bg-espresso bg-opacity-96 hidden opacity-0 transition-opacity duration-300 lg:hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile navigation">
+
+  <div class="flex flex-col items-center justify-center min-h-screen gap-8 px-6">
+    <a href="/" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Home</a>
+    <a href="/#product" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">How It Works</a>
+    <a href="/pricing.html" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Pricing</a>
+    <a href="/partners.html" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Partners</a>
+    <a href="/blog.html" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Blog</a>
+    <a href="/contact.html" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Contact</a>
+    <a href="https://app.oneclickcoaching.com"
+       class="mt-4 bg-terracotta text-bone px-8 py-3.5 rounded-full text-base font-medium hover:bg-opacity-90 transition-all">
+      Login
+    </a>
+  </div>
+</div>
+
+<style>
+/* Hamburger animation when open */
+.hamburger-icon.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-icon.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Mobile menu open state */
+#mobile-menu.open {
+  display: flex !important;
+  opacity: 1;
+  pointer-events: auto;
+}
+</style>
+
+<script>
+// Mobile menu toggle function
+function toggleMenu(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.querySelector('.hamburger-icon');
+  const button = document.querySelector('[aria-controls="mobile-menu"]');
+
+  const isOpen = menu.classList.contains('open');
+
+  // Toggle classes
+  menu.classList.toggle('open');
+  hamburger.classList.toggle('open');
+
+  // Update aria-expanded
+  button.setAttribute('aria-expanded', !isOpen);
+
+  // Prevent body scroll when menu is open
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+
+  return false;
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenu = document.getElementById('mobile-menu');
+  const links = mobileMenu.querySelectorAll('a');
+
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      // Close menu after a short delay to allow navigation
+      setTimeout(() => {
+        toggleMenu();
+      }, 150);
+    });
+  });
+
+  // Close menu when clicking outside (on overlay)
+  mobileMenu.addEventListener('click', function(e) {
+    if (e.target === mobileMenu) {
+      toggleMenu();
+    }
+  });
+
+  // Close menu on ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      toggleMenu();
+    }
+  });
+});
+</script>

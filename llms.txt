@@ -1,0 +1,39 @@
+# One Click Coaching
+
+> AI-powered coaching reinforcement platform. Scores every sales call against your team's methodology and fires automated coaching to reps — so training sticks.
+
+## About
+
+One Click Coaching (OCC) integrates with HubSpot and Fathom to score sales calls against the team's methodology (Sandler, Challenger, SPIN, MEDDIC, MEDDPICC, Gap Selling). After every call, OCC generates automated coaching cards specific to each rep's execution gaps. Managers approve before sending. The core problem: reps learn a methodology in training, but execution decays within weeks because managers can't reinforce it consistently.
+
+## Key Pages
+
+- [Platform](https://www.oneclickcoaching.com/index.html) — How OCC works
+- [Pricing](https://www.oneclickcoaching.com/pricing.html) — Plans and pricing
+- [Blog](https://www.oneclickcoaching.com/blog.html) — Sales coaching insights and methodology execution
+- [About](https://www.oneclickcoaching.com/about.html) — About John Cunningham and OCC
+- [Contact](https://www.oneclickcoaching.com/contact.html) — Get in touch
+
+## Blog
+
+The OCC blog covers sales coaching infrastructure, methodology reinforcement, training ROI, manager coaching effectiveness, and the science of behavior change for sales teams. Written for VP Sales, CROs, and Sales Enablement leaders at B2B companies with 5–50 reps.
+
+### Recent Posts
+
+- [Sales Is the Only High-Stakes Discipline Without Coaching Infrastructure](https://www.oneclickcoaching.com/blog/sales-coaching-infrastructure.html) — Every high-stakes discipline built coaching into the workflow. Sports. Medicine. Aviation. Sales never did.
+- [Why Coaching ROI Beats Hiring ROI Every Time](https://www.oneclickcoaching.com/blog/coaching-roi-vs-hiring-roi-sales-teams.html) — Hiring a new rep costs $45K and 5.7 months of ramp. Improving one existing rep by 20% compounds every quarter.
+- [The Manager Was Never Trained to Coach](https://www.oneclickcoaching.com/blog/sales-manager-coaching-training-gap.html) — Only 40% of sales managers were ever trained to coach. The system promoted them for selling and expected them to develop people.
+- [You Didn't Waste Money on Training. You Skipped the Practice.](https://www.oneclickcoaching.com/blog/training-vs-reinforcement-automaticity-sales-methodology.html) — Training creates awareness. Reinforcement builds automaticity. They are not the same system.
+- [Drift Is a Team Sport](https://www.oneclickcoaching.com/blog/drift-is-team-sport-methodology-erosion-spreads.html) — How methodology erosion spreads laterally across teams.
+- [The Enablement Measurement Gap](https://www.oneclickcoaching.com/blog/enablement-measurement-gap-sales-training-roi.html) — You can measure training attendance. You can't measure whether anyone is still using it on live calls.
+- [Cognitive Load on Sales Calls: Why Reps Revert](https://www.oneclickcoaching.com/blog/cognitive-load-sales-calls-why-reps-revert.html) — Under pressure, reps don't rise to the occasion. They revert to whatever their nervous system has practiced the most.
+- [Conversation Intelligence vs Sales Coaching](https://www.oneclickcoaching.com/blog/conversation-intelligence-vs-sales-coaching.html) — Your CI tool records calls. It doesn't score methodology execution or fire coaching.
+- [Why Sales Managers Can't Coach Every Rep Manually](https://www.oneclickcoaching.com/blog/why-sales-managers-cannot-coach-every-rep-manually.html) — The math that makes manual coaching impossible at scale.
+
+## Target Audience
+
+VP Sales, Sales Managers, Sales Enablement leaders, CROs at B2B companies with 5–50 reps who have invested in sales methodology training and are experiencing execution drift.
+
+## Founder
+
+John Cunningham — Founder, One Click Coaching. Hamilton, Ontario. john@oneclickcoaching.com.

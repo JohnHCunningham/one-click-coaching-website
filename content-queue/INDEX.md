@@ -28,6 +28,10 @@ Core wedge: sales training drift after formal training because reps are undercoa
 - `outreach/reviews/` — critic/advisor reviews for outreach
 - `outreach/approved/` — outreach approved for human-controlled sending
 - `outreach/rejected/` — outreach that needs rebuilds
+- `video/drafts/` — generated video scripts awaiting review
+- `video/approved/` — scripts approved for HeyGen production
+- `video/produced/` — videos produced and uploaded (with URLs)
+- `video/rejected/` — scripts that need rebuilds
 
 ## Standing Rules
 
@@ -35,6 +39,15 @@ Core wedge: sales training drift after formal training because reps are undercoa
 - No automated cold outreach sending while inboxes are warming.
 - All drafts should be reviewed against the OCC critic/advisor rubric.
 - Content should speak to leadership-level consequences, not individual rep self-improvement.
+
+### Design Approval Gate (Power Design)
+Before any blog post, carousel, or visual asset goes to approved/:
+- **Type check:** ≤4 sizes, 1.333 modular scale, body ≥24px
+- **Color check:** One accent (#C8501E) max. OCC brand tokens only.
+- **Spacing check:** 8-pt grid. No 6px, 10px, or ad-hoc values.
+- **Contrast check:** Body ≥4.5:1. Heading ≥3:1.
+- **Whitespace check:** ≥40% empty pixels.
+- Brand file reference: `~/Downloads/occ-brand-style.md`
 
 ## Useful Hermes Requests
 

@@ -16,3 +16,6 @@ node_modules/
 .env*.local
 env-edit.txt
 add-slack-credentials.sh
+
+# Generated CSS
+styles/output.css

@@ -108,9 +108,9 @@ Channel 2 — White label to training organizations
 |----------|----------|
 | Website | oneclickcoaching.com |
 | App | app.oneclickcoaching.com |
-| GitHub (website) | github.com/JohnC-Auto/one-click-coaching-website |
+| GitHub (website) | github.com/JohnHCunningham/one-click-coaching-website |
 | GitHub (app) | /Users/johncunningham/oneclickcoaching (Veso/local) |
-| Vercel (website) | oneclickcoaching-xero.vercel.app |
+| Vercel (website) | www.oneclickcoaching.com (john-cunninghams-projects-7f2beb2e) |
 | Outreach dashboard | outreach-dashboard-kjf6e2107-john-cunninghams-projects-7f2beb2e.vercel.app |
 | Booking | tidycal.com/aiautomations/sales-coach |
 | Email | john@oneclickcoaching.com / john@aiadvantagesolutions.ca |

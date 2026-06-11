@@ -12,6 +12,10 @@ from datetime import date, datetime, timedelta
 
 OUTREACH_DIR = "/Users/johncunningham/one-click-coaching-website/outreach"
 
+def safe_strip(val):
+    """Return stripped string, or empty string if None."""
+    return (val or "").strip()
+
 def check_followups():
     today = str(date.today())
     yesterday = str(date.today() - timedelta(days=1))
@@ -27,34 +31,35 @@ def check_followups():
         with open(csv_file, 'r') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                status = row.get("Status", "").strip()
-                notes = row.get("Follow-up Notes", "").strip()
-                accepted = row.get("Accepted Date", "").strip()
-                name = row.get("Name", "").strip()
-                company = row.get("Company", "").strip()
+                # Skip blank/malformed rows that produce None keys
+                if row is None or not any(row.values()):
+                    continue
                 
-                if status == "Connected" and accepted:
-                    # Check if follow-up was sent
-                    followup_sent = any(phrase in notes.lower() for phrase in [
-                        "follow-up sent", "replied", "messaged"
-                    ])
+                status = safe_strip(row.get("Status"))
+                name = safe_strip(row.get("Name"))
+                company = safe_strip(row.get("Company"))
+                title = safe_strip(row.get("Title"))
+                accepted_date = safe_strip(row.get("Date"))
+                
+                # Status values in CSV: Sent, Pending, Accepted
+                # "Accepted" means they connected — needs follow-up
+                if status == "Accepted" and name:
+                    # Calculate hours since acceptance
+                    try:
+                        accepted_dt = datetime.strptime(accepted_date, "%Y-%m-%d")
+                        hours_ago = (datetime.now() - accepted_dt).total_seconds() / 3600
+                        urgency = "⚠️ OVERDUE" if hours_ago > 24 else f"⏰ {24 - int(hours_ago)}h remaining"
+                    except:
+                        urgency = "⚠️ Unknown"
                     
-                    if not followup_sent:
-                        # Calculate hours since acceptance
-                        try:
-                            accepted_dt = datetime.strptime(accepted, "%Y-%m-%d")
-                            hours_ago = (datetime.now() - accepted_dt).total_seconds() / 3600
-                            urgency = "⚠️ OVERDUE" if hours_ago > 24 else f"⏰ {24 - int(hours_ago)}h remaining"
-                        except:
-                            urgency = "⚠️ Unknown"
-                        
-                        pending.append({
-                            "name": name,
-                            "company": company,
-                            "accepted": accepted,
-                            "urgency": urgency,
-                            "source": day
-                        })
+                    pending.append({
+                        "name": name,
+                        "company": company,
+                        "title": title,
+                        "accepted": accepted_date,
+                        "urgency": urgency,
+                        "source": day
+                    })
     
     return pending
 
@@ -72,7 +77,7 @@ def main():
     print()
     
     for p in pending:
-        print(f"   {p['name']} — {p['company']}")
+        print(f"   {p['name']} — {p['title']} @ {p['company']}" if p['company'] else f"   {p['name']} — {p['title']}")
         print(f"   Accepted: {p['accepted']} | {p['urgency']}")
         print(f"   Source: linkedin-connections-{p['source']}.csv")
         print()

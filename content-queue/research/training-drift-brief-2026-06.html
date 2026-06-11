@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    margin: 0.9in 0.6in 0.6in 0.6in;
+    size: letter;
+  }
+  * { box-sizing: border-box; }
+
+  /* ── RUNNING HEADER — repeats on every printed page ── */
+  .print-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.55in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F4EFE8;
+    z-index: 999;
+  }
+  .print-header svg {
+    height: 48px;
+    width: auto;
+  }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #2A221C;
+    line-height: 1.85;
+    background: #F4EFE8;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: #1A1511;
+    color: #F4EFE8;
+    position: relative;
+    page-break-after: always;
+    margin: -0.9in -0.6in -0.6in -0.6in;
+    min-height: 10.5in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 80px;
+  }
+  .cover-inner {
+    max-width: 520px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cover-top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #B5583E, #C9A687);
+  }
+  .cover-target { margin-bottom: 44px; }
+  .cover-label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #C9A687;
+    margin-bottom: 36px;
+  }
+  .cover-title {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #F4EFE8;
+    max-width: 560px;
+    margin-bottom: 40px;
+  }
+  .cover-title em { font-style: normal; color: #B5583E; }
+  .cover-wordmark {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #F4EFE8;
+    margin-bottom: 8px;
+  }
+  .cover-wordmark span { color: #B5583E; font-style: italic; }
+  .cover-divider {
+    width: 50px;
+    height: 2px;
+    background: #B5583E;
+    margin: 36px auto;
+  }
+  .cover-meta {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: #8F847A;
+    line-height: 2.2;
+  }
+  .cover-meta strong { color: #C9A687; font-weight: 600; }
+  .cover-bottom {
+    position: absolute;
+    bottom: 36px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    color: #3a322c;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 17px;
+    color: #B5583E;
+    margin: 32px 0 12px;
+    font-weight: 700;
+  }
+  p { margin: 0 0 13px 0; font-size: 15px; }
+  blockquote {
+    border-left: 3px solid #B5583E;
+    margin: 22px 0;
+    padding: 10px 20px;
+    background: rgba(181,88,62,0.06);
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A1511;
+    line-height: 1.5;
+  }
+  .scene {
+    background: #2A221C;
+    color: #C9A687;
+    padding: 20px 26px;
+    margin: 22px 0;
+    border-radius: 3px;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .scene strong { color: #F4EFE8; }
+  ul { margin: 8px 0 22px 20px; padding: 0; }
+  li { margin-bottom: 7px; font-size: 14px; }
+  .implication {
+    background: rgba(181,88,62,0.07);
+    border-left: 3px solid #B5583E;
+    padding: 10px 16px;
+    margin: 10px 0 22px;
+    font-size: 13px;
+    color: #6E6358;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .closer {
+    margin-top: 44px;
+    padding-top: 28px;
+    border-top: 2px solid #C9A687;
+  }
+  .closer p { font-size: 16px; font-weight: 500; }
+  .occ-note {
+    margin-top: 24px;
+    padding: 18px 22px;
+    background: rgba(181,88,62,0.06);
+    border-left: 3px solid #B5583E;
+    font-size: 14px;
+    color: #2A221C;
+    line-height: 1.7;
+  }
+  .occ-note strong { color: #B5583E; }
+  .sources {
+    margin-top: 40px;
+    padding-top: 22px;
+    border-top: 1px solid #C9A687;
+    font-size: 10px;
+    color: #6E6358;
+    line-height: 1.8;
+  }
+  .sources strong {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    color: #B5583E;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* ── BACK COVER ── */
+  .back-cover {
+    background: #1A1511;
+    color: #8F847A;
+    text-align: center;
+    padding: 60px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: -0.7in -0.6in -0.6in -0.6in;
+    padding: 60px 0.6in;
+  }
+  .back-cover .bc-target { margin-bottom: 20px; }
+  .back-cover .brand {
+    font-size: 14px;
+    color: #C9A687;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .back-cover p { font-size: 11px; color: #6E6358; }
+</style>
+</head>
+<body>
+
+<!-- Running header — fixed position, repeats on every printed page -->
+<div class="print-header">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="44" height="44" style="margin-right:10px;flex-shrink:0;">
+    <circle cx="40" cy="40" r="30" fill="none" stroke="#2A221C" stroke-width="3"/>
+    <circle cx="40" cy="40" r="20" fill="none" stroke="#2A221C" stroke-width="3"/>
+    <circle cx="40" cy="40" r="10" fill="none" stroke="#2A221C" stroke-width="3"/>
+    <circle cx="40" cy="40" r="4" fill="#B5583E"/>
+    <path d="M40 6v8M40 66v8M6 40h8M66 40h8" stroke="#2A221C" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <span style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2A221C;white-space:nowrap;">One Click <span style="color:#B5583E;font-style:italic;">Coaching</span></span>
+</div>
+
+<!-- ═════════ COVER ═════════ -->
+<div class="cover">
+  <div class="cover-top-line"></div>
+  <div class="cover-inner">
+  
+  <div class="cover-target">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100" height="100">
+      <circle cx="60" cy="60" r="34" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+      <circle cx="60" cy="60" r="24" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+      <circle cx="60" cy="60" r="13" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+      <circle cx="60" cy="60" r="5" fill="#B5583E"/>
+      <path d="M60 26v9M60 85v9M26 60h9M85 60h9" stroke="#F4EFE8" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="cover-wordmark">One Click <span>Coaching</span></div>
+  <div class="cover-label">Research Brief · June 2026</div>
+
+  <div class="cover-title">Sales Training Fails.<br>We All Know It.<br>Here's <em>Why</em> — And Who's<br>Carrying the Fix.</div>
+
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <strong>Author</strong> &nbsp; John Cunningham<br>
+    <strong>Date</strong> &nbsp; June 2026
+  </div>
+  <div class="cover-bottom">oneclickcoaching.com</div>
+  </div>
+</div>
+
+<!-- ═════════ CONTENT ═════════ -->
+<p>The workshop was great.</p>
+
+<p>Your team came back sharp. They were running the framework in role-plays. You heard the language in pipeline reviews.</p>
+
+<p>Three months later, you hear the same old patterns creeping back. The qualification questions got shorter. The discovery got looser. The framework is still in the slide deck — but it's not in the conversations.</p>
+
+<p>You're not imagining it.</p>
+
+<div class="scene">
+You're in a one-on-one on Thursday afternoon. Your rep walks you through a deal she's been working for six weeks. You start asking questions. You realize — somewhere around the third answer — that she's never established whether anyone in that company has budget authority. She doesn't know either. Neither of you says it out loud.<br><br>
+<strong>That's not a skills problem. That's a coaching problem that never happened.</strong>
+</div>
+
+<p>U.S. companies spend over $300 billion every year on corporate training. Sales training alone is a $5.8 billion industry in North America — and it's growing 8–10% annually.</p>
+
+<p>Organizations invest heavily. They fly in trainers. They run multi-day workshops. They celebrate the launch. Then the workshop ends. That's where the investment begins to evaporate.</p>
+
+<h2>87% Gone in a Month</h2>
+
+<p>Within 30 days of a sales training event, learners forget approximately 70% of what was taught without active reinforcement. By 90 days, retention drops below 15%.</p>
+
+<blockquote>87% of new skills learned in training are lost within 30 days when no reinforcement follows.</blockquote>
+
+<p>For every $100,000 spent on methodology training, roughly $87,000 produces no lasting behavior change. The 13% that sticks is whatever the rep happens to remember under pressure.</p>
+
+<h2>The Lever Nobody Is Training</h2>
+
+<p>The single biggest predictor of whether training sticks isn't the methodology.</p>
+
+<p>It isn't the trainer.</p>
+
+<p>It isn't the rep's motivation.</p>
+
+<p><strong>It's the front-line sales manager.</strong></p>
+
+<p>Organizations with dynamic, consistent coaching programs see win rates 28% higher than those without. Companies that invest in ongoing manager-led reinforcement report 10–19% higher quota attainment.</p>
+
+<p>So who's doing the coaching? Sales managers report spending less than 20% of their time on coaching and development. The rest goes to pipeline reviews. Forecasting. CRM hygiene. Internal meetings.</p>
+
+<p>Why?</p>
+
+<ul>
+<li>Only 40% of sales managers say they've received adequate training on how to coach.</li>
+<li>Only 20% of sales managers are rated as effective coaches by their own teams.</li>
+</ul>
+
+<p>Most were promoted because they were great reps. Not because they knew how to develop people.</p>
+
+<h2>What "Coaching" Looks Like In The Wild</h2>
+
+<p>When researchers observe sales managers in the field, the gap between intention and reality is stark:</p>
+
+<p>Managers say they do role-play and skill practice. Researchers observe it in fewer than 15% of one-on-ones.</p>
+
+<p>Managers say they coach in real-time on calls. The observation is usually a post-call deal critique, not behavior-level coaching.</p>
+
+<p>Methodology reinforcement gets reduced to a slide deck mention at the quarterly business review.</p>
+
+<p>The manager isn't lazy. They're untrained, unsupported, and measured on pipeline outcome — not on coaching proficiency. The system produces the behavior.</p>
+
+<h2>What Drift Actually Costs</h2>
+
+<p>Run the numbers on a mid-market B2B team: 15 reps, $80K ACV, 4 deals per year.</p>
+
+<p>At full potential: $4.8 million annually. At a 15% performance gap from training drift: $720,000 in unrealized revenue. Across a three-year methodology investment cycle: more than $2 million in preventable loss.</p>
+
+<p>That's seven to ten times the cost of the training program itself. And it compounds every year.</p>
+
+<h2>What The Evidence Actually Prescribes</h2>
+
+<h3 style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:#2A221C;margin:26px 0 6px;">1. Frequency Matters More Than Intensity</h3>
+
+<p>Monthly coaching lifts performance by about 7%. Weekly coaching: 19%. Daily micro-coaching — five to ten minutes of targeted reinforcement tied to a real deal — shows the strongest correlation with sustained behavior change.</p>
+
+<div class="implication">&rarr; Stop scheduling coaching. Build a cadence where it happens automatically, tied to real call activity — not to calendar availability.</div>
+
+<h3 style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:#2A221C;margin:26px 0 6px;">2. Methodology + Moment = Retention</h3>
+
+<p>Generic advice ("be more curious," "dig deeper") evaporates immediately. Coaching that's tied to a specific methodology moment — "this is where the framework would flag the qualification gap" — produces three times higher recall and application.</p>
+
+<div class="implication">&rarr; Every coaching conversation should be anchored to a specific call behavior, a specific framework step, and a specific deal — not to a general performance theme.</div>
+
+<h3 style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:#2A221C;margin:26px 0 6px;">3. The Manager Needs A System</h3>
+
+<p>The top predictor of coaching consistency isn't manager talent or motivation. It's whether the manager has a prompt. A structure. A framework that removes the cognitive load of "what do I coach on today?" When a system exists, coaching frequency increases by 300–400% across teams.</p>
+
+<div class="implication">&rarr; If your managers are inconsistent coaches, don't train harder — give them a system that tells them what to address, when, and why.</div>
+
+<div class="closer">
+<p>You already know this.</p>
+
+<p>You knew it when you signed the training invoice. You knew it when the energy dissipated sixty days later. You knew it every time you heard the old patterns back on the call recording.</p>
+
+<p>The gap between what your team learned in the workshop and what they're doing right now — that gap has a name. It has a cost. It has a mechanism.</p>
+
+<p>And none of those things change because you ran another training day.</p>
+</div>
+
+<div class="occ-note">
+<strong>One Click Coaching</strong> builds the reinforcement system that sits between your methodology and your managers. It scores every sales call against your framework, identifies where execution is drifting, and gives managers a specific coaching prompt — tied to a real deal, a real rep, and a real behavior. No new tools. No extra meetings. Just the right coaching moment, delivered when it matters.<br><br>
+If this research resonated, reach out at <strong>john@oneclickcoaching.com</strong> or visit <strong>oneclickcoaching.com</strong>.
+</div>
+
+<div class="sources">
+<strong>Sources</strong><br>
+ATD 2024 State of the Industry Report · Training Industry, Inc. 2025 · Ebbinghaus / ATD Science of Sales Training Reinforcement 2023 · Sales Management Association 2024, 2025 · CSO Insights 2024 · Forrester Research 2023 · Gartner/CEB 2023 · Rain Group 2024 · Vantage Point Performance 2024 · Bridge Group/Pavilion 2025
+</div>
+
+<!-- ═════════ BACK COVER ═════════ -->
+<div class="back-cover">
+  <div class="bc-target">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="72" height="72">
+      <circle cx="60" cy="60" r="34" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+      <circle cx="60" cy="60" r="24" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+      <circle cx="60" cy="60" r="13" fill="none" stroke="#F4EFE8" stroke-width="2.5"/>
+      <circle cx="60" cy="60" r="5" fill="#B5583E"/>
+      <path d="M60 26v9M60 85v9M26 60h9M85 60h9" stroke="#F4EFE8" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="brand">One Click Coaching</div>
+  <p>John Cunningham · john@oneclickcoaching.com</p>
+  <p>oneclickcoaching.com</p>
+</div>
+
+</body>
+</html>

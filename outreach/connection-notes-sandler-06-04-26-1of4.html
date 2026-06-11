@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — sandler-06-04-26-1/4</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F0EB; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; color: #3B2F2A; }
+  .header { max-width: 680px; margin: 0 auto 24px; }
+  .header h1 { font-size: 1.5rem; color: #4A3728; }
+  .header p { font-size: 0.9rem; color: #8B7355; margin-top: 4px; }
+  .stats { display: flex; gap: 16px; margin-top: 8px; font-size: 0.85rem; }
+  .stat { background: #EDE5D9; padding: 3px 10px; border-radius: 4px; }
+  .stat.send { background: #D4E8D0; color: #3A5A32; }
+  .card { max-width: 680px; margin: 0 auto 16px; background: #FFFBF7; border: 1px solid #E0D5C7; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .card-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .num { font-size: 1.1rem; font-weight: 700; color: #C06E48; min-width: 28px; }
+  .name { font-size: 1.1rem; font-weight: 700; color: #3B2F2A; }
+  .meta { font-size: 0.85rem; color: #8B7355; margin-bottom: 12px; }
+  .note-box { background: #FAF6F0; border: 1px solid #E0D5C7; border-radius: 6px; padding: 14px; font-size: 0.95rem; line-height: 1.5; position: relative; }
+  .copy-btn { position: absolute; top: 8px; right: 10px; background: #C06E48; color: #FFF; border: none; border-radius: 4px; padding: 3px 10px; font-size: 0.75rem; cursor: pointer; }
+  .copy-btn:hover { background: #A0583A; }
+  .char-count { text-align: right; font-size: 0.75rem; color: #A09080; margin-top: 4px; }
+  .footer { max-width: 680px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #E0D5C7; text-align: center; font-size: 0.85rem; color: #8B7355; }
+</style>
+<script>
+function copyNote(el, event) {
+  event.stopPropagation();
+  const btn = el.querySelector('.copy-btn');
+  const text = el.innerText.replace('Copy', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  });
+}
+</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤝 Sandler Partner Connect — Batch 1/4</h1>
+  <p>List: <strong>sandler-06-04-26-1/4</strong> · 25 notes · Thu, June 4, 2026</p>
+  <div class="stats">
+    <span class="stat send">25 SEND</span>
+    <span class="stat">Sandler Franchisees</span>
+  </div>
+</div>
+
+<div class="card"><div class="card-header"><span class="num">1</span><span class="name">Mark Foley</span></div><div class="meta">VP of Global Accounts · Sandler</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Mark — VP of Global Accounts at Sandler. You understand reinforcement better than most. I've built a white-label diagnostics layer that scores every rep call against the Sandler framework. I extend trainers' work, don't compete with it. Worth connecting.</div><div class="char-count">258 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">2</span><span class="name">Troy Elmore</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Troy — you said it yourself: one or two days of training doesn't stick. I've built a white-label diagnostics layer that scores calls against Sandler 60 days after the room. I extend trainers' work, don't compete with it. Worth comparing notes.</div><div class="char-count">244 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">3</span><span class="name">Jeff Borovitz</span></div><div class="meta">Sandler Franchisee · Remodeling & Custom Build</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Jeff — your work with remodeling and custom build teams is specific. I've built a white-label diagnostics layer that scores calls against the Sandler framework — keeps what you taught in the field, not just the workshop. I extend trainers' work, don't compete. Worth connecting.</div><div class="char-count">279 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">4</span><span class="name">Matt Close</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Matt — you help CEOs maximize their teams. The gap is usually what happens to Sandler skills between sessions. I've built a white-label diagnostics layer that scores every call against the framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div><div class="char-count">270 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">5</span><span class="name">Andy Rich</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Andy — you help B2B leaders stop chasing. I work on what happens after the methodology is installed: the reinforcement gap. White-label diagnostics layer that scores calls against Sandler. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">265 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">6</span><span class="name">Deborah Ellenberg</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Deborah — business growth lives or dies in the field, after the training. I've built a white-label diagnostics layer that scores every rep call against the Sandler framework. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">252 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">7</span><span class="name">Brad Ferguson</span></div><div class="meta">Sandler Franchisee · 30 years</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Brad — 30 years of client success means you know the reinforcement problem cold. I've built a white-label diagnostics layer that scores calls against the Sandler framework between sessions. I extend trainers' work, don't compete with it. Worth a conversation.</div><div class="char-count">260 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">8</span><span class="name">Keith Barber</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Keith — I work on the gap between what Sandler installs and what reps execute 60 days later. White-label diagnostics layer that scores every call against the framework. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">244 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">9</span><span class="name">Cesar Perez</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Cesar — you build predictable, scalable results. The unpredictable part is usually what sticks after the training. I've built a white-label diagnostics layer that scores calls against Sandler. I extend trainers' work, don't compete with it. Worth connecting.</div><div class="char-count">259 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">10</span><span class="name">Michelle Childs</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Michelle — clarity, confidence, consistency. That's what the reinforcement gap steals. I've built a white-label diagnostics layer that scores every call against the Sandler framework. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">261 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">11</span><span class="name">Rich Chiarello</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Rich — above the line is where reps live after great coaching. I work on keeping them there between sessions. White-label diagnostics layer that scores calls against Sandler. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">252 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">12</span><span class="name">Scott Bailey</span></div><div class="meta">Sandler Franchisee · 500+ boot camps</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Scott — 500+ Sandler boot camps. You know what lands in the room. I work on what happens 60 days after it. White-label diagnostics layer that scores every call against the framework. I extend trainers' work, don't compete with it. Worth connecting.</div><div class="char-count">249 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">13</span><span class="name">Jen Fraiman</span></div><div class="meta">Sandler Franchisee · #Sandler4SaaS</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Jen — #Sandler4SaaS is smart positioning. I work on the reinforcement layer: what SaaS reps actually execute on calls 60 days after training. White-label diagnostics that score against the Sandler framework. I extend trainers' work, don't compete. Worth comparing notes.</div><div class="char-count">271 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">14</span><span class="name">Hamish Knox</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hamish — consistency and predictability don't survive the gap between the workshop and Monday morning. I've built a white-label diagnostics layer that scores calls against Sandler. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">257 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">15</span><span class="name">Kaysi Coelho-Curtin</span></div><div class="meta">Sandler Franchisee · AI + Sandler</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Kaysi — you're already combining Sandler with AI tools. I've built a white-label diagnostics layer that scores every rep call against the Sandler framework — reinforcement, not replacement. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">266 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">16</span><span class="name">Toby Payne</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Toby — I work on the reinforcement problem every Sandler trainer lives with: the gap between what reps learn and what they execute 60 days later. White-label diagnostics that score against the framework. I extend trainers' work, don't compete. Worth connecting.</div><div class="char-count">261 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">17</span><span class="name">Montgomery Ostrander</span></div><div class="meta">Sandler Franchisee · Sales Enablement & Psychology</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Montgomery — sales enablement and psychology. You understand behavior change isn't a one-session event. I've built a white-label diagnostics layer that scores calls against Sandler over time. I extend trainers' work, don't compete with it. Worth comparing notes.</div><div class="char-count">262 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">18</span><span class="name">Tati Botta</span></div><div class="meta">Sandler Franchisee · 3x Sandler Award Winner</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Tati — three Sandler awards means your clients get results. I work on sustaining them: a white-label diagnostics layer that scores calls against the Sandler framework between sessions. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">260 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">19</span><span class="name">Patrick Carroll</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Patrick — performance improvement lives in the field, not just the room. I've built a white-label diagnostics layer that scores every call against the Sandler framework. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">246 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">20</span><span class="name">Michael Norton</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Michael — you help organizations eliminate excuses and drive measurable growth. Measurement is exactly what I work on: a white-label diagnostics layer scoring every call against Sandler. I extend trainers' work, don't compete with it. Worth connecting.</div><div class="char-count">253 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">21</span><span class="name">David Fischer</span></div><div class="meta">Sandler Training NYC</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>David — Sandler Training NYC. You know the reinforcement problem. I've built a white-label diagnostics layer that scores every rep call against the Sandler framework — the accountability layer between your room and Monday morning. I extend trainers' work, don't compete. Worth a conversation.</div><div class="char-count">291 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">22</span><span class="name">Christopher Kelly</span></div><div class="meta">Sandler Franchisee · 🇨🇦 Canadian</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Christopher — fellow Canadian. I work on the reinforcement problem Sandler trainers know well: what sticks after the workshop. White-label diagnostics that score every call against the framework. I extend trainers' work, don't compete with it. Worth comparing notes.</div><div class="char-count">264 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">23</span><span class="name">Sondeep Purewal</span></div><div class="meta">Sandler Franchisee</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Sondeep — scalable, repeatable sales systems need a reinforcement layer. I've built a white-label diagnostics layer that scores rep calls against the Sandler framework. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">243 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">24</span><span class="name">Russell Mitchell</span></div><div class="meta">Sales & Leadership Consultant</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Russell — consulting and coaching for sales and leadership. I work the same gap: between training and field execution. White-label diagnostics layer that scores calls against the Sandler framework. I extend trainers' work, don't compete with it. Worth connecting.</div><div class="char-count">262 chars</div></div>
+
+<div class="card"><div class="card-header"><span class="num">25</span><span class="name">Claire Mayweather</span></div><div class="meta">Award-Winning Sandler Trainer · Just Right Reader</div><div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Claire — award-winning Sandler trainer transforming sales culture. I work on what happens after the transformation: a white-label diagnostics layer that scores every call against the framework. I extend trainers' work, don't compete with it. Would enjoy comparing notes.</div><div class="char-count">268 chars</div></div>
+
+<div class="footer">sandler-06-04-26-1/4 · June 4, 2026 · 25 Sandler Partner Connect notes</div>
+
+</body>
+</html>

@@ -4,7 +4,10 @@
   "description": "Static website for One Click Coaching",
   "private": true,
   "scripts": {
-    "generate-image": "node utils/generate-blog-image.js"
+    "generate-image": "node utils/generate-blog-image.js",
+    "build:css": "tailwindcss -i ./styles/main.css -o ./styles/output.css --minify",
+    "watch:css": "tailwindcss -i ./styles/main.css -o ./styles/output.css --watch",
+    "dev": "npm run watch:css"
   },
   "keywords": [
     "sales",
@@ -20,5 +23,10 @@
     "dotenv": "^16.4.5",
     "openai": "^4.77.0",
     "pg": "^8.20.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.16"
   }
 }

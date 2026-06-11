@@ -1,445 +1,589 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>Contact — One Click Coaching | Book a Walkthrough</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Get in touch with One Click Coaching. Book a 20-minute walkthrough, start a 14-day trial, or talk pricing. We respond within one business day." />
-<meta name="keywords" content="One Click Coaching contact, book walkthrough, sales coaching demo, AI coaching trial, 14-day free trial, sales methodology platform, SCORE Method" />
-<meta name="author" content="One Click Coaching Inc." />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://www.oneclickcoaching.com/contact" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — One Click Coaching | Book a Walkthrough</title>
+  <meta name="description" content="Get in touch with One Click Coaching. Book a 20-minute walkthrough, start a 14-day trial, or talk pricing. We respond within one business day.">
+  <meta name="keywords" content="One Click Coaching contact, book walkthrough, sales coaching demo, AI coaching trial, 14-day free trial, sales methodology platform, SCORE Method">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.oneclickcoaching.com/contact">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.oneclickcoaching.com/contact" />
-<meta property="og:title" content="Contact — One Click Coaching" />
-<meta property="og:description" content="Book a 20-minute walkthrough. We respond within one business day." />
-<meta property="og:image" content="https://www.oneclickcoaching.com/og-image.svg" />
-<meta property="og:site_name" content="One Click Coaching" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.oneclickcoaching.com/contact">
+  <meta property="og:title" content="Contact — One Click Coaching">
+  <meta property="og:description" content="Book a 20-minute walkthrough. We respond within one business day.">
+  <meta property="og:image" content="https://www.oneclickcoaching.com/og-image.svg">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Contact — One Click Coaching" />
-<meta name="twitter:description" content="Book a 20-minute walkthrough. We respond within one business day." />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — One Click Coaching">
+  <meta name="twitter:description" content="Book a 20-minute walkthrough. We respond within one business day.">
 
-<!-- Theme Color -->
-<meta name="theme-color" content="#2A221C" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bone:#F4EFE8;--bone-2:#EAE3D8;--paper:#FBF8F3;--clay:#C9A687;--clay-2:#B08A66;
-    --terracotta:#B5583E;--espresso:#2A221C;--ink:#1A1511;--stone:#6E6358;--stone-2:#8F847A;
-    --line:#D9D0C2;--line-2:#C6BAA8;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
-  html,body{background:var(--bone);color:var(--ink);font-family:'Inter',sans-serif;font-size:17px;line-height:1.55}
-  a{color:inherit;text-decoration:none}
-  em{font-style:italic}
-  button{font-family:inherit;cursor:pointer;border:none;background:none}
-  input,textarea,select{font-family:inherit;font-size:inherit;color:inherit}
-  .serif{font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-0.02em}
-  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:0.12em;text-transform:uppercase;font-size:11px}
-  .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  nav.top{position:sticky;top:0;z-index:50;background:rgba(244,239,232,0.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-  nav.top .inner{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
-  nav.top .lockup{display:inline-flex;align-items:center;gap:12px;white-space:nowrap}
-  nav.top .lockup svg{width:26px;height:26px;flex-shrink:0}
-  nav.top .lockup .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em}
-  nav.top .links{display:none;gap:36px;font-size:14px;color:var(--stone);pointer-events:none}
-  nav.top .links a.active{color:var(--ink)}
-  nav.top .links a:hover{color:var(--ink)}
-  nav.top .cta{display:none;background:var(--espresso);color:var(--bone);padding:10px 20px;border-radius:999px;font-size:13px;font-weight:500;transition:transform .15s;pointer-events:none}
-  nav.top .cta:hover{transform:translateY(-1px)}
-
-  /* ── hamburger ── */
-  .hamburger { display: block; background: none; border: none; cursor: pointer; padding: 8px; z-index: 60; position: relative; }
-  .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
-  .hamburger span + span { margin-top: 5px; }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999999; background: rgba(26,21,17,0.96); flex-direction: column; align-items: center; justify-content: center; gap: 32px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
-  .mobile-menu.open { display: flex !important; pointer-events: auto; opacity: 1; }
-  .mobile-menu a { color: var(--bone); font-size: 22px; font-weight: 300; letter-spacing: -0.01em; }
-  .mobile-menu a:hover { color: var(--clay); }
-  .mobile-menu .cta-mobile { background: var(--terracotta); color: var(--bone); padding: 14px 32px; border-radius: 999px; font-size: 16px; font-weight: 500; margin-top: 8px; }
-
-  /* ── desktop nav (≥901px) ── */
-  @media (min-width: 901px) {
-    .hamburger { display: none !important; }
-    nav.top .links { display: flex !important; pointer-events: auto !important; }
-    nav.top .cta { display: inline-flex !important; pointer-events: auto !important; }
-  }
-
-  /* Hero */
-  section.hero{padding:120px 0 60px}
-  .hero .eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--terracotta);margin-bottom:40px}
-  .hero .eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--terracotta)}
-  .hero h1{font-family:'Instrument Serif',serif;font-size:clamp(56px,8vw,120px);line-height:1.0;letter-spacing:-0.035em;max-width:1100px}
-  .hero h1 em{color:var(--terracotta)}
-  .hero .lede{margin-top:40px;max-width:560px;font-size:20px;line-height:1.55;color:var(--stone);font-weight:300}
-
-  /* Form grid */
-  section.form-sec{padding:80px 0 140px}
-  .form-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:start}
-
-  /* Form */
-  .form-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:48px;position:relative}
-  .form-card::before{content:'';position:absolute;top:-1px;left:40px;right:40px;height:1px;background:var(--terracotta)}
-  .form-label{display:block;margin-bottom:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);font-weight:500}
-  .form-label .req{color:var(--terracotta);margin-left:4px}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px}
-  .field{display:flex;flex-direction:column}
-  .field.full{grid-column:1/-1}
-  input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{
-    background:transparent;border:none;border-bottom:1px solid var(--line-2);padding:10px 0 14px;font-size:17px;color:var(--ink);transition:border-color .15s;outline:none;
-  }
-  input:focus,select:focus,textarea:focus{border-bottom-color:var(--terracotta)}
-  input::placeholder,textarea::placeholder{color:var(--stone-2);font-weight:300}
-  textarea{resize:vertical;min-height:110px;font-family:inherit;line-height:1.55}
-  select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%236E6358' stroke-width='1.5'/></svg>");background-repeat:no-repeat;background-position:right 4px center;padding-right:28px}
-
-  .topic-group{margin-bottom:36px}
-  .topics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
-  .topic{position:relative;display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line-2);border-radius:10px;cursor:pointer;transition:all .15s;background:transparent}
-  .topic:hover{border-color:var(--clay-2)}
-  .topic input{position:absolute;opacity:0;pointer-events:none}
-  .topic .dot{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--line-2);flex-shrink:0;position:relative;transition:all .15s}
-  .topic input:checked ~ .dot{border-color:var(--terracotta);background:var(--terracotta)}
-  .topic input:checked ~ .dot::after{content:'';position:absolute;inset:3px;background:var(--paper);border-radius:50%}
-  .topic input:checked ~ .label-txt{color:var(--ink)}
-  .topic.selected{border-color:var(--terracotta);background:rgba(181,88,62,0.04)}
-  .topic .label-txt{font-size:14px;color:var(--stone);transition:color .15s}
-
-  .team-row{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:36px}
-
-  .consent{display:flex;align-items:flex-start;gap:12px;margin:36px 0 32px;padding:16px 18px;background:var(--bone-2);border-radius:10px}
-  .consent input{margin-top:3px;accent-color:var(--terracotta);width:14px;height:14px;flex-shrink:0}
-  .consent label{font-size:13px;color:var(--stone);line-height:1.55}
-  .consent label a{color:var(--ink);border-bottom:1px solid var(--line-2)}
-
-  .submit-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-  .submit{background:var(--espresso);color:var(--bone);padding:18px 36px;border-radius:999px;font-size:15px;font-weight:500;transition:transform .15s;display:inline-flex;align-items:center;gap:12px}
-  .submit:hover{transform:translateY(-1px)}
-  .submit .arrow{transition:transform .2s}
-  .submit:hover .arrow{transform:translateX(3px)}
-  .footnote{font-size:12px;color:var(--stone-2);max-width:260px;text-align:right}
-
-  /* Success state */
-  .success{display:none;text-align:center;padding:40px 20px}
-  .success.shown{display:block}
-  .success .mark{width:64px;height:64px;border-radius:50%;background:var(--terracotta);color:var(--bone);display:inline-flex;align-items:center;justify-content:center;margin-bottom:28px;font-size:28px}
-  .success h3{font-family:'Instrument Serif',serif;font-size:44px;line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px}
-  .success h3 em{color:var(--terracotta)}
-  .success p{color:var(--stone);max-width:420px;margin:0 auto}
-
-  .form-main.hidden{display:none}
-
-  /* Sidebar */
-  .side{display:flex;flex-direction:column;gap:40px;position:sticky;top:100px}
-  .side h3{font-family:'Instrument Serif',serif;font-size:32px;line-height:1.1;letter-spacing:-0.02em;margin-bottom:18px}
-  .side h3 em{color:var(--terracotta)}
-  .side .block{padding-bottom:36px;border-bottom:1px solid var(--line)}
-  .side .block:last-child{border-bottom:none}
-  .side .label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone-2);margin-bottom:14px}
-  .side .contact-row{font-size:16px;line-height:1.6;color:var(--ink)}
-  .side .contact-row a{border-bottom:1px solid var(--line-2);transition:border-color .15s}
-  .side .contact-row a:hover{border-color:var(--terracotta)}
-  .side .small{font-size:14px;color:var(--stone);line-height:1.6}
-  .response{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--stone);margin-top:16px}
-  .response .dot{width:8px;height:8px;border-radius:50%;background:#5B8F6A;box-shadow:0 0 0 4px rgba(91,143,106,0.18);animation:pulse 2.4s ease-in-out infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-
-  .quote-card{background:var(--espresso);color:var(--bone);border-radius:16px;padding:32px;position:relative;overflow:hidden}
-  .quote-card .q{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.25;letter-spacing:-0.01em}
-  .quote-card .q em{color:var(--clay)}
-  .quote-card .byline{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,232,0.55)}
-
-  footer{background:var(--espresso);color:rgba(244,239,232,0.6);padding:60px 0 40px;font-size:13px}
-  footer .inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
-  footer .lockup-f{display:inline-flex;align-items:center;gap:12px;color:var(--bone);white-space:nowrap}
-  footer .lockup-f svg{width:28px;height:28px;flex-shrink:0}
-  footer .lockup-f .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-0.01em}
-  footer .meta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.4);line-height:1.8}
-  footer .legal-links{margin-top:40px;padding-top:24px;border-top:1px solid rgba(244,239,232,0.1);display:flex;flex-wrap:wrap;gap:8px 18px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
-  footer .legal-links a{color:rgba(244,239,232,0.55);transition:color .2s}
-  footer .legal-links a:hover{color:var(--bone)}
-  footer .legal-links .sep{color:rgba(244,239,232,0.2)}
-  footer .bottom{margin-top:24px;padding-top:20px;border-top:1px solid rgba(244,239,232,0.1);display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,0.4)}
-
-  @media (max-width:900px){
-    .wrap{padding:0 24px}
-    .form-grid{grid-template-columns:1fr;gap:40px}
-    .form-card{padding:28px}
-    .row,.team-row,.topics{grid-template-columns:1fr}
-    .side{position:static}
-    footer .inner{grid-template-columns:1fr}
-  }
-</style>
-
-<script>
-  // ── Mobile menu ──
-  function toggleMenu(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log('toggleMenu called!', new Date().toISOString());
-    const menu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
-    console.log('Menu element:', menu, 'Has open class:', menu.classList.contains('open'));
-    menu.classList.toggle('open');
-    hamburger.classList.toggle('open');
-    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-    console.log('After toggle - Has open class:', menu.classList.contains('open'));
-  }
-</script>
-
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="styles/output.css">
 </head>
-<body>
+<body class="bg-bone text-ink">
 
-<nav class="top">
-  <div class="wrap inner">
-    <a href="index.html" class="lockup">
-      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#B5583E"/></svg>
-      <span class="wm">One Click <em>Coaching</em></span>
-    </a>
-    <div class="links">
-      <a href="index.html">Platform</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a href="#" class="active">Contact</a>
+  <!-- Skip to Main Content -->
+  <a href="#main-content" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[100000] focus:bg-terracotta focus:text-bone focus:px-4 focus:py-2 focus:rounded">
+    Skip to main content
+  </a>
+
+  <!-- Navigation -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-bone bg-opacity-90 backdrop-blur-md border-b border-line">
+    <div class="container flex items-center justify-between py-5">
+
+      <!-- Logo -->
+      <a href="index.html" class="inline-flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <svg viewBox="0 0 200 200" class="w-7 h-7 flex-shrink-0" aria-hidden="true">
+          <circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/>
+          <circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/>
+          <circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/>
+          <circle cx="100" cy="100" r="12" fill="#B5583E"/>
+        </svg>
+        <span class="font-serif text-xl tracking-tight whitespace-nowrap">
+          One Click <em class="text-terracotta">Coaching</em>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-9">
+        <a href="index.html" class="text-sm text-stone hover:text-ink transition-colors">Platform</a>
+        <a href="pricing.html" class="text-sm text-stone hover:text-ink transition-colors">Pricing</a>
+        <a href="about.html" class="text-sm text-stone hover:text-ink transition-colors">About</a>
+        <a href="blog.html" class="text-sm text-stone hover:text-ink transition-colors">Blog</a>
+        <a href="contact.html" class="text-sm text-ink font-medium">Contact</a>
+      </div>
+
+      <!-- Desktop CTA -->
+      <a href="https://oneclickcoaching-xeso.vercel.app/login" class="hidden lg:inline-flex btn-primary">
+        Sign In →
+      </a>
+
+      <!-- Hamburger (Mobile) -->
+      <button type="button" class="hamburger-icon lg:hidden flex flex-col gap-1.5 p-2 cursor-pointer" onclick="toggleMenu(event)" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="block w-6 h-0.5 bg-ink rounded transition-transform duration-200 ease-out"></span>
+        <span class="block w-6 h-0.5 bg-ink rounded transition-opacity duration-200 ease-out"></span>
+        <span class="block w-6 h-0.5 bg-ink rounded transition-transform duration-200 ease-out"></span>
+      </button>
     </div>
-    <a href="https://oneclickcoaching-xeso.vercel.app/login" class="cta">Sign In →</a>
-    <button type="button" class="hamburger" onclick="toggleMenu(event)" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Mobile menu">
+    <nav class="flex flex-col items-center justify-center gap-8">
+      <a href="index.html" class="text-bone text-2xl font-light hover:text-clay transition-colors" onclick="toggleMenu(event)">Home</a>
+      <a href="index-new.html#product" class="text-bone text-2xl font-light hover:text-clay transition-colors" onclick="toggleMenu(event)">How It Works</a>
+      <a href="pricing.html" class="text-bone text-2xl font-light hover:text-clay transition-colors" onclick="toggleMenu(event)">Pricing</a>
+      <a href="partners.html" class="text-bone text-2xl font-light hover:text-clay transition-colors" onclick="toggleMenu(event)">Partners</a>
+      <a href="blog.html" class="text-bone text-2xl font-light hover:text-clay transition-colors" onclick="toggleMenu(event)">Blog</a>
+      <a href="contact.html" class="text-bone text-2xl font-light hover:text-clay transition-colors" onclick="toggleMenu(event)">Contact</a>
+      <a href="https://oneclickcoaching-xeso.vercel.app/login" class="mt-2 bg-terracotta text-bone px-8 py-3.5 rounded-full text-base font-medium hover:bg-opacity-90 transition-all min-h-[44px] inline-flex items-center justify-center">
+        Sign In
+      </a>
+    </nav>
   </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="index.html#product">How It Works</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="partners.html">Partners</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-    <a href="https://oneclickcoaching-xeso.vercel.app/login" class="cta-mobile">Sign In</a>
-  </div>
-</nav>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow mono">Contact · We reply within one business day</div>
-    <h1>Let's see your team's <em>execution</em> layer.</h1>
-    <p class="lede">Tell us about your team and methodology. We'll come back with a 20-minute walkthrough — no slide deck, just the product against your actual calls.</p>
-  </div>
-</section>
+  <!-- Main Content -->
+  <main id="main-content" class="pt-24 md:pt-28">
 
-<section class="form-sec" id="form">
-  <div class="wrap form-grid">
+    <!-- ═══════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════ -->
+    <section class="py-16 md:py-24 lg:py-32">
+      <div class="container max-w-5xl">
 
-    <div class="form-card">
-      <form class="form-main" id="contact-form" action="https://formspree.io/f/xpqkvrjq" method="POST">
-        <input type="hidden" name="_subject" value="New Contact Form Submission - One Click Coaching" />
-
-        <div class="row">
-          <div class="field">
-            <label class="form-label">First name <span class="req">*</span></label>
-            <input type="text" name="first_name" required placeholder="Jane" />
-          </div>
-          <div class="field">
-            <label class="form-label">Last name <span class="req">*</span></label>
-            <input type="text" name="last_name" required placeholder="Patel" />
-          </div>
+        <!-- Eyebrow -->
+        <div class="inline-flex items-center gap-3 text-terracotta mb-10">
+          <span class="w-6 h-px bg-terracotta"></span>
+          <span class="mono text-xs">Contact · We reply within one business day</span>
         </div>
 
-        <div class="row">
-          <div class="field">
-            <label class="form-label">Work email <span class="req">*</span></label>
-            <input type="email" name="email" required placeholder="jane@company.com" />
-          </div>
-          <div class="field">
-            <label class="form-label">Phone</label>
-            <input type="tel" name="phone" placeholder="(555) 123-4567" />
-          </div>
-        </div>
+        <!-- Headline -->
+        <h1 class="font-serif text-[clamp(48px,7vw,112px)] leading-[1.0] tracking-tight">
+          Let's see your team's <em class="text-terracotta">execution</em> layer.
+        </h1>
 
-        <div class="row">
-          <div class="field">
-            <label class="form-label">Company <span class="req">*</span></label>
-            <input type="text" name="company" required placeholder="Company Inc." />
-          </div>
-          <div class="field">
-            <label class="form-label">Role</label>
-            <input type="text" name="role" placeholder="VP Sales, Head of RevOps…" />
-          </div>
-        </div>
-
-        <div class="team-row">
-          <div class="field">
-            <label class="form-label">Team size <span class="req">*</span></label>
-            <select name="team_size" required>
-              <option value="">Select a range</option>
-              <option value="1-4">1–4 reps</option>
-              <option value="5-9">5–9 reps</option>
-              <option value="10-20">10–20 reps</option>
-              <option value="20-50">20–50 reps</option>
-              <option value="50+">50+ reps</option>
-            </select>
-          </div>
-          <div class="field">
-            <label class="form-label">Methodology</label>
-            <select name="methodology">
-              <option value="">Select one</option>
-              <option value="Sandler">Sandler</option>
-              <option value="MEDDPICC">MEDDPICC</option>
-              <option value="Challenger">Challenger</option>
-              <option value="SPIN">SPIN</option>
-              <option value="Gap Selling">Gap Selling</option>
-              <option value="Custom">Custom / In-house</option>
-              <option value="None">None yet</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="topic-group">
-          <label class="form-label">What brings you in? <span class="req">*</span></label>
-          <div class="topics" id="topics">
-            <label class="topic"><input type="checkbox" name="topic[]" value="demo" /><span class="dot"></span><span class="label-txt">Book a walkthrough</span></label>
-            <label class="topic"><input type="checkbox" name="topic[]" value="pricing" /><span class="dot"></span><span class="label-txt">Pricing & procurement</span></label>
-            <label class="topic"><input type="checkbox" name="topic[]" value="pilot" /><span class="dot"></span><span class="label-txt">Start a 14-day trial</span></label>
-            <label class="topic"><input type="checkbox" name="topic[]" value="partner" /><span class="dot"></span><span class="label-txt">Partner / reseller</span></label>
-          </div>
-        </div>
-
-        <div class="field full">
-          <label class="form-label">What are you trying to fix?</label>
-          <textarea name="message" placeholder="e.g. Reps stopped using our upfront contracts within 60 days of training. Close rate down 12% this quarter."></textarea>
-        </div>
-
-        <div class="consent">
-          <input type="checkbox" id="consent" name="consent" checked />
-          <label for="consent">I agree to be contacted about One Click Coaching. We don't share your info, and we never train AI on your data. <a href="privacy.html">Privacy policy</a>.</label>
-        </div>
-
-        <div class="submit-row">
-          <button type="submit" class="submit" id="submit-btn">
-            <span>Send message</span>
-            <span class="arrow">→</span>
-          </button>
-          <div class="footnote">$85 / rep / month · 14-day free trial · Cancel anytime.</div>
-        </div>
-      </form>
-
-      <div class="success" id="success">
-        <div class="mark">✓</div>
-        <h3>Thanks — we'll be <em>in touch</em>.</h3>
-        <p>A real person on our team reads every message. You'll hear back within one business day, usually the same afternoon.</p>
+        <!-- Lede -->
+        <p class="mt-10 md:mt-12 max-w-xl text-lg md:text-xl text-stone font-light leading-relaxed">
+          Tell us about your team and methodology. We'll come back with a 20-minute walkthrough — no slide deck, just the product against your actual calls.
+        </p>
       </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FORM SECTION
+         ═══════════════════════════════════════════════ -->
+    <section class="py-12 md:py-20 pb-20 md:pb-32 lg:pb-40" id="form">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-20 items-start">
+
+          <!-- Form Card -->
+          <div class="bg-paper border border-line rounded-2xl p-7 md:p-12 relative order-2 lg:order-1">
+            <!-- Top accent line -->
+            <div class="absolute top-0 left-10 right-10 h-px bg-terracotta"></div>
+
+            <!-- Form -->
+            <form class="space-y-7" id="contact-form" action="https://formspree.io/f/xpqkvrjq" method="POST">
+              <input type="hidden" name="_subject" value="New Contact Form Submission - One Click Coaching">
+
+              <!-- Name Row -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+                <div class="flex flex-col">
+                  <label class="form-label">
+                    First name <span class="text-terracotta">*</span>
+                  </label>
+                  <input type="text" name="first_name" required placeholder="Jane" class="form-input">
+                </div>
+                <div class="flex flex-col">
+                  <label class="form-label">
+                    Last name <span class="text-terracotta">*</span>
+                  </label>
+                  <input type="text" name="last_name" required placeholder="Patel" class="form-input">
+                </div>
+              </div>
+
+              <!-- Email + Phone Row -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+                <div class="flex flex-col">
+                  <label class="form-label">
+                    Work email <span class="text-terracotta">*</span>
+                  </label>
+                  <input type="email" name="email" required placeholder="jane@company.com" class="form-input">
+                </div>
+                <div class="flex flex-col">
+                  <label class="form-label">Phone</label>
+                  <input type="tel" name="phone" placeholder="(555) 123-4567" class="form-input">
+                </div>
+              </div>
+
+              <!-- Company + Role Row -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+                <div class="flex flex-col">
+                  <label class="form-label">
+                    Company <span class="text-terracotta">*</span>
+                  </label>
+                  <input type="text" name="company" required placeholder="Company Inc." class="form-input">
+                </div>
+                <div class="flex flex-col">
+                  <label class="form-label">Role</label>
+                  <input type="text" name="role" placeholder="VP Sales, Head of RevOps…" class="form-input">
+                </div>
+              </div>
+
+              <!-- Team Size + Methodology Row -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+                <div class="flex flex-col">
+                  <label class="form-label">
+                    Team size <span class="text-terracotta">*</span>
+                  </label>
+                  <select name="team_size" required class="form-select">
+                    <option value="">Select a range</option>
+                    <option value="1-4">1–4 reps</option>
+                    <option value="5-9">5–9 reps</option>
+                    <option value="10-20">10–20 reps</option>
+                    <option value="20-50">20–50 reps</option>
+                    <option value="50+">50+ reps</option>
+                  </select>
+                </div>
+                <div class="flex flex-col">
+                  <label class="form-label">Methodology</label>
+                  <select name="methodology" class="form-select">
+                    <option value="">Select one</option>
+                    <option value="Sandler">Sandler</option>
+                    <option value="MEDDPICC">MEDDPICC</option>
+                    <option value="Challenger">Challenger</option>
+                    <option value="SPIN">SPIN</option>
+                    <option value="Gap Selling">Gap Selling</option>
+                    <option value="Custom">Custom / In-house</option>
+                    <option value="None">None yet</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Topic Checkboxes -->
+              <div class="space-y-3">
+                <label class="form-label">
+                  What brings you in? <span class="text-terracotta">*</span>
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="topics">
+                  <label class="topic-checkbox">
+                    <input type="checkbox" name="topic[]" value="demo" class="sr-only">
+                    <span class="checkbox-dot"></span>
+                    <span class="checkbox-label">Book a walkthrough</span>
+                  </label>
+                  <label class="topic-checkbox">
+                    <input type="checkbox" name="topic[]" value="pricing" class="sr-only">
+                    <span class="checkbox-dot"></span>
+                    <span class="checkbox-label">Pricing & procurement</span>
+                  </label>
+                  <label class="topic-checkbox">
+                    <input type="checkbox" name="topic[]" value="pilot" class="sr-only">
+                    <span class="checkbox-dot"></span>
+                    <span class="checkbox-label">Start a 14-day trial</span>
+                  </label>
+                  <label class="topic-checkbox">
+                    <input type="checkbox" name="topic[]" value="partner" class="sr-only">
+                    <span class="checkbox-dot"></span>
+                    <span class="checkbox-label">Partner / reseller</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Message Textarea -->
+              <div class="flex flex-col">
+                <label class="form-label">What are you trying to fix?</label>
+                <textarea name="message" rows="4" placeholder="e.g. Reps stopped using our upfront contracts within 60 days of training. Close rate down 12% this quarter." class="form-textarea"></textarea>
+              </div>
+
+              <!-- Consent -->
+              <div class="flex items-start gap-3 p-4 bg-bone-2 rounded-lg">
+                <input type="checkbox" id="consent" name="consent" checked class="mt-1 w-4 h-4 accent-terracotta flex-shrink-0">
+                <label for="consent" class="text-sm text-stone leading-relaxed">
+                  I agree to be contacted about One Click Coaching. We don't share your info, and we never train AI on your data. <a href="privacy.html" class="text-ink border-b border-line-2 hover:border-terracotta">Privacy policy</a>.
+                </label>
+              </div>
+
+              <!-- Submit Row -->
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 pt-2">
+                <button type="submit" class="btn-primary group" id="submit-btn">
+                  <span id="submit-text">Send message</span>
+                  <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+                </button>
+                <div class="text-xs text-stone-2 max-w-[260px] text-left sm:text-right">
+                  $85 / rep / month · 14-day free trial · Cancel anytime.
+                </div>
+              </div>
+            </form>
+
+            <!-- Success State -->
+            <div class="hidden text-center py-10" id="success">
+              <div class="w-16 h-16 rounded-full bg-terracotta text-bone flex items-center justify-center text-3xl mx-auto mb-7">
+                ✓
+              </div>
+              <h3 class="font-serif text-4xl leading-tight tracking-tight mb-4">
+                Thanks — we'll be <em class="text-terracotta">in touch</em>.
+              </h3>
+              <p class="text-stone max-w-md mx-auto">
+                A real person on our team reads every message. You'll hear back within one business day, usually the same afternoon.
+              </p>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="space-y-10 lg:sticky lg:top-32 order-1 lg:order-2">
+
+            <!-- Direct Contact -->
+            <div class="pb-9 border-b border-line">
+              <h3 class="font-serif text-3xl leading-tight tracking-tight mb-5">
+                Reach us <em class="text-terracotta">directly</em>.
+              </h3>
+              <div class="space-y-5">
+                <div>
+                  <div class="mono text-[10px] text-stone-2 mb-3.5">Email</div>
+                  <a href="mailto:john@oneclickcoaching.com" class="text-base text-ink border-b border-line-2 hover:border-terracotta transition-colors">
+                    john@oneclickcoaching.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="pb-9 border-b border-line">
+              <div class="mono text-[10px] text-stone-2 mb-3.5">Phone</div>
+              <a href="tel:+19055198983" class="text-base text-ink border-b border-line-2 hover:border-terracotta transition-colors">
+                (905) 519-8983
+              </a>
+              <div class="text-sm text-stone mt-2">Mon–Fri · 9:00am – 5:00pm EST</div>
+            </div>
+
+            <!-- Office -->
+            <div class="pb-9 border-b border-line">
+              <div class="mono text-[10px] text-stone-2 mb-3.5">Office</div>
+              <div class="text-base text-ink leading-relaxed">
+                1880 Main St. West, Suite 303<br>
+                Hamilton, ON · L8S 4P8<br>
+                Canada
+              </div>
+              <div class="flex items-center gap-2.5 text-sm text-stone mt-4">
+                <span class="w-2 h-2 rounded-full bg-green-600 shadow-[0_0_0_4px_rgba(22,163,74,0.18)] animate-pulse"></span>
+                Typically responding within 1 business day
+              </div>
+            </div>
+
+            <!-- Quote Card -->
+            <div class="bg-espresso text-bone rounded-2xl p-8 relative overflow-hidden">
+              <p class="font-serif text-[22px] leading-snug tracking-tight">
+                "When the system does the work, the coach can focus on <em class="text-clay">judgment</em> — not administration."
+              </p>
+              <div class="mono text-[10px] text-bone text-opacity-55 mt-5">
+                — Built on this belief
+              </div>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-espresso text-bone border-t border-opacity-10 border-bone">
+    <div class="container py-16 lg:py-20">
+
+      <!-- Top Section: Logo + Contact Info -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end">
+
+        <!-- Left: Logo & Address -->
+        <div>
+          <a href="index.html" class="inline-flex items-center gap-3 mb-6">
+            <svg viewBox="0 0 200 200" class="w-7 h-7 flex-shrink-0" aria-hidden="true">
+              <circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/>
+              <circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/>
+              <circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/>
+              <circle cx="100" cy="100" r="12" fill="#C9A687"/>
+            </svg>
+            <span class="font-serif text-xl tracking-tight whitespace-nowrap">
+              One Click <em class="text-clay">Coaching</em>
+            </span>
+          </a>
+          <div class="mono text-xs text-bone text-opacity-40 leading-relaxed">
+            AI sales coaching<br>
+            1880 Main St. W · Hamilton, ON
+          </div>
+        </div>
+
+        <!-- Right: Contact Info -->
+        <div class="mono text-xs text-bone text-opacity-40 leading-relaxed lg:text-right">
+          <a href="mailto:john@oneclickcoaching.com" class="hover:text-bone hover:text-opacity-100 transition-colors">
+            john@oneclickcoaching.com
+          </a>
+          <br>
+          <a href="tel:+19055198983" class="hover:text-bone hover:text-opacity-100 transition-colors">
+            (905) 519-8983
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Legal Links -->
+      <div class="mt-10 pt-6 border-t border-bone border-opacity-10">
+        <div class="flex flex-wrap gap-x-5 gap-y-2 mono text-xs text-bone text-opacity-55">
+          <a href="privacy.html" class="hover:text-bone hover:text-opacity-100 transition-colors">Privacy</a>
+          <span class="text-bone text-opacity-20">·</span>
+          <a href="terms.html" class="hover:text-bone hover:text-opacity-100 transition-colors">Terms</a>
+          <span class="text-bone text-opacity-20">·</span>
+          <a href="security.html" class="hover:text-bone hover:text-opacity-100 transition-colors">Security</a>
+          <span class="text-bone text-opacity-20">·</span>
+          <a href="ai-usage.html" class="hover:text-bone hover:text-opacity-100 transition-colors">AI Usage</a>
+          <span class="text-bone text-opacity-20">·</span>
+          <a href="subprocessors.html" class="hover:text-bone hover:text-opacity-100 transition-colors">Sub-processors</a>
+          <span class="text-bone text-opacity-20">·</span>
+          <a href="cookies.html" class="hover:text-bone hover:text-opacity-100 transition-colors">Cookies</a>
+          <span class="text-bone text-opacity-20">·</span>
+          <a href="sitemap.html" class="hover:text-bone hover:text-opacity-100 transition-colors">Sitemap</a>
+        </div>
+      </div>
+
+      <!-- Bottom: Copyright -->
+      <div class="mt-6 pt-5 border-t border-bone border-opacity-10 flex flex-col sm:flex-row justify-between gap-4 mono text-xs text-bone text-opacity-40">
+        <span>© 2026 One Click Coaching Inc.</span>
+        <span>Made in Hamilton · v1.0</span>
+      </div>
+
     </div>
+  </footer>
 
-    <aside class="side">
-      <div class="block">
-        <h3>Reach us <em>directly</em>.</h3>
-        <div class="label">Email</div>
-        <div class="contact-row"><a href="mailto:john@oneclickcoaching.com">john@oneclickcoaching.com</a></div>
-      </div>
-      <div class="block">
-        <div class="label">Phone</div>
-        <div class="contact-row"><a href="tel:+19055198983">(905) 519-8983</a></div>
-        <div class="small" style="margin-top:8px">Mon–Fri · 9:00am – 5:00pm EST</div>
-      </div>
-      <div class="block">
-        <div class="label">Office</div>
-        <div class="contact-row">1880 Main St. West, Suite 303<br>Hamilton, ON · L8S 4P8<br>Canada</div>
-        <div class="response"><span class="dot"></span>Typically responding within 1 business day</div>
-      </div>
-      <div class="quote-card">
-        <div class="q">"When the system does the work, the coach can focus on <em>judgment</em> — not administration."</div>
-        <div class="byline">— Built on this belief</div>
-      </div>
-    </aside>
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
 
-  </div>
-</section>
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 
-<footer>
-  <div class="wrap">
-    <div class="inner">
-      <div>
-        <a href="index.html" class="lockup-f">
-          <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="58" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="34" fill="none" stroke="#F4EFE8" stroke-width="6"/><circle cx="100" cy="100" r="12" fill="#C9A687"/></svg>
-          <span class="wm">One Click <em>Coaching</em></span>
-        </a>
-        <div class="meta" style="margin-top:20px">AI sales coaching<br>1880 Main St. W · Hamilton, ON</div>
-      </div>
-      <div class="meta" style="text-align:right">john@oneclickcoaching.com<br>(905) 519-8983</div>
-    </div>
-    <div class="legal-links">
-      <a href="privacy.html">Privacy</a><span class="sep">·</span>
-      <a href="terms.html">Terms</a><span class="sep">·</span>
-      <a href="security.html">Security</a><span class="sep">·</span>
-      <a href="ai-usage.html">AI Usage</a><span class="sep">·</span>
-      <a href="subprocessors.html">Sub-processors</a><span class="sep">·</span>
-      <a href="cookies.html">Cookies</a><span class="sep">·</span>
-      <a href="sitemap.html">Sitemap</a>
-    </div>
-    <div class="bottom"><span>© 2026 One Click Coaching Inc.</span><span>Made in Hamilton · v1.0</span></div>
-  </div>
-</footer>
+  <script>
+    // Topic checkbox toggle styling
+    document.querySelectorAll('.topic-checkbox').forEach(label => {
+      const checkbox = label.querySelector('input[type="checkbox"]');
+      const syncState = () => {
+        if (checkbox.checked) {
+          label.classList.add('checked');
+        } else {
+          label.classList.remove('checked');
+        }
+      };
+      checkbox.addEventListener('change', syncState);
+      syncState(); // Initial state
+    });
 
-<script>
-  // Topic chips - toggle selected state
-  document.querySelectorAll('.topic').forEach(t => {
-    const cb = t.querySelector('input');
-    const sync = () => t.classList.toggle('selected', cb.checked);
-    cb.addEventListener('change', sync);
-  });
+    // Formspree AJAX form submission
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const successDiv = document.getElementById('success');
 
-  // Formspree AJAX form submission
-  const form = document.getElementById('contact-form');
-  const submitBtn = document.getElementById('submit-btn');
-  const successDiv = document.getElementById('success');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
 
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitText.textContent = 'Sending...';
 
-    // Disable button and show loading state
-    submitBtn.disabled = true;
-    submitBtn.querySelector('span:first-child').textContent = 'Sending...';
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
 
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
+        if (response.ok) {
+          // Success - hide form, show success message
+          form.classList.add('hidden');
+          successDiv.classList.remove('hidden');
+          successDiv.classList.add('block');
 
-      if (response.ok) {
-        // Success - hide form, show success message
-        form.classList.add('hidden');
-        successDiv.classList.add('shown');
-        window.scrollTo({ top: document.getElementById('form').offsetTop - 60, behavior: 'smooth' });
-      } else {
-        // Server error
-        const data = await response.json();
-        alert(data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.');
+          // Scroll to form section
+          const formSection = document.getElementById('form');
+          if (formSection) {
+            const navHeight = 100;
+            const targetPosition = formSection.offsetTop - navHeight;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        } else {
+          // Server error
+          const data = await response.json();
+          alert(data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.');
+          submitBtn.disabled = false;
+          submitText.textContent = 'Send message';
+        }
+      } catch (error) {
+        // Network error
+        alert('Connection error. Please check your internet and try again.');
         submitBtn.disabled = false;
-        submitBtn.querySelector('span:first-child').textContent = 'Send message';
+        submitText.textContent = 'Send message';
       }
-    } catch (error) {
-      // Network error
-      alert('Connection error. Please check your internet and try again.');
-      submitBtn.disabled = false;
-      submitBtn.querySelector('span:first-child').textContent = 'Send message';
-    }
-  });
-</script>
+    });
+  </script>
 
-<script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    /* Custom form field styles */
+    .form-label {
+      display: block;
+      margin-bottom: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-stone);
+      font-weight: 500;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-line-2);
+      padding: 10px 0 14px;
+      font-size: 17px;
+      color: var(--color-ink);
+      transition: border-color 0.15s;
+      outline: none;
+      width: 100%;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-bottom-color: var(--color-terracotta);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--color-stone-2);
+      font-weight: 300;
+    }
+
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%236E6358' stroke-width='1.5'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      padding-right: 28px;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+      font-family: inherit;
+      line-height: 1.55;
+    }
+
+    /* Custom checkbox styling */
+    .topic-checkbox {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--color-line-2);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: transparent;
+      min-height: 52px;
+    }
+
+    .topic-checkbox:hover {
+      border-color: var(--color-clay-2);
+    }
+
+    .topic-checkbox.checked {
+      border-color: var(--color-terracotta);
+      background: rgba(181, 88, 62, 0.04);
+    }
+
+    .checkbox-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1.5px solid var(--color-line-2);
+      flex-shrink: 0;
+      position: relative;
+      transition: all 0.15s;
+    }
+
+    .topic-checkbox.checked .checkbox-dot {
+      border-color: var(--color-terracotta);
+      background: var(--color-terracotta);
+    }
+
+    .topic-checkbox.checked .checkbox-dot::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      background: var(--color-paper);
+      border-radius: 50%;
+    }
+
+    .checkbox-label {
+      font-size: 14px;
+      color: var(--color-stone);
+      transition: color 0.15s;
+    }
+
+    .topic-checkbox.checked .checkbox-label {
+      color: var(--color-ink);
+    }
+  </style>
+
 </body>
 </html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acceptance Thank-You Notes — June 11, 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; padding: 20px; color: #222; }
+  h1 { font-size: 1.4rem; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+  .card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .card.vip { border-left: 4px solid #f5a623; }
+  .card.meeting { border-left: 4px solid #16a34a; }
+  .name { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; }
+  .meta { color: #888; font-size: 0.8rem; margin-bottom: 10px; }
+  .message { font-size: 0.95rem; line-height: 1.5; color: #333; padding: 10px; background: #f9f9f9; border-radius: 6px; margin-bottom: 10px; }
+  .copy-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .copy-btn:hover { background: #1d4ed8; }
+  .copy-btn.copied { background: #16a34a; }
+  .badge {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-green {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .section-header { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin: 20px 0 8px; padding-top: 16px; border-top: 1px solid #e0e0e0; }
+</style>
+</head>
+<body>
+
+<h1>Acceptance Thank-You Notes</h1>
+<div class="subtitle">12 acceptances — June 11, 2026 | Trainers + Sandler + Organic | First name only in body</div>
+
+<div class="section-header">Trainers Batch (June 9) — 7</div>
+
+<!-- 1. Mike Kunkle · SPARXiQ -->
+<div class="card vip">
+  <div class="name">1. Mike Kunkle <span class="badge">⭐ VIP</span></div>
+  <div class="meta">VP, Sales Effectiveness Services · SPARXiQ</div>
+  <div class="message" id="msg1">Mike — thanks for connecting. "Under pressure orgs sink to their training level" — you said it, and it's the whole problem. Look forward to comparing notes.</div>
+  <button class="copy-btn" onclick="copyMsg('msg1', this)">Copy</button>
+</div>
+
+<!-- 2. Carrie Tuttle · Revenue Leadership Coach · PROFILE VIEW -->
+<div class="card vip">
+  <div class="name">2. Carrie Tuttle <span class="badge">🔥 Profile View</span></div>
+  <div class="meta">Revenue Leadership Coach · 25 years B2B</div>
+  <div class="message" id="msg2">Carrie — thanks for connecting. 25 years B2B, coaching revenue teams — you know what training rooms forget and what actually sticks on calls. Would enjoy a conversation when timing aligns.</div>
+  <button class="copy-btn" onclick="copyMsg('msg2', this)">Copy</button>
+</div>
+
+<!-- 3. Kat Wolfe · KRATOS · Meeting tomorrow -->
+<div class="card meeting">
+  <div class="name">3. Kat Wolfe <span class="badge-green">📅 Meeting Jun 12</span></div>
+  <div class="meta">VP of Sales & Growth Consultant · KRATOS</div>
+  <div class="message" id="msg3">Kat — thanks for connecting. "Systems problem, not talent problem" — that's exactly the right frame. Looking forward to our conversation tomorrow.</div>
+  <button class="copy-btn" onclick="copyMsg('msg3', this)">Copy</button>
+</div>
+
+<!-- 4. George Kaoutsos · Restaurant365 -->
+<div class="card">
+  <div class="name">4. George Kaoutsos</div>
+  <div class="meta">Senior Manager, Sales Development · Restaurant365</div>
+  <div class="message" id="msg4">George — thanks for connecting. 10 years helping people find confidence in the craft says coach at heart. Look forward to comparing notes.</div>
+  <button class="copy-btn" onclick="copyMsg('msg4', this)">Copy</button>
+</div>
+
+<!-- 5. Kristi Schnelten · Amgen -->
+<div class="card">
+  <div class="name">5. Kristi Schnelten</div>
+  <div class="meta">Senior Specialty Sales Representative · Amgen</div>
+  <div class="message" id="msg5">Kristi — thanks for connecting. RN background in medical device sales — that's a lens on what reps actually need that most trainers miss. Look forward to following your work.</div>
+  <button class="copy-btn" onclick="copyMsg('msg5', this)">Copy</button>
+</div>
+
+<!-- 6. Blake Robinson · SV Academy -->
+<div class="card">
+  <div class="name">6. Blake Robinson</div>
+  <div class="meta">Head of Sales · SV Academy</div>
+  <div class="message" id="msg6">Blake — thanks for connecting. Cold call advocate running Head of Sales at a training org — that's a rare combination. Look forward to comparing notes.</div>
+  <button class="copy-btn" onclick="copyMsg('msg6', this)">Copy</button>
+</div>
+
+<!-- 7. Myke Fuentes · alsico NA -->
+<div class="card">
+  <div class="name">7. Myke Fuentes</div>
+  <div class="meta">VP of Sales · alsico NA</div>
+  <div class="message" id="msg7">Myke — thanks for connecting. Building high-performing teams in textile manufacturing is a different kind of sales leadership. Look forward to comparing notes.</div>
+  <button class="copy-btn" onclick="copyMsg('msg7', this)">Copy</button>
+</div>
+
+<!-- 8. Ashley Altheide · Gemini Analytics -->
+<div class="card">
+  <div class="name">8. Ashley Altheide</div>
+  <div class="meta">National Sales Executive · Gemini Analytics</div>
+  <div class="message" id="msg8">Ashley — thanks for connecting. Healthcare sales into SNF operators — complex deals with real stakes. Look forward to comparing notes.</div>
+  <button class="copy-btn" onclick="copyMsg('msg8', this)">Copy</button>
+</div>
+
+<div class="section-header">Sandler Batches — 2</div>
+
+<!-- 9. Ryan Johansen · Sandler -->
+<div class="card">
+  <div class="name">9. Ryan Johansen</div>
+  <div class="meta">Systems Builder · Sandler Selling System</div>
+  <div class="message" id="msg9">Ryan — thanks for connecting. The systems builder lens on Sandler is the right one — methodology only works when the system holds. Look forward to comparing notes.</div>
+  <button class="copy-btn" onclick="copyMsg('msg9', this)">Copy</button>
+</div>
+
+<!-- 10. Jon De Young · Enterprise Sales Facilitator -->
+<div class="card">
+  <div class="name">10. Jon De Young</div>
+  <div class="meta">Enterprise Sales & Leadership Facilitator</div>
+  <div class="message" id="msg10">Jon — thanks for connecting. Enterprise sales and leadership facilitation — you see the gap between the room and the call 60 days later. Look forward to comparing notes.</div>
+  <button class="copy-btn" onclick="copyMsg('msg10', this)">Copy</button>
+</div>
+
+<div class="section-header">Organic / Other — 2</div>
+
+<!-- 11. Alan Schuster · InterVene -->
+<div class="card">
+  <div class="name">11. Alan Schuster</div>
+  <div class="meta">VP of Sales · InterVene, Inc.</div>
+  <div class="message" id="msg11">Alan — thanks for connecting. Walk Vascular to Abbott acquisition is a track record most VPs can't claim. Look forward to following what you're building at InterVene.</div>
+  <button class="copy-btn" onclick="copyMsg('msg11', this)">Copy</button>
+</div>
+
+<!-- 12. Stephanie van Dam · Sandler Franchisee -->
+<div class="card">
+  <div class="name">12. Stephanie van Dam</div>
+  <div class="meta">Sandler Franchisee · Clydesdale Performance Management</div>
+  <div class="message" id="msg12">Stephanie — thanks for connecting. Good to have another Sandler franchisee in the network. Look forward to following your work.</div>
+  <button class="copy-btn" onclick="copyMsg('msg12', this)">Copy</button>
+</div>
+
+<script>
+function copyMsg(id, btn) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+
+</body>
+</html>

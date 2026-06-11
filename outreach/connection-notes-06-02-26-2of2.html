@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — notes-06-02-26-2/2</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F0EB; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; color: #3B2F2A; }
+  .header { max-width: 680px; margin: 0 auto 24px; }
+  .header h1 { font-size: 1.5rem; color: #4A3728; }
+  .header p { font-size: 0.9rem; color: #8B7355; margin-top: 4px; }
+  .card { max-width: 680px; margin: 0 auto 16px; background: #FFFBF7; border: 1px solid #E0D5C7; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .card-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .num { font-size: 1.1rem; font-weight: 700; color: #C06E48; min-width: 28px; }
+  .name { font-size: 1.1rem; font-weight: 700; color: #3B2F2A; }
+  .meta { font-size: 0.85rem; color: #8B7355; margin-bottom: 12px; }
+  .note-box { background: #FAF6F0; border: 1px solid #E0D5C7; border-radius: 6px; padding: 14px; font-size: 0.95rem; line-height: 1.5; position: relative; }
+  .copy-btn { position: absolute; top: 8px; right: 10px; background: #C06E48; color: #FFF; border: none; border-radius: 4px; padding: 3px 10px; font-size: 0.75rem; cursor: pointer; }
+  .copy-btn:hover { background: #A0583A; }
+  .char-count { text-align: right; font-size: 0.75rem; color: #A09080; margin-top: 4px; }
+  .footer { max-width: 680px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #E0D5C7; text-align: center; font-size: 0.85rem; color: #8B7355; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Connection Notes — Ready to Send</h1>
+  <p>Sales Nav list: <strong>notes-06-02-26-2/2</strong> · 11 notes · Tue, June 2, 2026</p>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">1</span><span class="name">Guillermo Navarro</span></div>
+  <div class="meta">VP of Sales · Guardian Digital Inc. · San Francisco, CA</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Guillermo — 20 years in enterprise security, running a 2-rep team — you've been selling solo at the top for a while. Curious how you're thinking about consistent rep execution when the team grows.</div>
+  <div class="char-count">~174 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">2</span><span class="name">Daniel Ley</span></div>
+  <div class="meta">SVP, Sales and BD · Strangeworks · Austin, TX</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Daniel — 25 years scaling tech sales teams, now quantum computing at Strangeworks. The GTM challenge at the frontier is always the same: getting reps to sell what buyers don't yet understand. Curious how you coach that.</div>
+  <div class="char-count">~207 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">3</span><span class="name">Matthew T Burns</span></div>
+  <div class="meta">VP of Sales and Alliances · SellBigger, Inc. · Mountain View, CA</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Matthew — VP of Sales and Alliances at an AI SDR company — you're selling the thing that replaces part of your own motion. That tension is interesting. Curious how you coach reps through it.</div>
+  <div class="char-count">~192 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">4</span><span class="name">Marcus Bush</span></div>
+  <div class="meta">VP of Sales · 9Lenses · Chelmsford, MA</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Marcus — 10 months into VP Sales at 9Lenses — the platform literally systemizes consultative selling at scale. Curious how you're thinking about coaching consistency as you assess the team.</div>
+  <div class="char-count">~183 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">5</span><span class="name">Jon Parisi</span></div>
+  <div class="meta">VP, Sales · Tavrn · San Francisco, CA</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Jon — built playbooks that doubled ARR at MaestroQA, now scaling at Tavrn. 27 reps is a different consistency problem than 5. Curious what your coaching cadence looks like right now.</div>
+  <div class="char-count">~177 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">6</span><span class="name">Gregory Rauscher</span></div>
+  <div class="meta">VP of Sales · Transparency Analytics · New York City</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Gregory — 4 months into VP Sales at Transparency Analytics — selling private credit ratings into asset managers, hedge funds, insurance. Your team is navigating a sophisticated sale. Curious how you're calibrating early coaching.</div>
+  <div class="char-count">~227 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">7</span><span class="name">Michael Daniels</span></div>
+  <div class="meta">VP of Sales · hoop.dev · Greater Boston</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Michael — VP Sales at hoop.dev, AI-native security with a 4-rep team. The sale is technical and the buyer is cautious. Curious how you're maintaining coaching cadence with a lean team.</div>
+  <div class="char-count">~172 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">8</span><span class="name">Greg Krall</span></div>
+  <div class="meta">Sales Director · Quick Silver Systems · Bartlesville, OK</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Greg — Sales Director at Quick Silver — P&C carriers, MGA, SaaS. Enterprise deals, long cycles, consultative process. Curious how you keep a 3-rep team consistent on something that complex.</div>
+  <div class="char-count">~182 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">9</span><span class="name">Dave Hernandez</span></div>
+  <div class="meta">VP of Sales · Spillover · Austin, TX</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Dave — 21 years VP of Sales at Spillover, digital marketing for restaurants. 4 reps, Vince Lombardi quote in the bio. Curious how you keep winning as a habit when the market is constantly shifting.</div>
+  <div class="char-count">~190 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">10</span><span class="name">Matthew Woods</span></div>
+  <div class="meta">VP of Sales · Ruddr · Boston, MA</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Matthew — VP Sales at Ruddr, PSA software for consulting firms. You help consultants track utilization and margin. Curious how you coach reps to sell visibility to teams still living in spreadsheets.</div>
+  <div class="char-count">~203 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">11</span><span class="name">Tracy Johnson</span></div>
+  <div class="meta">Global Head of Sales · Synaccess Networks · Greater Chicago</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Hi Tracy — 2 months into Global Head of Sales at Synaccess — came in to build channels and direct. You've scaled teams from 3 to 30 before. Curious how you're thinking about coaching consistency in the first 90 days.</div>
+  <div class="char-count">~205 chars</div>
+</div>
+
+<div class="footer">11 notes ready · <strong>notes-06-02-26-2/2</strong> · June 2, 2026</div>
+
+<script>
+function copyNote(el, event) {
+  if (event.target.classList.contains('copy-btn')) {
+    const text = el.innerText.replace(/^Copy\n?/, '').trim();
+    navigator.clipboard.writeText(text);
+    const btn = el.querySelector('.copy-btn');
+    btn.textContent = 'Copied! ✓';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection Notes — notes-06-03-26-5/5</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F0EB; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; color: #3B2F2A; }
+  .header { max-width: 680px; margin: 0 auto 24px; }
+  .header h1 { font-size: 1.5rem; color: #4A3728; }
+  .header p { font-size: 0.9rem; color: #8B7355; margin-top: 4px; }
+  .stats { display: flex; gap: 16px; margin-top: 8px; font-size: 0.85rem; }
+  .stat { background: #EDE5D9; padding: 3px 10px; border-radius: 4px; }
+  .stat.send { background: #D4E8D0; color: #3A5A32; }
+  .stat.skip { background: #F0E0D0; color: #8B5A3A; }
+  .card { max-width: 680px; margin: 0 auto 16px; background: #FFFBF7; border: 1px solid #E0D5C7; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .card-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .num { font-size: 1.1rem; font-weight: 700; color: #C06E48; min-width: 28px; }
+  .name { font-size: 1.1rem; font-weight: 700; color: #3B2F2A; }
+  .meta { font-size: 0.85rem; color: #8B7355; margin-bottom: 12px; }
+  .note-box { background: #FAF6F0; border: 1px solid #E0D5C7; border-radius: 6px; padding: 14px; font-size: 0.95rem; line-height: 1.5; position: relative; }
+  .copy-btn { position: absolute; top: 8px; right: 10px; background: #C06E48; color: #FFF; border: none; border-radius: 4px; padding: 3px 10px; font-size: 0.75rem; cursor: pointer; }
+  .copy-btn:hover { background: #A0583A; }
+  .char-count { text-align: right; font-size: 0.75rem; color: #A09080; margin-top: 4px; }
+  .skipped { max-width: 680px; margin: 32px auto 0; }
+  .skipped h2 { font-size: 1rem; color: #8B7355; margin-bottom: 8px; }
+  .skip-item { font-size: 0.85rem; color: #A09080; padding: 3px 0; }
+  .footer { max-width: 680px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #E0D5C7; text-align: center; font-size: 0.85rem; color: #8B7355; }
+</style>
+<script>
+function copyNote(el, event) {
+  event.stopPropagation();
+  const btn = el.querySelector('.copy-btn');
+  const text = el.innerText.replace('Copy', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  });
+}
+</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Connection Notes — Ready to Send</h1>
+  <p>Sales Nav list: <strong>notes-06-03-26-5/5</strong> · 7 notes · Wed, June 3, 2026</p>
+  <div class="stats">
+    <span class="stat send">7 SEND</span>
+    <span class="stat skip">10 SKIP</span>
+    <span class="stat">41% yield</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">1</span><span class="name">Asad Malik</span></div>
+  <div class="meta">VP Corporate Accounts Americas · I-care Reliability Inc. · Software Development · Knoxville, TN</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Asad — 2 months in, 3 reps covering the Americas for an IIoT reliability SaaS. Your summary is built around coaching, enabling, and building dream teams — but at this stage you're still reading whether the reps you've inherited actually execute what you'd coach them to do. Curious what that assessment looks like right now.</div>
+  <div class="char-count">299 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">2</span><span class="name">Bardia Shahali</span></div>
+  <div class="meta">VP Global Sales · Granola · Technology, Information & Internet · San Francisco, CA</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Bardia — 3 months in at 116 people, building a global sales team. You scaled Fireworks from $3M to $400M ARR — you know the difference between bottom-up adoption and a team that can actually close enterprise. The gap between those two things lives on the call. Curious how you're bridging it.</div>
+  <div class="char-count">279 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">3</span><span class="name">Robert Shannon</span></div>
+  <div class="meta">VP Sales & GM North America · Grain · Financial Services · New York, NY</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Robert — 9 months building Grain's North America presence — FX hedging is a genuinely hard sell, complex buyer, short trust window. With 6 reps in a category most buyers haven't bought before, call consistency determines everything. Curious how you're thinking about coaching at this stage.</div>
+  <div class="char-count">278 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">4</span><span class="name">Yusef Akyüz</span></div>
+  <div class="meta">VP of Sales · MessageGears · Software Development · Atlanta, GA</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Yusef — Your headline says helping data-mature marketing teams reach their potential — but that's also the coaching problem. 4 reps selling a technical SaaS to sophisticated buyers means every call either builds credibility or burns it. Curious what execution looks like across the team right now.</div>
+  <div class="char-count">286 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">5</span><span class="name">Marcus Conroy</span></div>
+  <div class="meta">VP of Sales · Trustmi · Technology, Information & Internet · Dallas-Fort Worth, TX</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Marcus — 1 month in. You turned Cofense's Americas around, scaled VMRay 500%, rode Mimecast to IPO. Now you're reading a new team. First thing you're assessing: whether reps execute consistently, or whether results are concentrated in one or two. Curious what you're finding.</div>
+  <div class="char-count">264 chars ✓</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">6</span><span class="name">Shelly M Sanders</span></div>
+  <div class="meta">SVP Global Sales, Marketing & Communications · VECTRA International · Charlotte, NC</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Shelly — 5 months in, leading a 4-rep team at a 72-person consulting firm. Your background is inside and outside sales, performance management, and operations — you've built the systems before. At this stage you're probably still diagnosing where the execution gaps actually live. Curious what you're seeing.</div>
+  <div class="char-count">297 chars</div>
+</div>
+
+<div class="card">
+  <div class="card-header"><span class="num">7</span><span class="name">Ryan McBride</span></div>
+  <div class="meta">VP of Sales · Johanson Group LLP · Computer & Network Security · Calgary, AB</div>
+  <div class="note-box" onclick="copyNote(this, event)"><button class="copy-btn">Copy</button>Ryan — 8 months in at a 51-person security and compliance audit firm, 5 reps. You wrote about "simplifying complex problems for customers" — but the harder version of that is getting 5 reps to do it consistently on every call without you in the room. Curious how you're building that.</div>
+  <div class="char-count">276 chars</div>
+</div>
+
+<div class="skipped">
+  <h2>Skipped (10) — Click to expand</h2>
+  <details>
+    <summary style="cursor:pointer; color:#8B7355; font-size:0.85rem;">Show reasons</summary>
+    <div class="skip-item">Kelly Fairchild — Industrial boiler/HVAC manufacturing; not B2B SaaS sales team</div>
+    <div class="skip-item">Luke Mohamed — NHL team sponsorship/partnership sales; not B2B SaaS</div>
+    <div class="skip-item">Chris McKenzie — Outbound sales consultancy; not managing internal rep team</div>
+    <div class="skip-item">Desmond Hardy — Territory Manager title; residential construction</div>
+    <div class="skip-item">Erik Styacich — Closed profile; medical device</div>
+    <div class="skip-item">Peter Ceccarelli — 0 months in role; hardware/electronics manufacturing</div>
+    <div class="skip-item">Tim Mayer — 185 employees, 53-rep org; above sweet spot</div>
+    <div class="skip-item">David Stokey — 158 employees, 27-rep global enterprise; above ceiling</div>
+    <div class="skip-item">Kaylin Howell — Closed profile</div>
+    <div class="skip-item">Dimari Epps — 0 months in role; 130 employees</div>
+  </details>
+</div>
+
+<div class="footer">notes-06-03-26-5/5 · June 3, 2026 · 7/17 sent</div>
+
+</body>
+</html>

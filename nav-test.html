@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navigation Test - One Click Coaching</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <link href="./styles/output.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-bone text-ink">
+
+  <!-- Navigation Component -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-line">
+    <div class="container">
+      <div class="flex items-center justify-between py-5">
+
+        <!-- Logo / Lockup -->
+        <a href="/" class="flex items-center gap-3 z-50">
+          <svg viewBox="0 0 200 200" class="w-7 h-7 flex-shrink-0" aria-hidden="true">
+            <circle cx="100" cy="100" r="82" fill="none" stroke="#2A221C" stroke-width="6"/>
+            <circle cx="100" cy="100" r="58" fill="none" stroke="#2A221C" stroke-width="6"/>
+            <circle cx="100" cy="100" r="34" fill="none" stroke="#2A221C" stroke-width="6"/>
+            <circle cx="100" cy="100" r="12" fill="#B5583E"/>
+          </svg>
+          <span class="font-serif text-xl tracking-tight whitespace-nowrap">
+            One Click <em class="text-terracotta">Coaching</em>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation (hidden on mobile, visible lg+) -->
+        <div class="hidden lg:flex items-center gap-9">
+          <a href="/#product" class="text-sm text-stone hover:text-ink transition-colors">How It Works</a>
+          <a href="/pricing.html" class="text-sm text-stone hover:text-ink transition-colors">Pricing</a>
+          <a href="/partners.html" class="text-sm text-stone hover:text-ink transition-colors">Partners</a>
+          <a href="/blog.html" class="text-sm text-stone hover:text-ink transition-colors">Blog</a>
+          <a href="/contact.html" class="text-sm text-stone hover:text-ink transition-colors">Contact</a>
+        </div>
+
+        <!-- Desktop CTA (hidden on mobile, visible lg+) -->
+        <a href="https://app.oneclickcoaching.com"
+           class="hidden lg:inline-flex btn-primary">
+          Login
+        </a>
+
+        <!-- Hamburger Button (visible on mobile, hidden lg+) -->
+        <button
+          type="button"
+          class="lg:hidden relative z-50 p-2 -mr-2"
+          onclick="toggleMenu(event)"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+          <div class="w-6 h-5 flex flex-col justify-between hamburger-icon">
+            <span class="block w-full h-0.5 bg-ink rounded transition-all duration-300"></span>
+            <span class="block w-full h-0.5 bg-ink rounded transition-all duration-300"></span>
+            <span class="block w-full h-0.5 bg-ink rounded transition-all duration-300"></span>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 z-40 bg-espresso bg-opacity-96 hidden opacity-0 transition-opacity duration-300 lg:hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile navigation">
+    <div class="flex flex-col items-center justify-center min-h-screen gap-8 px-6">
+      <a href="/" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Home</a>
+      <a href="/#product" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">How It Works</a>
+      <a href="/pricing.html" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Pricing</a>
+      <a href="/partners.html" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Partners</a>
+      <a href="/blog.html" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Blog</a>
+      <a href="/contact.html" class="text-2xl text-bone font-light tracking-tight hover:text-clay transition-colors">Contact</a>
+      <a href="https://app.oneclickcoaching.com"
+         class="mt-4 bg-terracotta text-bone px-8 py-3.5 rounded-full text-base font-medium hover:bg-opacity-90 transition-all">
+        Login
+      </a>
+    </div>
+  </div>
+
+  <!-- Test Content -->
+  <main class="pt-24">
+    <div class="container py-20">
+      <h1 class="font-serif text-6xl mb-8">Navigation Test Page</h1>
+      <p class="text-xl text-stone mb-8 max-w-2xl">
+        This page tests the mobile-first navigation component. Try resizing your browser window or opening on mobile to test the hamburger menu.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div class="card-feature">
+          <h3 class="font-serif text-2xl mb-3">Mobile Menu</h3>
+          <p class="text-sm text-stone">Click the hamburger icon on mobile to open the fullscreen menu overlay.</p>
+        </div>
+        <div class="card-feature">
+          <h3 class="font-serif text-2xl mb-3">Desktop Nav</h3>
+          <p class="text-sm text-stone">On screens 1024px+, the full navigation displays in the header.</p>
+        </div>
+        <div class="card-feature">
+          <h3 class="font-serif text-2xl mb-3">Touch Targets</h3>
+          <p class="text-sm text-stone">All interactive elements meet the 44x44px minimum for mobile usability.</p>
+        </div>
+      </div>
+
+      <!-- Test scroll content -->
+      <div class="mt-20 space-y-8">
+        <h2 class="font-serif text-4xl">Scroll Test</h2>
+        <p class="text-stone">The navigation should stick to the top as you scroll.</p>
+
+        <div class="h-96 bg-paper rounded-lg p-8 border border-line">
+          <p class="text-stone">Scroll down to test sticky navigation...</p>
+        </div>
+        <div class="h-96 bg-paper rounded-lg p-8 border border-line">
+          <p class="text-stone">Keep scrolling...</p>
+        </div>
+        <div class="h-96 bg-paper rounded-lg p-8 border border-line">
+          <p class="text-stone">Navigation should remain fixed at top.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+  /* Hamburger animation when open */
+  .hamburger-icon.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-icon.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  /* Mobile menu open state */
+  #mobile-menu.open {
+    display: flex !important;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  </style>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
